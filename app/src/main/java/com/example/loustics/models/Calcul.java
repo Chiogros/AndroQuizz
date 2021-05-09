@@ -18,6 +18,10 @@ public abstract class Calcul<T> {
 
     public abstract double getResult();
 
+    public int getResultAsInt() {
+        return (int) getResult();
+    }
+
     public T getOperande1(T operande) {
         return this.operande1;
     }
