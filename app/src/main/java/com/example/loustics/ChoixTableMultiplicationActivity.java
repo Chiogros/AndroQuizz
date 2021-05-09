@@ -15,9 +15,9 @@ public class ChoixTableMultiplicationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // On charge le XML pour créer l'arbre graphique
-        setContentView(R.layout.choix_table_multiplication);
+        setContentView(R.layout.activity_choix_table_multiplication);
 
-        NumberPicker np = (NumberPicker) findViewById(R.id.np);
+        NumberPicker np = findViewById(R.id.np);
         np.setMinValue(0);
         np.setMaxValue(10);
         np.setWrapSelectorWheel(true);
@@ -26,7 +26,9 @@ public class ChoixTableMultiplicationActivity extends AppCompatActivity {
     public void button(View view) {
         Intent intent = new Intent(this, TableMultiplicationActivity.class);
         NumberPicker np = findViewById(R.id.np);
+
         intent.putExtra(TableMultiplicationActivity.NUMBER_KEY, np.getValue());
+
         startActivity(intent);
     }
 }
