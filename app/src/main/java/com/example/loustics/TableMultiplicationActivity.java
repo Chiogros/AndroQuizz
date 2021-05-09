@@ -57,9 +57,6 @@ public class TableMultiplicationActivity extends AppCompatActivity {
             }
         }
 
-        Intent intent = new Intent (this, ResultatActivity.class);
-        intent.putExtra(ResultatActivity.ERREURS, erreurs);
-        startActivity(intent);
     }
 }
 

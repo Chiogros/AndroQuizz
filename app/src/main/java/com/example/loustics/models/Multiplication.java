@@ -15,17 +15,17 @@ public class Multiplication<T> extends Calcul {
 
     @Override
     public double getResult() {
-        if (this.operande1.getClass().toString().equals("Byte"))
+        if (this.operande1 instanceof Byte)
             return (byte) this.operande1 * (byte) this.operande2;
-        else if (this.operande1.getClass().toString().equals("Double"))
+        else if (this.operande1 instanceof Double)
             return (double) this.operande1 * (double) this.operande2;
-        else if (this.operande1.getClass().toString().equals("Float"))
+        else if (this.operande1 instanceof Float)
             return (float) this.operande1 * (float) this.operande2;
-        else if (this.operande1.getClass().toString().equals("Integer"))
+        else if (this.operande1 instanceof Integer)
             return (int) this.operande1 * (int) this.operande2;
-        else if (this.operande1.getClass().toString().equals("Long"))
+        else if (this.operande1 instanceof Long)
             return (long) this.operande1 * (long) this.operande2;
-        else if (this.operande1.getClass().toString().equals("Short"))
+        else if (this.operande1 instanceof Short)
             return (short) this.operande1 * (short) this.operande2;
         else
             return Double.MIN_VALUE;
