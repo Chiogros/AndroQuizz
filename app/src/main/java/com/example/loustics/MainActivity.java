@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Intent TableMultiplication = new Intent(MainActivity.this, ChoixTableMultiplicationActivity.class);
 
         // Lancement de la demande de changement d'activité
-        startActivityForResult(TableMultiplication, ACTIVITY_MULTIPLICATION);
+        startActivity(TableMultiplication);
     }
 
     public void onAddition(View view) {
@@ -33,6 +33,6 @@ public class MainActivity extends AppCompatActivity {
         Intent addition = new Intent(MainActivity.this, AdditionActivity.class);
 
         // Lancement de la demande de changement d'activité
-        startActivityForResult(addition, ACTIVITY_ADDITION);
+        startActivity(addition);
     }
 }
