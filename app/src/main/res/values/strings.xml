@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Loustics</string>
+    <string name="button_valider">valider</string>
+    <string name="Choix_table">Choisissez une table de multiplication :</string>
+    <string name="corriger_autre_table">Autre Table</string>
+    <string name="Choix_exercice">Autre exercice</string>
+    <string name="resultat">Félicitation !</string>
+    <string name="multiplication">Table de Multiplication</string>
+    <string name="addition">Addition</string>
+</resources>
