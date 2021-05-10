@@ -6,15 +6,13 @@ public abstract class Calcul<T> {
 
     protected T operande1;
     protected T operande2;
-    protected String operation;
 
-    Calcul(T operande1, T operande2, String operation) {
+    protected Calcul() {}
+
+    protected Calcul(T operande1, T operande2) {
         this.operande1 = operande1;
         this.operande2 = operande2;
-        this.operation = operation;
     }
-
-    public abstract void display();
 
     public abstract double getResult();
 
@@ -30,9 +28,7 @@ public abstract class Calcul<T> {
         return this.operande2;
     }
 
-    public String getOperation(String operation) {
-        return this.operation;
-    }
+    public abstract String getOperation();
 
     public void setOperande1(T operande) {
         this.operande1 = operande;
@@ -40,10 +36,6 @@ public abstract class Calcul<T> {
 
     public void setOperande2(T operande) {
         this.operande2 = operande;
-    }
-
-    public void setOperation(String operation) {
-        this.operation = operation;
     }
 
     @NotNull
