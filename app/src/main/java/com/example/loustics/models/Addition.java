@@ -1,18 +1,20 @@
 package com.example.loustics.models;
 
-import android.util.Log;
-
 import org.jetbrains.annotations.NotNull;
 
 public class Addition<T> extends Calcul {
 
+    private final String operation = "x";
+
+    public Addition() { super(); }
+
     public Addition(T operande1, T operande2) {
-        super(operande1, operande2, "+");
+        super(operande1, operande2);
     }
 
     @Override
-    public void display() {
-        System.out.print(this.operande1 + this.operation + this.operande2);
+    public String getOperation() {
+        return operation;
     }
 
     @Override
@@ -35,7 +37,7 @@ public class Addition<T> extends Calcul {
 
     @NotNull
     public String toString() {
-        return (this.operande1 + this.operation + this.operande2 + " = ");
+        return (this.operande1 + operation + this.operande2 + " = ");
     }
 
 }

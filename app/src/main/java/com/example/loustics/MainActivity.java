@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public void onMultiplication(View view) {
 
         // Création d'une intention
-        Intent TableMultiplication = new Intent(MainActivity.this, ChoixTableMultiplicationActivity.class);
+        Intent TableMultiplication = new Intent(MainActivity.this, MultiplicationActivity.class);
 
         // Lancement de la demande de changement d'activité
         startActivity(TableMultiplication);
