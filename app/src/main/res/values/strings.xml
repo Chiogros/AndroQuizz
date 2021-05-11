@@ -9,4 +9,8 @@
     <string name="addition">Addition</string>
     <string name="button_autre">Autre Exercice</string>
     <string name="button_suivant">Suivant</string>
+    <string name="soustraction">soustraction</string>
+    <string name="mulitiplication">Multiplication</string>
+    <string name="division">Division</string>
+    <string name="modulo">Modulo</string>
 </resources>
