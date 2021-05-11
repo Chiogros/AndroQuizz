@@ -3,7 +3,7 @@ package com.example.loustics;
 import android.os.Bundle;
 
 import com.example.loustics.models.Addition;
-import com.example.loustics.models.Calcul;
+
 
 public class AdditionActivity extends CalculActivity {
 

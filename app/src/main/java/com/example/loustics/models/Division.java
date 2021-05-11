@@ -2,13 +2,13 @@ package com.example.loustics.models;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Addition<T> extends Calcul {
+public class Division<T> extends Calcul {
 
-    private final String operation = "+";
+    private final String operation = "/";
 
-    public Addition() { super(); }
+    public Division() { super(); }
 
-    public Addition(T operande1, T operande2) {
+    public Division(T operande1, T operande2) {
         super(operande1, operande2);
     }
 
@@ -20,17 +20,17 @@ public class Addition<T> extends Calcul {
     @Override
     public double getResult() {
         if (this.operande1 instanceof Byte)
-            return (byte) this.operande1 + (byte) this.operande2;
+            return (byte) this.operande1 / (byte) this.operande2;
         else if (this.operande1 instanceof Double)
-            return (double) this.operande1 + (double) this.operande2;
+            return (double) this.operande1 / (double) this.operande2;
         else if (this.operande1 instanceof Float)
-            return (float) this.operande1 + (float) this.operande2;
+            return (float) this.operande1 / (float) this.operande2;
         else if (this.operande1 instanceof Integer)
-            return (int) this.operande1 + (int) this.operande2;
+            return (int) this.operande1 / (int) this.operande2;
         else if (this.operande1 instanceof Long)
-            return (long) this.operande1 + (long) this.operande2;
+            return (long) this.operande1 / (long) this.operande2;
         else if (this.operande1 instanceof Short)
-            return (short) this.operande1 + (short) this.operande2;
+            return (short) this.operande1 / (short) this.operande2;
         else
             return Double.MIN_VALUE;
     }
