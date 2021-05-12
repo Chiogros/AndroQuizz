@@ -13,4 +13,5 @@
     <string name="mulitiplication">Multiplication</string>
     <string name="division">Division</string>
     <string name="modulo">Modulo</string>
+    <string name="new_compte">Créer un compte</string>
 </resources>

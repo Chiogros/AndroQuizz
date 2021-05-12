@@ -62,6 +62,7 @@ public abstract class CalculActivity extends AppCompatActivity {
             try { ((ViewGroup) v_calcul.getParent()).removeView(v_calcul); } catch (Exception ignored) {}
             ll_calcul.addView(v_calcul);
         }
+
     }
 
     public void creerTable() throws InstantiationException, IllegalAccessException {
@@ -126,4 +127,5 @@ public abstract class CalculActivity extends AppCompatActivity {
     }
 
     public abstract void setCalculClass();
+
 }
