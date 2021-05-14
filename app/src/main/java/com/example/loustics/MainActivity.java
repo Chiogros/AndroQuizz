@@ -65,4 +65,12 @@ public class MainActivity extends AppCompatActivity {
         // Lancement de la demande de changement d'activité
         startActivity(Modulo);
     }
+
+    public void onNew(View view) {
+        // Création d'une intention
+        Intent UserNew = new Intent(MainActivity.this, AddUserActivity.class);
+
+        // Lancement de la demande de changement d'activité
+        startActivity(UserNew);
+    }
 }
