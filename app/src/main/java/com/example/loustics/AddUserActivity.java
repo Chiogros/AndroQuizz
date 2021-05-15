@@ -32,9 +32,9 @@ public class AddUserActivity extends AppCompatActivity {
         mDb = DatabaseClient.getInstance(getApplicationContext());
 
         // Récupérer les vues
-        editTextNomView = findViewById(R.id.editTextNom);
-        editTextPrenomView = findViewById(R.id.editTextPrenom);
-        saveView = findViewById(R.id.button_save);
+        editTextNomView = findViewById(R.id.username);
+        editTextPrenomView = findViewById(R.id.password);
+        saveView = findViewById(R.id.login);
 
         // Associer un événement au bouton save
         saveView.setOnClickListener(new View.OnClickListener() {
