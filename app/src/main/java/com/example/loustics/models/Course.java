@@ -14,25 +14,25 @@ import java.util.ListIterator;
 public class Course {
 
     private ArrayList<Chapter> m_alChapters;
-    private Drawable m_dLogo;
+    private int m_dLogo;
     private String m_sName;
     private static ArrayList<Course> s_lCourses = new ArrayList<>();
 
     public Course(String sName) {
         this.m_alChapters = new ArrayList<>();
-        this.m_dLogo = null;
+        this.m_dLogo = -1;
         this.m_sName = sName;
         s_lCourses.add(this);
     }
 
-    public Course(String sName, Drawable dLogo) {
+    public Course(String sName, int dLogo) {
         this.m_alChapters = new ArrayList<>();
         this.m_dLogo = dLogo;
         this.m_sName = sName;
         s_lCourses.add(this);
     }
 
-    public Drawable getLogo() {
+    public int getLogo() {
         return this.m_dLogo;
     }
 
