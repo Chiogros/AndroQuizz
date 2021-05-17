@@ -46,9 +46,7 @@
             android:layout_height="wrap_content"
             android:padding="40dp"
             android:divider="@null"
-            android:layout_below="@+id/tv_course"
-            android:backgroundTint="@color/brown"/>
-
+            android:layout_below="@+id/tv_course" />
 
     </RelativeLayout>
 
