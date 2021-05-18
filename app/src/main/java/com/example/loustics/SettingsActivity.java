@@ -27,18 +27,21 @@ public class SettingsActivity extends AppCompatActivity {
 
         setBackButton();
         setLayoutXML();
-
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.defaultWhite));
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
-        }
-
+        setNavigationBarColors();
     }
 
     // Activer la flèche de retour dans la ActionBar
     private void setBackButton() {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    // afficher la navigationBar en blanc avec les boutons noirs
+    public void setNavigationBarColors() {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.defaultWhite));
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+        }
     }
 
     // Activé lors du clic sur la flèche de retour de la ActionBar

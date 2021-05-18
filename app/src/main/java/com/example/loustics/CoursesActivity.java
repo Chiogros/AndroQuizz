@@ -83,10 +83,10 @@ public class CoursesActivity extends AppCompatActivity {
 
                 // Le dernier enfant doit forcément être le nom de la matière
                 // Nom de la matière
-                TextView tv_logo = new TextView(getContext());
-                tv_logo.setText(this.getItem(position).getName());
-                tv_logo.setTextSize(25);
-                ll_line.addView(tv_logo);
+                TextView tv_courseName = new TextView(getContext());
+                tv_courseName.setText(this.getItem(position).getName());
+                tv_courseName.setTextSize(25);
+                ll_line.addView(tv_courseName);
 
                 // Au clic sur la matière
                 ll_line.setOnClickListener(new View.OnClickListener() {

@@ -1,14 +1,14 @@
-package com.example.loustics.models;
+package com.example.loustics.class_backup;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Multiplication<T> extends Calcul {
+public class Addition<T> extends Calcul {
 
-    private final String operation = "x";
+    private final String operation = "+";
 
-    public Multiplication() { super(); }
+    public Addition() { super(); }
 
-    public Multiplication(T operande1, T operande2) {
+    public Addition(T operande1, T operande2) {
         super(operande1, operande2);
     }
 
@@ -20,17 +20,17 @@ public class Multiplication<T> extends Calcul {
     @Override
     public double getResult() {
         if (this.operande1 instanceof Byte)
-            return (byte) this.operande1 * (byte) this.operande2;
+            return (byte) this.operande1 + (byte) this.operande2;
         else if (this.operande1 instanceof Double)
-            return (double) this.operande1 * (double) this.operande2;
+            return (double) this.operande1 + (double) this.operande2;
         else if (this.operande1 instanceof Float)
-            return (float) this.operande1 * (float) this.operande2;
+            return (float) this.operande1 + (float) this.operande2;
         else if (this.operande1 instanceof Integer)
-            return (int) this.operande1 * (int) this.operande2;
+            return (int) this.operande1 + (int) this.operande2;
         else if (this.operande1 instanceof Long)
-            return (long) this.operande1 * (long) this.operande2;
+            return (long) this.operande1 + (long) this.operande2;
         else if (this.operande1 instanceof Short)
-            return (short) this.operande1 * (short) this.operande2;
+            return (short) this.operande1 + (short) this.operande2;
         else
             return Double.MIN_VALUE;
     }
@@ -39,4 +39,5 @@ public class Multiplication<T> extends Calcul {
     public String toString() {
         return (this.operande1 + operation + this.operande2 + " = ");
     }
+
 }

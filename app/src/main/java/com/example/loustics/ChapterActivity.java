@@ -5,9 +5,12 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,23 +37,31 @@ public class ChapterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter);
 
+        Chapter c = new Chapter("Additions");
+        c = new Chapter("Soustractions");
+        c = new Chapter("Multiplications");
+        c = new Chapter("Divisions");
+
+        // Nom de la matière
         this.m_sCourseName = getIntent().getStringExtra(COURSE);
 
+        // Nom de la matière dans l'en-tête
         TextView t = (TextView) findViewById(R.id.tv_course);
         t.setText(this.m_sCourseName);
 
-        // setListView();
+        // Afficher les chapitres
+        setListView();
     }
 
     public void setListView() {
         // n'affiche rien si la liste est vide
-        if (Course.getCourses().size() == 0) {
+        if (Chapter.getChapters().size() == 0) {
             return ;
         }
 
         // Définition des lignes pour le ListView + l'action du click sur chaque ligne qui renvoit sur une nouvelle activité
         ListView lv_items = findViewById(R.id.lv_items);
-        lv_items.setAdapter(new ArrayAdapter<Course>(getApplicationContext(), R.id.lv_items, Course.getCourses()) {
+        lv_items.setAdapter(new ArrayAdapter<Chapter>(getApplicationContext(), R.id.lv_items, Chapter.getChapters()) {
             /*
             méthode utilisée à la génération de la ListView, renvoie une View qui est affichée dans la liste
              */
@@ -61,45 +72,21 @@ public class ChapterActivity extends AppCompatActivity {
                 ll_line.setOrientation(LinearLayout.HORIZONTAL);
                 ll_line.setGravity(Gravity.CENTER_VERTICAL);
 
-                // Logo de la matière
-                ImageView iv_logo = new ImageView(getContext());
-                iv_logo.setImageResource(this.getItem(position).getLogo());
-                ll_line.addView(iv_logo);
-
-                Space space = new Space(getContext());
-                space.setLayoutParams(new LinearLayout.LayoutParams(25, 1));
-                ll_line.addView(space);
-
                 // Le dernier enfant doit forcément être le nom de la matière
                 // Nom de la matière
-                TextView tv_logo = new TextView(getContext());
-                tv_logo.setText(this.getItem(position).getName());
-                tv_logo.setTextSize(25);
-                ll_line.addView(tv_logo);
+                TextView tv_chapterName = new TextView(getContext());
+                tv_chapterName.setText(this.getItem(position).getName());
+                tv_chapterName.setTextSize(25);
+                ll_line.addView(tv_chapterName);
 
-                // Au clic sur la matière
+                Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.fading_from_bottom);
+                ll_line.startAnimation(animation);
+                
+                // Au clic sur le chapitre
                 ll_line.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // on récupère le nom et le logo de la matière sur laquelle on a cliqué
-                        LinearLayout ll_line = (LinearLayout) view;
-                        ImageView iv_courseLogo = (ImageView) ((LinearLayout) view).getChildAt(0);
-                        TextView tv_courseName = (TextView) ll_line.getChildAt(
-                                ll_line.getChildCount()-1
-                        );
 
-                        // on passe le nom de la matière à la nouvelle activité
-                        Intent i = new Intent(getContext(), ChapterActivity.class);
-                        i.putExtra(ChapterActivity.COURSE, tv_courseName.getText());
-
-                        // Si la fonctionnalité est supportée par la version d'Android
-                        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-                            startActivity(i);
-                        } else {
-                            iv_courseLogo.setTransitionName("iv_courseLogo");
-                            tv_courseName.setTransitionName("tv_courseName");
-                            startActivity(i, ActivityOptions.makeSceneTransitionAnimation(ChapterActivity.this).toBundle());
-                        }
                     }
                 });
 

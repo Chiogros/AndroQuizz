@@ -39,12 +39,17 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="en théorie il faut créer des branches Alexandre">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/SplashScreenActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash_screen.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-v23/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-v27/themes.xml" afterDir="false" />
+    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="SplashScreenActivity&#10;SettingsActivity&#10;refonte des themes">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/QuizzActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Lesson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/MCQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Quizz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/fading_from_bottom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -55,29 +60,26 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChapterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChapterActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/CoursesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/CoursesActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/SettingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/SettingsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-v21/activity_courses.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-v21/activity_courses.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-v21/settings_activity.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_courses.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/settings_activity.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/transition/change_item_transform.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-v21/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/settings_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Addition.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Addition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calcul.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/class_backup/Calcul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Chapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/class_backup/Division.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Modulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/class_backup/Addition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Multiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/class_backup/Multiplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Soustraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/class_backup/Soustraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/TableMultiplication.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_26]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -101,10 +103,10 @@
         <option value="Interface" />
         <option value="AnnotationType" />
         <option value="layoutResourceFile_vertical" />
-        <option value="resourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile" />
         <option value="valueResourceFile" />
+        <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -300,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621176248046</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="SplashScreenActivity&#10;SettingsActivity&#10;refonte des themes">
+      <created>1621265594473</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621265594474</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,7 +365,8 @@
     <MESSAGE value="Léane a commit x)" />
     <MESSAGE value="Début de l'UML + activités test" />
     <MESSAGE value="en théorie il faut créer des branches Alexandre" />
-    <option name="LAST_COMMIT_MESSAGE" value="en théorie il faut créer des branches Alexandre" />
+    <MESSAGE value="SplashScreenActivity&#10;SettingsActivity&#10;refonte des themes" />
+    <option name="LAST_COMMIT_MESSAGE" value="SplashScreenActivity&#10;SettingsActivity&#10;refonte des themes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
@@ -367,6 +377,10 @@
       <screen x="0" y="0" width="3840" height="1128" />
     </state>
     <state x="424" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621235440826" />
+    <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1621319996419">
+      <screen x="1920" y="88" width="1920" height="1080" />
+    </state>
+    <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621319996419" />
     <state x="742" y="388" width="436" height="271" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1621069768949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -386,12 +400,12 @@
     </state>
     <state x="100" y="100" width="1720" height="840" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1621118706527" />
     <state x="0" y="0" width="960" height="1080" key="AVDManager/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621265198934" />
-    <state x="1568" y="458" width="824" height="483" key="AndroidCreateResourceFileDialog" timestamp="1621237317347">
-      <screen x="1920" y="88" width="1920" height="1080" />
+    <state x="846" y="355" width="824" height="483" key="AndroidCreateResourceFileDialog" timestamp="1621267507332">
+      <screen x="0" y="0" width="3840" height="1128" />
     </state>
     <state x="1586" y="247" key="AndroidCreateResourceFileDialog/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620829682476" />
     <state x="784" y="422" width="824" height="483" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621099727907" />
-    <state x="1568" y="458" key="AndroidCreateResourceFileDialog/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621237317347" />
+    <state x="846" y="355" key="AndroidCreateResourceFileDialog/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621267507332" />
     <state x="1456" y="343" key="AndroidCreateXmlResourceDialog" timestamp="1621247498919">
       <screen x="0" y="0" width="3840" height="1128" />
     </state>
@@ -402,41 +416,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="744" y="268" key="AndroidProcessChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621086006902" />
-    <state x="1302" y="184" key="FileChooserDialogImpl" timestamp="1621234543310">
-      <screen x="0" y="0" width="3840" height="1128" />
+    <state x="2571" y="264" key="FileChooserDialogImpl" timestamp="1621271000431">
+      <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="1800" y="161" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620820549152" />
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1620638421124" />
     <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1621087668649" />
     <state x="1302" y="184" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621234543310" />
-    <state width="1874" height="285" key="GridCell.Tab.0.bottom" timestamp="1621264345593">
+    <state x="2571" y="264" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621271000431" />
+    <state width="1874" height="285" key="GridCell.Tab.0.bottom" timestamp="1621268459900">
       <screen x="0" y="0" width="3840" height="1128" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620638846116" />
     <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1621118189911" />
-    <state width="1874" height="285" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621264345593" />
-    <state width="1874" height="285" key="GridCell.Tab.0.center" timestamp="1621264345593">
+    <state width="1874" height="285" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
+    <state width="1874" height="285" key="GridCell.Tab.0.center" timestamp="1621268459900">
       <screen x="0" y="0" width="3840" height="1128" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
     <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1621118189911" />
-    <state width="1874" height="285" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621264345593" />
-    <state width="1874" height="285" key="GridCell.Tab.0.left" timestamp="1621264345593">
+    <state width="1874" height="285" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
+    <state width="1874" height="285" key="GridCell.Tab.0.left" timestamp="1621268459900">
       <screen x="0" y="0" width="3840" height="1128" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
     <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1621118189911" />
-    <state width="1874" height="285" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621264345593" />
-    <state width="1874" height="285" key="GridCell.Tab.0.right" timestamp="1621264345593">
+    <state width="1874" height="285" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
+    <state width="1874" height="285" key="GridCell.Tab.0.right" timestamp="1621268459900">
       <screen x="0" y="0" width="3840" height="1128" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
     <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1621118189911" />
-    <state width="1874" height="285" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621264345593" />
+    <state width="1874" height="285" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="274" key="GridCell.Tab.1.bottom" timestamp="1621086044207">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -453,11 +468,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="274" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1621086044207" />
-    <state x="922" y="168" key="SettingsEditor" timestamp="1621233499964">
-      <screen x="0" y="0" width="3840" height="1128" />
+    <state x="2381" y="249" key="SettingsEditor" timestamp="1621319210682">
+      <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="461" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1621191273780" />
-    <state x="922" y="168" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621233499964" />
+    <state x="922" y="168" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621270746353" />
+    <state x="2381" y="249" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621319210682" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1620635577136">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -470,9 +486,10 @@
       <screen x="1366" y="0" width="1280" height="984" />
     </state>
     <state x="1815" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620817892183" />
-    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1621240075671">
-      <screen x="0" y="0" width="3840" height="1128" />
+    <state x="2232" y="317" width="672" height="650" key="search.everywhere.popup" timestamp="1621320526071">
+      <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621240075671" />
+    <state x="2232" y="317" width="672" height="650" key="search.everywhere.popup/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621320526071" />
   </component>
 </project>
