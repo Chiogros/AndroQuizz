@@ -16,19 +16,23 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
             android:text="Matière"
-            android:textSize="25dp"
-            android:transitionName="tv_courseName"/>
+            android:textSize="20dp"
+            android:textColor="@color/defaultWhite"
+            android:transitionName="tv_courseName"
+            android:paddingBottom="5dp"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/half_circle"/>
 
         <ImageView
             android:id="@+id/iv_course"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_course"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="25dp"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:transitionName="iv_courseLogo"/>
+            android:transitionName="iv_courseLogo"
+            android:padding="7dp"/>
 
         <ListView
             android:id="@+id/lv_items"
@@ -36,7 +40,8 @@
             android:layout_height="wrap_content"
             android:padding="40dp"
             android:divider="@null"
-            android:layout_below="@+id/iv_course" />
+            android:layout_below="@+id/iv_course"
+            android:scrollbars="none" />
 
     </RelativeLayout>
 
