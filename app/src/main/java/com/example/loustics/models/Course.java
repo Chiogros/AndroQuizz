@@ -17,9 +17,9 @@ public class Course {
         s_al_Courses.add(this);
     }
 
-    public Course(String sName, int dLogo) {
+    public Course(String sName, int iLogo) {
         this.m_al_Chapters = new ArrayList<>();
-        this.m_i_Logo = dLogo;
+        this.m_i_Logo = iLogo;
         this.m_s_Name = sName;
         s_al_Courses.add(this);
     }

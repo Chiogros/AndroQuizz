@@ -1,22 +1,15 @@
 package com.example.loustics;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
-
-import com.example.loustics.ui.login.LoginActivity;
-
-import java.util.Objects;
 
 public class SettingsActivity extends AppCompatActivity {
 
