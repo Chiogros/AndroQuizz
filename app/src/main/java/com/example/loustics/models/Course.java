@@ -2,9 +2,12 @@ package com.example.loustics.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import androidx.room.ColumnInfo;
+import androidx.room.PrimaryKey;
+import androidx.room.Entity;
 
-public class Course {
-
+@Entity public class Course {
+    
     private ArrayList<Chapter> m_al_Chapters;
     private int m_i_Logo;
     private String m_s_Name;

@@ -1,7 +1,11 @@
 package com.example.loustics.models;
 
 import java.util.ArrayList;
+import androidx.room.ColumnInfo;
+import androidx.room.PrimaryKey;
+import androidx.room.Entity;
 
+@Entity
 public class Chapter {
 
     private String m_s_name;

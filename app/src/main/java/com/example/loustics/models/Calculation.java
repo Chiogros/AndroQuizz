@@ -1,6 +1,10 @@
 package com.example.loustics.models;
 
-public abstract class Calculation extends Subject{
+import androidx.room.ColumnInfo;
+import androidx.room.PrimaryKey;
+import androidx.room.Entity;
+
+@Entity public abstract class Calculation extends Subject{
 
     private Double operand1;
     private Double operand2;

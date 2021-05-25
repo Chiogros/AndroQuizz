@@ -11,8 +11,9 @@ import java.util.List;
 @Dao
 public interface UserDAO {
 
-    @Query("SELECT * FROM user") List<User> getAll();
+    @Query
+            ("SELECT * FROM user") List<User> getAll();
 
     @Insert
-    void insert(User NewUser);
+            void insert(User NewUser);
 }
