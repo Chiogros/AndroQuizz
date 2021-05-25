@@ -1,6 +1,10 @@
 package com.example.loustics.models;
 
-public class Addition extends Calculation {
+import androidx.room.ColumnInfo;
+import androidx.room.PrimaryKey;
+import androidx.room.Entity;
+
+@Entity public class Addition extends Calculation {
 
     public Addition(Double operand1, Double operand2) {
         super(operand1, operand2);

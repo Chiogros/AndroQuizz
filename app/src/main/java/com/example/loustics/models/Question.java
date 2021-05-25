@@ -1,6 +1,10 @@
 package com.example.loustics.models;
 
-public abstract class Question {
+import androidx.room.ColumnInfo;
+import androidx.room.PrimaryKey;
+import androidx.room.Entity;
+
+@Entity public abstract class Question {
 
     private Subject m_s_subject;
 

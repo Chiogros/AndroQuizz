@@ -1,8 +1,12 @@
 package com.example.loustics.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.PrimaryKey;
+import androidx.room.Entity;
+
 import java.util.ArrayList;
 
-public class Quizz {
+@Entity public class Quizz {
 
     private ArrayList<Question> m_al_questions;
 

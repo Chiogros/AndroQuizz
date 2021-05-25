@@ -1,6 +1,10 @@
 package com.example.loustics.models;
 
-public class CheckMCQ extends MCQ {
+import androidx.room.ColumnInfo;
+import androidx.room.PrimaryKey;
+import androidx.room.Entity;
+
+@Entity public class CheckMCQ extends MCQ {
 
     public CheckMCQ() {
         super();
