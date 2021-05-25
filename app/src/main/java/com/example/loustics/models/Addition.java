@@ -8,7 +8,15 @@ public class Addition extends Calculation {
 
     @Override
     public Double getAlternativeAnswer() {
-        return null;
+        Double alternative;
+        do {
+            // réponse à +/- 20% d'erreur
+            alternative = getAnswer() * (Math.random() * 0.2);
+
+            // Verifie que la réponse alternative ne soit pas la bonne réponse
+        } while (alternative == getAnswer());
+
+        return alternative;
     }
 
     @Override
@@ -18,7 +26,7 @@ public class Addition extends Calculation {
 
     @Override
     public String getSubject() {
-        return null;
+        return getOperand1() + " + " + getOperand2() + " = ";
     }
 
 }
