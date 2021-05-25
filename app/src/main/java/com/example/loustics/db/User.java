@@ -5,7 +5,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 
-@Entity public class User {
+@Entity public class User{
     @PrimaryKey @NonNull
     @ColumnInfo(name = "nom")
     private String nom;

@@ -5,7 +5,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 
-@Entity class Chapter {
+@Entity
+public class Chapter {
 
     private String m_s_name;
     private Quizz m_q_quizz;
