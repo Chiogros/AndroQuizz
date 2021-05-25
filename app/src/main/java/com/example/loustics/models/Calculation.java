@@ -2,7 +2,7 @@ package com.example.loustics.models;
 
 import android.view.View;
 
-public abstract class Calculation extends Subject{
+public abstract class Calculation implements Subject {
 
     private Double operand1;
     private Double operand2;
@@ -30,10 +30,6 @@ public abstract class Calculation extends Subject{
     public abstract String getSubject();
 
     // TODO : problème pour récupérer le contexte
-    @Override
-    public final View getView() {
-        return new View(getView().getContext());
-    }
 
     public void setOperand1(Double operand) {
         this.operand1 = operand;

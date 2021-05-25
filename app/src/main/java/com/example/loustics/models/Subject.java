@@ -1,17 +1,13 @@
 package com.example.loustics.models;
 
-import android.view.View;
+import android.widget.ArrayAdapter;
 
-public abstract class Subject {
+public interface Subject extends ArrayAdapter<> {
 
-    public Subject() {}
+    Object getAlternativeAnswer();
 
-    public abstract Object getAlternativeAnswer();
+    Object getAnswer();
 
-    public abstract Object getAnswer();
-
-    public abstract Object getSubject();
-
-    public abstract View getView();
+    Object getSubject();
 
 }

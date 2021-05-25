@@ -2,7 +2,7 @@ package com.example.loustics.models;
 
 import android.view.View;
 
-public class Image extends Subject {
+public class Image implements Subject {
     // TODO : implémenter la classe
     @Override
     public Object getAlternativeAnswer() {
