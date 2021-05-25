@@ -1,13 +1,22 @@
 package com.example.loustics.models;
 
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+
 public class CheckMCQ extends MCQ {
 
-    public CheckMCQ() {
-        super();
+    public CheckMCQ(Subject subject, Context context, int resource) {
+        super(subject, context, resource);
     }
 
-    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // TODO
+        return null;
+    }
+
     public boolean isRight() {
-        return true;
+        // TODO
+        return false;
     }
 }

@@ -1,15 +1,17 @@
 package com.example.loustics.models;
 
+import android.content.Context;
 import android.view.View;
+import android.widget.TextView;
 
 public abstract class Calculation implements Subject {
 
-    private Double operand1;
-    private Double operand2;
+    private Double m_d_operand1;
+    private Double m_d_operand2;
 
     public Calculation(Double operand1, Double operand2) {
-        this.operand1 = operand1;
-        this.operand2 = operand2;
+        this.m_d_operand1 = operand1;
+        this.m_d_operand2 = operand2;
     }
 
     public abstract Double getAlternativeAnswer();
@@ -17,11 +19,11 @@ public abstract class Calculation implements Subject {
     public abstract Double getAnswer();
 
     public Double getOperand1() {
-        return this.operand1;
+        return this.m_d_operand1;
     }
 
     public Double getOperand2() {
-        return this.operand2;
+        return this.m_d_operand2;
     }
 
     // TODO : définir le paramètre classe ou pas
@@ -29,15 +31,9 @@ public abstract class Calculation implements Subject {
 
     public abstract String getSubject();
 
-    // TODO : problème pour récupérer le contexte
-
-    public void setOperand1(Double operand) {
-        this.operand1 = operand;
+    public final View getView(Context context) {
+        TextView tv = new TextView(context);
+        tv.setText(getSubject());
+        return tv;
     }
-
-    public void setOperand2(Double operand) {
-        this.operand2 = operand;
-    }
-
-
 }

@@ -6,7 +6,6 @@ public class Addition extends Calculation {
         super(operand1, operand2);
     }
 
-    @Override
     public Double getAlternativeAnswer() {
         Double alternative;
         do {
@@ -19,12 +18,10 @@ public class Addition extends Calculation {
         return alternative;
     }
 
-    @Override
     public Double getAnswer() {
         return getOperand1() + getOperand2();
     }
 
-    @Override
     public String getSubject() {
         return getOperand1() + " + " + getOperand2() + " = ";
     }

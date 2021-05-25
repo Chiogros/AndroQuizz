@@ -4,9 +4,8 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class RadioMCQ extends MCQ {
-
-    public RadioMCQ(Subject subject, Context context, int resource) {
+public class Open extends Question {
+    public Open(Subject subject, Context context, int resource) {
         super(subject, context, resource);
     }
 
@@ -19,5 +18,4 @@ public class RadioMCQ extends MCQ {
         // TODO
         return false;
     }
-
 }

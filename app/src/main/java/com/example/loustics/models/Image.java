@@ -1,26 +1,34 @@
 package com.example.loustics.models;
 
+import android.content.Context;
 import android.view.View;
+import android.widget.ImageView;
 
 public class Image implements Subject {
-    // TODO : implémenter la classe
-    @Override
-    public Object getAlternativeAnswer() {
+    private final Integer m_i_source;
+
+    public Image(Integer source) {
+        this.m_i_source = source;
+    }
+
+    public Integer getAlternativeAnswer() {
+        // Renvoyer une image aléatoire
         return null;
     }
 
-    @Override
-    public Object getAnswer() {
+    public Integer getAnswer() {
         return null;
     }
 
-    @Override
-    public Object getSubject() {
-        return null;
+    public Integer getSubject() {
+        return this.m_i_source;
     }
 
     @Override
-    public View getView() {
-        return null;
+    public View getView(Context context) {
+        ImageView im = new ImageView(context);
+        im.setImageResource(this.m_i_source);
+        return im;
     }
+
 }
