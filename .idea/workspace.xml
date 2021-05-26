@@ -42,21 +42,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="implements Addition and Calculation.&#10;backup before changing Subject to Interface">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" afterDir="false" />
+    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="all methods put, except Course">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Addition.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Addition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Chapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/MCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/MCQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Quizz.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Quizz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Subject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621953343968</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="all methods put, except Course">
+      <created>1621983342831</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1621983342831</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -379,7 +376,8 @@
     <MESSAGE value="LÉANE ARRIVE" />
     <MESSAGE value="backup" />
     <MESSAGE value="implements Addition and Calculation.&#10;backup before changing Subject to Interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="implements Addition and Calculation.&#10;backup before changing Subject to Interface" />
+    <MESSAGE value="all methods put, except Course" />
+    <option name="LAST_COMMIT_MESSAGE" value="all methods put, except Course" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
@@ -497,10 +495,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="274" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1621086044207" />
-    <state x="461" y="155" key="SettingsEditor" timestamp="1621970344417">
+    <state x="461" y="155" key="SettingsEditor" timestamp="1622012473022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1621970344417" />
+    <state x="461" y="155" key="SettingsEditor/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622012473022" />
     <state x="922" y="168" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621270746353" />
     <state x="2381" y="249" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621319210682" />
     <state x="2307" y="232" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1621500484549">

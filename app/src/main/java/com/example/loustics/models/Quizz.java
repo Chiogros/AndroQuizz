@@ -41,7 +41,7 @@ public class Quizz {
         try {
             this.m_al_questions.add(position, question);
         } catch (IndexOutOfBoundsException ex) {
-            throw new Exception("Cannot add this question to the " + position + " index while the array is " + this.m_al_questions.size() + " elements long.");
+            throw new Exception("Cannot add this question to the " + position + " position while the array is " + this.m_al_questions.size() + " elements long.");
         }
     }
 
