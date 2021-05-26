@@ -1,16 +1,16 @@
 package com.example.loustics.models;
 
-import androidx.room.ColumnInfo;
-import androidx.room.PrimaryKey;
-import androidx.room.Entity;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
-@Entity public abstract class MCQ extends Question {
+public abstract class MCQ extends Question {
 
-    public MCQ() {
-        super();
+    public MCQ(Subject subject, Context context, int resource) {
+        super(subject, context, resource);
     }
 
-    @Override
-    public abstract boolean isRight();
+    public abstract View getView(int position, View convertView, ViewGroup parent);
 
+    public abstract boolean isRight();
 }

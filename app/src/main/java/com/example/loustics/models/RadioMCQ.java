@@ -1,18 +1,23 @@
 package com.example.loustics.models;
 
-import androidx.room.ColumnInfo;
-import androidx.room.PrimaryKey;
-import androidx.room.Entity;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
-@Entity public class RadioMCQ extends MCQ {
+public class RadioMCQ extends MCQ {
 
-    public RadioMCQ() {
-        super();
+    public RadioMCQ(Subject subject, Context context, int resource) {
+        super(subject, context, resource);
     }
 
-    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // TODO
+        return null;
+    }
+
     public boolean isRight() {
-        return true;
+        // TODO
+        return false;
     }
 
 }

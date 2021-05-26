@@ -4,6 +4,7 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.transition.Explode;
 import android.transition.Slide;
 import android.util.Pair;
 import android.view.Gravity;
@@ -26,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_courses);
+        setContentView(R.layout.activity_home);
 
         // TODO : À supprimer
         Course c = new Course("Mathématiques", R.drawable.ic_math);
@@ -113,6 +114,7 @@ public class HomeActivity extends AppCompatActivity {
                             pairs[1] = new Pair<View, String>(iv_courseLogo, "iv_courseLogo");
 
                             ActivityOptions ao = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pairs);
+                            setTransitions();
                             startActivity(i, ao.toBundle());
                         }
                     }
@@ -128,9 +130,9 @@ public class HomeActivity extends AppCompatActivity {
             return ;
         }
 
-        getWindow().setExitTransition(new Slide());
-        getWindow().setSharedElementExitTransition(new Slide());
-        getWindow().setEnterTransition(new Slide());
-        getWindow().setSharedElementEnterTransition(new Slide());
+        getWindow().setExitTransition(new Explode());
+        getWindow().setSharedElementExitTransition(new Explode());
+        //getWindow().setEnterTransition(new Slide());
+        //getWindow().setSharedElementEnterTransition(new Slide());
     }
 }

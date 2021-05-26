@@ -1,17 +1,17 @@
 package com.example.loustics.models;
 
-import androidx.room.ColumnInfo;
-import androidx.room.PrimaryKey;
-import androidx.room.Entity;
+import android.content.Context;
+import android.view.View;
+import android.widget.ArrayAdapter;
 
-@Entity public abstract class Subject {
+public interface Subject {
 
-    public Subject() {}
+    Object getAlternativeAnswer();
 
-    public abstract Object getAlternativeAnswer();
+    Object getAnswer();
 
-    public abstract Object getAnswer();
+    Object getSubject();
 
-    public abstract Object getSubject();
+    View getView(Context context);
 
 }

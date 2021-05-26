@@ -1,27 +1,32 @@
 package com.example.loustics.models;
 
-import androidx.room.ColumnInfo;
-import androidx.room.PrimaryKey;
-import androidx.room.Entity;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
-@Entity public abstract class Question {
+public abstract class Question extends ArrayAdapter<Question> {
 
+    private int m_i_resource;
     private Subject m_s_subject;
 
-    public Question() {}
-
-    public Question(Subject subject) {
+    public Question(Subject subject, Context context, int resource) {
+        super(context, resource);
         this.m_s_subject = subject;
+        this.m_i_resource = resource;
+    }
+
+    public int getResource() {
+        return this.m_i_resource;
     }
 
     public Subject getSubject() {
         return this.m_s_subject;
     }
 
-    public abstract boolean isRight();
+    @Override
+    public abstract View getView(int position, View convertView, ViewGroup parent);
 
-    public void setSubject(Subject subject) {
-        this.m_s_subject = subject;
-    }
+    public abstract boolean isRight();
 
 }
