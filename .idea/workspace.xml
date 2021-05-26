@@ -44,9 +44,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="all methods put, except Course">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Chapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/MCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/MCQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Quizz.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Quizz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -502,10 +506,11 @@
     <state x="461" y="155" key="SettingsEditor/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622012473022" />
     <state x="922" y="168" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621270746353" />
     <state x="2381" y="249" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621319210682" />
-    <state x="2307" y="232" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1621500484549">
-      <screen x="1920" y="88" width="1920" height="1080" />
+    <state x="387" y="139" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1622015681189">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620635577136" />
+    <state x="387" y="139" key="Vcs.Push.Dialog.v2/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622015681189" />
     <state x="2307" y="232" width="800" height="527" key="Vcs.Push.Dialog.v2/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621500484549" />
     <state x="670" y="331" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1621160651285">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -519,6 +524,10 @@
       <screen x="0" y="0" width="3840" height="1128" />
     </state>
     <state x="2631" y="302" key="git4idea.branch.GitSmartOperationDialog/0.0.3840.1128@0.0.3840.1128" timestamp="1621957521449" />
+    <state x="624" y="237" key="run.anything.popup" timestamp="1622028963244">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="237" key="run.anything.popup/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622028963244" />
     <state x="2232" y="317" width="672" height="650" key="search.everywhere.popup" timestamp="1621320526071">
       <screen x="1920" y="88" width="1920" height="1080" />
     </state>
