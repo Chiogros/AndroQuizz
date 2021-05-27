@@ -5,25 +5,22 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-import androidx.room.Insert;
-
-import com.example.loustics.models.Quizz;
 
 import java.util.List;
-import com.example.loustics.models.Question;
+import com.example.loustics.models.QuestionFrame;
 
 
 @Dao
 public interface QuestionDAO {
     @Query("SELECT * FROM Question")
-    List<Question> getAllQuestions();
+    List<QuestionFrame> getAllQuestions();
 
     @Insert
-    void insert(Question question);
+    void insert(QuestionFrame questionFrame);
 
     @Delete
-    void delete(Question question);
+    void delete(QuestionFrame questionFrame);
 
     @Update
-    void update(Question question);
+    void update(QuestionFrame questionFrame);
 }

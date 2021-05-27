@@ -37,19 +37,43 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:alex" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="all methods put, except Course">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/QuestionFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/ic_earth.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/ic_fire.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/ic_geographie.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_earth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_fire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_geographie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_earth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_fire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_geographie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_earth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_fire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_geographie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_earth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_fire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_geographie.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/MCQ_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/MCQ_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/QuestionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/QuestionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/SubjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/SubjectDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/MCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/MCQ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Quizz.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Quizz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Subject.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +125,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1sKt8Wjzb4TbdoRYijFOv9zauEw" />
   <component name="ProjectLevelVcsManager">
@@ -339,7 +364,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="alex" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -381,7 +406,8 @@
     <MESSAGE value="backup" />
     <MESSAGE value="implements Addition and Calculation.&#10;backup before changing Subject to Interface" />
     <MESSAGE value="all methods put, except Course" />
-    <option name="LAST_COMMIT_MESSAGE" value="all methods put, except Course" />
+    <MESSAGE value="merging bor applying DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="merging bor applying DAO" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
@@ -392,12 +418,12 @@
       <screen x="0" y="0" width="3840" height="1128" />
     </state>
     <state x="424" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621235440826" />
-    <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1621978450348">
+    <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1622127540703">
       <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="773" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1621948651492" />
     <state x="782" y="238" key="#com.intellij.ide.util.MemberChooser/0.0.3840.1128@0.0.3840.1128" timestamp="1621959804945" />
-    <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621978450348" />
+    <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622127540703" />
     <state x="2568" y="345" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1621511203180">
       <screen x="1920" y="88" width="1920" height="1080" />
     </state>
@@ -407,10 +433,11 @@
     </state>
     <state x="742" y="388" width="436" height="271" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1621069768949" />
     <state x="2662" y="491" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621509825058" />
-    <state x="897" y="136" width="726" height="687" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1621961210830">
-      <screen x="0" y="0" width="3840" height="1128" />
+    <state x="2369" y="161" width="726" height="687" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1622127139837">
+      <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="897" y="136" width="726" height="687" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.3840.1128@0.0.3840.1128" timestamp="1621961210830" />
+    <state x="2369" y="161" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622127139837" />
     <state x="1110" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621241532641">
       <screen x="0" y="0" width="3840" height="1128" />
     </state>
@@ -426,13 +453,13 @@
     </state>
     <state x="100" y="100" width="1720" height="840" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1621118706527" />
     <state x="0" y="0" width="960" height="1080" key="AVDManager/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621265198934" />
-    <state x="2530" y="469" width="824" height="483" key="AndroidCreateResourceFileDialog" timestamp="1621430207862">
+    <state x="2530" y="469" width="824" height="483" key="AndroidCreateResourceFileDialog" timestamp="1622125265606">
       <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="1586" y="247" key="AndroidCreateResourceFileDialog/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620829682476" />
     <state x="784" y="422" width="824" height="483" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621099727907" />
     <state x="846" y="355" key="AndroidCreateResourceFileDialog/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621267507332" />
-    <state x="2530" y="469" key="AndroidCreateResourceFileDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621430207862" />
+    <state x="2530" y="469" key="AndroidCreateResourceFileDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622125265606" />
     <state x="1456" y="343" key="AndroidCreateXmlResourceDialog" timestamp="1621247498919">
       <screen x="0" y="0" width="3840" height="1128" />
     </state>
@@ -499,13 +526,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="274" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1621086044207" />
-    <state x="461" y="155" key="SettingsEditor" timestamp="1622012473022">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2381" y="249" key="SettingsEditor" timestamp="1622123631874">
+      <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="461" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1621970344417" />
     <state x="461" y="155" key="SettingsEditor/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622012473022" />
     <state x="922" y="168" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621270746353" />
-    <state x="2381" y="249" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621319210682" />
+    <state x="2381" y="249" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622123631874" />
     <state x="387" y="139" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1622015681189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

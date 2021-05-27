@@ -5,27 +5,24 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-import androidx.room.Insert;
-
-import com.example.loustics.models.MCQ;
 
 import java.util.List;
-import com.example.loustics.models.Subject;
+import com.example.loustics.models.Question;
 
 
 @Dao
 public interface SubjectDAO {
     @Query("SELECT * FROM Subject")
-    List<Subject> getAllSubject();
+    List<Question> getAllSubject();
 
     @Insert
-    void insert(Subject subject);
+    void insert(Question question);
 
     @Delete
-    void delete(Subject subject);
+    void delete(Question question);
 
     @Update
-    void update(Subject subject);
+    void update(Question question);
 
 
 }

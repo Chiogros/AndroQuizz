@@ -6,12 +6,12 @@ import android.view.ViewGroup;
 
 public class RadioMCQ extends MCQ {
 
-    public RadioMCQ(Subject subject, Context context) {
-        super(subject, context);
+    public RadioMCQ(Question question, Context context) {
+        super(question, context);
     }
 
     public View getView(Context context) {
-        Subject s = getSubject();
+        Question q = getQuestion();
         return new View(context);
     }
 

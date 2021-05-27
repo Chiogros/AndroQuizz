@@ -2,16 +2,15 @@ package com.example.loustics.models;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 
-public class YesNo extends Question {
+public class YesNo extends QuestionFrame {
 
-    public YesNo(Subject subject, Context context) {
-        super(subject, context);
+    public YesNo(Question question, Context context) {
+        super(question, context);
     }
 
     public View getView(Context context) {
-        Subject s = getSubject();
+        Question q = getQuestion();
         return new View(context);
     }
 

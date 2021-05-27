@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 
-public class Image implements Subject {
+/*public class Image implements Question {
     private final Integer m_i_source;
 
     public Image(Integer source) {
@@ -24,11 +24,10 @@ public class Image implements Subject {
         return this.m_i_source;
     }
 
-    @Override
     public View getView(Context context) {
         ImageView im = new ImageView(context);
         im.setImageResource(this.m_i_source);
         return im;
     }
 
-}
+}*/

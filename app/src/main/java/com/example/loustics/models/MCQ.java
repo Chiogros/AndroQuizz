@@ -2,12 +2,17 @@ package com.example.loustics.models;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 
-public abstract class MCQ extends Question {
+public abstract class MCQ extends QuestionFrame {
 
-    public MCQ(Subject subject, Context context) {
-        super(subject, context);
+    private int m_i_numberOfChoices;
+
+    public MCQ(Question question, Context context) {
+        super(question, context);
+    }
+
+    public int getNumberOfChoices() {
+        return m_i_numberOfChoices;
     }
 
     public abstract View getView(Context context);

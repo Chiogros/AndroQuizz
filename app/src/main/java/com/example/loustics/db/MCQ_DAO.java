@@ -5,9 +5,6 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-import androidx.room.Insert;
-
-import com.example.loustics.models.Question;
 
 import java.util.List;
 import com.example.loustics.models.MCQ;

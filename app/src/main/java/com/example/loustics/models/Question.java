@@ -2,29 +2,18 @@ package com.example.loustics.models;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-public abstract class Question {
+public interface Question {
 
-    private Context m_c_context;
-    private Subject m_s_subject;
+    Object getAlternativeAnswer();
 
-    public Question(Subject subject, Context context) {
-        this.m_s_subject = subject;
-        this.m_c_context = context;
-    }
+    Object getAnswer();
 
-    public Context getContext() {
-        return this.m_c_context;
-    }
+    View getAnswerView(Context context, Object answer);
 
-    protected Subject getSubject() {
-        return this.m_s_subject;
-    }
+    Object getSubject();
 
-    public abstract View getView(Context context);
-
-    public abstract boolean isRight();
+    View getSubjectView(Context context);
 
 }

@@ -2,21 +2,30 @@ package com.example.loustics.models;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
-public class Open extends Question {
+public class Open extends QuestionFrame {
 
-    public Open(Subject subject, Context context) {
-        super(subject, context);
+    public Open(Question question, Context context) {
+        super(question, context);
     }
 
     public View getView(Context context) {
-        Subject s = getSubject();
-        return new View(context);
+        LinearLayout ll = new LinearLayout(context);
+        ll.setOrientation(LinearLayout.VERTICAL);
+
+        Question q = getQuestion();
+        View v = q.getSubjectView(context);
+        ll.addView(v);
+
+        EditText et = new EditText(context);
+        ll.addView(et);
+
+        return ll;
     }
 
     public boolean isRight() {
-        // TODO
         return false;
     }
 }
