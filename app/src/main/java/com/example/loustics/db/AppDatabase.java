@@ -4,9 +4,16 @@ package com.example.loustics.db;
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {User.class}, version = 1, exportSchema = false)
+import com.example.loustics.models.Chapter;
+import com.example.loustics.models.Course;
+import com.example.loustics.models.Litteral;
+
+@Database(entities = {Course.class, Chapter.class, Litteral.class, User.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
-    public abstract UserDAO taskDao();
+    public abstract CourseDAO courseDAO();
+    public abstract ChapterDAO chapterDAO();
+    public abstract LitteralDAO litteralDAO();
+    public abstract UserDAO userDAO();
 
 }

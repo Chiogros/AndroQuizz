@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.loustics.db.CourseDAO;
 import com.example.loustics.models.Course;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -54,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void setListView() {
         // n'affiche rien si la liste est vide
-        if (Course.getCourses().size() == 0) {
+        if (CourseDAO.size() == 0) {
             return ;
         }
 

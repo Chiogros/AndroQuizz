@@ -11,14 +11,10 @@ import java.util.ArrayList;
 @Entity
 public class Litteral implements Question {
     @PrimaryKey @ColumnInfo(name="subject")
-    private String m_s_sentence;
+    private String m_s_subject;
     @ColumnInfo(name="answers")
     private ArrayList<String> m_al_answers;
     @ColumnInfo (name="chapterName")
-    private String m_s_chapterName;
-
-    private String m_s_subject;
-    private ArrayList<String> m_al_answers;
     private String m_s_chapterName;
 
     public Litteral(String subject) {

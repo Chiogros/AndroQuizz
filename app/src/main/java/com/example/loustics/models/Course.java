@@ -10,8 +10,10 @@ public class Course {
 
     @ColumnInfo (name="chaptersList")
     private ArrayList<Chapter> m_al_chapters;
+
     @ColumnInfo(name="logo")
     private int m_i_logo;
+
     @PrimaryKey @ColumnInfo(name="name")
     private String m_s_name;
 

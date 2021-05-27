@@ -79,7 +79,7 @@ public class AddUserActivity extends AppCompatActivity {
 
                 // adding to database
                 mDb.getAppDatabase()
-                        .taskDao()
+                        .userDAO()
                         .insert(NewUser);
 
                 return NewUser;
