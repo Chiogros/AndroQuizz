@@ -14,9 +14,9 @@ import com.example.loustics.models.Subject;
 
 
 @Dao
-public interface SubjectDAO {
-    @Query("SELECT * FROM Subject")
-    List<Subject> getAllSubject();
+public interface LitteralDAO {
+    @Query("SELECT * FROM Litteral")
+    List<Subject> getAllLitteral();
 
     @Insert
     void insert(Subject subject);

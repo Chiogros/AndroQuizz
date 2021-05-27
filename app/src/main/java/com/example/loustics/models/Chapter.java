@@ -7,7 +7,7 @@ import androidx.room.Entity;
 
 @Entity
 public class Chapter {
-
+    @PrimaryKey @ColumnInfo(name="chapterName")
     private String m_s_name;
     private Quizz m_q_quizz;
     private Lesson m_l_lesson;
