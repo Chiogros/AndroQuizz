@@ -10,21 +10,22 @@ import androidx.room.Insert;
 import com.example.loustics.models.MCQ;
 
 import java.util.List;
-import com.example.loustics.models.Calculation;
+import com.example.loustics.models.Question;
+
 
 @Dao
-public interface CalculationDAO {
-    @Query("SELECT * FROM Calculation")
-    List<MCQ> getAllCalculation();
+public interface LitteralDAO {
+    @Query("SELECT * FROM Litteral")
+    List<Question> getAllLitteral();
 
     @Insert
-    void insert(Calculation cal);
+    void insert(Question question);
 
     @Delete
-    void delete(Calculation cal);
+    void delete(Question question);
 
     @Update
-    void update(Calculation cal);
+    void update(Question question);
 
 
 }
