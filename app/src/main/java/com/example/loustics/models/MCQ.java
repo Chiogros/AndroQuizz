@@ -6,11 +6,11 @@ import android.view.ViewGroup;
 
 public abstract class MCQ extends Question {
 
-    public MCQ(Subject subject, Context context, int resource) {
-        super(subject, context, resource);
+    public MCQ(Subject subject, Context context) {
+        super(subject, context);
     }
 
-    public abstract View getView(int position, View convertView, ViewGroup parent);
+    public abstract View getView(Context context);
 
     public abstract boolean isRight();
 }
