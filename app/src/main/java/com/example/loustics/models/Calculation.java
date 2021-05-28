@@ -36,11 +36,11 @@ public abstract class Calculation implements Question {
         return rangeMin + (Math.random() * (rangeMax - rangeMin));
     }
 
-    public abstract String getSubject();
+    public abstract String getM_s_subject();
 
     public final View getSubjectView(Context context) {
         TextView tv = new TextView(context);
-        tv.setText(getSubject());
+        tv.setText(getM_s_subject());
         return tv;
     }
 }

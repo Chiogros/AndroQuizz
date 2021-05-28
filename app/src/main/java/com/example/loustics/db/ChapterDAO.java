@@ -9,6 +9,7 @@ import androidx.room.Insert;
 
 import com.example.loustics.models.Course;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.example.loustics.models.Chapter;
 
@@ -17,6 +18,9 @@ import com.example.loustics.models.Chapter;
 public interface ChapterDAO {
     @Query("SELECT * FROM Chapter")
     List<Chapter> getAllChapters();
+
+    @Query("SELECT * FROM Chapter WHERE courseName = :courseName")
+    List<Chapter> getAllChapters(String courseName);
 
     @Insert
     void insert(Chapter chapter);

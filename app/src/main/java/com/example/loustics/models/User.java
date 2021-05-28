@@ -1,4 +1,4 @@
-package com.example.loustics.db;
+package com.example.loustics.models;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

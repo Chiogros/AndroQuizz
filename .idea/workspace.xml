@@ -37,19 +37,35 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:alex" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="all methods put, except Course">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Loustics.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Loustics.app.iml" afterDir="false" />
+    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="added entities of classes and methods to AppDatabase">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/AddUserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/AddUserActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/CoursesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/CoursesActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/HomeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/AppDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/ChapterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/ChapterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/DatabaseClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/DatabaseClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/LitteralDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/LitteralDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Addition.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Addition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Chapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +239,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LousticsOK [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LousticsOK [dependencies]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -246,11 +262,6 @@
       <item itemvalue="Android App.app" />
       <item itemvalue="Gradle.LousticsOK [dependencies]" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.LousticsOK [dependencies]" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
@@ -320,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621983342831</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added entities of classes and methods to AppDatabase">
+      <created>1622129346656</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1622129346656</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -339,7 +357,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="alex" />
                       </list>
                     </value>
                   </entry>
@@ -382,23 +400,25 @@
     <MESSAGE value="implements Addition and Calculation.&#10;backup before changing Subject to Interface" />
     <MESSAGE value="all methods put, except Course" />
     <MESSAGE value="merging bor applying DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="merging bor applying DAO" />
+    <MESSAGE value="added entities of classes and methods to AppDatabase" />
+    <option name="LAST_COMMIT_MESSAGE" value="added entities of classes and methods to AppDatabase" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="200" y="110" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1620638841713" />
-    <state x="424" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621235440826">
-      <screen x="0" y="0" width="3840" height="1128" />
+    <state x="2132" y="278" width="1071" height="735" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622130123413">
+      <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="424" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621235440826" />
-    <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1622127540703">
+    <state x="2132" y="278" width="1071" height="735" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622130123413" />
+    <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1622189441149">
       <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="773" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1621948651492" />
     <state x="782" y="238" key="#com.intellij.ide.util.MemberChooser/0.0.3840.1128@0.0.3840.1128" timestamp="1621959804945" />
-    <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622127540703" />
+    <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622189441149" />
     <state x="2568" y="345" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1621511203180">
       <screen x="1920" y="88" width="1920" height="1080" />
     </state>

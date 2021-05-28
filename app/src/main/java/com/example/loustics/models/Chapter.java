@@ -1,26 +1,44 @@
 package com.example.loustics.models;
 
 import java.util.ArrayList;
+
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 
-@Entity
+@Entity(tableName = "Chapter")
 public class Chapter {
-    @PrimaryKey @ColumnInfo(name="chapterName")
+
+    @PrimaryKey @NonNull
+    @ColumnInfo(name="chapter")
     private String m_s_name;
+
+    @ColumnInfo(name = "courseName")
+    private String m_s_courseName;
+
+    @Ignore
     private Quizz m_q_quizz;
+
+    @Ignore
     private Lesson m_l_lesson;
 
-    public Chapter(String name) {
-        this.m_s_name = name;
+
+    public Chapter(String m_s_name, String m_s_courseName) {
+        this.m_s_name = m_s_name;
+        this.m_s_courseName = m_s_courseName;
     }
 
     public Lesson getLesson() {
         return this.m_l_lesson;
     }
 
-    public String getName() {
+    public String getM_s_courseName() {
+        return this.m_s_courseName;
+    }
+
+    public String getM_s_name() {
         return this.m_s_name;
     }
 
@@ -32,7 +50,7 @@ public class Chapter {
         this.m_l_lesson = lesson;
     }
 
-    public void setName(String name) {
+    public void setM_s_name(String name) {
         this.m_s_name = name;
     }
 

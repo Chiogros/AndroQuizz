@@ -90,26 +90,26 @@ public class DatabaseClient {
 
             //Table Course (Noms des cours)
             ArrayList<Chapter> chap = new ArrayList<Chapter>();
-            Chapter revo = new Chapter("La révolution");
-            Chapter guerre1 = new Chapter("La première guerre Mondiale");
+            Chapter revo = new Chapter("La révolution", "Histoire");
+            Chapter guerre1 = new Chapter("La première guerre Mondiale", "Histoire");
             chap.add(revo);
             chap.add(guerre1);
             db.execSQL("INSERT INTO Course (chaptersList, logo, name) VALUES(chap, 70004,\"Histoire\");");
             chap.clear();
-            Chapter villeF = new Chapter("Les villes de France");
-            Chapter villeE = new Chapter("Les villes d'Europe");
+            Chapter villeF = new Chapter("Les villes de France", "Géographie");
+            Chapter villeE = new Chapter("Les villes d'Europe", "Géographie");
             chap.add(villeF);
             chap.add(villeE);
             db.execSQL("INSERT INTO Course (chaptersList, logo, name) VALUES(chap, 70004,\"Géographie\");");
             chap.clear();
-            Chapter gramm = new Chapter("Grammaire");
-            Chapter conjug = new Chapter("Conjugaison");
+            Chapter gramm = new Chapter("Grammaire", "Français");
+            Chapter conjug = new Chapter("Conjugaison", "Français");
             chap.add(gramm);
             chap.add(conjug);
             db.execSQL("INSERT INTO Course (chaptersList, logo, name) VALUES(chap, 700038,\"Français\");");
             chap.clear();
-            Chapter cycle = new Chapter("Le cycle de l'eau");
-            Chapter foret = new Chapter("La fôret");
+            Chapter cycle = new Chapter("Le cycle de l'eau", "Sciences");
+            Chapter foret = new Chapter("La fôret", "Sciences");
             chap.add(cycle);
             chap.add(foret);
             db.execSQL("INSERT INTO Course (chaptersList, logo, name) VALUES(chap, 70004,\"Sciences\");");

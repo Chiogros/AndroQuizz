@@ -7,8 +7,10 @@ import androidx.room.Query;
 import androidx.room.Update;
 import androidx.room.Insert;
 
+import com.example.loustics.models.Litteral;
 import com.example.loustics.models.MCQ;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.example.loustics.models.Question;
 
@@ -16,16 +18,19 @@ import com.example.loustics.models.Question;
 @Dao
 public interface LitteralDAO {
     @Query("SELECT * FROM Litteral")
-    List<Question> getAllLitteral();
+    List<Litteral> getAllLitterals();
+
+    @Query("SELECT * FROM Litteral WHERE chapterName = :chapterName")
+    List<Litteral> getAllLitteralsFromChapter(String chapterName);
 
     @Insert
-    void insert(Question question);
+    void insert(Litteral litteral);
 
     @Delete
-    void delete(Question question);
+    void delete(Litteral litteral);
 
     @Update
-    void update(Question question);
+    void update(Litteral litteral);
 
 
 }

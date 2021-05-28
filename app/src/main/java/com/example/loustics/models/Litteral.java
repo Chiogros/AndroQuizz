@@ -3,22 +3,31 @@ package com.example.loustics.models;
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 import java.util.ArrayList;
 
-@Entity
+@Entity(tableName = "Litteral")
 public class Litteral implements Question {
-    @PrimaryKey @ColumnInfo(name="subject")
+
+    @PrimaryKey @NonNull
+    @ColumnInfo(name="subject")
     private String m_s_subject;
-    @ColumnInfo(name="answers")
+
+    @Ignore
     private ArrayList<String> m_al_answers;
+
     @ColumnInfo (name="chapterName")
     private String m_s_chapterName;
 
-    public Litteral(String subject) {
-        this.m_s_subject = subject;
+
+    public Litteral(String m_s_subject, String m_s_chapterName) {
+        this.m_s_subject = m_s_subject;
+        this.m_s_chapterName = m_s_chapterName;
     }
 
     public String getAlternativeAnswer() {
@@ -37,7 +46,11 @@ public class Litteral implements Question {
         return tv;
     }
 
-    public String getSubject() {
+    public String getM_s_chapterName() {
+        return this.m_s_chapterName;
+    }
+
+    public String getM_s_subject() {
         return this.m_s_subject;
     }
 

@@ -1,10 +1,13 @@
 package com.example.loustics.models;
 
+import android.content.Context;
+import android.view.View;
+
 import androidx.room.ColumnInfo;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 
-@Entity public class Addition extends Calculation {
+public class Addition extends Calculation {
 
     public Addition(Double operand1, Double operand2) {
         super(operand1, operand2);
@@ -26,7 +29,11 @@ import androidx.room.Entity;
         return getOperand1() + getOperand2();
     }
 
-    public String getSubject() {
+    public View getAnswerView(Context context, Object answer) {
+        return null;
+    }
+
+    public String getM_s_subject() {
         return getOperand1() + " + " + getOperand2() + " = ";
     }
 

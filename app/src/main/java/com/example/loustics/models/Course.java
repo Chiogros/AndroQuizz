@@ -1,75 +1,40 @@
 package com.example.loustics.models;
 
 import java.util.ArrayList;
+
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 
-@Entity
+@Entity(tableName = "Course")
 public class Course {
-
-    @ColumnInfo (name="chaptersList")
-    private ArrayList<Chapter> m_al_chapters;
 
     @ColumnInfo(name="logo")
     private int m_i_logo;
 
-    @PrimaryKey @ColumnInfo(name="name")
+    @PrimaryKey @NonNull
+    @ColumnInfo(name="name")
     private String m_s_name;
 
-    public Course(String name) {
-        this.m_al_chapters = new ArrayList<>();
+    @Ignore
+    public Course(String m_s_name) {
         this.m_i_logo = -1;
-        this.m_s_name = name;
+        this.m_s_name = m_s_name;
     }
 
-    public Course(String name, int logo) {
-        this.m_al_chapters = new ArrayList<>();
-        this.m_i_logo = logo;
-        this.m_s_name = name;
+    public Course(String m_s_name, int m_i_logo) {
+        this.m_i_logo = m_i_logo;
+        this.m_s_name = m_s_name;
     }
 
-    public void addChapter(Chapter chapter) {
-        this.m_al_chapters.add(chapter);
-    }
-
-    public Chapter getChapter(int position) {
-        return this.m_al_chapters.get(position);
-    }
-
-    public ArrayList<Chapter> getChapters() {
-        return this.m_al_chapters;
-    }
-
-    public int getLogo() {
+    public int getM_i_logo() {
         return this.m_i_logo;
     }
 
-    public String getName() {
+    public String getM_s_name() {
         return this.m_s_name;
     }
 
-    public void insertChapter(Chapter chapter, int position) throws Exception {
-        try {
-            this.m_al_chapters.add(position, chapter);
-        } catch (IndexOutOfBoundsException ex) {
-            throw new Exception("Cannot add this chapter at the " + position + " position while the array is " + this.m_al_chapters.size() + " elements long.");
-        }
-    }
-
-    public boolean removeChapter(Chapter chapter) {
-        return this.m_al_chapters.remove(chapter);
-    }
-
-    public Chapter removeChapter(int position) throws Exception {
-        try {
-            return this.m_al_chapters.remove(position);
-        } catch (IndexOutOfBoundsException ex) {
-            throw new Exception("Cannot remove the " + position + "th chapter from the array that is " + this.m_al_chapters.size() + " elements long.");
-        }
-    }
-
-    public void setName(String name) {
-        this.m_s_name = name;
-    }
 }

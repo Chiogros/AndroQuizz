@@ -12,7 +12,7 @@ public interface Question {
 
     View getAnswerView(Context context, Object answer);
 
-    Object getSubject();
+    Object getM_s_subject();
 
     View getSubjectView(Context context);
 

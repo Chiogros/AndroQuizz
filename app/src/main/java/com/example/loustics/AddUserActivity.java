@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.loustics.db.DatabaseClient;
-import com.example.loustics.db.User;
+import com.example.loustics.models.User;
 
 public class AddUserActivity extends AppCompatActivity {
 
