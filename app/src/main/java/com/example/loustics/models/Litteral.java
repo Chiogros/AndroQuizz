@@ -6,28 +6,37 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity(tableName = "Litteral")
 public class Litteral implements Question {
 
     @PrimaryKey @NonNull
-    @ColumnInfo(name="subject")
+    @ColumnInfo (name = "subject")
     private String m_s_subject;
 
-    @Ignore
-    private ArrayList<String> m_al_answers;
-
-    @ColumnInfo (name="chapterName")
+    @ColumnInfo (name = "chapterName")
+    @ForeignKey(entity = Chapter.class, parentColumns = "m_s_name", childColumns = "m_s_chapterName")
     private String m_s_chapterName;
 
+    @ColumnInfo (name = "courseName")
+    @ForeignKey(entity = Chapter.class, parentColumns = "m_s_courseName", childColumns = "m_s_courseName")
+    private String m_s_courseName;
 
-    public Litteral(String m_s_subject, String m_s_chapterName) {
+    @ColumnInfo (name = "answers")
+    private List<String> m_al_answers;
+
+
+    public Litteral(String m_s_subject, String m_s_chapterName, String m_s_courseName, List<String> m_al_answers) {
         this.m_s_subject = m_s_subject;
         this.m_s_chapterName = m_s_chapterName;
+        this.m_s_courseName = m_s_courseName;
+        this.m_al_answers = m_al_answers;
     }
 
     public String getAlternativeAnswer() {
@@ -46,8 +55,16 @@ public class Litteral implements Question {
         return tv;
     }
 
+    public List<String> getM_al_answers() {
+        return this.m_al_answers;
+    }
+
     public String getM_s_chapterName() {
         return this.m_s_chapterName;
+    }
+
+    public String getM_s_courseName() {
+        return this.m_s_courseName;
     }
 
     public String getM_s_subject() {
@@ -59,5 +76,4 @@ public class Litteral implements Question {
         tv.setText(this.m_s_subject);
         return tv;
     }
-
 }

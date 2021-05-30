@@ -58,43 +58,13 @@ public class DatabaseClient {
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
 
-            //Table Litteral (question et réponses possibles)
-            ArrayList<String> reponses = new ArrayList<>();
-            reponses.add("Antoine");
-            reponses.add("Chevallet");
-            reponses.add("Rieu");
-            reponses.add("Le gif préféré de Line");
-            db.execSQL("INSERT INTO Litteral (subject, answers, chapterName) VALUES(\"Bonsoir est\", reponses,\"La révolution\");");
-            reponses.clear();
-            reponses.add("Antoine");
-            reponses.add("Chevallet");
-            reponses.add("Rieu");
-            reponses.add("Le gif préféré de Line");
-            db.execSQL("INSERT INTO Litteral (subject, answers, chapterName) VALUES(\"La réponse toujours juste parce que c'est comme ça est\", reponses,\"La révolution\");");
-            reponses.clear();
-
-            //Table Chapters (Noms des chapitres, sous cours)
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Addition\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Multiplication\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Division\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Soustraction\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Modulo\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Grammaire\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Conjugaison\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"La révolution\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"La première guerre Mondiale\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Les villes de France\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Les villes d'Europe\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Le cycle de l'eau\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"La fôret\");");
-
             //Table Course (Noms des cours)
-            ArrayList<Chapter> chap = new ArrayList<Chapter>();
+            /*{ArrayList<Chapter> chap = new ArrayList<Chapter>();
             Chapter revo = new Chapter("La révolution", "Histoire");
             Chapter guerre1 = new Chapter("La première guerre Mondiale", "Histoire");
             chap.add(revo);
             chap.add(guerre1);
-            db.execSQL("INSERT INTO Course (chaptersList, logo, name) VALUES(chap, 70004,\"Histoire\");");
+            db.execSQL("INSERT INTO Course VALUES(\"Histoire\", 70004);");
             chap.clear();
             Chapter villeF = new Chapter("Les villes de France", "Géographie");
             Chapter villeE = new Chapter("Les villes d'Europe", "Géographie");
@@ -113,7 +83,38 @@ public class DatabaseClient {
             chap.add(cycle);
             chap.add(foret);
             db.execSQL("INSERT INTO Course (chaptersList, logo, name) VALUES(chap, 70004,\"Sciences\");");
-            chap.clear();
+            chap.clear();}*/
+            db.execSQL("INSERT INTO Course VALUES('Français', 'ic_french');");
+
+            //Table Chapters (Noms des chapitres, sous cours)
+            /*{db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Addition\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Multiplication\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Division\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Soustraction\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Modulo\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Grammaire\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Conjugaison\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"La révolution\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"La première guerre Mondiale\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Les villes de France\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Les villes d'Europe\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Le cycle de l'eau\");");
+            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"La fôret\");");}*/
+
+            //Table Litteral (question et réponses possibles)
+            /*{ArrayList<String> reponses = new ArrayList<>();
+            reponses.add("Antoine");
+            reponses.add("Chevallet");
+            reponses.add("Rieu");
+            reponses.add("Le gif préféré de Line");
+            db.execSQL("INSERT INTO Litteral (subject, answers, chapterName) VALUES(\"Bonsoir est\", reponses,\"La révolution\");");
+            reponses.clear();
+            reponses.add("Antoine");
+            reponses.add("Chevallet");
+            reponses.add("Rieu");
+            reponses.add("Le gif préféré de Line");
+            db.execSQL("INSERT INTO Litteral (subject, answers, chapterName) VALUES(\"La réponse toujours juste parce que c'est comme ça est\", reponses,\"La révolution\");");
+            reponses.clear();}*/
 
         }
     };

@@ -14,14 +14,14 @@ import java.util.ArrayList;
 import java.util.List;
 import com.example.loustics.models.Question;
 
+import org.json.JSONException;
+
 
 @Dao
 public interface LitteralDAO {
-    @Query("SELECT * FROM Litteral")
-    List<Litteral> getAllLitterals();
 
-    @Query("SELECT * FROM Litteral WHERE chapterName = :chapterName")
-    List<Litteral> getAllLitteralsFromChapter(String chapterName);
+    @Query("SELECT * FROM Litteral WHERE chapterName = :chapterName AND courseName = :courseName")
+    List<Litteral> getAllLitterals(String chapterName, String courseName);
 
     @Insert
     void insert(Litteral litteral);

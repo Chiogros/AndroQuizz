@@ -1,10 +1,12 @@
 package com.example.loustics;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.Explode;
+import android.util.Log;
 import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
@@ -17,12 +19,16 @@ import android.widget.Space;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.room.Room;
 
 import com.example.loustics.db.AppDatabase;
+import com.example.loustics.db.Converters;
 import com.example.loustics.db.CourseDAO;
 import com.example.loustics.models.Course;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -35,15 +41,19 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         setupDAOs();
-
         setFloatingButton();
-        setListView();
         // setTransitions();
     }
 
     public void setupDAOs() {
-        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "database-name").build();
+        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Loustics").build();
         courseDAO = db.courseDAO();
+        courseDAO.getAllCourses().observe(this, new Observer<List<Course>>() {
+            @Override
+            public void onChanged(List<Course> courses) {
+                setListView(courses);
+            }
+        });
     }
 
     public void setFloatingButton() {
@@ -58,15 +68,15 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    public void setListView() {
+    public void setListView(List<Course> courses) {
         // n'affiche rien si la liste est vide
-        if (courseDAO.getAllCourses().size() == 0) {
+        if (courses.size() == 0) {
             return ;
         }
 
         // Définition des lignes pour le ListView + l'action du clic sur chaque ligne qui renvoie sur une nouvelle activité
         ListView lv_items = findViewById(R.id.lv_items);
-        lv_items.setAdapter(new ArrayAdapter<Course>(getApplicationContext(), R.id.lv_items, courseDAO.getAllCourses()) {
+        lv_items.setAdapter(new ArrayAdapter<Course>(getApplicationContext(), R.id.lv_items, courses) {
             /*
             méthode utilisée à la génération de la ListView, renvoie une View qui est affichée dans la liste
              */
@@ -79,7 +89,15 @@ public class HomeActivity extends AppCompatActivity {
 
                 // Logo de la matière
                 ImageView iv_logo = new ImageView(getContext());
-                iv_logo.setImageResource(this.getItem(position).getM_i_logo());
+                iv_logo.setImageResource(
+                    // à partir des resources
+                    getResources().getIdentifier(
+                        // à partir du nom du logo
+                        this.getItem(position).getM_s_logo(),
+                        "drawable",
+                        getPackageName()
+                    )
+                );
                 ll_line.addView(iv_logo);
 
                 Space space = new Space(getContext());

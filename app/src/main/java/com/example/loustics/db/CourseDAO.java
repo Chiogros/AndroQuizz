@@ -2,6 +2,8 @@ package com.example.loustics.db;
 
 
 import java.util.ArrayList;
+
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -16,7 +18,7 @@ import com.example.loustics.models.Chapter;
 @Dao
 public interface CourseDAO {
     @Query("SELECT * FROM Course")
-    List<Course> getAllCourses();
+    LiveData<List<Course>> getAllCourses();
 
     @Insert
     void insert(Course course);

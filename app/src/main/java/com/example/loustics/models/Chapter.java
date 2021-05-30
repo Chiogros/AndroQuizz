@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
@@ -12,10 +13,11 @@ import androidx.room.Entity;
 public class Chapter {
 
     @PrimaryKey @NonNull
-    @ColumnInfo(name="chapter")
+    @ColumnInfo(name="name")
     private String m_s_name;
 
     @ColumnInfo(name = "courseName")
+    @ForeignKey(entity = Course.class, parentColumns = "m_s_name", childColumns = "m_s_courseName")
     private String m_s_courseName;
 
     @Ignore
