@@ -8,24 +8,36 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.ForeignKey;
 import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(tableName = "Litteral")
+@Entity(tableName = "Litteral",
+foreignKeys = {
+    @ForeignKey(entity = Chapter.class, parentColumns = { "name", "courseName" }, childColumns = { "chapterName", "courseName" })
+},
+primaryKeys = {
+    "subject", "chapterName", "courseName"
+},
+indices = {
+    @Index("subject"),
+    @Index("chapterName"),
+    @Index("courseName")
+})
 public class Litteral implements Question {
 
-    @PrimaryKey @NonNull
+    @NonNull
     @ColumnInfo (name = "subject")
     private String m_s_subject;
 
+    @NonNull
     @ColumnInfo (name = "chapterName")
-    @ForeignKey(entity = Chapter.class, parentColumns = "m_s_name", childColumns = "m_s_chapterName")
     private String m_s_chapterName;
 
+    @NonNull
     @ColumnInfo (name = "courseName")
-    @ForeignKey(entity = Chapter.class, parentColumns = "m_s_courseName", childColumns = "m_s_courseName")
     private String m_s_courseName;
 
     @ColumnInfo (name = "answers")

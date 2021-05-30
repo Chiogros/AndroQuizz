@@ -6,18 +6,29 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.ForeignKey;
 import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 
-@Entity(tableName = "Chapter")
+@Entity(tableName = "Chapter",
+foreignKeys = {
+    @ForeignKey(entity = Course.class, parentColumns = "name", childColumns = "courseName")
+},
+primaryKeys = {
+    "name", "courseName"
+},
+indices = {
+    @Index("name"),
+    @Index("courseName")
+})
 public class Chapter {
 
-    @PrimaryKey @NonNull
+    @NonNull
     @ColumnInfo(name="name")
     private String m_s_name;
 
+    @NonNull
     @ColumnInfo(name = "courseName")
-    @ForeignKey(entity = Course.class, parentColumns = "m_s_name", childColumns = "m_s_courseName")
     private String m_s_courseName;
 
     @Ignore

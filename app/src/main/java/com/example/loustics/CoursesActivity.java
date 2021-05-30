@@ -11,12 +11,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.room.Room;
 
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.ChapterDAO;
 import com.example.loustics.db.CourseDAO;
 import com.example.loustics.models.Chapter;
+import com.example.loustics.models.Course;
+
+import java.util.List;
 
 public class CoursesActivity extends AppCompatActivity {
 
@@ -44,19 +48,25 @@ public class CoursesActivity extends AppCompatActivity {
     }
 
     public void setupDAOs() {
-        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "database-name").build();
+        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Loustics").build();
         chapterDAO = db.chapterDAO();
+        chapterDAO.getAllChapters(m_s_CourseName).observe(this, new Observer<List<Chapter>>() {
+            @Override
+            public void onChanged(List<Chapter> chapters) {
+                setListView(chapters);
+            }
+        });
     }
 
-    public void setListView() {
+    public void setListView(List<Chapter> chapters) {
         // n'affiche rien si la liste est vide
-        if (chapterDAO.getAllChapters(m_s_CourseName).size() == 0) {
+        if (chapters.size() == 0) {
             return ;
         }
 
         // Définition des lignes pour le ListView + l'action du click sur chaque ligne qui renvoit sur une nouvelle activité
         ListView lv_items = findViewById(R.id.lv_items);
-        lv_items.setAdapter(new ArrayAdapter<Chapter>(getApplicationContext(), R.id.lv_items, chapterDAO.getAllChapters(m_s_CourseName)) {
+        lv_items.setAdapter(new ArrayAdapter<Chapter>(getApplicationContext(), R.id.lv_items, chapters) {
             /*
             méthode utilisée à la génération de la ListView, renvoie une View qui est affichée dans la liste
              */
@@ -86,5 +96,4 @@ public class CoursesActivity extends AppCompatActivity {
             }
         });
     }
-
 }

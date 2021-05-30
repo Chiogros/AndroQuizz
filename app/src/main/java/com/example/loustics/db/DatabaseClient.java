@@ -85,6 +85,10 @@ public class DatabaseClient {
             db.execSQL("INSERT INTO Course (chaptersList, logo, name) VALUES(chap, 70004,\"Sciences\");");
             chap.clear();}*/
             db.execSQL("INSERT INTO Course VALUES('Français', 'ic_french');");
+            db.execSQL("INSERT INTO Course VALUES('Géographie', 'ic_earth');");
+            db.execSQL("INSERT INTO Course VALUES('Histoire', 'ic_history');");
+            db.execSQL("INSERT INTO Course VALUES('Mathématiques', 'ic_math');");
+            db.execSQL("INSERT INTO Course VALUES('Physique', 'ic_fire');");
 
             //Table Chapters (Noms des chapitres, sous cours)
             /*{db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Addition\");");
@@ -100,6 +104,22 @@ public class DatabaseClient {
             db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Les villes d'Europe\");");
             db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Le cycle de l'eau\");");
             db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"La fôret\");");}*/
+                // Français
+                {
+                db.execSQL("INSERT INTO Chapter VALUES('Grammaire - Pronoms', 'Français');");
+                db.execSQL("INSERT INTO Chapter VALUES('Grammaire - Adverbes', 'Français');");
+                db.execSQL("INSERT INTO Chapter VALUES('Conjugaison - Présent', 'Français');");
+                db.execSQL("INSERT INTO Chapter VALUES('Conjugaison - Futur', 'Français');");
+                db.execSQL("INSERT INTO Chapter VALUES('Conjugaison - Passé simple', 'Français');");
+                }
+                // Géographie
+                {
+                    db.execSQL("INSERT INTO Chapter VALUES('Les départements', 'Géographie');");
+                    db.execSQL("INSERT INTO Chapter VALUES('Les régions', 'Géographie');");
+                    db.execSQL("INSERT INTO Chapter VALUES('Les villes', 'Géographie');");
+                    db.execSQL("INSERT INTO Chapter VALUES(\"L'Europe\", 'Géographie');");
+                    db.execSQL("INSERT INTO Chapter VALUES('Le monde', 'Géographie');");
+                }
 
             //Table Litteral (question et réponses possibles)
             /*{ArrayList<String> reponses = new ArrayList<>();
