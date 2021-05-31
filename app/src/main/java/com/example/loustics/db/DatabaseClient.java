@@ -27,13 +27,9 @@ public class DatabaseClient {
 
         // Créer l'objet représentant la base de données de votre application
         // à l'aide du "Room database builder"
-        // MyToDos est le nom de la base de données
-        appDatabase = Room.databaseBuilder(context, AppDatabase.class, "EcolesDesLoustics").build();
-
-
-        ////////// REMPLIR LA BD à la première création à l'aide de l'objet roomDatabaseCallback
-        // Ajout de la méthode addCallback permettant de populate (remplir) la base de données à sa création
-        //appDatabase = Room.databaseBuilder(context, AppDatabase.class, "MyToDos").addCallback(roomDatabaseCallback).build();
+        appDatabase = Room.databaseBuilder(context, AppDatabase.class, "Loustics")
+                .addCallback(roomDatabaseCallback)
+                .build();
     }
 
     // Méthode statique
@@ -58,7 +54,7 @@ public class DatabaseClient {
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
 
-            //Table Course (Noms des cours)
+            //Table Course (Nom des cours + logo)
             /*{ArrayList<Chapter> chap = new ArrayList<Chapter>();
             Chapter revo = new Chapter("La révolution", "Histoire");
             Chapter guerre1 = new Chapter("La première guerre Mondiale", "Histoire");

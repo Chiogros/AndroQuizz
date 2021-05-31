@@ -21,7 +21,7 @@ public interface ChapterDAO {
     List<Chapter> getAllChapters();
 
     @Query("SELECT * FROM Chapter WHERE courseName = :courseName")
-    LiveData<List<Chapter>> getAllChapters(String courseName);
+    List<Chapter> getAllChapters(String courseName);
 
     @Insert
     void insert(Chapter chapter);

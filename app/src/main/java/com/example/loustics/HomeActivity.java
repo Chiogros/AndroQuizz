@@ -25,6 +25,7 @@ import androidx.room.Room;
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.Converters;
 import com.example.loustics.db.CourseDAO;
+import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Course;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -42,18 +43,17 @@ public class HomeActivity extends AppCompatActivity {
 
         setupDAOs();
         setFloatingButton();
+        fetchCourses();
         // setTransitions();
     }
 
+    private void fetchCourses() {
+        new CoursesAsyncTask().execute();
+    }
+
     public void setupDAOs() {
-        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Loustics").build();
+        db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
         courseDAO = db.courseDAO();
-        courseDAO.getAllCourses().observe(this, new Observer<List<Course>>() {
-            @Override
-            public void onChanged(List<Course> courses) {
-                setListView(courses);
-            }
-        });
     }
 
     public void setFloatingButton() {
@@ -158,5 +158,21 @@ public class HomeActivity extends AppCompatActivity {
         getWindow().setSharedElementExitTransition(new Explode());
         //getWindow().setEnterTransition(new Slide());
         //getWindow().setSharedElementEnterTransition(new Slide());
+    }
+
+
+    // Classes privées
+
+    private class CoursesAsyncTask extends android.os.AsyncTask<Void, Void, List<Course>> {
+
+        @Override
+        protected List<Course> doInBackground(Void... voids) {
+            return courseDAO.getAllCourses();
+        }
+
+        @Override
+        protected void onPostExecute(List<Course> courses) {
+            setListView(courses);
+        }
     }
 }

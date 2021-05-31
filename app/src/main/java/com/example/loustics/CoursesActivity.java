@@ -11,21 +11,19 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.room.Room;
 
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.ChapterDAO;
 import com.example.loustics.db.CourseDAO;
+import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Chapter;
-import com.example.loustics.models.Course;
 
 import java.util.List;
 
 public class CoursesActivity extends AppCompatActivity {
 
     public static final String COURSE = "";
-    private String m_s_CourseName;
+    private String m_s_courseName;
     AppDatabase db;
     ChapterDAO chapterDAO;
 
@@ -35,27 +33,37 @@ public class CoursesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_courses);
 
         // Nom de la matière
-        this.m_s_CourseName = getIntent().getStringExtra(COURSE);
+        m_s_courseName = getIntent().getStringExtra(COURSE);
 
-        setupDAOs();
+        setDAOs();
+        setHeader();
 
-        // Nom de la matière dans l'en-tête
-        TextView t = (TextView) findViewById(R.id.tv_course);
-        t.setText(this.m_s_CourseName);
-
-        ImageView iv = (ImageView) findViewById(R.id.iv_course);
-        iv.setImageResource(R.drawable.ic_math);
+        new ChaptersAsyncTask().execute(m_s_courseName);
     }
 
-    public void setupDAOs() {
-        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Loustics").build();
+    public void setDAOs() {
+        db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
         chapterDAO = db.chapterDAO();
-        chapterDAO.getAllChapters(m_s_CourseName).observe(this, new Observer<List<Chapter>>() {
-            @Override
-            public void onChanged(List<Chapter> chapters) {
-                setListView(chapters);
-            }
-        });
+    }
+
+    // Nom de la matière dans l'en-tête
+    public void setHeader() {
+        TextView t = (TextView) findViewById(R.id.tv_course);
+        t.setText(m_s_courseName);
+
+        // Charger le logo correspondant à la matière
+        new LogoAsyncTask().execute(m_s_courseName);
+    }
+
+    public void setImageViewLogo(String resources) {
+        ImageView iv = (ImageView) findViewById(R.id.iv_course);
+        iv.setImageResource(
+                getResources().getIdentifier(
+                        // à partir du nom du logo
+                        resources,
+                        "drawable",
+                        getPackageName()
+                ));
     }
 
     public void setListView(List<Chapter> chapters) {
@@ -95,5 +103,33 @@ public class CoursesActivity extends AppCompatActivity {
                 return ll_line;
             }
         });
+    }
+
+
+    // Classes privées
+
+    private class ChaptersAsyncTask extends android.os.AsyncTask<String, String, List<Chapter>> {
+        @Override
+        protected List<Chapter> doInBackground(String... strings) {
+            return chapterDAO.getAllChapters(strings[0]);
+        }
+
+        @Override
+        protected void onPostExecute(List<Chapter> chapters) {
+            setListView(chapters);
+        }
+    }
+
+    private class LogoAsyncTask extends android.os.AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... strings) {
+            CourseDAO courseDAO = db.courseDAO();
+            return courseDAO.getLogo(strings[0]);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            setImageViewLogo(result);
+        }
     }
 }

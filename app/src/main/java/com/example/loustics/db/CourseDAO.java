@@ -1,6 +1,8 @@
 package com.example.loustics.db;
 
 
+import android.os.AsyncTask;
+
 import java.util.ArrayList;
 
 import androidx.lifecycle.LiveData;
@@ -18,7 +20,10 @@ import com.example.loustics.models.Chapter;
 @Dao
 public interface CourseDAO {
     @Query("SELECT * FROM Course")
-    LiveData<List<Course>> getAllCourses();
+    List<Course> getAllCourses();
+
+    @Query("SELECT logo FROM Course WHERE name = :name")
+    String getLogo(String name);
 
     @Insert
     void insert(Course course);
