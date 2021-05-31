@@ -43,8 +43,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="tried to fix transitions">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/DAO.java" afterDir="false" />
+    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="backup before trying to reimplements Question as abstract class">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -53,22 +52,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/CoursesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/CoursesActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/HomeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/ChapterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/ChapterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/CourseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/CourseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/LitteralDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/LitteralDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/MCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/MCQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/QuestionFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/QuestionFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_chapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chapter.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622452023880</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="backup before trying to reimplements Question as abstract class">
+      <created>1622461233498</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622461233498</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -437,7 +429,8 @@
     <MESSAGE value="logo's of Courses are now stored Stringly instead of inteady&#10;Making TypeConverters needed to translate JSON that will be usefull for storing multiple answers in db" />
     <MESSAGE value="Entities updated with multiple ForeignKeys, primaryKeys and indices" />
     <MESSAGE value="tried to fix transitions" />
-    <option name="LAST_COMMIT_MESSAGE" value="tried to fix transitions" />
+    <MESSAGE value="backup before trying to reimplements Question as abstract class" />
+    <option name="LAST_COMMIT_MESSAGE" value="backup before trying to reimplements Question as abstract class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
@@ -465,10 +458,10 @@
     </state>
     <state x="742" y="388" width="436" height="271" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1621069768949" />
     <state x="2662" y="491" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621509825058" />
-    <state x="449" y="0" width="726" height="687" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1622408298762">
+    <state x="449" y="0" width="726" height="687" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1622478058348">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="449" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622408298762" />
+    <state x="449" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622478058348" />
     <state x="897" y="136" width="726" height="687" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.3840.1128@0.0.3840.1128" timestamp="1621961210830" />
     <state x="2369" y="161" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622127139837" />
     <state x="1110" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621241532641">
