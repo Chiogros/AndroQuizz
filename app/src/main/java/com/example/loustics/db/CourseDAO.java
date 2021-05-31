@@ -18,7 +18,7 @@ import com.example.loustics.models.Course;
 import com.example.loustics.models.Chapter;
 
 @Dao
-public interface CourseDAO {
+public interface CourseDAO extends DAO {
     @Query("SELECT * FROM Course")
     List<Course> getAllCourses();
 

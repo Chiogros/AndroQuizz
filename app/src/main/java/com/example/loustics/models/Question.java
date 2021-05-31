@@ -4,16 +4,24 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
-public interface Question {
+import java.util.List;
 
-    Object getAlternativeAnswer();
+public abstract class Question {
 
-    Object getAnswer();
+    protected Question() {}
 
-    View getAnswerView(Context context, Object answer);
+    public abstract Object getAlternativeAnswer();
 
-    Object getM_s_subject();
+    public abstract Object getAnswer();
 
-    View getSubjectView(Context context);
+    public abstract View getAnswerView(Context context, Object answer);
+
+    public abstract Object getM_s_subject();
+
+    public abstract View getSubjectView(Context context);
+
+    public static List<Question> getAllQuestions(String chapterName, String courseName) {
+
+    }
 
 }

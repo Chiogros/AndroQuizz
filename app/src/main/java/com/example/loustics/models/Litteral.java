@@ -26,7 +26,7 @@ indices = {
     @Index("chapterName"),
     @Index("courseName")
 })
-public class Litteral implements Question {
+public class Litteral extends Question {
 
     @NonNull
     @ColumnInfo (name = "subject")

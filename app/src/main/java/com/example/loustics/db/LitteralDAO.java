@@ -18,7 +18,7 @@ import org.json.JSONException;
 
 
 @Dao
-public interface LitteralDAO {
+public interface LitteralDAO extends DAO {
 
     @Query("SELECT * FROM Litteral WHERE chapterName = :chapterName AND courseName = :courseName")
     List<Litteral> getAllLitterals(String chapterName, String courseName);

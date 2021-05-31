@@ -16,7 +16,7 @@ import com.example.loustics.models.Chapter;
 
 
 @Dao
-public interface ChapterDAO {
+public interface ChapterDAO extends DAO {
     @Query("SELECT * FROM Chapter")
     List<Chapter> getAllChapters();
 

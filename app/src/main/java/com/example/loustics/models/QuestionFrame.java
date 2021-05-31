@@ -8,7 +8,9 @@ public abstract class QuestionFrame {
     private Context m_c_context;
     private Question m_s_question;
 
-    public QuestionFrame(Question question, Context context) {
+    protected QuestionFrame() {}
+
+    protected QuestionFrame(Question question, Context context) {
         this.m_s_question = question;
         this.m_c_context = context;
     }
@@ -17,12 +19,20 @@ public abstract class QuestionFrame {
         return this.m_c_context;
     }
 
-    protected Question getQuestion() {
+    public Question getQuestion() {
         return this.m_s_question;
     }
 
-    public abstract View getView(Context context);
+    public abstract View getView();
 
     public abstract boolean isRight();
+
+    public void setContext(Context context) {
+        m_c_context = context;
+    }
+
+    public void setQuestion(Question question) {
+        m_s_question = question;
+    }
 
 }

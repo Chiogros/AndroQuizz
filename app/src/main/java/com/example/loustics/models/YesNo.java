@@ -5,13 +5,17 @@ import android.view.View;
 
 public class YesNo extends QuestionFrame {
 
+    public YesNo() {
+        super();
+    }
+
     public YesNo(Question question, Context context) {
         super(question, context);
     }
 
-    public View getView(Context context) {
+    public View getView() {
         Question q = getQuestion();
-        return new View(context);
+        return new View(getContext());
     }
 
     public boolean isRight() {

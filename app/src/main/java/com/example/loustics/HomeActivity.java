@@ -34,6 +34,8 @@ import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Course;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
@@ -73,11 +75,7 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    public void setListView(List<Course> courses) {
-        // n'affiche rien si la liste est vide
-        if (courses.size() == 0) {
-            return ;
-        }
+    public void setListView(@NotNull List<Course> courses) {
 
         // Définition des lignes pour le ListView + l'action du clic sur chaque ligne qui renvoie sur une nouvelle activité
         ListView lv_items = findViewById(R.id.lv_items);

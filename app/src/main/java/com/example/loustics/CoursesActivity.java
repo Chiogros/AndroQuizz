@@ -1,5 +1,7 @@
 package com.example.loustics;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -19,6 +21,8 @@ import com.example.loustics.db.CourseDAO;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Chapter;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class CoursesActivity extends AppCompatActivity {
@@ -34,13 +38,16 @@ public class CoursesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
 
-        // Nom de la matière
-        m_s_courseName = getIntent().getStringExtra(COURSE);
-
+        getIntentValues();
         setDAOs();
         setHeader();
 
         new ChaptersAsyncTask().execute(m_s_courseName);
+    }
+
+    public void getIntentValues() {
+        // Nom de la matière
+        m_s_courseName = getIntent().getStringExtra(COURSE);
     }
 
     @Override
@@ -73,11 +80,7 @@ public class CoursesActivity extends AppCompatActivity {
                 ));
     }
 
-    public void setListView(List<Chapter> chapters) {
-        // n'affiche rien si la liste est vide
-        if (chapters.size() == 0) {
-            return ;
-        }
+    public void setListView(@NotNull List<Chapter> chapters) {
 
         // Définition des lignes pour le ListView + l'action du click sur chaque ligne qui renvoit sur une nouvelle activité
         ListView lv_items = findViewById(R.id.lv_items);
@@ -103,7 +106,14 @@ public class CoursesActivity extends AppCompatActivity {
                 ll_line.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        LinearLayout ll_line = (LinearLayout) view;
+                        TextView tv_chapterName = (TextView) ((LinearLayout) view).getChildAt(0);
 
+                        Intent i = new Intent(getContext(), ChaptersActivity.class);
+                        i.putExtra(ChaptersActivity.COURSE, m_s_courseName);
+                        i.putExtra(ChaptersActivity.CHAPTER, tv_chapterName.getText());
+
+                        startActivity(i);
                     }
                 });
 
@@ -115,7 +125,7 @@ public class CoursesActivity extends AppCompatActivity {
 
     // Classes privées
 
-    private class ChaptersAsyncTask extends android.os.AsyncTask<String, String, List<Chapter>> {
+    private class ChaptersAsyncTask extends android.os.AsyncTask<String, Void, List<Chapter>> {
         @Override
         protected List<Chapter> doInBackground(String... strings) {
             return chapterDAO.getAllChapters(strings[0]);
@@ -127,7 +137,7 @@ public class CoursesActivity extends AppCompatActivity {
         }
     }
 
-    private class LogoAsyncTask extends android.os.AsyncTask<String, String, String> {
+    private class LogoAsyncTask extends android.os.AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... strings) {
             CourseDAO courseDAO = db.courseDAO();
