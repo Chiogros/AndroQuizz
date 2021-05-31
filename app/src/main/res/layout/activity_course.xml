@@ -18,11 +18,10 @@
             android:layout_centerHorizontal="true"
             android:text="Matière"
             android:textSize="20dp"
-            android:textColor="@color/defaultWhite"
+            android:textColor="@color/brown"
             android:transitionName="tv_courseName"
             android:paddingBottom="5dp"
-            android:paddingHorizontal="20dp"
-            android:background="@drawable/half_circle"/>
+            android:paddingHorizontal="20dp" />
 
         <ImageView
             android:id="@+id/iv_course"

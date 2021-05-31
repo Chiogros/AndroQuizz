@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -29,8 +30,9 @@ public class CoursesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_courses);
+        setContentView(R.layout.activity_course);
 
         // Nom de la matière
         m_s_courseName = getIntent().getStringExtra(COURSE);
@@ -39,6 +41,11 @@ public class CoursesActivity extends AppCompatActivity {
         setHeader();
 
         new ChaptersAsyncTask().execute(m_s_courseName);
+    }
+
+    @Override
+    public void onBackPressed() {
+        supportFinishAfterTransition();
     }
 
     public void setDAOs() {

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
 import android.util.Log;
 import android.util.Pair;
 import android.view.Gravity;
@@ -19,6 +21,9 @@ import android.widget.Space;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
 import androidx.lifecycle.Observer;
 import androidx.room.Room;
 
@@ -137,9 +142,9 @@ public class HomeActivity extends AppCompatActivity {
                             pairs[0] = new Pair<View, String>(tv_courseName, "tv_courseName");
                             pairs[1] = new Pair<View, String>(iv_courseLogo, "iv_courseLogo");
 
-                            ActivityOptions ao = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this, pairs);
+                            ActivityOptionsCompat aoc = ActivityOptionsCompat.makeSceneTransitionAnimation(HomeActivity.this, tv_courseName, ViewCompat.getTransitionName(tv_courseName));
                             setTransitions();
-                            startActivity(i, ao.toBundle());
+                            startActivity(i, aoc.toBundle());
                         }
                     }
                 });
@@ -154,10 +159,10 @@ public class HomeActivity extends AppCompatActivity {
             return ;
         }
 
-        getWindow().setExitTransition(new Explode());
-        getWindow().setSharedElementExitTransition(new Explode());
-        //getWindow().setEnterTransition(new Slide());
-        //getWindow().setSharedElementEnterTransition(new Slide());
+        getWindow().setExitTransition(new Fade());
+        getWindow().setSharedElementExitTransition(new Fade());
+        getWindow().setEnterTransition(new Fade());
+        getWindow().setSharedElementEnterTransition(new Fade());
     }
 
 
