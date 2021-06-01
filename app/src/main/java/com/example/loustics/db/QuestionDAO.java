@@ -18,19 +18,17 @@ import org.json.JSONException;
 
 
 @Dao
-public interface LitteralDAO extends DAO {
+public interface QuestionDAO extends DAO {
 
-    @Query("SELECT * FROM Litteral WHERE chapterName = :chapterName AND courseName = :courseName")
-    List<Litteral> getAllLitterals(String chapterName, String courseName);
+    @Query("SELECT * FROM Question WHERE chapterName = :chapterName AND courseName = :courseName")
+    List<Question> getAllQuestions(String chapterName, String courseName);
 
     @Insert
-    void insert(Litteral litteral);
-
-    @Delete
-    void delete(Litteral litteral);
+    void insert(Question question);
 
     @Update
-    void update(Litteral litteral);
+    void update(Question question);
 
-
+    @Delete
+    void delete(Question question);
 }

@@ -77,7 +77,7 @@ public class ChaptersActivity extends AppCompatActivity {
     public void setListView(@NotNull List<Question> questions) {
         // Définition des lignes pour le ListView
         ListView lv_items = findViewById(R.id.lv_items);
-        lv_items.setAdapter(new ArrayAdapter<Chapter>(getApplicationContext(), R.id.lv_items, questions) {
+        lv_items.setAdapter(new ArrayAdapter<Question>(getApplicationContext(), R.id.lv_items, questions) {
             // méthode utilisée à la génération de la ListView, renvoie une View qui est affichée dans la liste
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {

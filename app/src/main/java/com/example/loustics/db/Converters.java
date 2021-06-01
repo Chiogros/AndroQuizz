@@ -13,27 +13,13 @@ import java.util.List;
 
 public class Converters {
     @TypeConverter
-    public static String toJSONString(List<String> al_answers) {
-
-        try {
-            JSONArray jsonArr = new JSONArray(al_answers);
-            Log.d("JSONStringFromArray", jsonArr.toString());
-            return jsonArr.toString();
-        } catch (Exception ex) {
-            Log.e("Ooops", "yes");
-        }
-        return null;
+    public static String toString(JSONObject json) {
+        return json.toString();
     }
 
     @TypeConverter
-    public static List<String> toArrayList(String answers) {
-
-        try {
-            JSONArray jsonArr = new JSONArray(answers);
-        } catch (Exception ex) {
-            Log.e("Ooops", "yes");
-        }
-        return new ArrayList<>();
+    public static JSONObject toJSONObject(String jsonString) throws JSONException {
+        return new JSONObject(jsonString);
     }
 
 }

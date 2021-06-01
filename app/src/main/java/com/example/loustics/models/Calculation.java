@@ -3,8 +3,8 @@ package com.example.loustics.models;
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
-
-public abstract class Calculation implements Question {
+/*
+public abstract class Calculation extends Question {
 
     private Double m_d_operand1;
     private Double m_d_operand2;
@@ -44,3 +44,4 @@ public abstract class Calculation implements Question {
         return tv;
     }
 }
+*/

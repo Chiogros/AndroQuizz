@@ -7,7 +7,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 
-public class Addition extends Calculation {
+/*public class Addition extends Calculation {
 
     public Addition(Double operand1, Double operand2) {
         super(operand1, operand2);
@@ -38,3 +38,4 @@ public class Addition extends Calculation {
     }
 
 }
+*/

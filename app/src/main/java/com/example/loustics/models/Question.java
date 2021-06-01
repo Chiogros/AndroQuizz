@@ -10,6 +10,10 @@ import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.Index;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 
@@ -40,26 +44,43 @@ public abstract class Question {
     private String m_s_courseName;
 
     @ColumnInfo (name = "answers")
-    private List<String> m_l_answers;
+    private JSONObject m_json_answers;
 
     @Ignore
-    private List<String> m_l_rightAnswers, m_l_wrongAnswers;
+    private JSONArray m_json_rightAnswers, m_json_wrongAnswers;
+    @Ignore
+    private Context m_c_context;
 
-    public Question(String m_s_subject, String m_s_chapterName, String m_s_courseName, List<String> m_l_answers) {
+    public Question(String m_s_subject, String m_s_chapterName, String m_s_courseName, JSONObject m_json_answers) {
         this.m_s_subject = m_s_subject;
         this.m_s_chapterName = m_s_chapterName;
         this.m_s_courseName = m_s_courseName;
-        this.m_l_answers = m_l_answers;
+        this.m_json_answers = m_json_answers;
+        try {
+            m_json_rightAnswers = m_json_answers.getJSONArray("right");
+            m_json_wrongAnswers = m_json_answers.getJSONArray("wrong");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
-    public abstract Object getAlternativeAnswer();
 
-    public abstract Object getAnswer();
+    public abstract View getAnswerView(Object answer);
 
-    public abstract View getAnswerView(Context context, Object answer);
+    public Context getM_c_context() {
+        return this.m_c_context;
+    }
 
-    public List<String> getM_l_answers() {
-        return this.m_l_answers;
+    public JSONObject getM_json_answers() {
+        return this.m_json_answers;
+    }
+
+    public JSONArray getM_json_rightAnswers() {
+        return this.m_json_rightAnswers;
+    }
+
+    public JSONArray getM_json_wrongAnswers() {
+        return this.m_json_wrongAnswers;
     }
 
     public String getM_s_chapterName() {
@@ -74,6 +95,18 @@ public abstract class Question {
         return this.m_s_subject;
     }
 
-    public abstract View getSubjectView(Context context);
+    public String getRightAnswer() {
+        int length = m_json_wrongAnswers.length();
+        int randomValue = (int) (Math.random() * length);
+        return m_json_rightAnswers .optString(randomValue);
+    }
+
+    public abstract View getSubjectView();
+
+    public String getWrongAnswer() {
+        int length = m_json_wrongAnswers.length();
+        int randomValue = (int) (Math.random() * length);
+        return m_json_wrongAnswers.optString(randomValue);
+    }
 
 }
