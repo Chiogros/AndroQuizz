@@ -18,7 +18,7 @@ public class Open extends QuestionFrame {
     public View getView() {
         Context context = getContext();
         LinearLayout ll = new LinearLayout(context);
-        ll.setOrientation(LinearLayout.VERTICAL);
+        ll.setOrientation(LinearLayout.HORIZONTAL);
 
         Question q = getQuestion();
         View v = q.getSubjectView(context);

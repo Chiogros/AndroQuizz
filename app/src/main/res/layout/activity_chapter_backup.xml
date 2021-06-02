@@ -34,20 +34,20 @@
             android:transitionName="iv_courseLogo"
             android:padding="7dp"/>
 
-        <LinearLayout
-            android:id="@+id/ll_items"
+        <ListView
+            android:id="@+id/lv_items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="40dp"
             android:layout_below="@+id/iv_course"
-            android:orientation="vertical" />
+            android:scrollbars="none" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Valider mes réponses"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/ll_items"/>
+            android:layout_below="@+id/lv_items"/>
 
     </RelativeLayout>
 

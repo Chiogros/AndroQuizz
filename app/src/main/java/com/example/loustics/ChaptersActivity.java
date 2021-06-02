@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +33,7 @@ public class ChaptersActivity extends AppCompatActivity {
     AppDatabase db;
     private Class<? extends QuestionFrame> m_qf_questionType;
     private static int s_i_nombreQuestions = 15;
+    private int m_listHeight = 0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +79,7 @@ public class ChaptersActivity extends AppCompatActivity {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
     }
 
-    public void setListView(@NotNull List<Question> questions) {
+    /*public void setListView(@NotNull List<Question> questions) {
         // Définition des lignes pour le ListView
         ListView lv_items = findViewById(R.id.lv_items);
         lv_items.setAdapter(new ArrayAdapter<Question>(getApplicationContext(), R.id.lv_items, questions) {
@@ -93,6 +95,8 @@ public class ChaptersActivity extends AppCompatActivity {
                     View v = questionFrame.getView();
                     // mettre de l'espacement entre les questions
                     v.setPadding(5, 50, 5, 50);
+
+                    m_listHeight += v.getMeasuredHeight();
                     return v;
 
                 // les catch sont obligatoires pour le newInstance()
@@ -106,8 +110,34 @@ public class ChaptersActivity extends AppCompatActivity {
                 return new View(getContext());
             }
         });
-    }
 
+        lv_items.setMinimumHeight(50);
+    }*/
+
+    public void setListView(@NotNull List<Question> questions) {
+        // Définition des lignes pour le ListView
+        LinearLayout ll_items = findViewById(R.id.ll_items);
+        for (Question question : questions) {
+            try {
+                // Nouvelle question du type choisis aléatoirement
+                QuestionFrame questionFrame = m_qf_questionType.newInstance();
+                questionFrame.setContext(getApplicationContext());
+                questionFrame.setQuestion(question);  // assigne une réponse aléatoire
+
+                View v = questionFrame.getView();
+                // mettre de l'espacement entre les questions
+                v.setPadding(5, 50, 5, 50);
+
+                ll_items.addView(v);
+
+                // les catch sont obligatoires pour le newInstance()
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     // Classes privées
 
