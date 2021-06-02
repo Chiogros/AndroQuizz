@@ -23,6 +23,9 @@ public abstract class Question {
     @Ignore
     protected JSONArray m_json_rightAnswers, m_json_wrongAnswers;
 
+    @Ignore
+    private static int incrementRight = 0, incrementWrong = 0;
+
 
     public Question() {}
 
@@ -39,17 +42,23 @@ public abstract class Question {
     }
 
     public String getRightAnswer() {
-        int length = m_json_rightAnswers.length();
-        int randomValue = (int) ((Math.random() * 10 )% length);
-        return m_json_rightAnswers .optString(randomValue);
+        String s =  m_json_rightAnswers.optString(incrementRight);
+        incrementRight++;
+        if (m_json_rightAnswers.length() <= incrementRight) {
+            incrementRight = 0;
+        }
+        return s;
     }
 
     public abstract View getSubjectView(Context context);
 
     public String getWrongAnswer() {
-        int length = m_json_wrongAnswers.length();
-        int randomValue = (int) ((Math.random() * 10 )% length);
-        return m_json_wrongAnswers.optString(randomValue);
+        String s =  m_json_wrongAnswers.optString(incrementWrong);
+        incrementWrong++;
+        if (m_json_wrongAnswers.length() <= incrementWrong) {
+            incrementWrong = 0;
+        }
+        return s;
     }
 
 }

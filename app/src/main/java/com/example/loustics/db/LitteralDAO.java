@@ -5,20 +5,14 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-import androidx.room.Insert;
 
 import com.example.loustics.models.Litteral;
-import com.example.loustics.models.MCQ;
 
-import java.util.ArrayList;
 import java.util.List;
-import com.example.loustics.models.Question;
-
-import org.json.JSONException;
 
 
 @Dao
-public interface LitteralDAO extends DAO {
+public interface LitteralDAO {
 
     @Query("SELECT * FROM Litteral WHERE chapterName = :chapterName AND courseName = :courseName")
     List<Litteral> getAllQuestions(String chapterName, String courseName);

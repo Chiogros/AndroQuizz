@@ -16,11 +16,12 @@ foreignKeys = {
     @ForeignKey(entity = Chapter.class, parentColumns = { "name", "courseName" }, childColumns = { "chapterName", "courseName" })
 },
 primaryKeys = {
-    "chapterName", "courseName"
+    "chapterName", "courseName", "difficulty"
 },
 indices = {
     @Index("chapterName"),
-    @Index("courseName")
+    @Index("courseName"),
+    @Index("difficulty")
 })
 public class Addition extends Calculation {
 
@@ -32,6 +33,7 @@ public class Addition extends Calculation {
     @ColumnInfo (name = "courseName")
     protected String m_s_courseName;
 
+    @NonNull
     @ColumnInfo (name = "difficulty")
     protected int m_s_difficulty;
 
@@ -40,10 +42,15 @@ public class Addition extends Calculation {
         super(m_s_difficulty);
         this.m_s_chapterName = m_s_chapterName;
         this.m_s_courseName = m_s_courseName;
+        this.m_s_difficulty = m_s_difficulty;
     }
 
     public boolean isRight(Object answer) {
         return m_d_operand1 + m_d_operand2 == Integer.parseInt(answer.toString());
+    }
+
+    public int getM_s_difficulty() {
+        return m_s_difficulty;
     }
 
     public String getM_s_chapterName() {

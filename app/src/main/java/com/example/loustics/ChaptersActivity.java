@@ -1,7 +1,6 @@
 package com.example.loustics;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -10,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Addition;
-import com.example.loustics.models.Calculation;
 import com.example.loustics.models.CheckMCQ;
 import com.example.loustics.models.Litteral;
 import com.example.loustics.models.Open;
@@ -47,7 +45,7 @@ public class ChaptersActivity extends AppCompatActivity {
     public void defineQuestionFrameType() {
         int rand = (int) (Math.random() * (4 - 1));   // 0 -> 3
         // TODO
-        rand = 0;
+        rand = 3;
 
         switch (rand) {
             case 0:
@@ -128,7 +126,7 @@ public class ChaptersActivity extends AppCompatActivity {
 
             // pour les calculs
             for(int i = 0 ; i < s_i_nombreQuestions ; i++) {
-                List<Addition> calc = db.calculationDAO().getAllAdditions(m_s_chapterName, m_s_courseName);
+                List<Addition> calc = db.calculationDAO().getAddition(m_s_chapterName, m_s_courseName);
                 if (calc.size() > 0)
                     questions.add(calc.get(0));
             }

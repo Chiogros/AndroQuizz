@@ -1,16 +1,20 @@
 package com.example.loustics.models;
 
 import android.content.Context;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.example.loustics.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Random;
 
 public class RadioMCQ extends MCQ {
@@ -28,8 +32,9 @@ public class RadioMCQ extends MCQ {
 
         View questionSubjectView = q.getSubjectView(getContext());
 
-        int maxAnswers = q.getM_json_rightAnswers().length() + q.getM_json_wrongAnswers().length();
-        int numberOfAnswers = (int) (((Math.random() * 10) % (maxAnswers-2))+2);    // nombre entre 2 et le nombre de réponses disponibles
+        int maxWrongAnswers = q.getM_json_wrongAnswers().length();
+        int numberOfAnswers = (int) (Math.random() * 3)+2;    // nombre entre 2 et le nombre de réponses disponibles
+        if (numberOfAnswers > maxWrongAnswers) numberOfAnswers = maxWrongAnswers;
 
         ArrayList<View> answersViews = new ArrayList<>();   // contient toutes les réponses qui seront proposées
         answersViews.add(q.getAnswerView(q.getRightAnswer(), getContext()));    // on y met au moins une réponse juste
@@ -45,7 +50,15 @@ public class RadioMCQ extends MCQ {
         // créé les boutons avec les vues
         RadioGroup rg = new RadioGroup(getContext());
         for (View view : answersViews) {
-            // rg.addView(new CustomRadioButton(getContext(), view));
+            RadioButton rb = new RadioButton(getContext());
+
+            if (view instanceof ImageView)
+                rb.setBackground(view.getBackground());
+
+            if (view instanceof TextView)
+                rb.setText(((TextView) view).getText());
+
+            rg.addView(rb);
         }
 
         LinearLayout ll_question = new LinearLayout(getContext());
@@ -60,25 +73,4 @@ public class RadioMCQ extends MCQ {
         return false;
     }
 
-    /*private class CustomRadioButton extends LinearLayout {   // on ne peut pas mettre des images dans des radio boutons, du coup je créé ma classe
-        private RadioButton m_rb;
-        private View m_view;
-        private Context m_context;
-
-        public CustomRadioButton(Context context, View view) {
-            super(context);
-            m_context = context;
-            m_rb = new RadioButton(context);
-            setOrientation(HORIZONTAL);
-            addView(m_rb);
-            addView(view);
-        }
-    }
-
-    private class CustomRadioGroup extends RadioGroup {   // on ne peut pas mettre des images dans des radio boutons, du coup je créé ma classe
-
-        public CustomRadioGroup(Context context, View view) {
-            super(context);
-        }
-    }*/
 }

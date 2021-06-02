@@ -12,6 +12,6 @@ public interface CalculationDAO {
 
     // ne pas utiliser, passer par getAllAdditions
     @Query("SELECT * FROM Calculation WHERE chapterName = :chapterName AND courseName = :courseName")
-    List<Addition> getAllAdditions(String chapterName, String courseName);
+    List<Addition> getAddition(String chapterName, String courseName);
 
 }

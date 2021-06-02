@@ -8,7 +8,7 @@ import com.example.loustics.models.User;
 
 import java.util.List;
 @Dao
-public interface UserDAO extends DAO {
+public interface UserDAO {
 
     @Query
             ("SELECT * FROM user") List<User> getAllUsers();

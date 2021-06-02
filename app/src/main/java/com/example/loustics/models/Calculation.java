@@ -11,13 +11,13 @@ import androidx.room.Ignore;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class Calculation extends Question {
 
     @Ignore
     protected int m_d_operand1;
-
     @Ignore
     protected int m_d_operand2;
 
@@ -52,7 +52,11 @@ public abstract class Calculation extends Question {
     public abstract boolean isRight(Object answer);
 
     private int getAlternativeAnswer() {
-        return (int) (m_d_operand1 + m_d_operand2 + ((new Random().nextInt() - new Random().nextInt()) % (0.2 * (m_d_operand1 + m_d_operand2))));
+        int val;
+        do {
+            val = (int) (getResult() + Math.random() * Math.log(getResult()) * ((Math.random() * 2) - 1) + ((Math.random() * 6) - 3) * 1);
+        } while (val == getResult());
+        return val;
     }
 
     public View getAnswerView(Object answer, Context context) {
@@ -61,13 +65,27 @@ public abstract class Calculation extends Question {
         return tv;
     }
 
+    public abstract int getM_s_difficulty();
+
     public JSONObject getM_json_answers() {
-        // Création du json
+        int numberOfWrongAnswers = 4;
+        ArrayList<Integer> alreadyGenerated = new ArrayList<>();
+
+        // Création du json aléatoire
         String jsonString = "{'right' : [" + getResult() + "], 'wrong' : [";
-        for(int i = 0 ; i < 10 ; i++) {
-            jsonString += getAlternativeAnswer();
-            if (i < 9) jsonString += ", ";
+        while (alreadyGenerated.size() < numberOfWrongAnswers){
+            int generated = getAlternativeAnswer();
+
+            if (alreadyGenerated.contains(generated))
+                continue;
+
+            alreadyGenerated.add(generated);
+            jsonString += generated;
+
+            if (alreadyGenerated.size() < numberOfWrongAnswers-1)
+                jsonString += ", ";
         }
+
         jsonString += "]}";
 
         try {

@@ -87,19 +87,7 @@ public class DatabaseClient {
             db.execSQL("INSERT INTO Course VALUES('Physique', 'ic_fire');");
 
             //Table Chapters (Noms des chapitres, sous cours)
-            /*{db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Addition\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Multiplication\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Division\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Soustraction\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Modulo\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Grammaire\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Conjugaison\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"La révolution\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"La première guerre Mondiale\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Les villes de France\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Les villes d'Europe\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"Le cycle de l'eau\");");
-            db.execSQL("INSERT INTO Chapter (chapterName) VALUES(\"La fôret\");");}*/
+
                 // Français
                 {
                 db.execSQL("INSERT INTO Chapter VALUES('Grammaire - Pronoms', 'Français');");
@@ -116,22 +104,25 @@ public class DatabaseClient {
                     db.execSQL("INSERT INTO Chapter VALUES(\"L'Europe\", 'Géographie');");
                     db.execSQL("INSERT INTO Chapter VALUES('Le monde', 'Géographie');");
                 }
+                // Mathématiques
+                {
+                    db.execSQL("INSERT INTO Chapter VALUES('Additions 1', 'Mathématiques');");
+                    db.execSQL("INSERT INTO Chapter VALUES('Additions 2', 'Mathématiques');");
+                    db.execSQL("INSERT INTO Chapter VALUES('Additions 3', 'Mathématiques');");
+                    db.execSQL("INSERT INTO Chapter VALUES('Additions 4', 'Mathématiques');");
+                    db.execSQL("INSERT INTO Chapter VALUES('Additions 5', 'Mathématiques');");
+                }
 
             //Table Litteral (question et réponses possibles)
-            /*{ArrayList<String> reponses = new ArrayList<>();
-            reponses.add("Antoine");
-            reponses.add("Chevallet");
-            reponses.add("Rieu");
-            reponses.add("Le gif préféré de Line");
-            db.execSQL("INSERT INTO Litteral (subject, answers, chapterName) VALUES(\"Bonsoir est\", reponses,\"La révolution\");");
-            reponses.clear();
-            reponses.add("Antoine");
-            reponses.add("Chevallet");
-            reponses.add("Rieu");
-            reponses.add("Le gif préféré de Line");
-            db.execSQL("INSERT INTO Litteral (subject, answers, chapterName) VALUES(\"La réponse toujours juste parce que c'est comme ça est\", reponses,\"La révolution\");");
-            reponses.clear();}*/
 
+            // Table Calculation
+            {
+                db.execSQL("INSERT INTO Calculation VALUES('Additions 1', 'Mathématiques', 1);");
+                db.execSQL("INSERT INTO Calculation VALUES('Additions 2', 'Mathématiques', 2);");
+                db.execSQL("INSERT INTO Calculation VALUES('Additions 3', 'Mathématiques', 3);");
+                db.execSQL("INSERT INTO Calculation VALUES('Additions 4', 'Mathématiques', 4);");
+                db.execSQL("INSERT INTO Calculation VALUES('Additions 5', 'Mathématiques', 5);");
+            }
         }
     };
 }
