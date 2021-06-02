@@ -1,5 +1,6 @@
 package com.example.loustics;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DAO;
 import com.example.loustics.db.DatabaseClient;
+import com.example.loustics.db.LitteralDAO;
+import com.example.loustics.db.UserDAO;
 import com.example.loustics.models.CheckMCQ;
 import com.example.loustics.models.Open;
 import com.example.loustics.models.Question;
@@ -32,8 +35,7 @@ public class ChaptersActivity extends AppCompatActivity {
     private String m_s_chapterName;
     AppDatabase db;
     private Class<? extends QuestionFrame> m_qf_questionType;
-    private static int s_i_nombreQuestions = 15;
-    private int m_listHeight = 0;
+    private static final int s_i_nombreQuestions = 15;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +52,7 @@ public class ChaptersActivity extends AppCompatActivity {
     public void defineQuestionFrameType() {
         int rand = (int) (Math.random() * (4 - 1));   // 0 -> 3
         // TODO
-        rand = 0;
+        rand = 3;
 
         switch (rand) {
             case 0:
@@ -79,41 +81,6 @@ public class ChaptersActivity extends AppCompatActivity {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
     }
 
-    /*public void setListView(@NotNull List<Question> questions) {
-        // Définition des lignes pour le ListView
-        ListView lv_items = findViewById(R.id.lv_items);
-        lv_items.setAdapter(new ArrayAdapter<Question>(getApplicationContext(), R.id.lv_items, questions) {
-            // méthode utilisée à la génération de la ListView, renvoie une View qui est affichée dans la liste
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                try {
-                    // Nouvelle question du type choisis aléatoirement
-                    QuestionFrame questionFrame = m_qf_questionType.newInstance();
-                    questionFrame.setContext(getContext());
-                    questionFrame.setQuestion(this.getItem(position));  // assigne une réponse aléatoire
-
-                    View v = questionFrame.getView();
-                    // mettre de l'espacement entre les questions
-                    v.setPadding(5, 50, 5, 50);
-
-                    m_listHeight += v.getMeasuredHeight();
-                    return v;
-
-                // les catch sont obligatoires pour le newInstance()
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                } catch (InstantiationException e) {
-                    e.printStackTrace();
-                }
-
-                // Échec du newInstance()
-                return new View(getContext());
-            }
-        });
-
-        lv_items.setMinimumHeight(50);
-    }*/
-
     public void setListView(@NotNull List<Question> questions) {
         // Définition des lignes pour le ListView
         LinearLayout ll_items = findViewById(R.id.ll_items);
@@ -137,6 +104,10 @@ public class ChaptersActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void onButtonClick(View view) {
+        // Intent i = new Intent(this, );
     }
 
     // Classes privées

@@ -24,30 +24,24 @@
             android:paddingBottom="5dp"
             android:paddingHorizontal="20dp" />
 
-        <ImageView
-            android:id="@+id/iv_course"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="25dp"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:transitionName="iv_courseLogo"
-            android:padding="7dp"/>
-
         <LinearLayout
             android:id="@+id/ll_items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="40dp"
-            android:layout_below="@+id/iv_course"
+            android:layout_below="@+id/tv_course"
+            android:layout_marginTop="50dp"
             android:orientation="vertical" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Valider mes réponses"
+            android:text="Valider les réponses"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/ll_items"/>
+            android:layout_below="@+id/ll_items"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:onClick="onButtonClick"/>
 
     </RelativeLayout>
 

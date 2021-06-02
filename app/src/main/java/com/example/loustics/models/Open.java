@@ -31,6 +31,6 @@ public class Open extends QuestionFrame {
     }
 
     public boolean isRight() {
-        return false;
+        return true;
     }
 }
