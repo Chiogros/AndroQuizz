@@ -14,8 +14,6 @@ import androidx.room.Index;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.List;
-
 @Entity(tableName = "Litteral",
 foreignKeys = {
     @ForeignKey(entity = Chapter.class, parentColumns = { "name", "courseName" }, childColumns = { "chapterName", "courseName" })
@@ -32,18 +30,18 @@ public class Litteral extends Question {
 
     @NonNull
     @ColumnInfo(name = "subject")
-    protected String m_s_subject;
+    private String m_s_subject;
 
     @NonNull
     @ColumnInfo (name = "chapterName")
-    protected String m_s_chapterName;
+    private String m_s_chapterName;
 
     @NonNull
     @ColumnInfo (name = "courseName")
-    protected String m_s_courseName;
+    private String m_s_courseName;
 
     @ColumnInfo (name = "answers")
-    protected JSONObject m_json_answers;
+    private JSONObject m_json_answers;
 
 
     public Litteral(String m_s_subject, String m_s_chapterName, String m_s_courseName, JSONObject m_json_answers) {

@@ -39,8 +39,7 @@ public abstract class Question {
     }
 
     public String getRightAnswer() {
-
-        int length = m_json_wrongAnswers.length();
+        int length = m_json_rightAnswers.length();
         int randomValue = (int) ((Math.random() * 10 )% length);
         return m_json_rightAnswers .optString(randomValue);
     }

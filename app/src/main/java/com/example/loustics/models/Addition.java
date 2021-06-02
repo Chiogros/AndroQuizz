@@ -3,39 +3,62 @@ package com.example.loustics.models;
 import android.content.Context;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 
-/*public class Addition extends Calculation {
+@Entity(tableName = "Calculation",
+foreignKeys = {
+    @ForeignKey(entity = Chapter.class, parentColumns = { "name", "courseName" }, childColumns = { "chapterName", "courseName" })
+},
+primaryKeys = {
+    "chapterName", "courseName"
+},
+indices = {
+    @Index("chapterName"),
+    @Index("courseName")
+})
+public class Addition extends Calculation {
 
-    public Addition(Double operand1, Double operand2) {
-        super(operand1, operand2);
+    @NonNull
+    @ColumnInfo(name = "chapterName")
+    protected String m_s_chapterName;
+
+    @NonNull
+    @ColumnInfo (name = "courseName")
+    protected String m_s_courseName;
+
+    @ColumnInfo (name = "difficulty")
+    protected int m_s_difficulty;
+
+
+    public Addition(String m_s_chapterName, String m_s_courseName, int m_s_difficulty) {
+        super(m_s_difficulty);
+        this.m_s_chapterName = m_s_chapterName;
+        this.m_s_courseName = m_s_courseName;
     }
 
-    public Double getAlternativeAnswer() {
-        Double alternative;
-        do {
-            // réponse à +/- 20% d'erreur
-            alternative = getAnswer() * (Math.random() * 0.2);
-
-            // Verifie que la réponse alternative ne soit pas la bonne réponse
-        } while (alternative == getAnswer());
-
-        return alternative;
+    public boolean isRight(Object answer) {
+        return m_d_operand1 + m_d_operand2 == Integer.parseInt(answer.toString());
     }
 
-    public Double getAnswer() {
-        return getOperand1() + getOperand2();
+    public String getM_s_chapterName() {
+        return m_s_chapterName;
     }
 
-    public View getAnswerView(Context context, Object answer) {
-        return null;
+    public String getM_s_courseName() {
+        return m_s_courseName;
     }
 
     public String getM_s_subject() {
-        return getOperand1() + " + " + getOperand2() + " = ";
+        return m_d_operand1 + " + " + m_d_operand2 + " = ";
     }
 
+    public int getResult() {
+        return m_d_operand1 + m_d_operand2;
+    }
 }
-*/

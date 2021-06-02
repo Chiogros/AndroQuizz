@@ -43,7 +43,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="remove ArrayAdapter of ChaptersActivity with a foreach loop">
+    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="bugged CheckBox, tried to subclass RadioButton and RadioGroup to accept ImageView as button">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ResultActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/CalculationDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -56,12 +59,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/AppDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Addition.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Addition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_chapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chapter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_chapter_backup.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,8 +99,8 @@
         <option value="layoutResourceFile_vertical" />
         <option value="valueResourceFile" />
         <option value="resourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
         <option value="Interface" />
       </list>
     </option>
@@ -137,7 +140,7 @@
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="android-custom-viewC:/Users/User/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.android.tools.idea.sqlite.queryhistory" value="insert into Litteral values (&quot;J\'ai plus d\'idées&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\'il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;Est un exemple de pronom&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\'il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;On aura les notes de JP&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\'il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;On aura les notes de JP&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;Une pizza peut avoir&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['des tomates', 'du jambon', 'des olives', 'des champignons', 'de l'huile d'olive', 'du fromage'], 'wrong' : ['du caca','de l'ananas','du chocolat', 'des chips', 'de la banane']}&quot;);&#10;select * from Litteral where chapterName = &quot;Conjugaison - Présent&quot; AND courseName = &quot;Français&quot;&#10;insert into Litteral values (&quot;La couleur du cheval blanc d'Henri IV&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['blanc', 'pas noir'], 'wrong' : ['bleu','vert','gris']}&quot;);&#10;insert into Chapter values (&quot;prout&quot;, &quot;mdr&quot;)&#10;INSERT INTO Chapter VALUES('Le monde', 'Géographie');" />
+    <property name="com.android.tools.idea.sqlite.queryhistory" value="insert into Calculation values(&quot;Additions 1&quot;, &quot;Mathématiques&quot;, 1)&#10;insert into Chapter values(&quot;Additions 1&quot;, &quot;Mathématiques&quot;, 1)&#10;insert into Chapter values(&quot;Additions 1&quot;, &quot;Mathématiques&quot;)&#10;insert into Litteral values (&quot;J\'ai plus d\'idées&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\'il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;Est un exemple de pronom&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\'il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;On aura les notes de JP&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\'il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;On aura les notes de JP&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;Une pizza peut avoir&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['des tomates', 'du jambon', 'des olives', 'des champignons', 'de l'huile d'olive', 'du fromage'], 'wrong' : ['du caca','de l'ananas','du chocolat', 'des chips', 'de la banane']}&quot;);&#10;select * from Litteral where chapterName = &quot;Conjugaison - Présent&quot; AND courseName = &quot;Français&quot;" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="multi-representation-previewC:/Users/User/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Project" />
@@ -398,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622638698777</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="bugged CheckBox, tried to subclass RadioButton and RadioGroup to accept ImageView as button">
+      <created>1622650940577</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1622650940577</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -470,7 +480,8 @@
     <MESSAGE value="JSONObject converters done (for answers of Question)&#10;Question is now a stored Entity instead of Litteral" />
     <MESSAGE value="YesNo questions displayed with subject properly set.&#10;A little padding of the getView to add some space between questions&#10;JSON properly parsed from DB in 2 JSONArray that contain right and wrong answers" />
     <MESSAGE value="remove ArrayAdapter of ChaptersActivity with a foreach loop" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove ArrayAdapter of ChaptersActivity with a foreach loop" />
+    <MESSAGE value="bugged CheckBox, tried to subclass RadioButton and RadioGroup to accept ImageView as button" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugged CheckBox, tried to subclass RadioButton and RadioGroup to accept ImageView as button" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
@@ -482,10 +493,10 @@
     </state>
     <state x="424" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621235440826" />
     <state x="2132" y="278" width="1071" height="735" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622130123413" />
-    <state x="773" y="220" width="374" height="561" key="#com.intellij.ide.util.MemberChooser" timestamp="1622650766731">
+    <state x="773" y="220" width="374" height="561" key="#com.intellij.ide.util.MemberChooser" timestamp="1622659277176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="773" y="220" width="374" height="561" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622650766731" />
+    <state x="773" y="220" width="374" height="561" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1622659277176" />
     <state x="782" y="238" key="#com.intellij.ide.util.MemberChooser/0.0.3840.1128@0.0.3840.1128" timestamp="1621959804945" />
     <state x="773" y="220" key="#com.intellij.ide.util.MemberChooser/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622208397561" />
     <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622189441149" />
@@ -548,36 +559,36 @@
     <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1621087668649" />
     <state x="1302" y="184" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621616840795" />
     <state x="2571" y="264" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621431848796" />
-    <state width="1874" height="278" key="GridCell.Tab.0.bottom" timestamp="1622649860996">
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1622659728966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620638846116" />
-    <state width="1874" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622649860996" />
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622659728966" />
     <state width="1874" height="285" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="278" key="GridCell.Tab.0.center" timestamp="1622649860996">
+    <state width="1874" height="277" key="GridCell.Tab.0.center" timestamp="1622659728965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622649860996" />
+    <state width="1874" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622659728965" />
     <state width="1874" height="285" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="278" key="GridCell.Tab.0.left" timestamp="1622649860995">
+    <state width="1874" height="277" key="GridCell.Tab.0.left" timestamp="1622659728964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622649860995" />
+    <state width="1874" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622659728964" />
     <state width="1874" height="285" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="278" key="GridCell.Tab.0.right" timestamp="1622649860996">
+    <state width="1874" height="277" key="GridCell.Tab.0.right" timestamp="1622659728966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622649860996" />
+    <state width="1874" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622659728966" />
     <state width="1874" height="285" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
     <state width="1874" height="274" key="GridCell.Tab.1.bottom" timestamp="1621086044207">
@@ -604,10 +615,10 @@
       <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="2522" y="369" key="MultipleFileMergeDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622128769405" />
-    <state x="461" y="155" key="SettingsEditor" timestamp="1622525846266">
+    <state x="461" y="155" key="SettingsEditor" timestamp="1622655664897">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1622525846266" />
+    <state x="461" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1622655664897" />
     <state x="461" y="155" key="SettingsEditor/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622400980122" />
     <state x="922" y="168" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621270746353" />
     <state x="2381" y="249" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622123631874" />

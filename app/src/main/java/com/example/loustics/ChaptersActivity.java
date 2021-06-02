@@ -1,29 +1,23 @@
 package com.example.loustics;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.loustics.db.AppDatabase;
-import com.example.loustics.db.DAO;
 import com.example.loustics.db.DatabaseClient;
-import com.example.loustics.db.LitteralDAO;
-import com.example.loustics.db.UserDAO;
+import com.example.loustics.models.Addition;
+import com.example.loustics.models.Calculation;
 import com.example.loustics.models.CheckMCQ;
+import com.example.loustics.models.Litteral;
 import com.example.loustics.models.Open;
 import com.example.loustics.models.Question;
 import com.example.loustics.models.QuestionFrame;
 import com.example.loustics.models.RadioMCQ;
 import com.example.loustics.models.YesNo;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,6 +30,7 @@ public class ChaptersActivity extends AppCompatActivity {
     AppDatabase db;
     private Class<? extends QuestionFrame> m_qf_questionType;
     private static final int s_i_nombreQuestions = 15;
+    private List<Question> m_l_questions;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +47,7 @@ public class ChaptersActivity extends AppCompatActivity {
     public void defineQuestionFrameType() {
         int rand = (int) (Math.random() * (4 - 1));   // 0 -> 3
         // TODO
-        rand = 3;
+        rand = 0;
 
         switch (rand) {
             case 0:
@@ -81,10 +76,13 @@ public class ChaptersActivity extends AppCompatActivity {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
     }
 
-    public void setListView(@NotNull List<Question> questions) {
+    public void setListView() {
+        if (m_l_questions.size() == 0)
+            return ;
+
         // Définition des lignes pour le ListView
         LinearLayout ll_items = findViewById(R.id.ll_items);
-        for (Question question : questions) {
+        for (Question question : m_l_questions) {
             try {
                 // Nouvelle question du type choisis aléatoirement
                 QuestionFrame questionFrame = m_qf_questionType.newInstance();
@@ -107,7 +105,11 @@ public class ChaptersActivity extends AppCompatActivity {
     }
 
     public void onButtonClick(View view) {
-        // Intent i = new Intent(this, );
+        // TODO
+        /* Récupérer le linearlayout dans lequel il y a toutes les QuestionFrame
+         * et appeler sur chacune la méthode isRight() en comptant le nombre de fois où ça renvoie false (aka la réponse entrée est mauvaise)
+         * Enfin, aller sur l'activité résultat pour afficher le nombre d'erreurs / ou Félicitations
+         */
     }
 
     // Classes privées
@@ -120,7 +122,16 @@ public class ChaptersActivity extends AppCompatActivity {
             List<Question> questions = new ArrayList<>();
 
             // faire ça pour tous les DAO qui contiennent des Questions, récupère toutes les questions en lien avec ce chapitre + cours
-            questions.addAll(db.litteralDAO().getAllQuestions(m_s_chapterName, m_s_courseName));
+            List<Litteral> l = db.litteralDAO().getAllQuestions(m_s_chapterName, m_s_courseName);
+            if (l.size() > 0)
+                questions.addAll(l);
+
+            // pour les calculs
+            for(int i = 0 ; i < s_i_nombreQuestions ; i++) {
+                List<Addition> calc = db.calculationDAO().getAllAdditions(m_s_chapterName, m_s_courseName);
+                if (calc.size() > 0)
+                    questions.add(calc.get(0));
+            }
 
             return questions;
         }
@@ -129,9 +140,9 @@ public class ChaptersActivity extends AppCompatActivity {
         protected void onPostExecute(List<Question> questions) {
             RandomQuestion.questionsFromAllTypes = questions;
             // lance l'affichage des questions en demandant s_i_nombreQuestions à afficher
-            setListView(
-                RandomQuestion.getRandomQuestions(s_i_nombreQuestions)
-            );
+            m_l_questions = RandomQuestion.getRandomQuestions(s_i_nombreQuestions);
+
+            setListView();
         }
     }
 
@@ -148,6 +159,9 @@ public class ChaptersActivity extends AppCompatActivity {
             // sinon récupère aléatoirement des questions parmi celles appartenant à ce chapitre
             ArrayList<Question> questions = new ArrayList<>();
             int length = questionsFromAllTypes.size();
+            if (length == 0)
+                return questions;
+
             while (questions.size() < numberOfQuestions) {
                 int randomValue = (int) (Math.random() * length);
                 questions.add(questionsFromAllTypes.get(randomValue));

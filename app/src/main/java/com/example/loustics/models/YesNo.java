@@ -26,16 +26,16 @@ public class YesNo extends QuestionFrame {
     }
 
     public View getView() {
-        Question q = getQuestion();
+        Question question = getQuestion();
 
-        View questionSubjectView = q.getSubjectView(getContext());
+        View questionSubjectView = question.getSubjectView(getContext());
         View questionAnswerView;
 
         if (new Random().nextBoolean()) {   // choisis aléatoirement si la sujet sera une réponse juste ou fausse impossible
-            questionAnswerView = q.getAnswerView(q.getRightAnswer(), getContext());
+            questionAnswerView = question.getAnswerView(question.getRightAnswer(), getContext());
             m_b_isRight = true;
         } else {
-            questionAnswerView = q.getAnswerView(q.getWrongAnswer(), getContext());
+            questionAnswerView = question.getAnswerView(question.getWrongAnswer(), getContext());
             m_b_isRight = false;
         }
 
