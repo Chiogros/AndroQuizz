@@ -12,7 +12,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
@@ -43,25 +43,29 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="backup before converting List&lt;String&gt; as JSONObject for answers">
+    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="JSONObject converters done (for answers of Question)&#10;Question is now a stored Entity instead of Litteral">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/CoursesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/CoursesActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/AppDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/Converters.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/Converters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/LitteralDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/QuestionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Addition.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Addition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/QuestionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/LitteralDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Open.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_chapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chapter.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +141,7 @@
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="android-custom-viewC:/Users/User/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.android.tools.idea.sqlite.queryhistory" value="insert into Chapter values (&quot;prout&quot;, &quot;mdr&quot;)&#10;INSERT INTO Chapter VALUES('Le monde', 'Géographie');&#10;INSERT INTO Chapter VALUES(\&quot;L'Europe\&quot;, 'Géographie');&#10;INSERT INTO Chapter VALUES('Les villes', 'Géographie');&#10;INSERT INTO Chapter VALUES('Les régions', 'Géographie');&#10;INSERT INTO Chapter VALUES('Les départements', 'Géographie');&#10;INSERT INTO Chapter VALUES('Conjugaison - Passé simple', 'Français');&#10;INSERT INTO Chapter VALUES('Conjugaison - Futur', 'Français');&#10;INSERT INTO Chapter VALUES('Conjugaison - Présent', 'Français');" />
+    <property name="com.android.tools.idea.sqlite.queryhistory" value="insert into Litteral values (&quot;On aura les notes de JP&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\'il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;On aura les notes de JP&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;Une pizza peut avoir&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['des tomates', 'du jambon', 'des olives', 'des champignons', 'de l'huile d'olive', 'du fromage'], 'wrong' : ['du caca','de l'ananas','du chocolat', 'des chips', 'de la banane']}&quot;);&#10;select * from Litteral where chapterName = &quot;Conjugaison - Présent&quot; AND courseName = &quot;Français&quot;&#10;insert into Litteral values (&quot;La couleur du cheval blanc d'Henri IV&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['blanc', 'pas noir'], 'wrong' : ['bleu','vert','gris']}&quot;);&#10;insert into Chapter values (&quot;prout&quot;, &quot;mdr&quot;)&#10;INSERT INTO Chapter VALUES('Le monde', 'Géographie');&#10;INSERT INTO Chapter VALUES(\&quot;L'Europe\&quot;, 'Géographie');&#10;INSERT INTO Chapter VALUES('Les villes', 'Géographie');" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Onglets" />
     <property name="multi-representation-previewC:/Users/User/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Project" />
@@ -377,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622485940416</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="JSONObject converters done (for answers of Question)&#10;Question is now a stored Entity instead of Litteral">
+      <created>1622527634223</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1622527634223</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,7 +457,8 @@
     <MESSAGE value="tried to fix transitions" />
     <MESSAGE value="backup before trying to reimplements Question as abstract class" />
     <MESSAGE value="backup before converting List&lt;String&gt; as JSONObject for answers" />
-    <option name="LAST_COMMIT_MESSAGE" value="backup before converting List&lt;String&gt; as JSONObject for answers" />
+    <MESSAGE value="JSONObject converters done (for answers of Question)&#10;Question is now a stored Entity instead of Litteral" />
+    <option name="LAST_COMMIT_MESSAGE" value="JSONObject converters done (for answers of Question)&#10;Question is now a stored Entity instead of Litteral" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
@@ -474,10 +486,10 @@
     </state>
     <state x="742" y="388" width="436" height="271" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1621069768949" />
     <state x="2662" y="491" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621509825058" />
-    <state x="0" y="0" width="726" height="687" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1622527015609">
+    <state x="0" y="0" width="726" height="687" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1622528812035">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622527015609" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622528812035" />
     <state x="897" y="136" width="726" height="687" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.3840.1128@0.0.3840.1128" timestamp="1621961210830" />
     <state x="2369" y="161" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622127139837" />
     <state x="1110" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621241532641">
@@ -494,10 +506,10 @@
       <screen x="1366" y="0" width="1280" height="984" />
     </state>
     <state x="1748" y="326" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620754694357" />
-    <state x="0" y="0" width="960" height="1080" key="AVDManager" timestamp="1621265198934">
-      <screen x="0" y="0" width="3840" height="1128" />
+    <state x="100" y="100" width="1720" height="840" key="AVDManager" timestamp="1622632651800">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="100" y="100" width="1720" height="840" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1621118706527" />
+    <state x="100" y="100" width="1720" height="840" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1622632651800" />
     <state x="0" y="0" width="960" height="1080" key="AVDManager/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621265198934" />
     <state x="784" y="422" width="824" height="483" key="AndroidCreateResourceFileDialog" timestamp="1622451962327">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -524,36 +536,36 @@
     <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1621087668649" />
     <state x="1302" y="184" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621616840795" />
     <state x="2571" y="264" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621431848796" />
-    <state width="1874" height="269" key="GridCell.Tab.0.bottom" timestamp="1622449210512">
+    <state width="1874" height="278" key="GridCell.Tab.0.bottom" timestamp="1622634891080">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620638846116" />
-    <state width="1874" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622449210512" />
+    <state width="1874" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622634891080" />
     <state width="1874" height="285" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="269" key="GridCell.Tab.0.center" timestamp="1622449210512">
+    <state width="1874" height="278" key="GridCell.Tab.0.center" timestamp="1622634891079">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="269" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622449210512" />
+    <state width="1874" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622634891079" />
     <state width="1874" height="285" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="269" key="GridCell.Tab.0.left" timestamp="1622449210511">
+    <state width="1874" height="278" key="GridCell.Tab.0.left" timestamp="1622634891078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="269" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622449210511" />
+    <state width="1874" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622634891078" />
     <state width="1874" height="285" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="269" key="GridCell.Tab.0.right" timestamp="1622449210512">
+    <state width="1874" height="278" key="GridCell.Tab.0.right" timestamp="1622634891079">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="269" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622449210512" />
+    <state width="1874" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622634891079" />
     <state width="1874" height="285" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
     <state width="1874" height="274" key="GridCell.Tab.1.bottom" timestamp="1621086044207">
@@ -597,6 +609,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="670" y="331" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621160651285" />
+    <state x="670" y="331" key="com.android.tools.idea.run.deployment.SelectMultipleDevicesDialog" timestamp="1622631773717">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="670" y="331" key="com.android.tools.idea.run.deployment.SelectMultipleDevicesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622631773717" />
     <state x="1815" y="406" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620817892183">
       <screen x="1366" y="0" width="1280" height="984" />
     </state>
@@ -617,10 +633,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="624" y="237" key="run.anything.popup/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622028963244" />
-    <state x="312" y="221" width="672" height="626" key="search.everywhere.popup" timestamp="1622444637983">
+    <state x="312" y="221" width="672" height="626" key="search.everywhere.popup" timestamp="1622527910309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="312" y="221" width="672" height="626" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622444637983" />
+    <state x="312" y="221" width="672" height="626" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622527910309" />
     <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621240075671" />
     <state x="2232" y="317" width="672" height="650" key="search.everywhere.popup/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621320526071" />
   </component>

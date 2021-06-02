@@ -21,7 +21,7 @@ public class Open extends QuestionFrame {
         ll.setOrientation(LinearLayout.VERTICAL);
 
         Question q = getQuestion();
-        View v = q.getSubjectView();
+        View v = q.getSubjectView(context);
         ll.addView(v);
 
         EditText et = new EditText(context);

@@ -18,8 +18,13 @@ public class Converters {
     }
 
     @TypeConverter
-    public static JSONObject toJSONObject(String jsonString) throws JSONException {
-        return new JSONObject(jsonString);
+    public static JSONObject toJSONObject(String jsonString) {
+        try {
+            return new JSONObject(jsonString);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return new JSONObject();
     }
 
 }

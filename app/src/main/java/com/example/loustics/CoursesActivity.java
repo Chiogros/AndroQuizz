@@ -3,6 +3,7 @@ package com.example.loustics;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -110,8 +111,8 @@ public class CoursesActivity extends AppCompatActivity {
                         TextView tv_chapterName = (TextView) ((LinearLayout) view).getChildAt(0);
 
                         Intent i = new Intent(getContext(), ChaptersActivity.class);
-                        i.putExtra(ChaptersActivity.COURSE, m_s_courseName);
-                        i.putExtra(ChaptersActivity.CHAPTER, tv_chapterName.getText());
+                        i.putExtra("COURSE", m_s_courseName);
+                        i.putExtra("CHAPTER", tv_chapterName.getText());
 
                         startActivity(i);
                     }
