@@ -52,9 +52,11 @@ public abstract class Calculation extends Question {
     public abstract boolean isRight(Object answer);
 
     private int getAlternativeAnswer() {
-        int val;
+        int val, i = 1;
         do {
-            val = (int) (getResult() + Math.random() * Math.log(getResult()) * ((Math.random() * 2) - 1) + ((Math.random() * 6) - 3) * 1);
+            int signe = ((Math.random() * 2) - 1) > 0 ? 1 : -1;
+            val = (int) ((signe * (Math.random() * getResult())) + signe * Math.random() * i);
+            i++;
         } while (val == getResult());
         return val;
     }
@@ -68,7 +70,7 @@ public abstract class Calculation extends Question {
     public abstract int getM_s_difficulty();
 
     public JSONObject getM_json_answers() {
-        int numberOfWrongAnswers = 4;
+        int numberOfWrongAnswers = 5;
         ArrayList<Integer> alreadyGenerated = new ArrayList<>();
 
         // Création du json aléatoire
@@ -82,7 +84,7 @@ public abstract class Calculation extends Question {
             alreadyGenerated.add(generated);
             jsonString += generated;
 
-            if (alreadyGenerated.size() < numberOfWrongAnswers-1)
+            if (alreadyGenerated.size() < numberOfWrongAnswers)
                 jsonString += ", ";
         }
 

@@ -42,22 +42,22 @@ public abstract class Question {
     }
 
     public String getRightAnswer() {
-        String s =  m_json_rightAnswers.optString(incrementRight);
-        incrementRight++;
         if (m_json_rightAnswers.length() <= incrementRight) {
             incrementRight = 0;
         }
+        String s = m_json_rightAnswers.optString(incrementRight);
+        incrementRight++;
         return s;
     }
 
     public abstract View getSubjectView(Context context);
 
     public String getWrongAnswer() {
-        String s =  m_json_wrongAnswers.optString(incrementWrong);
-        incrementWrong++;
         if (m_json_wrongAnswers.length() <= incrementWrong) {
             incrementWrong = 0;
         }
+        String s = m_json_wrongAnswers.optString(incrementWrong);
+        incrementWrong++;
         return s;
     }
 

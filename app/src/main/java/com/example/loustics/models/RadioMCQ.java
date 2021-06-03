@@ -33,7 +33,7 @@ public class RadioMCQ extends MCQ {
         View questionSubjectView = q.getSubjectView(getContext());
 
         int maxWrongAnswers = q.getM_json_wrongAnswers().length();
-        int numberOfAnswers = (int) (Math.random() * 3)+2;    // nombre entre 2 et le nombre de réponses disponibles
+        int numberOfAnswers = (int) (Math.random() * 4)+2;    // nombre entre 2 et le nombre de réponses disponibles
         if (numberOfAnswers > maxWrongAnswers) numberOfAnswers = maxWrongAnswers;
 
         ArrayList<View> answersViews = new ArrayList<>();   // contient toutes les réponses qui seront proposées
