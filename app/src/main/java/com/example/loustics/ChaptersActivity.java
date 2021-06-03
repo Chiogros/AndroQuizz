@@ -43,9 +43,8 @@ public class ChaptersActivity extends AppCompatActivity {
     }
 
     public void defineQuestionFrameType() {
-        int rand = (int) (Math.random() * (4 - 1));   // 0 -> 3
-        // TODO
-        rand = 3;
+        // int rand = (int) (Math.random() * (4));   // 0 -> 3
+        int rand = (int) (Math.random() * (4 - 1));   // 0 -> 2
 
         switch (rand) {
             case 0:
@@ -55,12 +54,13 @@ public class ChaptersActivity extends AppCompatActivity {
                 m_qf_questionType = Open.class;
                 break;
             case 2:
-                m_qf_questionType = CheckMCQ.class;
-                break;
-            case 3:
                 m_qf_questionType = RadioMCQ.class;
                 break;
-            default:
+            case 3:
+                m_qf_questionType = CheckMCQ.class;
+                break;
+            default:    // should never be chosen
+                m_qf_questionType = YesNo.class;
                 break;
         }
     }

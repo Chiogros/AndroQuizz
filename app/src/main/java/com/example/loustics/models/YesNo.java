@@ -39,12 +39,17 @@ public class YesNo extends QuestionFrame {
             m_b_isRight = false;
         }
 
+        if (questionSubjectView instanceof TextView && questionAnswerView instanceof TextView) {
+            ((TextView) questionSubjectView).append(" " + ((TextView) questionAnswerView).getText());
+            ((TextView) questionAnswerView).setText("");
+        }
+
         // Pour séparer le texte du sujet que la réponse
         TextView space = new TextView(getContext());
         space.setText(" ");
 
         LinearLayout ll_subject = new LinearLayout(getContext());
-        ll_subject.setOrientation(LinearLayout.HORIZONTAL);
+        // ll_subject.setOrientation(LinearLayout.HORIZONTAL);
         ll_subject.addView(questionSubjectView);
         ll_subject.addView(space);
         ll_subject.addView(questionAnswerView);

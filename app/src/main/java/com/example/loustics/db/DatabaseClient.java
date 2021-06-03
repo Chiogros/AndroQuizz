@@ -55,36 +55,13 @@ public class DatabaseClient {
             super.onCreate(db);
 
             //Table Course (Nom des cours + logo)
-            /*{ArrayList<Chapter> chap = new ArrayList<Chapter>();
-            Chapter revo = new Chapter("La révolution", "Histoire");
-            Chapter guerre1 = new Chapter("La première guerre Mondiale", "Histoire");
-            chap.add(revo);
-            chap.add(guerre1);
-            db.execSQL("INSERT INTO Course VALUES(\"Histoire\", 70004);");
-            chap.clear();
-            Chapter villeF = new Chapter("Les villes de France", "Géographie");
-            Chapter villeE = new Chapter("Les villes d'Europe", "Géographie");
-            chap.add(villeF);
-            chap.add(villeE);
-            db.execSQL("INSERT INTO Course (chaptersList, logo, name) VALUES(chap, 70004,\"Géographie\");");
-            chap.clear();
-            Chapter gramm = new Chapter("Grammaire", "Français");
-            Chapter conjug = new Chapter("Conjugaison", "Français");
-            chap.add(gramm);
-            chap.add(conjug);
-            db.execSQL("INSERT INTO Course (chaptersList, logo, name) VALUES(chap, 700038,\"Français\");");
-            chap.clear();
-            Chapter cycle = new Chapter("Le cycle de l'eau", "Sciences");
-            Chapter foret = new Chapter("La fôret", "Sciences");
-            chap.add(cycle);
-            chap.add(foret);
-            db.execSQL("INSERT INTO Course (chaptersList, logo, name) VALUES(chap, 70004,\"Sciences\");");
-            chap.clear();}*/
-            db.execSQL("INSERT INTO Course VALUES('Français', 'ic_french');");
-            db.execSQL("INSERT INTO Course VALUES('Géographie', 'ic_earth');");
-            db.execSQL("INSERT INTO Course VALUES('Histoire', 'ic_history');");
-            db.execSQL("INSERT INTO Course VALUES('Mathématiques', 'ic_math');");
-            db.execSQL("INSERT INTO Course VALUES('Physique', 'ic_fire');");
+            {
+                db.execSQL("INSERT INTO Course VALUES('Français', 'ic_french');");
+                db.execSQL("INSERT INTO Course VALUES('Géographie', 'ic_earth');");
+                db.execSQL("INSERT INTO Course VALUES('Histoire', 'ic_history');");
+                db.execSQL("INSERT INTO Course VALUES('Mathématiques', 'ic_math');");
+                db.execSQL("INSERT INTO Course VALUES('Physique', 'ic_fire');");
+            }
 
             //Table Chapters (Noms des chapitres, sous cours)
 
@@ -114,6 +91,10 @@ public class DatabaseClient {
                 }
 
             //Table Litteral (question et réponses possibles)
+            {
+               db.execSQL("INSERT INTO Litteral VALUES(\"L'assembleur\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['permet de manipuler la mémoire', 'est un langage de programmation', 'est la base de nimporte quel langage informatique'], 'wrong' : ['permet de commander Uber', 'a été inventé par JP', 'offre des réductions dès 3 octets achetés', 'sent bon la menthe']}\");");
+            }
+
 
             // Table Calculation
             {
