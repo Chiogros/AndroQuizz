@@ -1,5 +1,6 @@
 package com.example.loustics;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -89,9 +90,16 @@ public class ChaptersActivity extends AppCompatActivity {
 
                 View v = questionFrame.getView();
                 // mettre de l'espacement entre les questions
-                v.setPadding(5, 50, 5, 50);
+                v.setPadding(100, 50, 100, 50);
+                v.setBackgroundResource(R.drawable.card_background);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    v.setElevation(1);
+                }
 
-                ll_items.addView(v);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                params.setMargins(20,5, 20, 5);
+
+                ll_items.addView(v, params);
 
                 // les catch sont obligatoires pour le newInstance()
             } catch (IllegalAccessException e) {

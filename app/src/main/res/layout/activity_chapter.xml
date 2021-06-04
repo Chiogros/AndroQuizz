@@ -29,7 +29,7 @@
             android:id="@+id/ll_items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="40dp"
+            android:padding="0dp"
             android:layout_below="@+id/tv_course"
             android:layout_marginTop="50dp"
             android:orientation="vertical" />

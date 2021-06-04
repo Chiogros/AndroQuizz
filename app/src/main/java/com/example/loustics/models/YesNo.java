@@ -8,6 +8,8 @@ import android.widget.Space;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.example.loustics.R;
+
 import org.w3c.dom.Text;
 
 import java.util.Random;

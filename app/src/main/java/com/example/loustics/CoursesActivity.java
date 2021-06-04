@@ -3,6 +3,7 @@ package com.example.loustics;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -117,6 +118,10 @@ public class CoursesActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                 });
+
+                ImageView checked = new ImageView(getContext());
+                checked.setBackgroundResource(R.drawable.ic_check);
+                ll_line.addView(checked);
 
                 return ll_line;
             }
