@@ -62,7 +62,7 @@ public class Addition extends Calculation {
     }
 
     public String getM_s_subject() {
-        return m_d_operand1 + " + " + m_d_operand2 + " = ";
+        return m_d_operand1 + " + " + m_d_operand2 + " =";
     }
 
     public int getResult() {

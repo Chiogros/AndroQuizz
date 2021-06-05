@@ -19,6 +19,9 @@ import java.util.Random;
 
 public class RadioMCQ extends MCQ {
 
+    private RadioGroup m_rg_buttons;
+    private RadioButton m_rb_rightOneToCheck;
+
     public RadioMCQ() {
         super();
     }
@@ -37,7 +40,8 @@ public class RadioMCQ extends MCQ {
         if (numberOfAnswers > maxWrongAnswers) numberOfAnswers = maxWrongAnswers;
 
         ArrayList<View> answersViews = new ArrayList<>();   // contient toutes les réponses qui seront proposées
-        answersViews.add(q.getAnswerView(q.getRightAnswer(), getContext()));    // on y met au moins une réponse juste
+        View v_rightAnswer = q.getAnswerView(q.getRightAnswer(), getContext()); // on isole la vue de la bonne réponse pour ensuite pouvoir récupérer l'ID du RadioBouton qui est juste
+        answersViews.add(v_rightAnswer);    // on y met au moins une réponse juste
         while (answersViews.size() < numberOfAnswers) { // récupère les réponses et les met dans answersViews
             View v = q.getAnswerView(q.getWrongAnswer(), getContext());
 
@@ -48,29 +52,32 @@ public class RadioMCQ extends MCQ {
         Collections.shuffle(answersViews);  // mélange les réponses
 
         // créé les boutons avec les vues
-        RadioGroup rg = new RadioGroup(getContext());
+        m_rg_buttons = new RadioGroup(getContext());
         for (View view : answersViews) {
+
             RadioButton rb = new RadioButton(getContext());
 
-            if (view instanceof ImageView)
+            if (view instanceof ImageView)  // met l'image en fond si on récupère une ImageView de la question
                 rb.setBackground(view.getBackground());
 
-            if (view instanceof TextView)
+            if (view instanceof TextView)   // change le texte si on récupère un TextView de la question
                 rb.setText(((TextView) view).getText());
 
-            rg.addView(rb);
+            if (view == v_rightAnswer)  // si c'est la vue qui est juste, on garde ce bouton pour la vérification
+                m_rb_rightOneToCheck = rb;
+
+            m_rg_buttons.addView(rb);
         }
 
         LinearLayout ll_question = new LinearLayout(getContext());
         ll_question.setOrientation(LinearLayout.VERTICAL);
         ll_question.addView(questionSubjectView);
-        ll_question.addView(rg);
+        ll_question.addView(m_rg_buttons);
         return ll_question;
     }
 
     public boolean isRight() {
-        // TODO
-        return false;
+        return m_rg_buttons.getCheckedRadioButtonId() == m_rb_rightOneToCheck.getId();  // vérifie si le bouton sélectionné est bien celui qui est juste
     }
 
 }

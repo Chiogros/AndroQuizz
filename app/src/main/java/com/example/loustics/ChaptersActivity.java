@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -39,6 +40,7 @@ public class ChaptersActivity extends AppCompatActivity {
         setDAOs();
         defineQuestionFrameType();
         setNavigationBarColors();
+        setHeader();
 
         // lance la récupération de toutes les questions en lien avec ce chapitre
         new QuestionsAsyncTask().execute();
@@ -82,6 +84,15 @@ public class ChaptersActivity extends AppCompatActivity {
 
     public void setDAOs() {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
+    }
+
+    // Nom de la matière dans l'en-tête
+    public void setHeader() {
+
+        // on applique le texte au TextView afin qu'il soit affiché
+        TextView t = (TextView) findViewById(R.id.tv_chapter);
+        t.setText(m_s_chapterName);
+
     }
 
     public void setListView() {

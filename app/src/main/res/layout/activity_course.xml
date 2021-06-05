@@ -13,11 +13,9 @@
         <ImageView
             android:id="@+id/iv_wave"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:src="@drawable/ic_course_header"
-            android:scaleType="centerCrop"
-            android:scaleX="1.1"
-            android:scaleY="1.5" />
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/tv_course"
@@ -29,17 +27,16 @@
             android:textSize="30sp"
             android:textColor="@color/defaultWhite"
             android:transitionName="tv_courseName"
-            android:textFontWeight="100"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="5dp"
             android:textStyle="italic"
             android:gravity="center"/>
 
         <ImageView
             android:id="@+id/iv_course"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
             android:transitionName="iv_courseLogo" />
 
