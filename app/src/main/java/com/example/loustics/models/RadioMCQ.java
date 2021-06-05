@@ -40,8 +40,10 @@ public class RadioMCQ extends MCQ {
         if (numberOfAnswers > maxWrongAnswers) numberOfAnswers = maxWrongAnswers;
 
         ArrayList<View> answersViews = new ArrayList<>();   // contient toutes les réponses qui seront proposées
+
         View v_rightAnswer = q.getAnswerView(q.getRightAnswer(), getContext()); // on isole la vue de la bonne réponse pour ensuite pouvoir récupérer l'ID du RadioBouton qui est juste
         answersViews.add(v_rightAnswer);    // on y met au moins une réponse juste
+
         while (answersViews.size() < numberOfAnswers) { // récupère les réponses et les met dans answersViews
             View v = q.getAnswerView(q.getWrongAnswer(), getContext());
 
@@ -73,6 +75,7 @@ public class RadioMCQ extends MCQ {
         ll_question.setOrientation(LinearLayout.VERTICAL);
         ll_question.addView(questionSubjectView);
         ll_question.addView(m_rg_buttons);
+
         return ll_question;
     }
 

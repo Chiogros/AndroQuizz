@@ -6,7 +6,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import org.json.JSONArray;
+
 public class Open extends QuestionFrame {
+
+    private EditText m_et;
 
     public Open() {
         super();
@@ -27,14 +31,18 @@ public class Open extends QuestionFrame {
         View v = q.getSubjectView(context);
         ll.addView(v);
 
-        EditText et = new EditText(context);
-        et.setMinWidth(200);
-        ll.addView(et);
+        m_et = new EditText(context);
+        m_et.setMinWidth(200);
+        ll.addView(m_et);
 
         return ll;
     }
 
     public boolean isRight() {
-        return true;
+        Question q = getQuestion();
+
+        JSONArray jsonRightAnswers = q.getM_json_rightAnswers();
+
+        return jsonRightAnswers.toString().contains(m_et.getText());    // si le texte entré est dans le JSON des bonnes réponses, alors on a bien répondu
     }
 }
