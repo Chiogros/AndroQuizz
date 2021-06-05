@@ -43,11 +43,13 @@
         </activity>
 
         <activity
-            android:name=".CoursesActivity" >
+            android:name=".CoursesActivity"
+            android:theme="@style/Theme.Course" >
         </activity>
 
         <activity
-            android:name=".ChaptersActivity" >
+            android:name=".ChaptersActivity"
+            android:theme="@style/Theme.Chapter" >
         </activity>
 
     </application>

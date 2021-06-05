@@ -38,6 +38,7 @@ public class ChaptersActivity extends AppCompatActivity {
         getIntentValues();
         setDAOs();
         defineQuestionFrameType();
+        setNavigationBarColors();
 
         // lance la récupération de toutes les questions en lien avec ce chapitre
         new QuestionsAsyncTask().execute();
@@ -69,6 +70,14 @@ public class ChaptersActivity extends AppCompatActivity {
     public void getIntentValues() {
         m_s_courseName = getIntent().getStringExtra("COURSE");
         m_s_chapterName = getIntent().getStringExtra("CHAPTER");
+    }
+
+    public void onButtonClick(View view) {
+        // TODO
+        /* Récupérer le linearlayout dans lequel il y a toutes les QuestionFrame
+         * et appeler sur chacune la méthode isRight() en comptant le nombre de fois où ça renvoie false (aka la réponse entrée est mauvaise)
+         * Enfin, aller sur l'activité résultat pour afficher le nombre d'erreurs / ou Félicitations
+         */
     }
 
     public void setDAOs() {
@@ -110,13 +119,13 @@ public class ChaptersActivity extends AppCompatActivity {
         }
     }
 
-    public void onButtonClick(View view) {
-        // TODO
-        /* Récupérer le linearlayout dans lequel il y a toutes les QuestionFrame
-         * et appeler sur chacune la méthode isRight() en comptant le nombre de fois où ça renvoie false (aka la réponse entrée est mauvaise)
-         * Enfin, aller sur l'activité résultat pour afficher le nombre d'erreurs / ou Félicitations
-         */
+    // afficher la navigationBar en blanc avec les boutons noirs
+    public void setNavigationBarColors() {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+        }
     }
+
 
     // Classes privées
 

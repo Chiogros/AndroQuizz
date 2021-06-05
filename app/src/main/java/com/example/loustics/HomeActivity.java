@@ -1,6 +1,7 @@
 package com.example.loustics;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.Fade;
@@ -87,6 +88,8 @@ public class HomeActivity extends AppCompatActivity {
                                 getPackageName()
                         )
                 );
+                // change la couleur du logo en blanc
+                iv_logo.setColorFilter(getResources().getColor(R.color.default_black), PorterDuff.Mode.SRC_IN);
                 ll_line.addView(iv_logo);
 
                 Space space = new Space(getContext());

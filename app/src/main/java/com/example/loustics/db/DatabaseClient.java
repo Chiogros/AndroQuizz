@@ -56,8 +56,8 @@ public class DatabaseClient {
 
             //Table Course (Nom des cours + logo)
             {
-                db.execSQL("INSERT INTO Course VALUES('Français', 'ic_french');");
-                db.execSQL("INSERT INTO Course VALUES('Géographie', 'ic_earth');");
+                db.execSQL("INSERT INTO Course VALUES('Français', 'ic_book');");
+                db.execSQL("INSERT INTO Course VALUES('Géographie', 'ic_map');");
                 db.execSQL("INSERT INTO Course VALUES('Histoire', 'ic_history');");
                 db.execSQL("INSERT INTO Course VALUES('Mathématiques', 'ic_math');");
                 db.execSQL("INSERT INTO Course VALUES('Physique', 'ic_fire');");

@@ -1,9 +1,12 @@
 package com.example.loustics;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -43,6 +46,7 @@ public class CoursesActivity extends AppCompatActivity {
         getIntentValues();
         setDAOs();
         setHeader();
+        setNavigationBarColors();
 
         new ChaptersAsyncTask().execute(m_s_courseName);
     }
@@ -64,6 +68,8 @@ public class CoursesActivity extends AppCompatActivity {
 
     // Nom de la matière dans l'en-tête
     public void setHeader() {
+
+        // on applique le texte au TextView afin qu'il soit affiché
         TextView t = (TextView) findViewById(R.id.tv_course);
         t.setText(m_s_courseName);
 
@@ -80,6 +86,8 @@ public class CoursesActivity extends AppCompatActivity {
                         "drawable",
                         getPackageName()
                 ));
+        // change la couleur du logo en blanc
+        iv.setColorFilter(getResources().getColor(R.color.defaultWhite), PorterDuff.Mode.SRC_IN);
     }
 
     public void setListView(@NotNull List<Chapter> chapters) {
@@ -128,6 +136,12 @@ public class CoursesActivity extends AppCompatActivity {
         });
     }
 
+    // afficher la navigationBar en blanc avec les boutons noirs
+    public void setNavigationBarColors() {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+        }
+    }
 
     // Classes privées
 

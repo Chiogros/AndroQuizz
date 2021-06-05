@@ -10,28 +10,38 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/iv_wave"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_course_header"
+            android:scaleType="centerCrop"
+            android:scaleX="1.1"
+            android:scaleY="1.5" />
+
         <TextView
             android:id="@+id/tv_course"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:text="Matière"
-            android:textSize="20dp"
-            android:textColor="@color/brown"
+            android:textSize="30sp"
+            android:textColor="@color/defaultWhite"
             android:transitionName="tv_courseName"
-            android:paddingBottom="5dp"
-            android:paddingHorizontal="20dp" />
+            android:textFontWeight="100"
+            android:layout_marginTop="4dp"
+            android:textStyle="italic"
+            android:gravity="center"/>
 
         <ImageView
             android:id="@+id/iv_course"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="25dp"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:transitionName="iv_courseLogo"
-            android:padding="7dp"/>
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:transitionName="iv_courseLogo" />
 
         <ListView
             android:id="@+id/lv_items"
@@ -39,7 +49,7 @@
             android:layout_height="wrap_content"
             android:padding="40dp"
             android:divider="@null"
-            android:layout_below="@+id/iv_course"
+            android:layout_below="@+id/iv_wave"
             android:scrollbars="none" />
 
     </RelativeLayout>

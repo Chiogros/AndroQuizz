@@ -8,5 +8,6 @@
     <color name="brown_light">#FFfdc590</color>
     <color name="brown_dark">#FF956637</color>
     <color name="defaultWhite">#FFFAFAFA</color>
+    <color name="default_black">#FF767676</color>
 
 </resources>
