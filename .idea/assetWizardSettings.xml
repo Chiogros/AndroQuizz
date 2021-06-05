@@ -42,6 +42,19 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                      <entry key="image">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                                <entry key="imagePath" value="/tmp/wave.svg" />
+                                                <entry key="opacityPercent" value="80" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="text">
                                         <value>
                                           <PersistentState>
@@ -68,9 +81,11 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_check" />
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="imageAsset" value="/tmp/wave.svg" />
+                                      <entry key="outputName" value="ic_wave" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="4caf50" />
+                                      <entry key="themeColor" value="c89462" />
                                     </map>
                                   </option>
                                 </PersistentState>

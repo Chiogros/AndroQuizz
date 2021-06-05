@@ -5,6 +5,8 @@
     <color name="orange">#FFFFA500</color>
     <color name="red">#FFFF0000</color>
     <color name="brown">#FFc89462</color>
+    <color name="brown_light">#FFfdc590</color>
+    <color name="brown_dark">#FF956637</color>
     <color name="defaultWhite">#FFFAFAFA</color>
 
 </resources>

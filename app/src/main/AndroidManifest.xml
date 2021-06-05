@@ -33,7 +33,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_courses"
-            android:theme="@style/Theme.Course">
+            android:theme="@style/Theme.Home">
         </activity>
 
         <activity

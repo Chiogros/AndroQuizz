@@ -1,14 +1,9 @@
 package com.example.loustics;
 
-import android.annotation.SuppressLint;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.transition.Explode;
 import android.transition.Fade;
-import android.transition.Slide;
-import android.util.Log;
 import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
@@ -21,14 +16,10 @@ import android.widget.Space;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.view.ViewCompat;
-import androidx.lifecycle.Observer;
-import androidx.room.Room;
 
 import com.example.loustics.db.AppDatabase;
-import com.example.loustics.db.Converters;
 import com.example.loustics.db.CourseDAO;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Course;
@@ -49,18 +40,13 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         setupDAOs();
+        setNavigationBarColors();
         setFloatingButton();
         fetchCourses();
-        // setTransitions();
     }
 
     private void fetchCourses() {
         new CoursesAsyncTask().execute();
-    }
-
-    public void setupDAOs() {
-        db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
-        courseDAO = db.courseDAO();
     }
 
     public void setFloatingButton() {
@@ -93,13 +79,13 @@ public class HomeActivity extends AppCompatActivity {
                 // Logo de la matière
                 ImageView iv_logo = new ImageView(getContext());
                 iv_logo.setImageResource(
-                    // à partir des resources
-                    getResources().getIdentifier(
-                        // à partir du nom du logo
-                        this.getItem(position).getM_s_logo(),
-                        "drawable",
-                        getPackageName()
-                    )
+                        // à partir des resources
+                        getResources().getIdentifier(
+                                // à partir du nom du logo
+                                this.getItem(position).getM_s_logo(),
+                                "drawable",
+                                getPackageName()
+                        )
                 );
                 ll_line.addView(iv_logo);
 
@@ -152,6 +138,13 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    // afficher la navigationBar en blanc avec les boutons noirs
+    public void setNavigationBarColors() {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+        }
+    }
+
     public void setTransitions() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             return ;
@@ -161,6 +154,11 @@ public class HomeActivity extends AppCompatActivity {
         getWindow().setSharedElementExitTransition(new Fade());
         getWindow().setEnterTransition(new Fade());
         getWindow().setSharedElementEnterTransition(new Fade());
+    }
+
+    public void setupDAOs() {
+        db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
+        courseDAO = db.courseDAO();
     }
 
 

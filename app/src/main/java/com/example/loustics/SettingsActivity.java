@@ -32,7 +32,6 @@ public class SettingsActivity extends AppCompatActivity {
     // afficher la navigationBar en blanc avec les boutons noirs
     public void setNavigationBarColors() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setNavigationBarColor(getResources().getColor(R.color.defaultWhite));
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }
     }
