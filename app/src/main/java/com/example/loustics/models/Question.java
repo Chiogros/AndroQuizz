@@ -29,8 +29,6 @@ public abstract class Question {
 
     public Question() {}
 
-    public abstract boolean isRight(Object answer);
-
     public abstract View getAnswerView(Object answer, Context context);
 
     public JSONArray getM_json_rightAnswers() {

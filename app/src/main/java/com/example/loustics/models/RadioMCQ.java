@@ -40,16 +40,26 @@ public class RadioMCQ extends MCQ {
         if (numberOfAnswers > maxWrongAnswers) numberOfAnswers = maxWrongAnswers;
 
         ArrayList<View> answersViews = new ArrayList<>();   // contient toutes les réponses qui seront proposées
+        ArrayList<String> al_answers = new ArrayList<>();   // contient toutes les réponses String pour la vérification dans la boucle
 
-        View v_rightAnswer = q.getAnswerView(q.getRightAnswer(), getContext()); // on isole la vue de la bonne réponse pour ensuite pouvoir récupérer l'ID du RadioBouton qui est juste
-        answersViews.add(v_rightAnswer);    // on y met au moins une réponse juste
+        ArrayList<String> al_answersStrings = new ArrayList<>();    // contient tous les sujets en String, afin de vérifier qu'elle ne soit pas déjà prise
+        String firstRightAnswer = q.getRightAnswer();   // récupère une bonne réponse
+        al_answersStrings.add(firstRightAnswer);
+
+        View v_minimalRightAnswer = q.getAnswerView(firstRightAnswer, getContext()); // on isole la vue de la bonne réponse pour ensuite pouvoir récupérer l'ID du RadioBouton qui est juste
+        answersViews.add(v_minimalRightAnswer);    // on y met au moins la réponse juste
 
         while (answersViews.size() < numberOfAnswers) { // récupère les réponses et les met dans answersViews
-            View v = q.getAnswerView(q.getWrongAnswer(), getContext());
+            String s;
+            s = q.getWrongAnswer();
 
-            if (!answersViews.contains(v)) {    // vérifie que cette réponse n'a pas déjà été choisie
-                answersViews.add(v);
-            }
+            if (al_answersStrings.contains(s)) // vérifie que cette réponse n'a pas déjà été choisie
+                continue;
+
+            al_answersStrings.add(s);
+
+            View v = q.getAnswerView(s, getContext());  // génère la vue de la réponse
+            answersViews.add(v);    // ajoute la vue avec les autres pour l'afficher
         }
         Collections.shuffle(answersViews);  // mélange les réponses
 
@@ -65,7 +75,7 @@ public class RadioMCQ extends MCQ {
             if (view instanceof TextView)   // change le texte si on récupère un TextView de la question
                 rb.setText(((TextView) view).getText());
 
-            if (view == v_rightAnswer)  // si c'est la vue qui est juste, on garde ce bouton pour la vérification
+            if (view == v_minimalRightAnswer)  // si c'est la vue qui est juste, on garde ce bouton pour la vérification
                 m_rb_rightOneToCheck = rb;
 
             m_rg_buttons.addView(rb);

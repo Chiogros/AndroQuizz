@@ -12,6 +12,7 @@ import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Addition;
 import com.example.loustics.models.CheckMCQ;
+import com.example.loustics.models.Image;
 import com.example.loustics.models.Litteral;
 import com.example.loustics.models.Open;
 import com.example.loustics.models.Question;
@@ -47,8 +48,7 @@ public class ChaptersActivity extends AppCompatActivity {
     }
 
     public void defineQuestionFrameType() {
-        // int rand = (int) (Math.random() * (4));   // 0 -> 3
-        int rand = (int) (Math.random() * (4 - 1));   // 0 -> 2
+        int rand = (int) (Math.random() * (4));   // 0 -> 3
 
         switch (rand) {
             case 0:
@@ -148,11 +148,18 @@ public class ChaptersActivity extends AppCompatActivity {
             List<Question> questions = new ArrayList<>();
 
             // faire ça pour tous les DAO qui contiennent des Questions, récupère toutes les questions en lien avec ce chapitre + cours
-            List<Litteral> l = db.litteralDAO().getAllQuestions(m_s_chapterName, m_s_courseName);
-            if (l.size() > 0)
-                questions.addAll(l);
+            // LitteralDAO
+            List<Litteral> l_litteral = db.litteralDAO().getAllQuestions(m_s_chapterName, m_s_courseName);
+            if (l_litteral.size() > 0)
+                questions.addAll(l_litteral);
+
+            // ImageDAO
+            List<Image> l_image = db.imageDAO().getAllQuestions(m_s_chapterName, m_s_courseName);
+            if (l_image.size() > 0)
+                questions.addAll(l_image);
 
             // pour les calculs
+            // CalculationDAO
             for(int i = 0 ; i < s_i_nombreQuestions ; i++) {
                 List<Addition> calc = db.calculationDAO().getAddition(m_s_chapterName, m_s_courseName);
                 if (calc.size() > 0)

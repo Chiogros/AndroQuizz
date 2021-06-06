@@ -12,11 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Converters {
+    // tranforme le JSON en String pour la BDD
     @TypeConverter
     public static String toString(JSONObject json) {
         return json.toString();
     }
 
+    // transforme le String de la BDD e JSON
     @TypeConverter
     public static JSONObject toJSONObject(String jsonString) {
         try {

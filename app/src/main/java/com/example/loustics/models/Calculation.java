@@ -57,6 +57,9 @@ public abstract class Calculation extends Question {
             int signe = ((Math.random() * 2) - 1) > 0 ? 1 : -1;
             val = (int) ((signe * (Math.random() * getResult())) + signe * Math.random() * i);
             i++;
+            if (getResult() <= -1 && getResult() >= -2) {
+                val = (int) (-1 + signe * Math.random() * 10);
+            }
         } while (val == getResult());
         return val;
     }

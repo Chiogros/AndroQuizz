@@ -58,15 +58,6 @@ public class Litteral extends Question {
     }
 
     @Override
-    public boolean isRight(Object answer) {
-        /*answer.
-        for(int i = 0 ; i < m_json_rightAnswers.length() ; i++) {
-            if (m_json_rightAnswers.get(i))
-        }*/
-        return true;
-    }
-
-    @Override
     public View getAnswerView(Object answer, Context context) {
         TextView tv = new TextView(context);
         tv.setText(answer.toString());

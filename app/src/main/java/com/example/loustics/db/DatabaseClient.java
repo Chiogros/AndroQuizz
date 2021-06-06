@@ -90,11 +90,10 @@ public class DatabaseClient {
                     db.execSQL("INSERT INTO Chapter VALUES('Additions 5', 'Mathématiques');");
                 }
 
-            //Table Litteral (question et réponses possibles)
+            // Table Litteral (questions et réponses possibles)
             {
                db.execSQL("INSERT INTO Litteral VALUES(\"L'assembleur\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['permet de manipuler la mémoire', 'est un langage de programmation', 'est la base de nimporte quel langage informatique'], 'wrong' : ['permet de commander Uber', 'a été inventé par JP', 'offre des réductions dès 3 octets achetés', 'sent bon la menthe']}\");");
             }
-
 
             // Table Calculation
             {
@@ -103,6 +102,11 @@ public class DatabaseClient {
                 db.execSQL("INSERT INTO Calculation VALUES('Additions 3', 'Mathématiques', 3);");
                 db.execSQL("INSERT INTO Calculation VALUES('Additions 4', 'Mathématiques', 4);");
                 db.execSQL("INSERT INTO Calculation VALUES('Additions 5', 'Mathématiques', 5);");
+            }
+
+            // Table Image
+            {
+                db.execSQL("INSERT INTO Image VALUES('ic_check', 'Les départements', 'Géographie', \"{'right' : ['ic_book', 'ic_check', 'ic_fire'], 'wrong' : ['ic_map', 'ic_math', 'ic_settings', 'ic_history']}\");");
             }
         }
     };

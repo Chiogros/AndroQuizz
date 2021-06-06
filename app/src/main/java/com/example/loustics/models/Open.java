@@ -43,6 +43,7 @@ public class Open extends QuestionFrame {
 
         JSONArray jsonRightAnswers = q.getM_json_rightAnswers();
 
+        // TODO : mettre une vérification que ce ne soit pas des ', {, }, [, ], right, wrong, "
         return jsonRightAnswers.toString().contains(m_et.getText());    // si le texte entré est dans le JSON des bonnes réponses, alors on a bien répondu
     }
 }

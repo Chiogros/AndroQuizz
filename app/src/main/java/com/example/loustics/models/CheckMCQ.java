@@ -29,6 +29,10 @@ public class CheckMCQ extends MCQ {
     }
 
     public View getView() {
+        m_al_checkboxesToNotCheck = new ArrayList<>();
+        m_al_checkboxesToCheck = new ArrayList<>();
+        m_al_rightViews = new ArrayList<>();
+
         Question q = getQuestion();
 
         View questionSubjectView = q.getSubjectView(getContext());
@@ -39,27 +43,36 @@ public class CheckMCQ extends MCQ {
 
         ArrayList<View> answersViews = new ArrayList<>();   // contient toutes les réponses qui seront proposées
 
-        View v_minimalRightAnswer = q.getAnswerView(q.getRightAnswer(), getContext()); // on isole la vue de la bonne réponse pour ensuite pouvoir récupérer l'ID du RadioBouton qui est juste
-        answersViews.add(v_minimalRightAnswer);    // on y met au moins une réponse juste
+        ArrayList<String> al_answersStrings = new ArrayList<>();    // contient tous les sujets en String, afin de vérifier qu'elle ne soit pas déjà prise
+        String firstRightAnswer = q.getRightAnswer();   // récupère une bonne réponse
+        al_answersStrings.add(firstRightAnswer);
+
+        View v_minimalRightAnswer = q.getAnswerView(firstRightAnswer, getContext()); // on isole la vue de la bonne réponse pour ensuite pouvoir récupérer l'ID du CheckBouton qui est juste
+        answersViews.add(v_minimalRightAnswer);    // on y met au moins la réponse juste
         m_al_rightViews.add(v_minimalRightAnswer);
 
         while (answersViews.size() < numberOfAnswers) { // récupère les réponses et les met dans answersViews
-            View v;
-            boolean rightAnswer;
+            String s;
+            boolean isRight;
 
             if (new Random().nextBoolean()) {
-                v = q.getAnswerView(q.getRightAnswer(), getContext());
-                rightAnswer = true;
+                s = q.getRightAnswer();
+                isRight = true; // indique que cette réponse est bonne et qu'on doit ajouter sa vue en tant que réponse juste
             } else {
-                v = q.getAnswerView(q.getWrongAnswer(), getContext());
-                rightAnswer = false;
+                s = q.getWrongAnswer();
+                isRight = false;    // indique que cette réponse est fausse et qu'on ne doit pas ajouter sa vue en tant que réponse juste
             }
 
-            if (answersViews.contains(v))   // vérifie que cette réponse n'a pas déjà été choisie
+            if (al_answersStrings.contains(s)) // vérifie que cette réponse n'a pas déjà été choisie
                 continue;
 
-            answersViews.add(v);
-            m_al_rightViews.add(v);
+            al_answersStrings.add(s);
+
+            View v = q.getAnswerView(s, getContext());  // génère la vue de la réponse
+            answersViews.add(v);    // ajoute la vue avec les autres pour l'afficher
+
+            if (isRight)    // la réponse est juste, on ajoute sa vue avec les autres qui sont justes
+                m_al_rightViews.add(v);
         }
         Collections.shuffle(answersViews);  // mélange les réponses
 
