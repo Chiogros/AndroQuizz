@@ -6,7 +6,7 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 
-@Entity(tableName = "Addition",
+@Entity(tableName = "Soustraction",
 foreignKeys = {
     @ForeignKey(entity = Chapter.class, parentColumns = { "name", "courseName" }, childColumns = { "chapterName", "courseName" })
 },
@@ -21,7 +21,7 @@ indices = {
     @Index("rangeMinOperand2"),
     @Index("rangeMaxOperand2")
 })
-public class Addition extends Calculation {
+public class Soustraction extends Calculation {
 
     @NonNull
     @ColumnInfo(name = "chapterName")
@@ -48,7 +48,7 @@ public class Addition extends Calculation {
     protected int m_i_rangeMaxOperand2;
 
 
-    public Addition(String m_s_chapterName, String m_s_courseName, int m_i_rangeMinOperand1, int m_i_rangeMaxOperand1, int m_i_rangeMinOperand2, int m_i_rangeMaxOperand2) {
+    public Soustraction(String m_s_chapterName, String m_s_courseName, int m_i_rangeMinOperand1, int m_i_rangeMaxOperand1, int m_i_rangeMinOperand2, int m_i_rangeMaxOperand2) {
         super(m_i_rangeMinOperand1, m_i_rangeMaxOperand1, m_i_rangeMinOperand2, m_i_rangeMaxOperand2);
         this.m_s_chapterName = m_s_chapterName;
         this.m_s_courseName = m_s_courseName;
@@ -83,10 +83,10 @@ public class Addition extends Calculation {
     }
 
     public String getM_s_subject() {
-        return m_d_operand1 + " + " + m_d_operand2 + " =";
+        return m_d_operand1 + " - " + m_d_operand2 + " =";
     }
 
     public int getResult() {
-        return m_d_operand1 + m_d_operand2;
+        return m_d_operand1 - m_d_operand2;
     }
 }

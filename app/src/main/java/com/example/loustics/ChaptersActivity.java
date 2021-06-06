@@ -12,13 +12,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Addition;
+import com.example.loustics.models.Calculation;
 import com.example.loustics.models.CheckMCQ;
 import com.example.loustics.models.Image;
 import com.example.loustics.models.Litteral;
+import com.example.loustics.models.Multiplication;
 import com.example.loustics.models.Open;
 import com.example.loustics.models.Question;
 import com.example.loustics.models.QuestionFrame;
 import com.example.loustics.models.RadioMCQ;
+import com.example.loustics.models.Soustraction;
 import com.example.loustics.models.YesNo;
 
 import java.util.ArrayList;
@@ -154,6 +157,7 @@ public class ChaptersActivity extends AppCompatActivity {
             List<Question> questions = new ArrayList<>();
 
             // faire ça pour tous les DAO qui contiennent des Questions, récupère toutes les questions en lien avec ce chapitre + cours
+
             // LitteralDAO
             List<Litteral> l_litteral = db.litteralDAO().getAllQuestions(m_s_chapterName, m_s_courseName);
             if (l_litteral.size() > 0)
@@ -164,19 +168,39 @@ public class ChaptersActivity extends AppCompatActivity {
             if (l_image.size() > 0)
                 questions.addAll(l_image);
 
-            // pour les calculs
             // CalculationDAO
-            for(int i = 0 ; i < s_i_nombreQuestions ; i++) {
-                List<Addition> calc = db.calculationDAO().getAddition(m_s_chapterName, m_s_courseName);
-                if (calc.size() > 0)
-                    questions.add(calc.get(0));
+            List<Addition> addition = db.calculationDAO().getAddition(m_s_chapterName, m_s_courseName);
+            if (addition.size() > 0) {
+                for(int i = 0 ; i < s_i_nombreQuestions ; i++) {
+                    addition = db.calculationDAO().getAddition(m_s_chapterName, m_s_courseName);
+                    questions.add(addition.get(0));
+                }
             }
+            List<Soustraction> soustraction = db.calculationDAO().getSoustraction(m_s_chapterName, m_s_courseName);
+            if (soustraction.size() > 0) {
+                for(int i = 0 ; i < s_i_nombreQuestions ; i++) {
+                    soustraction = db.calculationDAO().getSoustraction(m_s_chapterName, m_s_courseName);
+                    questions.add(soustraction.get(0));
+                }
+            }
+            List<Multiplication> multiplications = db.calculationDAO().getMultiplication(m_s_chapterName, m_s_courseName);
+            if (multiplications.size() > 0) {
+                for(int i = 0 ; i < s_i_nombreQuestions ; i++) {
+                    multiplications = db.calculationDAO().getMultiplication(m_s_chapterName, m_s_courseName);
+                    questions.add(multiplications.get(0));
+                }
+            }
+
 
             return questions;
         }
 
         @Override
         protected void onPostExecute(List<Question> questions) {
+            // Sélectionne le nombre de questions max
+            Collections.shuffle(questions);
+            questions = questions.subList(0, s_i_nombreQuestions-1);
+
             RandomQuestion.questionsFromAllTypes = questions;
             // lance l'affichage des questions en demandant s_i_nombreQuestions à afficher
             m_l_questions = RandomQuestion.getRandomQuestions(s_i_nombreQuestions);

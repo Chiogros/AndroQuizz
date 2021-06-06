@@ -21,35 +21,15 @@ public abstract class Calculation extends Question {
     @Ignore
     protected int m_d_operand2;
 
-    public Calculation(int m_s_difficulty) {
-        switch (m_s_difficulty) {
-            case 1:
-                this.m_d_operand1 = getRandomOperand(0, 10);
-                this.m_d_operand2 = getRandomOperand(0, 10);
-                break;
-            case 2:
-                this.m_d_operand1 = getRandomOperand(0, 100);
-                this.m_d_operand2 = getRandomOperand(0, 100);
-                break;
-            case 3:
-                this.m_d_operand1 = getRandomOperand(0, 1000);
-                this.m_d_operand2 = getRandomOperand(0, 1000);
-                break;
-            case 4:
-                this.m_d_operand1 = getRandomOperand(-100, 100);
-                this.m_d_operand2 = getRandomOperand(-100, 100);
-                break;
-            case 5:
-                this.m_d_operand1 = getRandomOperand(-1000000, 1000000);
-                this.m_d_operand2 = getRandomOperand(-1000000, 1000000);
-                break;
-        }
+    public Calculation(int rangeMinOperand1, int rangeMaxOperand1, int rangeMinOperand2, int rangeMaxOperand2) {
 
+        this.m_d_operand1 = getRandomOperand(rangeMinOperand1, rangeMaxOperand1);
+        this.m_d_operand2 = getRandomOperand(rangeMinOperand2, rangeMaxOperand2);
+
+        // parser le json dans deux array
         m_json_rightAnswers = getM_json_answers().optJSONArray("right");
         m_json_wrongAnswers = getM_json_answers().optJSONArray("wrong");
     }
-
-    public abstract boolean isRight(Object answer);
 
     private int getAlternativeAnswer() {
         int val, i = 1;
@@ -57,8 +37,10 @@ public abstract class Calculation extends Question {
             int signe = ((Math.random() * 2) - 1) > 0 ? 1 : -1;
             val = (int) ((signe * (Math.random() * getResult())) + signe * Math.random() * i);
             i++;
-            if (getResult() <= -1 && getResult() >= -2) {
-                val = (int) (-1 + signe * Math.random() * 10);
+
+            // on met une valeur de secours si on tombe sur un nombre qui s'arrondit mal au bout de la 50ème fois
+            if (i >= 50) {
+                val = (int) (Math.random() * 100);
             }
         } while (val == getResult());
         return val;
@@ -70,19 +52,33 @@ public abstract class Calculation extends Question {
         return tv;
     }
 
-    public abstract int getM_s_difficulty();
+    public abstract int getM_i_rangeMinOperand1();
+
+    public abstract int getM_i_rangeMaxOperand1();
+
+    public abstract int getM_i_rangeMinOperand2();
+
+    public abstract int getM_i_rangeMaxOperand2();
 
     public JSONObject getM_json_answers() {
         int numberOfWrongAnswers = 5;
         ArrayList<Integer> alreadyGenerated = new ArrayList<>();
 
+        int tries = 0;
+
         // Création du json aléatoire
         String jsonString = "{'right' : [" + getResult() + "], 'wrong' : [";
-        while (alreadyGenerated.size() < numberOfWrongAnswers){
+        while (alreadyGenerated.size() < numberOfWrongAnswers) {
             int generated = getAlternativeAnswer();
 
-            if (alreadyGenerated.contains(generated))
+            // on met une valeur de secours si on tombe sur un nombre qui s'arrondit mal au bout de la 50ème fois
+            if (tries > 50)
+                generated = (int) (Math.random() * 100);
+
+            if (alreadyGenerated.contains(generated)) {
+                tries++;
                 continue;
+            }
 
             alreadyGenerated.add(generated);
             jsonString += generated;

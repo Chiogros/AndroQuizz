@@ -11,10 +11,12 @@ import com.example.loustics.models.Chapter;
 import com.example.loustics.models.Course;
 import com.example.loustics.models.Image;
 import com.example.loustics.models.Litteral;
+import com.example.loustics.models.Multiplication;
 import com.example.loustics.models.Question;
+import com.example.loustics.models.Soustraction;
 import com.example.loustics.models.User;
 
-@Database(entities = {Course.class, Chapter.class, Litteral.class, Image.class, Addition.class, User.class}, version = 1, exportSchema = false)
+@Database(entities = {Course.class, Chapter.class, Litteral.class, Image.class, Addition.class, Soustraction.class, Multiplication.class, User.class}, version = 1, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
