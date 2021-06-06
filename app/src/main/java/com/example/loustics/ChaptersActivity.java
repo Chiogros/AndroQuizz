@@ -199,7 +199,8 @@ public class ChaptersActivity extends AppCompatActivity {
         protected void onPostExecute(List<Question> questions) {
             // Sélectionne le nombre de questions max
             Collections.shuffle(questions);
-            questions = questions.subList(0, s_i_nombreQuestions-1);
+            int maxQuestions = questions.size() > s_i_nombreQuestions ? s_i_nombreQuestions-1 : questions.size();
+            questions = questions.subList(0, maxQuestions);
 
             RandomQuestion.questionsFromAllTypes = questions;
             // lance l'affichage des questions en demandant s_i_nombreQuestions à afficher

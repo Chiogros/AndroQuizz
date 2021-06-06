@@ -70,7 +70,7 @@ public class RadioMCQ extends MCQ {
             RadioButton rb = new RadioButton(getContext());
 
             if (view instanceof ImageView)  // met l'image en fond si on récupère une ImageView de la question
-                rb.setBackground(view.getBackground());
+                rb.setBackgroundResource(((ImageView) view).getBaseline());
 
             if (view instanceof TextView)   // change le texte si on récupère un TextView de la question
                 rb.setText(((TextView) view).getText());

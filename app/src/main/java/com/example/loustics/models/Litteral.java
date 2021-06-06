@@ -54,6 +54,7 @@ public class Litteral extends Question {
             m_json_wrongAnswers = m_json_answers.getJSONArray("wrong");
         } catch (JSONException e) {
             e.printStackTrace();
+            Log.d("*****", "Impossible de parser correctement pour le sujet : " + m_s_subject);
         }
     }
 

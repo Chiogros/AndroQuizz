@@ -3,7 +3,9 @@ package com.example.loustics.models;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -73,6 +75,9 @@ public class Image extends Question {
                         context.getPackageName()
                 )
         );
+
+        // iv.getLayoutParams().width = 8;
+
         return iv;
     }
 
@@ -94,16 +99,8 @@ public class Image extends Question {
 
     @Override
     public View getSubjectView(Context context) {
-        ImageView iv = new ImageView(context);
-        iv.setImageResource(
-                // à partir des resources
-                context.getResources().getIdentifier(
-                        // à partir du nom du logo
-                        m_s_subject,
-                        "drawable",
-                        context.getPackageName()
-                )
-        );
-        return iv;
+        TextView tv = new TextView(context);
+        tv.setText(getM_s_subject());
+        return tv;
     }
 }
