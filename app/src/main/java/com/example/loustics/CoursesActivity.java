@@ -169,4 +169,16 @@ public class CoursesActivity extends AppCompatActivity {
             setImageViewLogo(result);
         }
     }
+
+    private class UserAsyncTask extends android.os.AsyncTask<String, Void, List<Chapter>> {
+        @Override
+        protected List<Chapter> doInBackground(String... strings) {
+            return chapterDAO.getAllChapters(strings[0]);
+        }
+
+        @Override
+        protected void onPostExecute(List<Chapter> chapters) {
+            setListView(chapters);
+        }
+    }
 }
