@@ -7,5 +7,8 @@
         </attr>
         <attr name="numberOfWaves" format="float" />
         <attr name="waveColor" format="color" />
+        <attr name="setGradient" format="boolean" />
+        <attr name="gradientStartColor" format="color" />
+        <attr name="gradientEndColor" format="color" />
     </declare-styleable>
 </resources>

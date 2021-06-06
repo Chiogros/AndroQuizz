@@ -8,12 +8,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics">
 
         <com.example.loustics.models.Wave
             android:layout_width="match_parent"
             android:layout_height="125dp"
-            xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
             custom:waveColor="@color/brown_dark"
             custom:numberOfWaves="2"
             custom:waveGravity="top"
@@ -22,7 +22,6 @@
         <com.example.loustics.models.Wave
             android:layout_width="match_parent"
             android:layout_height="125dp"
-            xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
             custom:waveColor="@color/brown_light"
             custom:numberOfWaves="2"
             custom:waveGravity="top"
@@ -32,11 +31,10 @@
             android:id="@+id/wave"
             android:layout_width="match_parent"
             android:layout_height="125dp"
-            xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
             custom:waveColor="@color/brown"
             custom:numberOfWaves="2"
             custom:waveGravity="top"
-            android:alpha="0.7843"/>
+            android:alpha="0.7843" />
 
         <TextView
             android:id="@+id/tv_course"
@@ -50,7 +48,7 @@
             android:transitionName="tv_courseName"
             android:layout_marginTop="20dp"
             android:textStyle="italic"
-            android:gravity="center"/>
+            android:gravity="center" />
 
         <ImageView
             android:id="@+id/iv_course"

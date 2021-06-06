@@ -4,14 +4,17 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
 import com.example.loustics.R;
 
+// Vue qui permet de générer des vagues colorées
 public class Wave extends View {
 
     private Path path;
@@ -19,6 +22,7 @@ public class Wave extends View {
     private boolean gravity;
     private int color;
     private float waveCount;
+    private int startGradientColor, endGradientColor;
 
     public Wave(Context context) {
         this(context, null, 0);
@@ -41,11 +45,17 @@ public class Wave extends View {
         color = attributes.getColor(R.styleable.Wave_waveColor, Color.parseColor("#FF956637"));
         gravity = attributes.getBoolean(R.styleable.Wave_waveGravity, true);
         waveCount = attributes.getFloat(R.styleable.Wave_numberOfWaves, 1);
+        boolean setGradient = attributes.getBoolean(R.styleable.Wave_setGradient, false);
+        startGradientColor = attributes.getColor(R.styleable.Wave_gradientStartColor, 0);
+        endGradientColor = attributes.getColor(R.styleable.Wave_gradientEndColor, 0);
 
         paint = new Paint();
         paint.setColor(color);
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
+        if (setGradient && startGradientColor > 0 && endGradientColor > 0) {
+            paint.setShader(new LinearGradient(0, 0, 0, getHeight(), startGradientColor, endGradientColor, Shader.TileMode.MIRROR));
+        }
     }
 
     private void createPath() {
