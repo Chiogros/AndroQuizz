@@ -118,21 +118,7 @@ public class HomeActivity extends AppCompatActivity {
                         Intent i = new Intent(getContext(), CoursesActivity.class);
                         i.putExtra(CoursesActivity.COURSE, tv_courseName.getText());
 
-                        // Si la fonctionnalité est supportée par la version d'Android
-                        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-                            startActivity(i);
-                        } else {
-                            iv_courseLogo.setTransitionName("iv_courseLogo");
-                            tv_courseName.setTransitionName("tv_courseName");
-
-                            Pair[] pairs = new Pair[2];
-                            pairs[0] = new Pair<View, String>(tv_courseName, "tv_courseName");
-                            pairs[1] = new Pair<View, String>(iv_courseLogo, "iv_courseLogo");
-
-                            ActivityOptionsCompat aoc = ActivityOptionsCompat.makeSceneTransitionAnimation(HomeActivity.this, tv_courseName, ViewCompat.getTransitionName(tv_courseName));
-                            setTransitions();
-                            startActivity(i, aoc.toBundle());
-                        }
+                        startActivity(i);
                     }
                 });
 
@@ -146,17 +132,6 @@ public class HomeActivity extends AppCompatActivity {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }
-    }
-
-    public void setTransitions() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            return ;
-        }
-
-        getWindow().setExitTransition(new Fade());
-        getWindow().setSharedElementExitTransition(new Fade());
-        getWindow().setEnterTransition(new Fade());
-        getWindow().setSharedElementEnterTransition(new Fade());
     }
 
     public void setupDAOs() {

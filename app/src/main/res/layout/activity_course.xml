@@ -45,7 +45,6 @@
             android:text="Matière"
             android:textSize="30sp"
             android:textColor="@color/defaultWhite"
-            android:transitionName="tv_courseName"
             android:layout_marginTop="20dp"
             android:textStyle="italic"
             android:gravity="center" />
@@ -56,8 +55,7 @@
             android:layout_height="50dp"
             android:layout_toRightOf="@+id/tv_course"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:transitionName="iv_courseLogo" />
+            android:layout_marginRight="20dp" />
 
         <ListView
             android:id="@+id/lv_items"

@@ -2,6 +2,7 @@ package com.example.loustics;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -32,6 +33,7 @@ public class ChaptersActivity extends AppCompatActivity {
     private Class<? extends QuestionFrame> m_qf_questionType;
     private static final int s_i_nombreQuestions = 15;
     private List<Question> m_l_questions;
+    private List<QuestionFrame> m_l_questionsFrames;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,8 @@ public class ChaptersActivity extends AppCompatActivity {
         defineQuestionFrameType();
         setNavigationBarColors();
         setHeader();
+
+        m_l_questionsFrames = new ArrayList<>();
 
         // lance la récupération de toutes les questions en lien avec ce chapitre
         new QuestionsAsyncTask().execute();
@@ -75,11 +79,12 @@ public class ChaptersActivity extends AppCompatActivity {
     }
 
     public void onButtonClick(View view) {
-        // TODO
-        /* Récupérer le linearlayout dans lequel il y a toutes les QuestionFrame
-         * et appeler sur chacune la méthode isRight() en comptant le nombre de fois où ça renvoie false (aka la réponse entrée est mauvaise)
-         * Enfin, aller sur l'activité résultat pour afficher le nombre d'erreurs / ou Félicitations
-         */
+        int errors = 0;
+        for(QuestionFrame qf : m_l_questionsFrames) {
+            if (!qf.isRight())
+                errors++;
+        }
+        // TODO : envoyer un Intent avec la variable errors
     }
 
     public void setDAOs() {
@@ -107,6 +112,7 @@ public class ChaptersActivity extends AppCompatActivity {
                 QuestionFrame questionFrame = m_qf_questionType.newInstance();
                 questionFrame.setContext(getApplicationContext());
                 questionFrame.setQuestion(question);  // assigne une réponse aléatoire
+                m_l_questionsFrames.add(questionFrame);
 
                 View v = questionFrame.getView();
                 // mettre de l'espacement entre les questions

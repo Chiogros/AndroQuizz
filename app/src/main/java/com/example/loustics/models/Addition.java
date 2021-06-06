@@ -1,15 +1,10 @@
 package com.example.loustics.models;
 
-import android.content.Context;
-import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
-import androidx.room.ForeignKey;
-import androidx.room.Ignore;
-import androidx.room.Index;
-import androidx.room.PrimaryKey;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Index;
 
 @Entity(tableName = "Calculation",
 foreignKeys = {

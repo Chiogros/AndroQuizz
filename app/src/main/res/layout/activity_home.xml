@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/header"
-        android:background="@color/brown">
+        android:background="#d39f6d">
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,11 +39,10 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
-        custom:waveColor="@color/brown"
+        custom:waveColor="#d39f6d"
         custom:numberOfWaves="2"
         custom:waveGravity="top"
-        android:layout_below="@id/header"
-        android:alpha="1"/>
+        android:layout_below="@id/header" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_settings"
