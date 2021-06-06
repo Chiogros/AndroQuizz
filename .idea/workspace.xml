@@ -43,7 +43,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="debugged CheckMCQ and RadioMCQ that added the same answers even if they was already in the array">
+    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="deleted Quizz.java">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Wave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -56,8 +58,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Chapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Quizz.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_course.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_course.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,11 +91,11 @@
       <list>
         <option value="AnnotationType" />
         <option value="layoutResourceFile_vertical" />
-        <option value="valueResourceFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="Class" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -140,6 +141,7 @@
     <property name="android-custom-view/home/alex/Android/Sdk/sources/android-30/android/widget/RadioButton.java_SELECTED" value="RadioButton" />
     <property name="android-custom-view/home/alex/Android/Sdk/sources/android-30/android/widget/RadioGroup.java_SELECTED" value="RadioGroup" />
     <property name="android-custom-view/home/alex/Cours/S2106/Projet/Loustics/app/src/main/java/com/example/loustics/models/RadioGroup.java_SELECTED" value="RadioGroup" />
+    <property name="android-custom-view/home/alex/Cours/S2106/Projet/Loustics/app/src/main/java/com/example/loustics/models/Wave.java_SELECTED" value="Wave" />
     <property name="android-custom-viewC:/Users/User/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="com.android.tools.idea.sqlite.queryhistory" value="INSERT INTO Litteral VALUES(&quot;L'assembleur&quot;, 'Grammaire - Pronoms', 'Français', &quot;{'right' : ['permet de manipuler la mémoire', 'est un langage de programmation', 'est la base de n\'importe quel langage informatique'], 'wrong' : ['permet de commander Uber', 'a été inventé par JP', 'offre des réductions dès 3 octets achetés', 'sent bon la menthe']}\&quot;)&#10;INSERT INTO Calculation VALUES('Additions 5', 'Mathématiques', 5);&#10;insert into Litteral values(&quot;Demain, je&quot;, &quot;Conjugaison - Futur&quot;, &quot;Français&quot;, &quot;{'right' : ['mangerai une pomme', 'prendrai mon sac', 'suis en vacances'], 'wrong' : ['changerais de vêtements', 'casserez des œufs']}&quot;)&#10;insert into Calculation values(&quot;Additions 1&quot;, &quot;Mathématiques&quot;, 1)&#10;insert into Chapter values(&quot;Additions 1&quot;, &quot;Mathématiques&quot;, 1)&#10;insert into Chapter values(&quot;Additions 1&quot;, &quot;Mathématiques&quot;)&#10;insert into Litteral values (&quot;J\'ai plus d\'idées&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\'il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;Est un exemple de pronom&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\'il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);&#10;insert into Litteral values (&quot;On aura les notes de JP&quot;, &quot;Conjugaison - Présent&quot;, &quot;Français&quot;, &quot;{'right' : ['dans longtemps', 'dans très longtemps', 's\'il se décide enfin à les corriger'], 'wrong' : ['rapidement','d\'ici demain','avec un concert de synthé']}&quot;);" />
@@ -469,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622972758940</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="deleted Quizz.java">
+      <created>1622972911326</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1622972911326</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -522,7 +531,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="LÉANE ARRIVE" />
     <MESSAGE value="backup" />
     <MESSAGE value="implements Addition and Calculation.&#10;backup before changing Subject to Interface" />
     <MESSAGE value="all methods put, except Course" />
@@ -547,7 +555,8 @@
     <MESSAGE value="modified some SVG for headers&#10;added set isRight() to RadioMCQ with the attributes needed" />
     <MESSAGE value="completed isRight() method for all classes (Open, RadioMCQ, CheckMCQ)" />
     <MESSAGE value="debugged CheckMCQ and RadioMCQ that added the same answers even if they was already in the array" />
-    <option name="LAST_COMMIT_MESSAGE" value="debugged CheckMCQ and RadioMCQ that added the same answers even if they was already in the array" />
+    <MESSAGE value="deleted Quizz.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted Quizz.java" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
@@ -601,11 +610,11 @@
     </state>
     <state x="100" y="100" width="1720" height="840" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1622816480945" />
     <state x="0" y="0" width="960" height="1080" key="AVDManager/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621265198934" />
-    <state x="784" y="422" width="824" height="483" key="AndroidCreateResourceFileDialog" timestamp="1622921497027">
+    <state x="784" y="422" width="824" height="483" key="AndroidCreateResourceFileDialog" timestamp="1622974597094">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1586" y="247" key="AndroidCreateResourceFileDialog/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620829682476" />
-    <state x="784" y="422" width="824" height="483" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622921497027" />
+    <state x="784" y="422" width="824" height="483" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622974597094" />
     <state x="846" y="355" key="AndroidCreateResourceFileDialog/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621267507332" />
     <state x="2530" y="469" key="AndroidCreateResourceFileDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622125265606" />
     <state x="1456" y="343" key="AndroidCreateXmlResourceDialog" timestamp="1621247498919">
@@ -626,54 +635,54 @@
     <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622970930440" />
     <state x="1302" y="184" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621616840795" />
     <state x="2571" y="264" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621431848796" />
-    <state width="1874" height="273" key="GridCell.Tab.0.bottom" timestamp="1622972866773">
+    <state width="1874" height="378" key="GridCell.Tab.0.bottom" timestamp="1622986164997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620638846116" />
-    <state width="1874" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622972866773" />
+    <state width="1874" height="378" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622986164997" />
     <state width="1874" height="285" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="273" key="GridCell.Tab.0.center" timestamp="1622972866772">
+    <state width="1874" height="378" key="GridCell.Tab.0.center" timestamp="1622986164997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="273" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622972866772" />
+    <state width="1874" height="378" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622986164997" />
     <state width="1874" height="285" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="273" key="GridCell.Tab.0.left" timestamp="1622972866772">
+    <state width="1874" height="378" key="GridCell.Tab.0.left" timestamp="1622986164997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="273" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622972866772" />
+    <state width="1874" height="378" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622986164997" />
     <state width="1874" height="285" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="273" key="GridCell.Tab.0.right" timestamp="1622972866773">
+    <state width="1874" height="378" key="GridCell.Tab.0.right" timestamp="1622986164997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="273" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622972866773" />
+    <state width="1874" height="378" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622986164997" />
     <state width="1874" height="285" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="273" key="GridCell.Tab.1.bottom" timestamp="1622972866773">
+    <state width="1874" height="378" key="GridCell.Tab.1.bottom" timestamp="1622986164998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1874" height="273" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622972866773" />
-    <state width="1874" height="273" key="GridCell.Tab.1.center" timestamp="1622972866773">
+    <state width="1874" height="378" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622986164998" />
+    <state width="1874" height="378" key="GridCell.Tab.1.center" timestamp="1622986164998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1874" height="273" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622972866773" />
-    <state width="1874" height="273" key="GridCell.Tab.1.left" timestamp="1622972866773">
+    <state width="1874" height="378" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622986164998" />
+    <state width="1874" height="378" key="GridCell.Tab.1.left" timestamp="1622986164997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1874" height="273" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622972866773" />
-    <state width="1874" height="273" key="GridCell.Tab.1.right" timestamp="1622972866773">
+    <state width="1874" height="378" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622986164997" />
+    <state width="1874" height="378" key="GridCell.Tab.1.right" timestamp="1622986164998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1874" height="273" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622972866773" />
+    <state width="1874" height="378" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622986164998" />
     <state width="1874" height="273" key="GridCell.Tab.2.bottom" timestamp="1622673895614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -808,7 +817,7 @@
     </pin-to-top-manager>
     <watches-manager>
       <configuration name="app">
-        <watch expression="numberOfAnswers" language="JAVA" />
+        <watch expression="getWidth()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
