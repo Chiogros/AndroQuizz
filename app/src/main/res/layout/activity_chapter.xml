@@ -12,38 +12,52 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <FrameLayout
+        <com.example.loustics.models.Wave
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:background="@color/brown"
-            android:id="@+id/fl_header">
+            android:layout_height="125dp"
+            xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
+            custom:waveColor="@color/brown_dark"
+            custom:numberOfWaves="2"
+            custom:waveGravity="top"
+            android:alpha="0.5843"/>
 
-            <TextView
-                android:id="@+id/tv_chapter"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Chapitre"
-                android:textSize="25sp"
-                android:textColor="@color/defaultWhite"
-                android:transitionName="tv_chapterName"
-                android:textAlignment="center"/>
-        </FrameLayout>
-
-        <ImageView
-            android:id="@+id/iv_wave"
+        <com.example.loustics.models.Wave
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@id/fl_header"
-            android:src="@drawable/ic_chapterwave"
-            android:scaleType="centerCrop" />
+            android:layout_height="125dp"
+            xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
+            custom:waveColor="@color/brown_light"
+            custom:numberOfWaves="2"
+            custom:waveGravity="top"
+            android:alpha="0.9921"/>
+
+        <com.example.loustics.models.Wave
+            android:id="@+id/wave"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
+            custom:waveColor="@color/brown"
+            custom:numberOfWaves="2"
+            custom:waveGravity="top"
+            android:alpha="0.7843"/>
+
+        <TextView
+            android:id="@+id/tv_chapter"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Chapitre"
+            android:textSize="25sp"
+            android:textColor="@color/defaultWhite"
+            android:transitionName="tv_chapterName"
+            android:gravity="center_horizontal" />
 
         <LinearLayout
             android:id="@+id/ll_items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="40dp"
-            android:layout_below="@+id/iv_wave"
+            android:layout_below="@+id/wave"
             android:orientation="vertical" />
 
         <Button

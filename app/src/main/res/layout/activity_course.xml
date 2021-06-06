@@ -12,7 +12,7 @@
 
         <com.example.loustics.models.Wave
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="125dp"
             xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
             custom:waveColor="@color/brown_dark"
             custom:numberOfWaves="2"
@@ -21,7 +21,7 @@
 
         <com.example.loustics.models.Wave
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="125dp"
             xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
             custom:waveColor="@color/brown_light"
             custom:numberOfWaves="2"
@@ -31,7 +31,7 @@
         <com.example.loustics.models.Wave
             android:id="@+id/wave"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="125dp"
             xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
             custom:waveColor="@color/brown"
             custom:numberOfWaves="2"
@@ -48,7 +48,7 @@
             android:textSize="30sp"
             android:textColor="@color/defaultWhite"
             android:transitionName="tv_courseName"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:textStyle="italic"
             android:gravity="center"/>
 
@@ -56,7 +56,7 @@
             android:id="@+id/iv_course"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/tv_course"
             android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
             android:transitionName="iv_courseLogo" />

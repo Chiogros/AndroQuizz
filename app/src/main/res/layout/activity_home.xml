@@ -34,13 +34,16 @@
             android:textColor="@color/defaultWhite"/>
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/iv_wave"
+    <com.example.loustics.models.Wave
+        android:id="@+id/wave"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:src="@drawable/ic_wave"
-        android:layout_below="@+id/header"
-        android:scaleType="centerCrop"/>
+        android:layout_height="100dp"
+        xmlns:custom="http://schemas.android.com/apk/res/com.example.loustics"
+        custom:waveColor="@color/brown"
+        custom:numberOfWaves="2"
+        custom:waveGravity="top"
+        android:layout_below="@id/header"
+        android:alpha="1"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_settings"
@@ -59,7 +62,7 @@
         android:layout_height="wrap_content"
         android:padding="40dp"
         android:divider="@null"
-        android:layout_below="@+id/iv_wave"
+        android:layout_below="@+id/wave"
         android:scrollbars="none" />
 
 </RelativeLayout>
