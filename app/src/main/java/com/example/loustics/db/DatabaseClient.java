@@ -90,7 +90,6 @@ public class DatabaseClient {
                     db.execSQL("INSERT INTO Chapter VALUES('Le Moyen-Âge', 'Histoire');");
                     db.execSQL("INSERT INTO Chapter VALUES('Les temps modernes', 'Histoire');");
                     db.execSQL("INSERT INTO Chapter VALUES(\"L'époque contemporaine\", 'Histoire');");
-                    db.execSQL("INSERT INTO Chapter VALUES('Le temps présent', 'Histoire');");
                 }
 
                 // Mathématiques
@@ -124,7 +123,49 @@ public class DatabaseClient {
             {
                 // Français
                 {
+                    // Grammaire - Pronoms
+                    {
+                        db.execSQL("INSERT INTO Litteral VALUES('Oh, regarde ces chiots ! Tu as vu comme _____ est beau ?', 'Grammaire - Pronoms', 'Français', \"{'right' : ['celui-ci'], 'wrong' : ['ceux', 'ce', 'celui']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"J'aime beaucoup faire _____\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['cela', 'ceci'], 'wrong' : ['ceux-là', 'ce', 'celle-là']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"J'ai fait mes exercices mais je n'ai pas bien compris _____, ni celui-là d'ailleurs\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['celui-ci'], 'wrong' : ['ceux', 'ce', 'celui', 'celui-là']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Je ne comprends pas _____ que vous voulez me dire', 'Grammaire - Pronoms', 'Français', \"{'right' : ['ce'], 'wrong' : ['ceux', 'ceci', 'celui-ci']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"J'ai couru voir le postier, _____ m'a remis une lettre pour vous.\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['lequel'], 'wrong' : ['laquelle', 'auxquels', 'duquel']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"_____ s'est trompée.\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['Elle'], 'wrong' : ['lui', 'on', 'elles']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Regarde ces voitures. _____ sont en très mauvais état !', 'Grammaire - Pronoms', 'Français', \"{'right' : ['elles'], 'wrong' : ['ils', 'elle', 'il']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Les tonneaux vides sont ceux _____ font le plus de bruit.', 'Grammaire - Pronoms', 'Français', \"{'right' : ['qui'], 'wrong' : ['auxquels', 'que', 'dont']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Je vis dans une maison _____ les murs tombent en ruine.', 'Grammaire - Pronoms', 'Français', \"{'right' : ['dont'], 'wrong' : ['qui', 'duquel', 'ou']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Nous avons trouvé un trésor _____ nous allons garder précieusement.', 'Grammaire - Pronoms', 'Français', \"{'right' : ['que'], 'wrong' : ['qui', 'auxquels', 'duquel']}\");");
+                    }
 
+                    // Grammaire - Adverbes
+                    {
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Les vacances commencent demain !' L'adverbe est\", 'Grammaire - Adverbes', 'Français', \"{'right' : ['demain'], 'wrong' : ['commencent', 'les', 'vacances']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Les enfants pourront jouer dehors ce soir !' L'adverbe est\", 'Grammaire - Adverbes', 'Français', \"{'right' : ['dehors'], 'wrong' : ['soir', 'enfants', 'jouer']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Nous avons mangé des burgers hier soir. L'adverbe est\", 'Grammaire - Adverbes', 'Français', \"{'right' : ['hier'], 'wrong' : ['burgers', 'soir', 'nous']}\");");
+                    }
+
+                    // Conjugaison - Présent
+                    {
+                        db.execSQL("INSERT INTO Litteral VALUES('Je (être) un petit bout de bois.', 'Conjugaison - Présent', 'Français', \"{'right' : ['suis'], 'wrong' : ['suit', 'es', 'sui']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Le lion (être) mort ce soir', 'Conjugaison - Présent', 'Français', \"{'right' : ['est'], 'wrong' : ['ait', 'et', 'es']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Alexandre (mange) un brownie', 'Conjugaison - Présent', 'Français', \"{'right' : ['mange'], 'wrong' : ['manges', 'mangent', 'mangeais', 'celui-là']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Allez Pô, allez tu (venir)', 'Conjugaison - Présent', 'Français', \"{'right' : ['viens'], 'wrong' : ['vient', 'vi1', 'vien']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Seules les vacances (être) bonnes pour la santé', 'Conjugaison - Présent', 'Français', \"{'right' : ['sont'], 'wrong' : ['son', 's on', 'sons']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Ces cartons (être) lourds', 'Conjugaison - Présent', 'Français', \"{'right' : ['sont'], 'wrong' : ['son', 's on', 'sons']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Il (faire) tout noir', 'Conjugaison - Présent', 'Français', \"{'right' : ['fait'], 'wrong' : ['fais', 'fai', 'faie']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Vous n'(avoir) toujours rien corrigé\", 'Conjugaison - Présent', 'Français', \"{'right' : ['avez'], 'wrong' : ['avait', 'avé', 'avais']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Elles (avoir) des cours d'informatique\", 'Conjugaison - Présent', 'Français', \"{'right' : ['ont'], 'wrong' : ['on', 'ons', 'hon']}\");");
+                    }
+
+                    // Conjugaison - Futur
+                    {
+
+                    }
+
+                    // Conjugaison - Passé simple
+                    {
+
+                    }
                 }
 
                 // Géographie
@@ -140,7 +181,7 @@ public class DatabaseClient {
                         db.execSQL("INSERT INTO Litteral VALUES('Le département du Vaucluse', 'Les départements', 'Géographie', \"{'right' : ['est dans la région PACA', 'culmine à 1912, en haut du Mont Ventoux'], 'wrong' : ['est en région Aquitaine', 'est limitrophe avec la Suisse']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"L'Ain a pour numéro\", 'Les départements', 'Géographie', \"{'right' : ['01'], 'wrong' : ['02', '38', '05']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"Le terme de Département en Outre-mer s'applique pour\", 'Les départements', 'Géographie', \"{'right' : ['la Guadeloupe', 'la Martinique', 'la Guyane', 'la Réunion', 'Mayotte'], 'wrong' : ['l Yonne', 'l Orne', 'l Indre', 'le Puy-de-Dôme', 'la Haute-Corse', 'les Alpes-Maritime']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Le département du Vaucluse', 'Les départements', 'Géographie', \"{'right' : ['101 départements'], 'wrong' : ['78 départements', '26 départements', '136 départements']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('En France, il y a', 'Les départements', 'Géographie', \"{'right' : ['101 départements'], 'wrong' : ['78 départements', '26 départements', '136 départements']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Les départements sont numérotés', 'Les départements', 'Géographie', \"{'right' : ['par ordre alphabétique', 'de 01 à 95 et de 971 à 976'], 'wrong' : ['par taille', 'par nombre d habitants', 'par nombre d habitants au km²']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Les départements', 'Les départements', 'Géographie', \"{'right' : ['ont été créés en 1789'], 'wrong' : ['ont été créés en 1928', 'ont été découpés puis leurs frontières n ont jamais été changées']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Le 41 correspond', 'Les départements', 'Géographie', \"{'right' : ['au Loir-et-Cher'], 'wrong' : ['à la Meuse', 'au Finistère', 'au Morbihan', 'à la Haute-Saône', 'au département des Landes']}\");");
@@ -151,20 +192,19 @@ public class DatabaseClient {
 
                     // Les régions
                     {
-                        db.execSQL("INSERT INTO Litteral VALUES('En 2021, il existe', 'Les régions', 'Géographie', \"{'right' : ['18 régions', '13 régions métropolitaines + 5 régions d Outre-mer'], 'wrong' : ['9 régions', '13 régions + les 5 départements d Outre-mer', '15 régions', '23 régions']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('En 2021 en France, il y a', 'Les régions', 'Géographie', \"{'right' : ['18 régions', '13 régions métropolitaines + 5 régions d Outre-mer'], 'wrong' : ['9 régions', '13 régions + les 5 départements d Outre-mer', '15 régions', '23 régions']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('La plus grande région est celle', 'Les régions', 'Géographie', \"{'right' : ['de Nouvelle Aquitaine'], 'wrong' : ['d Occitanie', 'de Rhône-Alpes', 'de Savoie', 'du Centre-Val de l Oire']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('La plus région avec le moins d habitants au km² est', 'Les régions', 'Géographie', \"{'right' : ['la Corse'], 'wrong' : ['le Centre-Val de l Oire', 'l Ardèche', 'le Grand Est', 'la Bretagne']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('La région la plus peuplée', 'Les régions', 'Géographie', \"{'right' : ['est l Île de France', 'compte plus de 12 millions d habitants'], 'wrong' : ['est la région Provence-Alpes-Côte d Azur', 'est la région qui a la plus grande superficie']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('La région Auvergne-Rhône-Alpes accueille la grande ville', 'Les régions', 'Géographie', \"{'right' : ['de Lyon'], 'wrong' : ['de Poitiers', 'de Bordeaux', 'de Montélimar', 'du Touquet', 'de Besançon']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La région Auvergne-Rhône-Alpes accueille la grande ville', 'Les régions', 'Géographie', \"{'right' : ['de Lyon'], 'wrong' : ['de Poitiers', 'de Bordeaux', 'du Touquet', 'de Besançon']}\");");
                     }
 
                     // L'Europe
                     {
-                        db.execSQL("INSERT INTO Litteral VALUES('En Europe, il y a', \"L'Europe\", 'Géographie', \"{'right' : ['50 pays en Europe', '5 grandes régions européennes', 'Venise'], 'wrong' : ['aucun monument classé au patrimoine mondial de l UNESCO', 'la plus grande montagne au monde', 'la plus haute tour au monde']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('En Europe, il y a', \"L'Europe\", 'Géographie', \"{'right' : ['50 pays en Europe', '5 grandes régions européennes', 'Venise'], 'wrong' : ['aucun monument classé au patrimoine mondial de l UNESCO', 'la plus grande montagne au monde', 'la plus haute tour du monde']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('La BCE', \"L'Europe\", 'Géographie', \"{'right' : ['signifie Banque Centrale Européenne', 'a été créée en 1998', 'se situe à Francfort, en Belgique', 'gère l émission des billets de la zone Euro'], 'wrong' : ['veut dire Bruyère Cantal Eybens', 'a son siège social à Liège', 'ne publie jamais de bulletin économique', 'limite le nombre d emprunts accordés aux banques']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Lisbonne est la capitale', \"L'Europe\", 'Géographie', \"{'right' : ['du Portugal'], 'wrong' : ['de l Espagne', 'de la Suède', 'de l Autriche']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('La région Auvergne-Rhône-Alpes accueille la grande ville', \"L'Europe\", 'Géographie', \"{'right' : ['de Lyon'], 'wrong' : ['de Poitiers', 'de Bordeaux', 'de Montélimar', 'du Touquet', 'de Besançon']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('La région Auvergne-Rhône-Alpes accueille la grande ville', \"L'Europe\", 'Géographie', \"{'right' : ['de Lyon'], 'wrong' : ['de Poitiers', 'de Bordeaux', 'de Montélimar', 'du Touquet', 'de Besançon']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'espace Schengen\", \"L'Europe\", 'Géographie', \"{'right' : ['comprend 26 états européens', 'compte plus de 400 millions d habitants'], 'wrong' : ['est la même chose que l Union Européenne', 'a été mis en place en 1950', 'oblige les pays à avoir un contrôle aux frontières entre les pays membres']}\");");
                     }
 
                     // Le monde
@@ -173,10 +213,9 @@ public class DatabaseClient {
                         db.execSQL("INSERT INTO Litteral VALUES(\"L'océan pacifique\", 'Le monde', 'Géographie', \"{'right' : ['est entre la Chine et les États-Unis', 'est le plus grand au monde'], 'wrong' : ['le deuxième plus grand océan après l océan Atlantique', 'entre les États-Unis et l Europe']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('La capitale des États-Unis', 'Le monde', 'Géographie', \"{'right' : ['est Washigton D.C.', 'accueille la Maison Blanche'], 'wrong' : ['est New York', 'est Brooklyn']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('La capitale de la Chine', 'Le monde', 'Géographie', \"{'right' : ['est Beijing', 'fait 16 000 km²'], 'wrong' : ['est Tokyo', 'est Shanghaï']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('La muraille de Chine', 'Le monde', 'Géographie', \"{'right' : ['traverse le pays d'Est en Ouest', 'mesure 21,196 mètres', 'fait de 6 à 7 mètres de haut'], 'wrong' : ['servait à facilement traverser le pays', 'était utilisée pour le commerce sur de longues distances']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Moscou', 'Le monde', 'Géographie', \"{'right' : ['est la ville la plus peuplée d'Europe', 'produit 25% du PIB de la Russie', 'est la capitale Russe'], 'wrong' : ['est la capitale de la Mongolie', 'accueille chaque année le G20']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La muraille de Chine', 'Le monde', 'Géographie', \"{'right' : ['traverse le pays d Est en Ouest', 'mesure 21,196 mètres', 'fait de 6 à 7 mètres de haut'], 'wrong' : ['servait à facilement traverser le pays', 'était utilisée pour le commerce sur de longues distances']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Moscou', 'Le monde', 'Géographie', \"{'right' : ['est la ville la plus peuplée d Europe', 'produit 25% du PIB de la Russie', 'est la capitale Russe'], 'wrong' : ['est la capitale de la Mongolie', 'accueille chaque année le G20']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Le Rwanda', 'Le monde', 'Géographie', \"{'right' : ['est en Afrique', 'est membre de l ONU', 'est appelé le Pays des milles collines'], 'wrong' : ['compte beaucoup de déserts', 'la majorité de la population sont protestants', 'accueillera en 2025 les championnats du monde de cyclisme sur route pour la seconde fois']}\");");
-
                     }
                 }
 
@@ -211,17 +250,37 @@ public class DatabaseClient {
 
                     // Les temps modernes
                     {
-
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Sous l'Ancien Régime, la France est divisée en trois ordres : le Clergé, la Noblesse et\", 'Les temps modernes', 'Histoire', \"{'right' : ['le Tier État'], 'wrong' : ['les paysans', 'le Tier pauvre', 'la classe moyenne']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Lors de la révolution, _____ était le roi à la tête de la France', 'Les temps modernes', 'Histoire', \"{'right' : ['Louis XVI'], 'wrong' : ['Louis XIV', 'Napoléon', 'Henri IV']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le serment proclamé à l'assemblée nationale s'appelle le serment\", 'Les temps modernes', 'Histoire', \"{'right' : ['du jeu de paume'], 'wrong' : ['des députés', 'de l assemblée', 'de Versailles']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La révolution éclate le ', 'Les temps modernes', 'Histoire', \"{'right' : ['14 juillet 1789'], 'wrong' : ['14 juillet 1785', '30 août 1789', '30 août 1785']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('_____ est envahit par les parisiens le jour où la révolution française éclate', 'Les temps modernes', 'Histoire', \"{'right' : ['La prison de la Bastille'], 'wrong' : ['L hôpital militaire', 'La tour Eiffel', 'Versailles']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le texte qui met fin à l'ancier régime est\", 'Les temps modernes', 'Histoire', \"{'right' : ['lé délcaration des droits de l Homme'], 'wrong' : ['la république', 'la constitution', 'la monarchie']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Après le renversement de la royauté, la république est proclamée en', 'Les temps modernes', 'Histoire', \"{'right' : ['1792'], 'wrong' : ['1789', '1790', '1791']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('_____ mène la politique de la terreur avec les montagnards et les sans-culottes', 'Les temps modernes', 'Histoire', \"{'right' : ['Robespierre'], 'wrong' : ['Jean Valjean', 'Les députés', 'Jean-Pierre Chevallet']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Après sa fuite, le roi a été guillotiné en', 'Les temps modernes', 'Histoire', \"{'right' : ['1793'], 'wrong' : ['1791', '1790', '1792']}\");");
                     }
 
                     // L'époque contemporaine
                     {
-
-                    }
-
-                    // Le temps présent
-                    {
-
+                        db.execSQL("INSERT INTO Litteral VALUES('Adolph Hitler devient Führer en Allemagne en', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['1933'], 'wrong' : ['1935', '1938', '1940']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"La seconde guerre mondiale s'est déroulée de\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['1939 à 1945'], 'wrong' : ['1914 à 1918', '1920 à 1930', '1945 à 1970']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'événement lors duquel la France a été envahie s'appelle\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['la guerre éclair'], 'wrong' : ['la bataille éclair', 'la guerre lumière', 'la guerre totale']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"_____ a pris le titre de chef de l'État Français lors de l'occupation\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['Le maréchal Pétain'], 'wrong' : ['Le Général de Gaulle', 'Le général Joffre', 'Le général Vichy']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Pour être distingués, les juifs devaient porter', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['une étoile jaune'], 'wrong' : ['une étoile rouge', 'un carré jaune', 'un carré rouge']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Les juifs étaient déportés dans', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['des camps d extermination'], 'wrong' : ['des camps de concentration', 'des camps d héradication', 'des goulags']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"_____ était allié de l'Allemagne\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['Le Japon'], 'wrong' : ['La Chine', 'L Angleterre', 'Le Brésil']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Les États-Unis ont déclaré la guerre à l'Allemagne et ses alliés lors de l'attaque de\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['Pearl Harbor en 1941'], 'wrong' : ['Pearl Harbor en 1940', 'New York en 1941', 'New York en 1940']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('On surnomme la seconde guerre mondiale comme étant la', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['guerre totale'], 'wrong' : ['guerre éclair', 'bataille éclair', 'guerre lumière']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La première guerre mondiale dure de', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['1914 à 1918'], 'wrong' : ['1915 à 1918', '1914 à 1919', '1915 à 1919']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'armistice est signé à Rethondes le'\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['11 novembre 1918'], 'wrong' : ['11 novembre 1919', '11 décembre 1918', '11 décembre 1919']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'archiduc François-Ferdinand a eu lieu le\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['28 juin 1914 à Sarajevo'], 'wrong' : ['28 juin 1916 à Sarajevo', '28 juin 1914 à Vienne', '28 juin 1916 à Vienne']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Pendant la guerre, deux blocs se forment. La France fait partie', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['de la Triple Alliance'], 'wrong' : ['de la Triple Entente', 'de la Triple Armée', 'du bloc de l Ouest']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'Allemagne s'allie à l'Autriche-Hongrie et\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['à l Italie'], 'wrong' : ['aux Pays-Bas', 'à la Russie', 'à la Suisse']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('_____ commandant la bataille de Verdun', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['Le général Pétain'], 'wrong' : ['Le général Clémenceau', 'Le général Joffre', 'Le général Nivel']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Pour instaurer la paix, les Alliés et l'Allemagne ont signé le\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['Traité de Versailles'], 'wrong' : ['Traité de Neuilly', 'Traité de Berlin', 'Traité de Paris']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Pour régler les désaccords entre pays, fut signée', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['la Société des Nations'], 'wrong' : ['l Union Européenne', 'la Société de la Paix', 'l ONU']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La bataille la plus meurtrière fut', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['la bataille de la Somme'], 'wrong' : ['la bataille de Verdun', 'la bataille de la Marne', 'la bataille des Frontières']}\");");
                     }
                 }
 
@@ -330,11 +389,6 @@ public class DatabaseClient {
                     }
 
                     // L'époque contemporaine
-                    {
-
-                    }
-
-                    // Le temps présent
                     {
 
                     }
