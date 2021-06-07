@@ -45,10 +45,19 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         getIntentValues();
+        setHelloText();
         setupDAOs();
         setNavigationBarColors();
         setFloatingButton();
         fetchCourses();
+    }
+
+    private void setHelloText() {
+        TextView t = findViewById(R.id.tv_bonjour);
+
+        String helloText = t.getText().toString();
+        helloText += " " + m_s_firstName;
+        t.setText(helloText);
     }
 
     private void fetchCourses() {

@@ -160,8 +160,7 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<User> users) {
-            m_l_users.clear();
-            m_l_users.addAll(users);
+            m_l_users = users;
             setListView();
         }
     }

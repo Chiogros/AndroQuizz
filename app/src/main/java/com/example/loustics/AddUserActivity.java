@@ -65,8 +65,11 @@ public class AddUserActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (et_firstName.getText().length() >= 3 && et_lastName.getText().length() >= 3)
+                if (et_firstName.getText().length() >= 3 && et_lastName.getText().length() >= 3) {
                     new UserAvailableAsyncTask().execute(et_firstName.getText().toString(), et_lastName.getText().toString());
+                } else if (b.isEnabled()){
+                    b.setEnabled(false);
+                }
             }
         });
 
@@ -84,8 +87,11 @@ public class AddUserActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (et_firstName.getText().length() >= 3 && et_lastName.getText().length() >= 3)
+                if (et_firstName.getText().length() >= 3 && et_lastName.getText().length() >= 3) {
                     new UserAvailableAsyncTask().execute(et_firstName.getText().toString(), et_lastName.getText().toString());
+                } else if (b.isEnabled()){
+                    b.setEnabled(false);
+                }
             }
         });
 
