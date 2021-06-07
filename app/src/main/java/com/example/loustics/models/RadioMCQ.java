@@ -1,6 +1,13 @@
 package com.example.loustics.models;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ScaleDrawable;
+import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +44,7 @@ public class RadioMCQ extends MCQ {
 
         int maxWrongAnswers = q.getM_json_wrongAnswers().length();
         int numberOfAnswers = (int) (Math.random() * 4)+2;    // nombre entre 2 et le nombre de réponses disponibles
-        if (numberOfAnswers > maxWrongAnswers) numberOfAnswers = maxWrongAnswers;
+        if (numberOfAnswers > maxWrongAnswers+1) numberOfAnswers = maxWrongAnswers+1;   // +1 pour la réponse juste
 
         ArrayList<View> answersViews = new ArrayList<>();   // contient toutes les réponses qui seront proposées
         ArrayList<String> al_answers = new ArrayList<>();   // contient toutes les réponses String pour la vérification dans la boucle
@@ -70,7 +77,7 @@ public class RadioMCQ extends MCQ {
             RadioButton rb = new RadioButton(getContext());
 
             if (view instanceof ImageView)  // met l'image en fond si on récupère une ImageView de la question
-                rb.setBackgroundResource(((ImageView) view).getBaseline());
+                rb.setCompoundDrawablesWithIntrinsicBounds(null, null, ((ImageView) view).getDrawable(), null);
 
             if (view instanceof TextView)   // change le texte si on récupère un TextView de la question
                 rb.setText(((TextView) view).getText());

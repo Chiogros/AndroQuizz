@@ -56,7 +56,7 @@ public class ChaptersActivity extends AppCompatActivity {
 
     public void defineQuestionFrameType() {
         int rand = (int) (Math.random() * (4));   // 0 -> 3
-
+rand = 2;
         switch (rand) {
             case 0:
                 m_qf_questionType = YesNo.class;

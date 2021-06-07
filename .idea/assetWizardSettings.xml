@@ -379,8 +379,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_flag_of_italy" />
-                            <entry key="sourceFile" value="/tmp/Flag_of_Italy.svg" />
+                            <entry key="outputName" value="ic_flag_of_the_united_states" />
+                            <entry key="sourceFile" value="/tmp/Flag_of_the_United_States.svg" />
                           </map>
                         </option>
                       </PersistentState>

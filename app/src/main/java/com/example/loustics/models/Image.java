@@ -1,11 +1,12 @@
 package com.example.loustics.models;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -75,8 +76,6 @@ public class Image extends Question {
                         context.getPackageName()
                 )
         );
-
-        // iv.getLayoutParams().width = 8;
 
         return iv;
     }
