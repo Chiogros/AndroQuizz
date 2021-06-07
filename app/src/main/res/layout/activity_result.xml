@@ -13,5 +13,28 @@
         android:layout_marginTop="100dp"
         android:gravity="center_horizontal"
         android:textColor="@color/defaultWhite"
+        android:textStyle="bold"
         />
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Score"
+        android:layout_below="@id/tv_result_message"
+        android:layout_marginTop="75dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/defaultWhite"
+        />
+
+    <LinearLayout
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/tv_score"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:orientation="horizontal" />
+
 </RelativeLayout>

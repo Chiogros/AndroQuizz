@@ -1,19 +1,20 @@
 package com.example.loustics;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Space;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Achievement;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -39,15 +40,7 @@ public class ResultActivity extends AppCompatActivity {
         getIntentValues();
         setDAOs();
         setNavigationBarColors();
-        calculateSuccess();
-    }
-
-    // Enregistre dans la base de données si on a réussi
-    private void calculateSuccess() {
-        if (m_i_errors <= m_i_numberOfQuestions * 20) {
-            Achievement newSuccess = new Achievement(m_s_chapterName, m_s_courseName, m_s_firstName, m_s_lastName);
-            new AchievementsAsyncTask().execute(newSuccess);
-        }
+        work();
     }
 
     public void getIntentValues() {
@@ -57,6 +50,101 @@ public class ResultActivity extends AppCompatActivity {
         m_s_lastName = getIntent().getStringExtra(LASTNAME);
         m_i_errors = getIntent().getIntExtra(ERRORS, 0);
         m_i_numberOfQuestions = getIntent().getIntExtra(NUMBEROFQUESTIONS, 0);
+    }
+
+    private void onFail() {
+        // Dommage
+        TextView message = findViewById(R.id.tv_result_message);
+        message.setText("Mmm...");
+
+        // Marque le score
+        TextView score = findViewById(R.id.tv_score);
+        String string = "Tu as réussi " + (m_i_numberOfQuestions - m_i_errors) + " question"
+                + (m_i_errors < m_i_numberOfQuestions-1 ? "s" : "") +
+                " sur " + m_i_numberOfQuestions + ", mais ce n'est pas assez. Tu feras un meilleur score la prochaine fois !";
+        score.setText(string);
+
+        LinearLayout ll_action_bar = findViewById(R.id.action_bar);
+
+        // Bouton Réessayer
+        ImageView iv_tryAgain = new ImageView(getApplicationContext());
+        iv_tryAgain.setImageResource(getResources().getIdentifier("ic_loop","drawable", getPackageName()));
+        iv_tryAgain.setColorFilter(getResources().getColor(R.color.defaultWhite));
+        ll_action_bar.addView(iv_tryAgain);
+
+        iv_tryAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), ChaptersActivity.class);
+
+                i.putExtra(ResultActivity.COURSE, m_s_courseName);
+                i.putExtra(ResultActivity.CHAPTER, m_s_chapterName);
+                i.putExtra(ResultActivity.FIRSTNAME, m_s_firstName);
+                i.putExtra(ResultActivity.LASTNAME, m_s_lastName);
+
+                startActivity(i);
+                finish();
+            }
+        });
+
+        // Espace
+        Space space = new Space(getApplicationContext());
+        space.setLayoutParams(new LinearLayout.LayoutParams(150, 1));
+        ll_action_bar.addView(space);
+
+        // Bouton Suivant
+        ImageView iv_next = new ImageView(getApplicationContext());
+        iv_next.setImageResource(getResources().getIdentifier("ic_forward","drawable", getPackageName()));
+        iv_next.setColorFilter(getResources().getColor(R.color.defaultWhite));
+        ll_action_bar.addView(iv_next);
+
+        iv_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), CoursesActivity.class);
+
+                i.putExtra(ResultActivity.COURSE, m_s_courseName);
+                i.putExtra(ResultActivity.CHAPTER, m_s_chapterName);
+                i.putExtra(ResultActivity.FIRSTNAME, m_s_firstName);
+                i.putExtra(ResultActivity.LASTNAME, m_s_lastName);
+
+                startActivity(i);
+                finish();
+            }
+        });
+    }
+
+    public void onSuccess() {
+        // Enregistre dans la base de données
+        Achievement newSuccess = new Achievement(m_s_chapterName, m_s_courseName, m_s_firstName, m_s_lastName);
+        new AchievementsAsyncTask().execute(newSuccess);
+
+        // Marque le score
+        TextView score = findViewById(R.id.tv_score);
+        score.setText("Vous avez réussi " + (m_i_numberOfQuestions - m_i_errors) + " questions sur " + m_i_numberOfQuestions + " !");
+
+        LinearLayout ll_action_bar = findViewById(R.id.action_bar);
+
+        // Bouton Suivant
+        ImageView iv_next = new ImageView(getApplicationContext());
+        iv_next.setImageResource(getResources().getIdentifier("ic_forward","drawable", getPackageName()));
+        iv_next.setColorFilter(getResources().getColor(R.color.defaultWhite));
+        ll_action_bar.addView(iv_next);
+
+        iv_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), CoursesActivity.class);
+
+                i.putExtra(ResultActivity.COURSE, m_s_courseName);
+                i.putExtra(ResultActivity.CHAPTER, m_s_chapterName);
+                i.putExtra(ResultActivity.FIRSTNAME, m_s_firstName);
+                i.putExtra(ResultActivity.LASTNAME, m_s_lastName);
+
+                startActivity(i);
+                finish();
+            }
+        });
     }
 
     public void setDAOs() {
@@ -69,6 +157,17 @@ public class ResultActivity extends AppCompatActivity {
         }
     }
 
+    public boolean succededToTest() {
+        return m_i_errors <= m_i_numberOfQuestions * 0.20;
+    }
+
+    private void work() {
+        if (succededToTest()) {
+            onSuccess();
+        } else {
+            onFail();
+        }
+    }
 
     // Classes privées
 

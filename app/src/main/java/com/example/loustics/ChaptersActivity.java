@@ -105,6 +105,7 @@ public class ChaptersActivity extends AppCompatActivity {
         i.putExtra(ResultActivity.NUMBEROFQUESTIONS, m_l_questionsFrames.size());
 
         startActivity(i);
+        finish();
     }
 
     public void setDAOs() {

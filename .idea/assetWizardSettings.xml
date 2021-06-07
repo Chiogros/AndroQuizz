@@ -368,7 +368,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/arrow_forward_ios/baseline_arrow_forward_ios_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/loop/baseline_loop_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -378,7 +378,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_forward" />
+                            <entry key="outputName" value="ic_loop" />
                             <entry key="sourceFile" value="/tmp/Flag of Canada (Pantone colours).svg" />
                           </map>
                         </option>
