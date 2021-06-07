@@ -43,7 +43,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="Image::getM_s_subject now returns a TextView&#10;added a log message if parse fails in Litteral&#10;added chapters for Histoire&#10;added Litteral questions for Préhistoire&#10;added few flags, hoping that Image works properly">
+    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="Images are properly working, Youhou !&#10;Added France, Italy and US flags">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_canada.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_europe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_mexico.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_poland.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_russia.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_spain.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_sweden.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -62,12 +69,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/Loustics.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Loustics.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/DatabaseClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/DatabaseClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/CheckMCQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/RadioMCQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_flag_of_italy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_italy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_france.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_france.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_united_states.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_united_states.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -538,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623018238280</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Images are properly working, Youhou !&#10;Added France, Italy and US flags">
+      <created>1623025504577</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1623025504577</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -591,7 +601,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tried to fix transitions" />
     <MESSAGE value="backup before trying to reimplements Question as abstract class" />
     <MESSAGE value="backup before converting List&lt;String&gt; as JSONObject for answers" />
     <MESSAGE value="JSONObject converters done (for answers of Question)&#10;Question is now a stored Entity instead of Litteral" />
@@ -616,7 +625,8 @@
     <MESSAGE value="added Multiplication and Soustraction&#10;changed tableName of Addition, Multiplication and Soustraction to their own name&#10;changed table name in CalculationDAO for each method" />
     <MESSAGE value="added Multiplication and Soustraction&#10;changed tableName of Addition, Multiplication and Soustraction to their own name&#10;changed table name in CalculationDAO for each method&#10;added some entries in DB for Calculation" />
     <MESSAGE value="Image::getM_s_subject now returns a TextView&#10;added a log message if parse fails in Litteral&#10;added chapters for Histoire&#10;added Litteral questions for Préhistoire&#10;added few flags, hoping that Image works properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Image::getM_s_subject now returns a TextView&#10;added a log message if parse fails in Litteral&#10;added chapters for Histoire&#10;added Litteral questions for Préhistoire&#10;added few flags, hoping that Image works properly" />
+    <MESSAGE value="Images are properly working, Youhou !&#10;Added France, Italy and US flags" />
+    <option name="LAST_COMMIT_MESSAGE" value="Images are properly working, Youhou !&#10;Added France, Italy and US flags" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
@@ -687,12 +697,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="744" y="268" key="AndroidProcessChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622671329936" />
-    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1623025412834">
+    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1623025912198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1800" y="161" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620820549152" />
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1620638421124" />
-    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623025412834" />
+    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623025912198" />
     <state x="1302" y="184" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621616840795" />
     <state x="2571" y="264" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621431848796" />
     <state width="1874" height="254" key="GridCell.Tab.0.bottom" timestamp="1623023926940">
@@ -815,10 +825,10 @@
       <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="2522" y="369" key="MultipleFileMergeDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622128769405" />
-    <state x="461" y="155" key="SettingsEditor" timestamp="1623000645591">
+    <state x="461" y="155" key="SettingsEditor" timestamp="1623062112921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1623000645591" />
+    <state x="461" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1623062112921" />
     <state x="461" y="155" key="SettingsEditor/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622400980122" />
     <state x="922" y="168" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621270746353" />
     <state x="2381" y="249" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622123631874" />

@@ -64,7 +64,7 @@ public class DatabaseClient {
             }
 
             //Table Chapters (Noms des chapitres, sous cours)
-
+            {
                 // Français
                 {
                     db.execSQL("INSERT INTO Chapter VALUES('Grammaire - Pronoms', 'Français');");
@@ -76,9 +76,9 @@ public class DatabaseClient {
 
                 // Géographie
                 {
+                    db.execSQL("INSERT INTO Chapter VALUES('Les villes', 'Géographie');");
                     db.execSQL("INSERT INTO Chapter VALUES('Les départements', 'Géographie');");
                     db.execSQL("INSERT INTO Chapter VALUES('Les régions', 'Géographie');");
-                    db.execSQL("INSERT INTO Chapter VALUES('Les villes', 'Géographie');");
                     db.execSQL("INSERT INTO Chapter VALUES(\"L'Europe\", 'Géographie');");
                     db.execSQL("INSERT INTO Chapter VALUES('Le monde', 'Géographie');");
                 }
@@ -118,8 +118,9 @@ public class DatabaseClient {
                     db.execSQL("INSERT INTO Chapter VALUES('Multiplications - Table de 10', 'Mathématiques');");
                     db.execSQL("INSERT INTO Chapter VALUES('Multiplications de 0 à 10', 'Mathématiques');");
                 }
+            }
 
-            // Table Litteral (questions et réponses possibles)
+            // Table Litteral
             {
                 // Français
                 {
@@ -128,7 +129,55 @@ public class DatabaseClient {
 
                 // Géographie
                 {
+                    // Les villes
+                    {
+                        db.execSQL("INSERT INTO Litteral VALUES('Grenoble', 'Les villes', 'Géographie', \"{'right' : ['est appelée la Capitale des Alpes', 'a pour maire Éric Piolle', 'a accueilli les JO d hiver en 1968', 'est la ville la plus plate de France'], 'wrong' : ['accueille la plus grande gare de la région', 'est connu pour le quartier Fourvièvre']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La ville de Bordeaux', 'Les villes', 'Géographie', \"{'right' : ['est la capitale mondiale du Vin', 'est traversée par la Garonne', 'est la 9ème ville française en nombre d'habitants'], 'wrong' : ['organise une grande paella chaque année', 'est dans le département du Vaucluse']}\");");
+                    }
 
+                    // Les départements
+                    {
+                        db.execSQL("INSERT INTO Litteral VALUES('Le département du Vaucluse', 'Les départements', 'Géographie', \"{'right' : ['est dans la région PACA', 'culmine à 1912, en haut du Mont Ventoux'], 'wrong' : ['est en région Aquitaine', 'est limitrophe avec la Suisse']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'Ain a pour numéro\", 'Les départements', 'Géographie', \"{'right' : ['01'], 'wrong' : ['02', '38', '05']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le terme de Département en Outre-mer s'applique pour\", 'Les départements', 'Géographie', \"{'right' : ['la Guadeloupe', 'la Martinique', 'la Guyane', 'la Réunion', 'Mayotte'], 'wrong' : ['l Yonne', 'l Orne', 'l Indre', 'le Puy-de-Dôme', 'la Haute-Corse', 'les Alpes-Maritime']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Le département du Vaucluse', 'Les départements', 'Géographie', \"{'right' : ['101 départements'], 'wrong' : ['78 départements', '26 départements', '136 départements']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Les départements sont numérotés', 'Les départements', 'Géographie', \"{'right' : ['par ordre alphabétique', 'de 01 à 95 et de 971 à 976'], 'wrong' : ['par taille', 'par nombre d habitants', 'par nombre d habitants au km²']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Les départements', 'Les départements', 'Géographie', \"{'right' : ['ont été créés en 1789'], 'wrong' : ['ont été créés en 1928', 'ont été découpés puis leurs frontières n ont jamais été changées']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Le 41 correspond', 'Les départements', 'Géographie', \"{'right' : ['au Loir-et-Cher'], 'wrong' : ['à la Meuse', 'au Finistère', 'au Morbihan', 'à la Haute-Saône', 'au département des Landes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Le n°55 correspond', 'Les départements', 'Géographie', \"{'right' : ['à la Meuse'], 'wrong' : ['au Loir-et-Cher', 'au Finistère', 'au Morbihan', 'à la Haute-Saône', 'au département des Landes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Le département n°29', 'Les départements', 'Géographie', \"{'right' : ['est celui du Finistère'], 'wrong' : ['est celui de Loir-et-Cher', 'est celui de la Meuse', 'est celui du Morbihan', 'est celui de la Haute-Saône', 'est le département des Landes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La capitale française se situe dans', 'Les départements', 'Géographie', \"{'right' : ['le 75'], 'wrong' : ['le 76', 'le 94', 'le 18', 'le 17', 'le 36']}\");");
+                    }
+
+                    // Les régions
+                    {
+                        db.execSQL("INSERT INTO Litteral VALUES('En 2021, il existe', 'Les régions', 'Géographie', \"{'right' : ['18 régions', '13 régions métropolitaines + 5 régions d Outre-mer'], 'wrong' : ['9 régions', '13 régions + les 5 départements d Outre-mer', '15 régions', '23 régions']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La plus grande région est celle', 'Les régions', 'Géographie', \"{'right' : ['de Nouvelle Aquitaine'], 'wrong' : ['d Occitanie', 'de Rhône-Alpes', 'de Savoie', 'du Centre-Val de l Oire']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La plus région avec le moins d habitants au km² est', 'Les régions', 'Géographie', \"{'right' : ['la Corse'], 'wrong' : ['le Centre-Val de l Oire', 'l Ardèche', 'le Grand Est', 'la Bretagne']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La région la plus peuplée', 'Les régions', 'Géographie', \"{'right' : ['est l Île de France', 'compte plus de 12 millions d habitants'], 'wrong' : ['est la région Provence-Alpes-Côte d Azur', 'est la région qui a la plus grande superficie']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La région Auvergne-Rhône-Alpes accueille la grande ville', 'Les régions', 'Géographie', \"{'right' : ['de Lyon'], 'wrong' : ['de Poitiers', 'de Bordeaux', 'de Montélimar', 'du Touquet', 'de Besançon']}\");");
+                    }
+
+                    // L'Europe
+                    {
+                        db.execSQL("INSERT INTO Litteral VALUES('En Europe, il y a', \"L'Europe\", 'Géographie', \"{'right' : ['50 pays en Europe', '5 grandes régions européennes', 'Venise'], 'wrong' : ['aucun monument classé au patrimoine mondial de l UNESCO', 'la plus grande montagne au monde', 'la plus haute tour au monde']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La BCE', \"L'Europe\", 'Géographie', \"{'right' : ['signifie Banque Centrale Européenne', 'a été créée en 1998', 'se situe à Francfort, en Belgique', 'gère l émission des billets de la zone Euro'], 'wrong' : ['veut dire Bruyère Cantal Eybens', 'a son siège social à Liège', 'ne publie jamais de bulletin économique', 'limite le nombre d emprunts accordés aux banques']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Lisbonne est la capitale', \"L'Europe\", 'Géographie', \"{'right' : ['du Portugal'], 'wrong' : ['de l Espagne', 'de la Suède', 'de l Autriche']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La région Auvergne-Rhône-Alpes accueille la grande ville', \"L'Europe\", 'Géographie', \"{'right' : ['de Lyon'], 'wrong' : ['de Poitiers', 'de Bordeaux', 'de Montélimar', 'du Touquet', 'de Besançon']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La région Auvergne-Rhône-Alpes accueille la grande ville', \"L'Europe\", 'Géographie', \"{'right' : ['de Lyon'], 'wrong' : ['de Poitiers', 'de Bordeaux', 'de Montélimar', 'du Touquet', 'de Besançon']}\");");
+                    }
+
+                    // Le monde
+                    {
+                        db.execSQL("INSERT INTO Litteral VALUES('En mars 2020, il y avait', 'Le monde', 'Géographie', \"{'right' : ['7,8 milliards de personnes sur Terre'], 'wrong' : ['5,5 milliards de personnes sur Terre', '8.3 milliards de personnes sur Terre']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'océan pacifique\", 'Le monde', 'Géographie', \"{'right' : ['est entre la Chine et les États-Unis', 'est le plus grand au monde'], 'wrong' : ['le deuxième plus grand océan après l océan Atlantique', 'entre les États-Unis et l Europe']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La capitale des États-Unis', 'Le monde', 'Géographie', \"{'right' : ['est Washigton D.C.', 'accueille la Maison Blanche'], 'wrong' : ['est New York', 'est Brooklyn']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La capitale de la Chine', 'Le monde', 'Géographie', \"{'right' : ['est Beijing', 'fait 16 000 km²'], 'wrong' : ['est Tokyo', 'est Shanghaï']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La muraille de Chine', 'Le monde', 'Géographie', \"{'right' : ['traverse le pays d'Est en Ouest', 'mesure 21,196 mètres', 'fait de 6 à 7 mètres de haut'], 'wrong' : ['servait à facilement traverser le pays', 'était utilisée pour le commerce sur de longues distances']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Moscou', 'Le monde', 'Géographie', \"{'right' : ['est la ville la plus peuplée d'Europe', 'produit 25% du PIB de la Russie', 'est la capitale Russe'], 'wrong' : ['est la capitale de la Mongolie', 'accueille chaque année le G20']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Le Rwanda', 'Le monde', 'Géographie', \"{'right' : ['est en Afrique', 'est membre de l ONU', 'est appelé le Pays des milles collines'], 'wrong' : ['compte beaucoup de déserts', 'la majorité de la population sont protestants', 'accueillera en 2025 les championnats du monde de cyclisme sur route pour la seconde fois']}\");");
+
+                    }
                 }
 
                 // Histoire
@@ -148,6 +197,31 @@ public class DatabaseClient {
                         db.execSQL("INSERT INTO Litteral VALUES('Le squelette Lucy', 'La préhistoire', 'Histoire', \"{'right' : ['a été découvert en Éthiopie', 'a été trouvé en 1974', 'porte ce nom car les chercheurs qui l ont trouvé écoutaient Lucy in the sky of diamonds des Beatles'], 'wrong' : ['portait un bracelet en défense de mammouth où était écrit son nom', 's appelle comme ça car la personne qui l a trouvé s appelle Lucy']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('À la préhistoire, on allumait le feu', 'La préhistoire', 'Histoire', \"{'right' : ['avec des pierres', 'en tapotant deux cailloux l un contre l autre', 'en tapant un silex avec du minerai de fer'], 'wrong' : ['avec un briquet', 'en soufflant très fort sur l herbe sèche']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Les personnes qui étudient la Préhistoire sont appelés', 'La préhistoire', 'Histoire', \"{'right' : ['préhistoriens'], 'wrong' : ['préhistoriques', 'préhistologues']}\");");
+                    }
+
+                    // L'Antiquité
+                    {
+
+                    }
+
+                    // Le Moyen-Âge
+                    {
+
+                    }
+
+                    // Les temps modernes
+                    {
+
+                    }
+
+                    // L'époque contemporaine
+                    {
+
+                    }
+
+                    // Le temps présent
+                    {
+
                     }
                 }
 
@@ -196,8 +270,76 @@ public class DatabaseClient {
 
             // Table Image
             {
-                db.execSQL("INSERT INTO Image VALUES('Les logos', 'Les départements', 'Géographie', \"{'right' : ['ic_book', 'ic_check', 'ic_fire'], 'wrong' : ['ic_map', 'ic_math', 'ic_settings', 'ic_history']}\");");
-                db.execSQL("INSERT INTO Image VALUES('Le drapeau français est', \"L'Europe\", 'Géographie', \"{'right' : ['ic_france'], 'wrong' : ['ic_united_states', 'ic_italy']}\");");
+                // Géographie
+                {
+                    // Les villes
+                    {
+
+                    }
+
+                    // Les départements
+                    {
+
+                    }
+
+                    // Les régions
+                    {
+
+                    }
+
+                    // L'Europe
+                    {
+                        db.execSQL("INSERT INTO Image VALUES('Le drapeau de la France est', \"L'Europe\", 'Géographie', \"{'right' : ['ic_france'], 'wrong' : ['ic_united_states', 'ic_italy', 'ic_canada', 'ic_europe', 'ic_mexico', 'ic_poland', 'ic_russia', 'ic_spain', 'ic_sweden']}\");");
+                        db.execSQL("INSERT INTO Image VALUES(\"Le drapeau de l'Italie est\", \"L'Europe\", 'Géographie', \"{'right' : ['ic_italy'], 'wrong' : ['ic_united_states', 'ic_canada', 'ic_europe', 'ic_mexico', 'ic_poland', 'ic_russia', 'ic_spain', 'ic_sweden', 'ic_france']}\");");
+                        db.execSQL("INSERT INTO Image VALUES(\"Le drapeau de l'Union Européenne est\", \"L'Europe\", 'Géographie', \"{'right' : ['ic_europe'], 'wrong' : ['ic_united_states', 'ic_italy', 'ic_canada', 'ic_mexico', 'ic_poland', 'ic_russia', 'ic_spain', 'ic_sweden', 'ic_france']}\");");
+                        db.execSQL("INSERT INTO Image VALUES('Le drapeau de la Pologne est', \"L'Europe\", 'Géographie', \"{'right' : ['ic_poland'], 'wrong' : ['ic_united_states', 'ic_italy', 'ic_canada', 'ic_europe', 'ic_mexico', 'ic_russia', 'ic_spain', 'ic_sweden', 'ic_france']}\");");
+                        db.execSQL("INSERT INTO Image VALUES('Le drapeau de la Suède est', \"L'Europe\", 'Géographie', \"{'right' : ['ic_sweden'], 'wrong' : ['ic_united_states', 'ic_italy', 'ic_canada', 'ic_europe', 'ic_mexico', 'ic_poland', 'ic_russia', 'ic_spain', 'ic_france']}\");");
+                        db.execSQL("INSERT INTO Image VALUES(\"Le drapeau de l'Espagne est\", \"L'Europe\", 'Géographie', \"{'right' : ['ic_spain'], 'wrong' : ['ic_united_states', 'ic_italy', 'ic_canada', 'ic_europe', 'ic_mexico', 'ic_poland', 'ic_russia', 'ic_sweden', 'ic_france']}\");");
+                        db.execSQL("INSERT INTO Image VALUES(\"Ce pays fait partie de l'Union Européenne : \", \"L'Europe\", 'Géographie', \"{'right' : ['ic_france', 'ic_italy', 'ic_spain', 'ic_sweden', 'ic_poland'], 'wrong' : ['ic_united_states', 'ic_canada', 'ic_mexico', 'ic_russia']}\");");
+                    }
+
+                    // Le monde
+                    {
+                        db.execSQL("INSERT INTO Image VALUES('Le drapeau du Canada est', 'Le monde', 'Géographie', \"{'right' : ['ic_canada'], 'wrong' : ['ic_united_states', 'ic_italy', 'ic_europe', 'ic_mexico', 'ic_poland', 'ic_russia', 'ic_spain', 'ic_sweden', 'ic_france']}\");");
+                        db.execSQL("INSERT INTO Image VALUES('Le drapeau de la Russie est', 'Le monde', 'Géographie', \"{'right' : ['ic_russia'], 'wrong' : ['ic_united_states', 'ic_italy', 'ic_canada', 'ic_europe', 'ic_mexico', 'ic_poland', 'ic_spain', 'ic_sweden', 'ic_france']}\");");
+                        db.execSQL("INSERT INTO Image VALUES('Le drapeau des États-Unis est', 'Le monde', 'Géographie', \"{'right' : ['ic_united_states'], 'wrong' : ['ic_italy', 'ic_canada', 'ic_europe', 'ic_mexico', 'ic_poland', 'ic_russia', 'ic_spain', 'ic_sweden', 'ic_france']}\");");
+                        db.execSQL("INSERT INTO Image VALUES('Le drapeau du Mexique est', 'Le monde', 'Géographie', \"{'right' : ['ic_mexico'], 'wrong' : ['ic_united_states', 'ic_italy', 'ic_canada', 'ic_europe', 'ic_poland', 'ic_russia', 'ic_spain', 'ic_sweden', 'ic_france']}\");");
+                    }
+                }
+
+                // Histoire
+                {
+                    // La Préhistoire
+                    {
+
+                    }
+
+                    // L'Antiquité
+                    {
+
+                    }
+
+                    // Le Moyen-Âge
+                    {
+
+                    }
+
+                    // Les temps modernes
+                    {
+
+                    }
+
+                    // L'époque contemporaine
+                    {
+
+                    }
+
+                    // Le temps présent
+                    {
+
+                    }
+                }
+
             }
         }
     };
