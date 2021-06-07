@@ -20,7 +20,11 @@
         <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/brown</item>
     </style>
     <style name="Theme.Login" parent="Theme.DefaultWithoutActionBar">
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/defaultWhite</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/defaultWhite</item>
+    </style>
+    <style name="Theme.AddUser" parent="Theme.DefaultWithoutActionBar">
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="android:statusBarColor" tools:targetApi="lollipop">@color/defaultWhite</item>
         <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/brown</item>
     </style>
@@ -41,5 +45,9 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="android:statusBarColor" tools:targetApi="lollipop">@color/brown</item>
         <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/defaultWhite</item>
+    </style>
+    <style name="Theme.Result" parent="Theme.DefaultWithoutActionBar">
+        <item name="android:windowBackground">@color/brown</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/brown</item>
     </style>
 </resources>

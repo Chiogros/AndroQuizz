@@ -1,5 +1,6 @@
 package com.example.loustics;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,8 +31,14 @@ import java.util.List;
 
 public class ChaptersActivity extends AppCompatActivity {
 
-    private String m_s_courseName;
+    public static final String CHAPTER = "chapterName";
     private String m_s_chapterName;
+    public static final String COURSE = "courseName";
+    private String m_s_courseName;
+    public static final String LASTNAME = "lastName";
+    private String m_s_lastName;
+    public static final String FIRSTNAME = "firstName";
+    private String m_s_firstName;
     private AppDatabase db;
     private Class<? extends QuestionFrame> m_qf_questionType;
     private static final int s_i_nombreQuestions = 15;
@@ -47,7 +54,6 @@ public class ChaptersActivity extends AppCompatActivity {
         defineQuestionFrameType();
         setNavigationBarColors();
         setHeader();
-
         m_l_questionsFrames = new ArrayList<>();
 
         // lance la récupération de toutes les questions en lien avec ce chapitre
@@ -77,8 +83,10 @@ public class ChaptersActivity extends AppCompatActivity {
     }
 
     public void getIntentValues() {
-        m_s_courseName = getIntent().getStringExtra("COURSE");
-        m_s_chapterName = getIntent().getStringExtra("CHAPTER");
+        m_s_courseName = getIntent().getStringExtra(COURSE);
+        m_s_chapterName = getIntent().getStringExtra(CHAPTER);
+        m_s_firstName = getIntent().getStringExtra(FIRSTNAME);
+        m_s_lastName = getIntent().getStringExtra(LASTNAME);
     }
 
     public void onButtonClick(View view) {
@@ -87,7 +95,16 @@ public class ChaptersActivity extends AppCompatActivity {
             if (!qf.isRight())
                 errors++;
         }
-        // TODO : envoyer un Intent avec la variable errors
+
+        Intent i = new Intent(this, ResultActivity.class);
+        i.putExtra(ResultActivity.COURSE, m_s_courseName);
+        i.putExtra(ResultActivity.CHAPTER, m_s_chapterName);
+        i.putExtra(ResultActivity.FIRSTNAME, m_s_firstName);
+        i.putExtra(ResultActivity.LASTNAME, m_s_lastName);
+        i.putExtra(ResultActivity.ERRORS, errors);
+        i.putExtra(ResultActivity.NUMBEROFQUESTIONS, m_l_questionsFrames.size());
+
+        startActivity(i);
     }
 
     public void setDAOs() {

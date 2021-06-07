@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.text.SpannableString;
-import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -16,30 +13,32 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Space;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.loustics.db.AppDatabase;
-import com.example.loustics.db.ChapterDAO;
 import com.example.loustics.db.CourseDAO;
 import com.example.loustics.db.DatabaseClient;
+import com.example.loustics.models.Achievement;
 import com.example.loustics.models.Chapter;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CoursesActivity extends AppCompatActivity {
 
-    public static final String COURSE = "";
+    public static final String COURSE = "courseName";
     private String m_s_courseName;
-    public static final String LASTNAME = "";
+    public static final String LASTNAME = "lastName";
     private String m_s_lastName;
-    public static final String FIRSTNAME = "";
+    public static final String FIRSTNAME = "firstName";
     private String m_s_firstName;
     private AppDatabase db;
-    private ChapterDAO chapterDAO;
+    private List<String> m_l_achievedChapters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,17 +46,21 @@ public class CoursesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
 
+        m_l_achievedChapters = new ArrayList<>();
+
         getIntentValues();
         setDAOs();
         setHeader();
         setNavigationBarColors();
 
-        new ChaptersAsyncTask().execute(m_s_courseName);
+        new AchievementsAsyncTask().execute();
     }
 
     public void getIntentValues() {
         // Nom de la matière
         m_s_courseName = getIntent().getStringExtra(COURSE);
+        m_s_firstName = getIntent().getStringExtra(FIRSTNAME);
+        m_s_lastName = getIntent().getStringExtra(LASTNAME);
     }
 
     @Override
@@ -67,7 +70,6 @@ public class CoursesActivity extends AppCompatActivity {
 
     public void setDAOs() {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
-        chapterDAO = db.chapterDAO();
     }
 
     // Nom de la matière dans l'en-tête
@@ -124,16 +126,27 @@ public class CoursesActivity extends AppCompatActivity {
                         TextView tv_chapterName = (TextView) ((LinearLayout) view).getChildAt(0);
 
                         Intent i = new Intent(getContext(), ChaptersActivity.class);
-                        i.putExtra("COURSE", m_s_courseName);
-                        i.putExtra("CHAPTER", tv_chapterName.getText());
+
+                        i.putExtra(ChaptersActivity.COURSE, m_s_courseName);
+                        i.putExtra(ChaptersActivity.CHAPTER, tv_chapterName.getText());
+                        i.putExtra(ChaptersActivity.FIRSTNAME, m_s_firstName);
+                        i.putExtra(ChaptersActivity.LASTNAME, m_s_lastName);
 
                         startActivity(i);
                     }
                 });
 
-                ImageView checked = new ImageView(getContext());
-                checked.setBackgroundResource(R.drawable.ic_check);
-                ll_line.addView(checked);
+                if (m_l_achievedChapters.contains(this.getItem(position).getM_s_name())) {
+                    // écarte le logo du text
+                    Space space = new Space(getContext());
+                    space.setLayoutParams(new LinearLayout.LayoutParams(25, 1));
+                    ll_line.addView(space);
+
+                    ImageView checked = new ImageView(getContext());
+                    checked.setImageResource(getResources().getIdentifier("ic_check","drawable", getPackageName()));
+                    checked.setColorFilter(getResources().getColor(R.color.green));
+                    ll_line.addView(checked);
+                }
 
                 return ll_line;
             }
@@ -147,12 +160,13 @@ public class CoursesActivity extends AppCompatActivity {
         }
     }
 
+
     // Classes privées
 
     private class ChaptersAsyncTask extends android.os.AsyncTask<String, Void, List<Chapter>> {
         @Override
         protected List<Chapter> doInBackground(String... strings) {
-            return chapterDAO.getAllChapters(strings[0]);
+            return db.chapterDAO().getAllChapters(strings[0]);
         }
 
         @Override
@@ -174,15 +188,24 @@ public class CoursesActivity extends AppCompatActivity {
         }
     }
 
-    private class UserAsyncTask extends android.os.AsyncTask<String, Void, List<Chapter>> {
+    private class AchievementsAsyncTask extends android.os.AsyncTask<Void, Void, List<String>> {
+
         @Override
-        protected List<Chapter> doInBackground(String... strings) {
-            return chapterDAO.getAllChapters(strings[0]);
+        protected List<String> doInBackground(Void... voids) {
+            ArrayList<String> achievedChapters = new ArrayList<>();
+
+            List<Achievement> achieved = db.achievementDAO().getAllAchievementsInACourse(m_s_firstName, m_s_lastName, m_s_courseName);
+            for (Achievement a : achieved) {
+                achievedChapters.add(a.getM_s_chapterName());
+            }
+
+            return achievedChapters;
         }
 
         @Override
-        protected void onPostExecute(List<Chapter> chapters) {
-            setListView(chapters);
+        protected void onPostExecute(List<String> chaptersNames) {
+            m_l_achievedChapters = chaptersNames;
+            new ChaptersAsyncTask().execute(m_s_courseName);
         }
     }
 }

@@ -30,7 +30,9 @@
         </activity>
 
         <activity
-            android:name=".AddUserActivity" >
+            android:name=".AddUserActivity"
+            android:label="AddUserActivity"
+            android:theme="@style/Theme.AddUser">
         </activity>
 
         <activity
@@ -53,6 +55,11 @@
         <activity
             android:name=".ChaptersActivity"
             android:theme="@style/Theme.Chapter" >
+        </activity>
+
+        <activity
+            android:name=".ResultActivity"
+            android:theme="@style/Theme.Result" >
         </activity>
 
     </application>

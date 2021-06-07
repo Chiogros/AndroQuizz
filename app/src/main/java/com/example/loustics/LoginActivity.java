@@ -3,6 +3,10 @@ package com.example.loustics;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +24,6 @@ import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -34,12 +37,22 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         setDAOs();
-        setNavigationBarColors();
+        setBarsThemes();
         setFloatingButton();
+        setTextColors();
 
         // lance la récupération de toutes les questions en lien avec ce chapitre
-        m_l_users = new ArrayList<>();
         new UsersAsyncTask().execute();
+    }
+
+    private void setTextColors() {
+        SpannableString str = new SpannableString(" Bienvenue. ");
+        // marron
+        str.setSpan(new BackgroundColorSpan(0xFFc89462), 0, str.length(), 0);
+        str.setSpan(new ForegroundColorSpan(0xFFFFFFFF), 0, str.length(), 0);
+
+        TextView t = findViewById(R.id.tv_message);
+        t.setText(str);
     }
 
     // au retour de l'activité AddUser, si on a ajouté un utilisateur on actualise la liste, sinon rien
@@ -84,6 +97,11 @@ public class LoginActivity extends AppCompatActivity {
                 ll_line.setOrientation(LinearLayout.HORIZONTAL);
                 ll_line.setGravity(Gravity.CENTER_VERTICAL);
 
+                ll_line.setBackgroundResource(R.drawable.card_background);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    ll_line.setElevation(1);
+                }
+
                 // Image de l'user
                 ImageView iv_logo = new ImageView(getContext());
                 // TODO : afficher l'image de l'user
@@ -98,10 +116,12 @@ public class LoginActivity extends AppCompatActivity {
 
                 TextView tv_firstName = new TextView(getContext());
                 tv_firstName.setText(this.getItem(position).getM_s_firstName());
+                tv_firstName.setTextSize(20);
                 ll_names.addView(tv_firstName);
 
                 TextView tv_lastName = new TextView(getContext());
                 tv_lastName.setText(this.getItem(position).getM_s_lastName());
+                tv_lastName.setTextSize(16);
                 ll_names.addView(tv_lastName);
 
                 // Au clic sur la matière
@@ -122,12 +142,13 @@ public class LoginActivity extends AppCompatActivity {
 
                         // on passe le nom et prénom de l'utilisateur à la nouvelle activité
                         i.putExtra(HomeActivity.LASTNAME, tv_lastName.getText().toString());
-                        i.putExtra(HomeActivity.FIRSTNAME, tv_lastName.getText().toString());
+                        i.putExtra(HomeActivity.FIRSTNAME, tv_firstName.getText().toString());
 
                         // on empêche de revenir à la page de login par le bouton retour
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                         startActivity(i);
+                        finish();
                     }
                 });
 
@@ -141,9 +162,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     // afficher la navigationBar en blanc avec les boutons noirs
-    public void setNavigationBarColors() {
+    public void setBarsThemes() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }
     }
 

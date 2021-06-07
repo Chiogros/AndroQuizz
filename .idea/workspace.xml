@@ -43,7 +43,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="passed all AppDatabase to private&#10;set layouts for LoginActivity and AddUserActivity&#10;made AddUserActivity and LoginActivity working to add a new user">
+    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="added :&#10; - Delete account option in settings page&#10; - AchievementDAO methods for add and remove n-uplets">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_forward.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -58,11 +59,26 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/Loustics.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Loustics.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/AddUserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/AddUserActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/CoursesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/CoursesActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/HomeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/QuizzActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ResultActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/SettingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/SettingsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/AchievementDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/AchievementDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/AppDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/db/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/settings_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/settings_fragment.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +165,7 @@
     <property name="android-custom-viewC:/Users/User/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="com.android.tools.idea.sqlite.queryhistory" value="INSERT INTO Litteral VALUES('Les personnes qui étudient la Préhistoire sont appelés', 'La préhistoire', 'Histoire', &quot;{'right' : ['préhistoriens'], 'wrong' : ['préhistoriques', 'préhistologues']}&quot;);&#10;INSERT INTO Litteral VALUES('Les personnes qui étudient la Préhistoire sont appelés', 'La préhistoire', 'Histoire', \&quot;{'right' : ['préhistoriens'], 'wrong' : ['préhistoriques', 'préhistologues']}\&quot;);&#10;INSERT INTO Litteral VALUES('À la préhistoire, on allumait le feu', 'La préhistoire', 'Histoire', &quot;{'right' : ['avec des pierres', 'en tapotant deux cailloux l un contre l autre', 'en tapant un silex avec du minerai de fer'], 'wrong' : ['avec un briquet', 'en soufflant très fort sur l herbe sèche']}&quot;);&#10;INSERT INTO Litteral VALUES('À la préhistoire, on allumait le feu', 'La préhistoire', 'Histoire', \&quot;{'right' : ['avec des pierres', 'en tapotant deux cailloux l un contre l autre', 'en tapant un silex avec du minerai de fer'], 'wrong' : ['avec un briquet', 'en soufflant très fort sur l herbe sèche']}\&quot;);&#10;INSERT INTO Litteral VALUES('Le squelette Lucy', 'La préhistoire', 'Histoire', &quot;{'right' : ['a été découvert en Éthiopie', 'a été trouvé en 1974', 'porte ce nom car les chercheurs qui l ont trouvé écoutaient Lucy in the sky of diamonds des Beatles'], 'wrong' : ['portait un bracelet en défense de mammouth où était écrit son nom', 's appelle comme ça car la personne qui l a trouvé s appelle Lucy']}&quot;);&#10;INSERT INTO Litteral VALUES('Le squelette Lucy', 'La préhistoire', 'Histoire', \&quot;{'right' : ['a été découvert en Éthiopie', 'a été trouvé en 1974', 'porte ce nom car les chercheurs qui l ont trouvé écoutaient Lucy in the sky of diamonds des Beatles'], 'wrong' : ['portait un bracelet en défense de mammouth où était écrit son nom', 's appelle comme ça car la personne qui l a trouvé s appelle Lucy']}\&quot;);&#10;INSERT INTO Litteral VALUES('La période de la Préhistoire', 'La préhistoire', 'Histoire', &quot;{'right' : ['correspond à l'apparition de l Homme sur Terre'], 'wrong' : ['est la période d apparition des dinosaures', 'a commencée il y a 5,5 millions d annees']}&quot;);&#10;INSERT INTO Litteral VALUES('La période de la Préhistoire', 'La préhistoire', 'Histoire', \&quot;{'right' : ['correspond à l'apparition de l Homme sur Terre'], 'wrong' : ['est la période d apparition des dinosaures', 'a commencée il y a 5,5 millions d annees']}\&quot;);&#10;INSERT INTO Litteral VALUES('Les Hommes préhistoriques', 'La préhistoire', 'Histoire', &quot;{'right' : ['mangeaient du mammouth', 'et les singes ont un ancêtre commun'], 'wrong' : ['habitaient dans une grotte', 'ont connu les dinosaures', 'descendent du singe', 'étaient de grosses brutes']}&quot;);" />
-    <property name="last_opened_file_path" value="/tmp/mozilla_alex0/loustic" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../AndroidTP" />
     <property name="multi-representation-previewC:/Users/User/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
@@ -561,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623088485500</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="created HomeActivity::setHelloText() that display the current firstname in hello text header">
+      <created>1623088925762</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1623088925762</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -614,7 +637,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="YesNo questions displayed with subject properly set.&#10;A little padding of the getView to add some space between questions&#10;JSON properly parsed from DB in 2 JSONArray that contain right and wrong answers" />
     <MESSAGE value="remove ArrayAdapter of ChaptersActivity with a foreach loop" />
     <MESSAGE value="bugged CheckBox, tried to subclass RadioButton and RadioGroup to accept ImageView as button" />
     <MESSAGE value="Addition and Calculation working" />
@@ -639,7 +661,8 @@
     <MESSAGE value="Added a lot of flags and a lot of questions" />
     <MESSAGE value="added some much questions" />
     <MESSAGE value="passed all AppDatabase to private&#10;set layouts for LoginActivity and AddUserActivity&#10;made AddUserActivity and LoginActivity working to add a new user" />
-    <option name="LAST_COMMIT_MESSAGE" value="passed all AppDatabase to private&#10;set layouts for LoginActivity and AddUserActivity&#10;made AddUserActivity and LoginActivity working to add a new user" />
+    <MESSAGE value="created HomeActivity::setHelloText() that display the current firstname in hello text header" />
+    <option name="LAST_COMMIT_MESSAGE" value="created HomeActivity::setHelloText() that display the current firstname in hello text header" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
@@ -651,10 +674,10 @@
     </state>
     <state x="424" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621235440826" />
     <state x="2132" y="278" width="1071" height="735" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622130123413" />
-    <state x="773" y="220" width="374" height="561" key="#com.intellij.ide.util.MemberChooser" timestamp="1623082325294">
+    <state x="773" y="220" width="374" height="561" key="#com.intellij.ide.util.MemberChooser" timestamp="1623094205883">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="773" y="220" width="374" height="561" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1623082325294" />
+    <state x="773" y="220" width="374" height="561" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1623094205883" />
     <state x="782" y="238" key="#com.intellij.ide.util.MemberChooser/0.0.3840.1128@0.0.3840.1128" timestamp="1621959804945" />
     <state x="773" y="220" key="#com.intellij.ide.util.MemberChooser/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622208397561" />
     <state x="2693" y="316" width="374" height="584" key="#com.intellij.ide.util.MemberChooser/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622189441149" />
@@ -710,44 +733,44 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="744" y="268" key="AndroidProcessChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622671329936" />
-    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1623073465739">
+    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1623096597422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1800" y="161" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620820549152" />
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1620638421124" />
-    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623073465739" />
+    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623096597422" />
     <state x="1302" y="184" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621616840795" />
     <state x="2571" y="264" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621431848796" />
-    <state width="1874" height="265" key="GridCell.Tab.0.bottom" timestamp="1623088846065">
+    <state width="1874" height="265" key="GridCell.Tab.0.bottom" timestamp="1623105727755">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620638846116" />
-    <state width="1874" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623088846065" />
+    <state width="1874" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623105727755" />
     <state width="1874" height="285" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="265" key="GridCell.Tab.0.center" timestamp="1623088846065">
+    <state width="1874" height="265" key="GridCell.Tab.0.center" timestamp="1623105727754">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623088846065" />
+    <state width="1874" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623105727754" />
     <state width="1874" height="285" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="265" key="GridCell.Tab.0.left" timestamp="1623088846065">
+    <state width="1874" height="265" key="GridCell.Tab.0.left" timestamp="1623105727754">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623088846065" />
+    <state width="1874" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623105727754" />
     <state width="1874" height="285" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="265" key="GridCell.Tab.0.right" timestamp="1623088846065">
+    <state width="1874" height="265" key="GridCell.Tab.0.right" timestamp="1623105727754">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623088846065" />
+    <state width="1874" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623105727754" />
     <state width="1874" height="285" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
     <state width="1874" height="254" key="GridCell.Tab.1.bottom" timestamp="1623023926940">
@@ -838,10 +861,10 @@
       <screen x="1920" y="88" width="1920" height="1080" />
     </state>
     <state x="2522" y="369" key="MultipleFileMergeDialog/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622128769405" />
-    <state x="461" y="155" key="SettingsEditor" timestamp="1623062112921">
+    <state x="461" y="155" key="SettingsEditor" timestamp="1623091026105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1623062112921" />
+    <state x="461" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1623091026105" />
     <state x="461" y="155" key="SettingsEditor/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622400980122" />
     <state x="922" y="168" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621270746353" />
     <state x="2381" y="249" key="SettingsEditor/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622123631874" />
@@ -885,10 +908,10 @@
     </state>
     <state x="624" y="237" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622817462154" />
     <state x="624" y="237" key="run.anything.popup/1920.88.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1622028963244" />
-    <state x="312" y="221" width="672" height="626" key="search.everywhere.popup" timestamp="1622527910309">
+    <state x="312" y="221" width="672" height="626" key="search.everywhere.popup" timestamp="1623105053069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="312" y="221" width="672" height="626" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622527910309" />
+    <state x="312" y="221" width="672" height="626" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1623105053069" />
     <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621240075671" />
     <state x="2232" y="317" width="672" height="650" key="search.everywhere.popup/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621320526071" />
   </component>

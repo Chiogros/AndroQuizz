@@ -29,9 +29,9 @@ public class User {
     private String m_photo;
 
 
-    public User(String m_s_lastName, String m_s_firstName, String m_photo) {
-        this.m_s_lastName = m_s_lastName;
+    public User(String m_s_firstName, String m_s_lastName, String m_photo) {
         this.m_s_firstName = m_s_firstName;
+        this.m_s_lastName = m_s_lastName;
         this.m_photo = m_photo;
     }
 

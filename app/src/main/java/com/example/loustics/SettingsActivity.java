@@ -6,12 +6,25 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
+import com.example.loustics.db.AppDatabase;
+import com.example.loustics.db.DatabaseClient;
+import com.example.loustics.models.User;
+
+import java.util.List;
+
 public class SettingsActivity extends AppCompatActivity {
+
+    public static final String FIRSTNAME = "firstName";
+    private static String m_s_firstName;
+    public static final String LASTNAME = "lastName";
+    private static String m_s_lastName;
+    private static AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +34,24 @@ public class SettingsActivity extends AppCompatActivity {
         setBackButton();
         setLayoutXML();
         setNavigationBarColors();
+        getIntentValues();
+        setupDAOs();
+    }
+
+    public void getIntentValues() {
+        // Nom et prénom de l'utilisateur
+        m_s_lastName = getIntent().getStringExtra(LASTNAME);
+        m_s_firstName = getIntent().getStringExtra(FIRSTNAME);
     }
 
     // Activer la flèche de retour dans la ActionBar
     private void setBackButton() {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    public void setupDAOs() {
+        db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
     }
 
     // afficher la navigationBar en blanc avec les boutons noirs
@@ -45,11 +70,6 @@ public class SettingsActivity extends AppCompatActivity {
         Log.v("id", String.valueOf(item.getItemId()));
         return super.onOptionsItemSelected(item);
     }
-
-
-    //
-    // Tout ce qui est en dessous est pour l'application du layout
-    //
 
     private void setLayoutXML() {
         // insère le XML dans le layout
@@ -77,6 +97,61 @@ public class SettingsActivity extends AppCompatActivity {
                     }
                 });
             }
+
+            // Actions sur les éléments du layout
+            Preference deleteButton = getPreferenceManager().findPreference("deleteButton");
+            if (deleteButton != null) {
+                deleteButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                    // quand on clique sur "Supprimé le compte", on est envoyé sur la page de login et on suppprime le compte
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        // supprime l'utilisateur
+                        new SelectUserForDeletionAsyncTask().execute(m_s_firstName, m_s_lastName);
+
+                        return true;
+                    }
+
+                    // classes pour supprimer le user
+                    class SelectUserForDeletionAsyncTask extends android.os.AsyncTask<String, Void, User> {
+
+                        @Override
+                        // Récupère toutes les questions de toutes les tables issues de Question qui sont en liées au chapitre et au cours
+                        protected User doInBackground(String... strings) {
+                            return db.userDAO().getUser(strings[0], strings[1]).get(0);
+                        }
+                        @Override
+                        protected void onPostExecute(User user) {
+                            new DeleteUsersAsyncTask().execute(user);
+                        }
+                    }
+
+                    class DeleteUsersAsyncTask extends android.os.AsyncTask<User, Void, String> {
+
+                        @Override
+                        // Récupère toutes les questions de toutes les tables issues de Question qui sont en liées au chapitre et au cours
+                        protected String doInBackground(User... users) {
+                            db.userDAO().delete(users[0]);
+                            return "Compte supprimé. À bientôt !";
+                        }
+                        @Override
+                        protected void onPostExecute(String sentence) {
+
+                            // notification de suppression
+                            Toast.makeText(getContext(), sentence, Toast.LENGTH_SHORT).show();
+
+                            // renvoie sur la page de login
+                            Intent i = new Intent(getContext(), LoginActivity.class);
+                            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(i);
+                        }
+                    }
+                });
+            }
         }
     }
+
+
+    // Classes privées
+
+
 }

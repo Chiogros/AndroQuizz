@@ -5,6 +5,7 @@ import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.Fade;
+import android.util.Log;
 import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
@@ -34,10 +35,10 @@ public class HomeActivity extends AppCompatActivity {
 
     private AppDatabase db;
     private CourseDAO courseDAO;
-    public static final String LASTNAME = "";
-    private String m_s_lastName;
-    public static final String FIRSTNAME = "";
+    public static final String FIRSTNAME = "firstName";
     private String m_s_firstName;
+    public static final String LASTNAME = "lastName";
+    private String m_s_lastName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,10 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), SettingsActivity.class);
+
+                i.putExtra(SettingsActivity.FIRSTNAME, m_s_firstName);
+                i.putExtra(SettingsActivity.LASTNAME, m_s_lastName);
+
                 startActivity(i);
             }
         });
