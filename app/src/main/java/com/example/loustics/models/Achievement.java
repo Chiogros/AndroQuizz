@@ -9,16 +9,16 @@ import androidx.room.Index;
 @Entity(tableName = "Achievement",
 foreignKeys = {
     @ForeignKey(entity = Chapter.class, parentColumns = { "name", "courseName" }, childColumns = { "chapterName", "courseName" }),
-    // TODO : mettre la clé étrangère de la classe
-    // @ForeignKey(entity = User.class, parentColumns = { "name", "courseName" }, childColumns = { "chapterName", "courseName" })
+    @ForeignKey(entity = User.class, parentColumns = { "firstName", "lastName" }, childColumns = { "firstName", "lastName" })
 },
 primaryKeys = {
-    "chapterName", "courseName", "userName"
+    "chapterName", "courseName", "lastName", "firstName"
 },
 indices = {
     @Index("chapterName"),
     @Index("courseName"),
-    @Index("userName")
+    @Index("firstName"),
+    @Index("lastName")
 })
 public class Achievement{
 
@@ -31,13 +31,19 @@ public class Achievement{
     private String m_s_courseName;
 
     @NonNull
-    @ColumnInfo (name = "userName")
-    private String m_s_userName;
+    @ColumnInfo(name = "firstName")
+    private String m_s_firstName;
 
-    public Achievement(String m_s_chapterName, String m_s_courseName, String m_s_userName) {
+    @NonNull
+    @ColumnInfo(name = "lastName")
+    private String m_s_lastName;
+
+
+    public Achievement(String m_s_chapterName, String m_s_courseName, String m_s_firstName, String m_s_lastName) {
         this.m_s_chapterName = m_s_chapterName;
         this.m_s_courseName = m_s_courseName;
-        this.m_s_userName = m_s_userName;
+        this.m_s_firstName = m_s_firstName;
+        this.m_s_lastName = m_s_lastName;
     }
 
     public String getM_s_chapterName() {
@@ -48,7 +54,11 @@ public class Achievement{
         return m_s_courseName;
     }
 
-    public String getM_s_userName() {
-        return m_s_userName;
+    public String getM_s_firstName() {
+        return m_s_firstName;
+    }
+
+    public String getM_s_lastName() {
+        return m_s_lastName;
     }
 }

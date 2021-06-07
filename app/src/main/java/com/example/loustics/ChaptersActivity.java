@@ -32,7 +32,7 @@ public class ChaptersActivity extends AppCompatActivity {
 
     private String m_s_courseName;
     private String m_s_chapterName;
-    AppDatabase db;
+    private AppDatabase db;
     private Class<? extends QuestionFrame> m_qf_questionType;
     private static final int s_i_nombreQuestions = 15;
     private List<Question> m_l_questions;

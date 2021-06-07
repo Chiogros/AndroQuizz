@@ -45,4 +45,5 @@
     <string name="parametres">Paramètres</string>
     <string name="matieres">Matières</string>
     <string name="bienvenue">Bienvenue</string>
+    <string name="ajouter_un_utilisateur">Ajouter un utilisateur</string>
 </resources>

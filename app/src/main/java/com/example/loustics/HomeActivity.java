@@ -32,14 +32,19 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
-    AppDatabase db;
-    CourseDAO courseDAO;
+    private AppDatabase db;
+    private CourseDAO courseDAO;
+    public static final String LASTNAME = "";
+    private String m_s_lastName;
+    public static final String FIRSTNAME = "";
+    private String m_s_firstName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        getIntentValues();
         setupDAOs();
         setNavigationBarColors();
         setFloatingButton();
@@ -48,6 +53,12 @@ public class HomeActivity extends AppCompatActivity {
 
     private void fetchCourses() {
         new CoursesAsyncTask().execute();
+    }
+
+    public void getIntentValues() {
+        // Nom et prénom de l'utilisateur
+        m_s_lastName = getIntent().getStringExtra(LASTNAME);
+        m_s_firstName = getIntent().getStringExtra(FIRSTNAME);
     }
 
     public void setFloatingButton() {
@@ -114,9 +125,14 @@ public class HomeActivity extends AppCompatActivity {
                                 ll_line.getChildCount()-1
                         );
 
-                        // on passe le nom de la matière à la nouvelle activité
+
                         Intent i = new Intent(getContext(), CoursesActivity.class);
+
+                        // on passe le nom de la matière à la nouvelle activité
                         i.putExtra(CoursesActivity.COURSE, tv_courseName.getText());
+                        // on passe le nom et prénom de l'utilisateur à la nouvelle activité
+                        i.putExtra(HomeActivity.LASTNAME, m_s_lastName);
+                        i.putExtra(HomeActivity.FIRSTNAME, m_s_firstName);
 
                         startActivity(i);
                     }

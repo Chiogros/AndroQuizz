@@ -34,8 +34,12 @@ public class CoursesActivity extends AppCompatActivity {
 
     public static final String COURSE = "";
     private String m_s_courseName;
-    AppDatabase db;
-    ChapterDAO chapterDAO;
+    public static final String LASTNAME = "";
+    private String m_s_lastName;
+    public static final String FIRSTNAME = "";
+    private String m_s_firstName;
+    private AppDatabase db;
+    private ChapterDAO chapterDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
