@@ -18,8 +18,13 @@ public abstract class Calculation extends Question {
 
     @Ignore
     protected int m_d_operand1;
+
     @Ignore
     protected int m_d_operand2;
+
+    @Ignore
+    public static ArrayList<Class<? extends QuestionFrame>> QuestionsFramesCompatibleWith = new ArrayList<>();
+
 
     public Calculation(int rangeMinOperand1, int rangeMaxOperand1, int rangeMinOperand2, int rangeMaxOperand2) {
 
@@ -44,6 +49,21 @@ public abstract class Calculation extends Question {
             }
         } while (val == getResult());
         return val;
+    }
+
+    // Spécifie quels types de questions sont utilisables
+    private static void fillQuestionsFramesCompatibles() {
+        QuestionsFramesCompatibleWith.add(YesNo.class);
+        QuestionsFramesCompatibleWith.add(CheckMCQ.class);
+        QuestionsFramesCompatibleWith.add(RadioMCQ.class);
+        QuestionsFramesCompatibleWith.add(Open.class);
+    }
+
+    public boolean isCompatible(Class<? extends QuestionFrame> questionFrame) {
+        if (QuestionsFramesCompatibleWith.size() == 0)
+            fillQuestionsFramesCompatibles();
+
+        return QuestionsFramesCompatibleWith.contains(questionFrame);
     }
 
     public View getAnswerView(Object answer, Context context) {

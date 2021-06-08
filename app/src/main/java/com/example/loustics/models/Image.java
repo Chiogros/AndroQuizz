@@ -13,12 +13,15 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.Index;
 
 import com.example.loustics.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 @Entity(tableName = "Image",
 foreignKeys = {
@@ -49,6 +52,9 @@ public class Image extends Question {
     @ColumnInfo (name = "answers")
     private JSONObject m_json_answers;
 
+    @Ignore
+    public static ArrayList<Class<? extends QuestionFrame>> QuestionsFramesCompatibleWith = new ArrayList<>();
+
 
     public Image(String m_s_subject, String m_s_chapterName, String m_s_courseName, JSONObject m_json_answers) {
         this.m_s_subject = m_s_subject;
@@ -62,6 +68,20 @@ public class Image extends Question {
             e.printStackTrace();
             Log.d("*****", "Impossible de parser correctement pour le sujet : " + m_s_subject);
         }
+    }
+
+    // Spécifie quels types de questions sont utilisables
+    private static void fillQuestionsFramesCompatibles() {
+        QuestionsFramesCompatibleWith.add(YesNo.class);
+        QuestionsFramesCompatibleWith.add(CheckMCQ.class);
+        QuestionsFramesCompatibleWith.add(RadioMCQ.class);
+    }
+
+    public boolean isCompatible(Class<? extends QuestionFrame> questionFrame) {
+        if (QuestionsFramesCompatibleWith.size() == 0)
+            fillQuestionsFramesCompatibles();
+
+        return QuestionsFramesCompatibleWith.contains(questionFrame);
     }
 
     @Override

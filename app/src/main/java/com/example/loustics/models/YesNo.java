@@ -42,8 +42,17 @@ public class YesNo extends QuestionFrame {
         }
 
         if (questionSubjectView instanceof TextView && questionAnswerView instanceof TextView) {
-            ((TextView) questionSubjectView).append(" " + ((TextView) questionAnswerView).getText());
-            ((TextView) questionAnswerView).setText("");
+            TextView tv_subject = ((TextView) questionSubjectView);
+            TextView tv_answer = ((TextView) questionAnswerView);
+
+            // insère le mot à la place s'il y a ces 5 underscores
+            if (tv_subject.getText().toString().contains("_____")) {
+                tv_subject.getText().toString().replace("_____", tv_answer.getText().toString());
+            } else {
+                tv_subject.append(" " + ((TextView) questionAnswerView).getText());
+            }
+
+            tv_answer.setText("");
         }
 
         // Pour séparer le texte du sujet que la réponse

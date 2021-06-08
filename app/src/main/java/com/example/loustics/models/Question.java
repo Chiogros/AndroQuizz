@@ -29,6 +29,8 @@ public abstract class Question {
 
     public Question() {}
 
+    public abstract boolean isCompatible(Class<? extends QuestionFrame> questionFrame);
+
     public abstract View getAnswerView(Object answer, Context context);
 
     public JSONArray getM_json_rightAnswers() {

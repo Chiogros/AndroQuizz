@@ -68,13 +68,13 @@ public class ChaptersActivity extends AppCompatActivity {
                 m_qf_questionType = YesNo.class;
                 break;
             case 1:
-                m_qf_questionType = Open.class;
+                m_qf_questionType = CheckMCQ.class;
                 break;
             case 2:
                 m_qf_questionType = RadioMCQ.class;
                 break;
             case 3:
-                m_qf_questionType = CheckMCQ.class;
+                m_qf_questionType = Open.class;
                 break;
             default:    // should never be chosen
                 m_qf_questionType = YesNo.class;
@@ -220,18 +220,27 @@ public class ChaptersActivity extends AppCompatActivity {
             int maxQuestions = questions.size() > s_i_nombreQuestions ? s_i_nombreQuestions-1 : questions.size();
             questions = questions.subList(0, maxQuestions);
 
-            RandomQuestion.questionsFromAllTypes = questions;
-            // lance l'affichage des questions en demandant s_i_nombreQuestions à afficher
-            m_l_questions = RandomQuestion.getRandomQuestions(s_i_nombreQuestions);
+            // Enlève les questions qui ne sont pas compatibles avec ce type de QuestionFrame
+            List<Question> questions_iterator = new ArrayList<>(questions);
+            for(Question q : questions_iterator) {
+                if (!q.isCompatible(m_qf_questionType))
+                    questions.remove(q);
+            }
 
+            // sélectionne s_i_nombreQuestions à afficher parmi celles qui sont disponibles pour ce cours
+            questions = RandomQuestion.getRandomQuestions(s_i_nombreQuestions, questions);
+
+            // on stocke les questions pour qu'elles soient disponibles au reste de la classe
+            m_l_questions = questions;
+
+            // on affiche les questions
             setListView();
         }
     }
 
     private static class RandomQuestion {
-        public static List<Question> questionsFromAllTypes;
 
-        public static List<Question> getRandomQuestions(int numberOfQuestions) {
+        public static List<Question> getRandomQuestions(int numberOfQuestions, List<Question> questionsFromAllTypes) {
             // renvoie le tableau contenant toutes les questions si on demande >= de questions que ce que l'on a
             if (numberOfQuestions >= questionsFromAllTypes.size()) {
                 Collections.shuffle(questionsFromAllTypes);
