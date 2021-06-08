@@ -16,8 +16,6 @@ import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.User;
 
-import java.util.List;
-
 public class SettingsActivity extends AppCompatActivity {
 
     public static final String FIRSTNAME = "firstName";
@@ -64,11 +62,12 @@ public class SettingsActivity extends AppCompatActivity {
     // Activé lors du clic sur la flèche de retour de la ActionBar
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.home) {    // R.id.home existe déjà, interne à Android
+        //if (item.getItemId() == R.id.home) {    // R.id.home existe déjà, interne à Android
             this.finish();
-        }
+        /*}
         Log.v("id", String.valueOf(item.getItemId()));
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);*/
+        return true;
     }
 
     private void setLayoutXML() {
@@ -82,6 +81,18 @@ public class SettingsActivity extends AppCompatActivity {
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             // Liaison entre le FrameLayout et le XML
             setPreferencesFromResource(R.xml.settings_fragment, rootKey);
+
+            // Actions sur les éléments du layout
+            Preference changePhotoButton = getPreferenceManager().findPreference("changePhotoButton");
+            if (changePhotoButton != null) {
+                changePhotoButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        Toast.makeText(getContext(), "Oops, cette fonctionnalité n'a pas été implémentée.", Toast.LENGTH_LONG);
+                        return true;
+                    }
+                });
+            }
 
             // Actions sur les éléments du layout
             Preference deconnexionButton = getPreferenceManager().findPreference("deconnexionButton");
@@ -152,6 +163,5 @@ public class SettingsActivity extends AppCompatActivity {
 
 
     // Classes privées
-
 
 }

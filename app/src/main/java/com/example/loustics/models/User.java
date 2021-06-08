@@ -47,5 +47,7 @@ public class User {
         return this.m_photo;
     }
 
-
+    public void setM_photo(String photo) {
+        this.m_photo = photo;
+    }
 }

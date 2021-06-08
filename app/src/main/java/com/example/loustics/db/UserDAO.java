@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.loustics.models.Litteral;
 import com.example.loustics.models.User;
@@ -20,6 +21,9 @@ public interface UserDAO {
 
     @Query("SELECT photo FROM User WHERE firstName = :firstName AND lastName = :lastName LIMIT 1")
     String getPhoto(String firstName, String lastName);
+
+    @Update
+    void update(User user);
 
     @Insert
     void insert(User user);
