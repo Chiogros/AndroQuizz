@@ -24,7 +24,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="/tmp/baseline_check_circle_outline_24.xml" />
+                                                <entry key="imagePath" value="/tmp/baseline_add_reaction_24.xml" />
                                                 <entry key="opacityPercent" value="80" />
                                               </map>
                                             </option>
@@ -36,7 +36,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/check_circle_outline/baseline_check_circle_outline_24.xml" />
+                                                <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/add_reaction/baseline_add_reaction_24.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -81,11 +81,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="imageAsset" value="/tmp/wave.svg" />
-                                      <entry key="outputName" value="ic_wave" />
+                                      <entry key="outputName" value="img_smile_add" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="c89462" />
+                                      <entry key="themeColor" value="737373" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -368,7 +367,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/loop/baseline_loop_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/add_reaction/baseline_add_reaction_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -378,8 +377,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_loop" />
-                            <entry key="sourceFile" value="/tmp/Flag of Canada (Pantone colours).svg" />
+                            <entry key="outputName" value="ic_smile_add" />
+                            <entry key="sourceFile" value="/tmp/question.svg" />
                           </map>
                         </option>
                       </PersistentState>

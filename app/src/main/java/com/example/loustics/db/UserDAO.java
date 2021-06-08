@@ -18,6 +18,9 @@ public interface UserDAO {
     @Query("SELECT * FROM User ORDER BY firstName")
     List<User> getAllUsers();
 
+    @Query("SELECT photo FROM User WHERE firstName = :firstName AND lastName = :lastName LIMIT 1")
+    String getPhoto(String firstName, String lastName);
+
     @Insert
     void insert(User user);
 

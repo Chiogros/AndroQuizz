@@ -41,16 +41,38 @@
         android:hint="Nom de famille"
         android:layout_below="@+id/et_firstName" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_photopicker"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/et_lastName"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="50dp"
+        android:layout_marginTop="25dp"
+        android:onClick="onAddPhoto">
+
+        <ImageView
+            android:id="@+id/iv_photopicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_smile_add"
+            android:maxWidth="100dp"
+            android:maxHeight="100dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
     <Button
         android:id="@+id/b_add_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:enabled="false"
         android:text="@string/ajouter_un_utilisateur"
-        android:layout_below="@+id/et_lastName"
-        android:onClick="onClickButton"/>
+        android:layout_below="@+id/cv_photopicker"
+        android:onClick="onValidateButton"/>
 
 </RelativeLayout>

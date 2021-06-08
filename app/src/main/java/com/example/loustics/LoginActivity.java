@@ -1,6 +1,10 @@
 package com.example.loustics;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.PorterDuff;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -14,16 +18,20 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Space;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.List;
 
 
@@ -101,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                 // La ligne qui accueille les éléments
                 LinearLayout ll_line = new LinearLayout(getContext());
                 ll.addView(ll_line, params);
-                ll_line.setPadding(100, 50, 100, 50);
+                ll_line.setPadding(50, 50, 100, 50);
                 ll_line.setOrientation(LinearLayout.HORIZONTAL);
                 ll_line.setGravity(Gravity.CENTER_VERTICAL);
 
@@ -112,11 +120,33 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 // Image de l'user
-                ImageView iv_logo = new ImageView(getContext());
-                // TODO : afficher l'image de l'user
+                ImageView iv_photo = new ImageView(getContext());
+                try {
+                    // parse et récupère l'image dans la gallerie
+                    final Uri imageUri = Uri.parse(this.getItem(position).getM_photo());
+                    final InputStream imageStream = getContentResolver().openInputStream(imageUri);
+                    final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                    iv_photo.setImageBitmap(Bitmap.createScaledBitmap(selectedImage,
+                            (int) getResources().getDisplayMetrics().density * 100,
+                            (int) getResources().getDisplayMetrics().density * 100, false));
+                } catch (FileNotFoundException | SecurityException e) {
+                    e.printStackTrace();
+                    // si l'image n'a pas été trouvée, on en met une par défaut
+                    iv_photo.setImageResource(getResources().getIdentifier(
+                        // à partir du nom du logo
+                        "ic_unknown_person", "drawable", getPackageName()));
+                    // on met ce logo en marron
+                    iv_photo.setColorFilter(getResources().getColor(R.color.brown), PorterDuff.Mode.SRC_IN);
+                }
+
+                CardView cv_photo = new CardView(getContext());
+                // on met arrondi la cardview pour avoir un cercle
+                cv_photo.setRadius(getResources().getDisplayMetrics().density * 38);
+                cv_photo.addView(iv_photo);
+                ll_line.addView(cv_photo);
 
                 Space space = new Space(getContext());
-                space.setLayoutParams(new LinearLayout.LayoutParams(25, 1));
+                space.setLayoutParams(new LinearLayout.LayoutParams(50, 1));
                 ll_line.addView(space);
 
                 LinearLayout ll_names = new LinearLayout(getContext());

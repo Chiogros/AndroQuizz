@@ -1,6 +1,9 @@
 package com.example.loustics;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,12 +21,17 @@ import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.User;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 public class AddUserActivity extends AppCompatActivity {
 
     private AppDatabase db;
     private EditText et_firstName;
     private EditText et_lastName;
     private Button b;
+    private String m_photo = "";
+    private final int RESULT_LOAD_IMG = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +50,43 @@ public class AddUserActivity extends AppCompatActivity {
         b = findViewById(R.id.b_add_user);
     }
 
-    public void onClickButton(View view) {
+    @Override
+    protected void onActivityResult(int reqCode, int resultCode, Intent data) {
+        super.onActivityResult(reqCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            try {
+                // récupère le chemin vers l'image
+                final Uri imageUri = data.getData();
+                m_photo = data.getDataString();
+
+                // récupère l'image
+                final InputStream imageStream = getContentResolver().openInputStream(imageUri);
+                final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+
+                // affiche l'image
+                ImageView iv_photo = findViewById(R.id.iv_photopicker);
+                iv_photo.setImageBitmap(selectedImage);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Oops, une erreur s'est glissée ici...", Toast.LENGTH_SHORT).show();
+            } catch (NullPointerException e) {
+                // On a fait retour et on a rien sélectionné
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void onAddPhoto(View view) {
+        Intent photoPicker = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        photoPicker.setType("image/*");
+        startActivityForResult(photoPicker, RESULT_LOAD_IMG);
+    }
+
+    public void onValidateButton(View view) {
         User newUser = new User(et_firstName.getText().toString(),
                                 et_lastName.getText().toString(),
-                        "photo"
+                                m_photo
         );
 
         new UserAddAsyncTask().execute(newUser);
