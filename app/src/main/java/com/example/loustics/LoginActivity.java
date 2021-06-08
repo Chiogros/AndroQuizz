@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setTextColors() {
+        // surligne le texte
         SpannableString str = new SpannableString(" Bienvenue. ");
         // marron
         str.setSpan(new BackgroundColorSpan(0xFFc89462), 0, str.length(), 0);
@@ -92,14 +93,22 @@ public class LoginActivity extends AppCompatActivity {
         user_list.setAdapter(new ArrayAdapter<User>(getApplicationContext(), R.id.lv_items, m_l_users) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
+                // pour faire le margin entre les LinearLayout
+                LinearLayout ll = new LinearLayout(getContext());
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                params.setMargins(0,0, 0, 10);
+
+                // La ligne qui accueille les éléments
                 LinearLayout ll_line = new LinearLayout(getContext());
+                ll.addView(ll_line, params);
                 ll_line.setPadding(100, 50, 100, 50);
                 ll_line.setOrientation(LinearLayout.HORIZONTAL);
                 ll_line.setGravity(Gravity.CENTER_VERTICAL);
 
+                // met le fond en blanc + sur-élève
                 ll_line.setBackgroundResource(R.drawable.card_background);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    ll_line.setElevation(1);
+                    ll_line.setElevation(2);
                 }
 
                 // Image de l'user
@@ -124,7 +133,7 @@ public class LoginActivity extends AppCompatActivity {
                 tv_lastName.setTextSize(16);
                 ll_names.addView(tv_lastName);
 
-                // Au clic sur la matière
+                // Au clic sur l'utilisateur'
                 ll_line.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -152,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
-                return ll_line;
+                return ll;
             }
         });
     }

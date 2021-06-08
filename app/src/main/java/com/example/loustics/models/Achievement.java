@@ -6,10 +6,12 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 
+import static androidx.room.ForeignKey.CASCADE;
+
 @Entity(tableName = "Achievement",
 foreignKeys = {
-    @ForeignKey(entity = Chapter.class, parentColumns = { "name", "courseName" }, childColumns = { "chapterName", "courseName" }),
-    @ForeignKey(entity = User.class, parentColumns = { "firstName", "lastName" }, childColumns = { "firstName", "lastName" })
+    @ForeignKey(onDelete = CASCADE, entity = Chapter.class, parentColumns = { "name", "courseName" }, childColumns = { "chapterName", "courseName" }),
+    @ForeignKey(onDelete = CASCADE, entity = User.class, parentColumns = { "firstName", "lastName" }, childColumns = { "firstName", "lastName" })
 },
 primaryKeys = {
     "chapterName", "courseName", "lastName", "firstName"

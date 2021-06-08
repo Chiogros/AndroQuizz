@@ -88,7 +88,7 @@ public class CheckMCQ extends MCQ {
 
             if (view instanceof ImageView) {  // met l'image en fond si on récupère une ImageView de la question
                 cb.setText("");
-                cb.setCompoundDrawablesWithIntrinsicBounds(null, null, ((ImageView) view).getDrawable(), null);
+                cb.setCompoundDrawablesWithIntrinsicBounds(((ImageView) view).getDrawable(), null, null, null);
             }
 
             if (view instanceof TextView)   // change le texte si on récupère un TextView de la question

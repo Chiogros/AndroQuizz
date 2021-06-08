@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -63,6 +64,7 @@ public class AddUserActivity extends AppCompatActivity {
 
             }
 
+            // vérifie que le prénom et nom soient dispo et qu'il y ait plus de 3 caractères entrés
             @Override
             public void afterTextChanged(Editable s) {
                 if (et_firstName.getText().length() >= 3 && et_lastName.getText().length() >= 3) {
@@ -85,6 +87,7 @@ public class AddUserActivity extends AppCompatActivity {
 
             }
 
+            // vérifie que le prénom et nom soient dispo et qu'il y ait plus de 3 caractères entrés
             @Override
             public void afterTextChanged(Editable s) {
                 if (et_firstName.getText().length() >= 3 && et_lastName.getText().length() >= 3) {
@@ -104,7 +107,7 @@ public class AddUserActivity extends AppCompatActivity {
     // afficher la navigationBar en blanc avec les boutons noirs
     public void setNavigationBarColors() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }
     }
 

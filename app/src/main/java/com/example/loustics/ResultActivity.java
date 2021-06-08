@@ -121,7 +121,7 @@ public class ResultActivity extends AppCompatActivity {
 
         // Marque le score
         TextView score = findViewById(R.id.tv_score);
-        score.setText("Vous avez réussi " + (m_i_numberOfQuestions - m_i_errors) + " questions sur " + m_i_numberOfQuestions + " !");
+        score.setText("Tu as réussi " + (m_i_numberOfQuestions - m_i_errors) + " questions sur " + m_i_numberOfQuestions + " !");
 
         LinearLayout ll_action_bar = findViewById(R.id.action_bar);
 
@@ -140,6 +140,8 @@ public class ResultActivity extends AppCompatActivity {
                 i.putExtra(ResultActivity.CHAPTER, m_s_chapterName);
                 i.putExtra(ResultActivity.FIRSTNAME, m_s_firstName);
                 i.putExtra(ResultActivity.LASTNAME, m_s_lastName);
+
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                 startActivity(i);
                 finish();

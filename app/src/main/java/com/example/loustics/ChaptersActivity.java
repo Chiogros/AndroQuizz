@@ -140,11 +140,11 @@ public class ChaptersActivity extends AppCompatActivity {
                 v.setPadding(100, 50, 100, 50);
                 v.setBackgroundResource(R.drawable.card_background);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    v.setElevation(1);
+                    v.setElevation(2);
                 }
 
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                params.setMargins(20,5, 20, 5);
+                params.setMargins(20,5, 20, 10);
 
                 ll_items.addView(v, params);
 
