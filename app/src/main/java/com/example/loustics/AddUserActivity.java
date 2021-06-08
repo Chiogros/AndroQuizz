@@ -66,12 +66,8 @@ public class AddUserActivity extends AppCompatActivity {
                 // affiche l'image
                 ImageView iv_photo = findViewById(R.id.iv_photopicker);
                 iv_photo.setImageBitmap(selectedImage);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+            } catch (FileNotFoundException | NullPointerException e) {
                 Toast.makeText(getApplicationContext(), "Oops, une erreur s'est glissée ici...", Toast.LENGTH_SHORT).show();
-            } catch (NullPointerException e) {
-                // On a fait retour et on a rien sélectionné
-                e.printStackTrace();
             }
         }
     }

@@ -122,8 +122,13 @@ public class ChaptersActivity extends AppCompatActivity {
     }
 
     public void setListView() {
-        if (m_l_questions.size() == 0)
-            return ;
+        // on relance la recherche de questions
+        if (m_l_questions.size() == 0) {
+            defineQuestionFrameType();
+            // lance la récupération de toutes les questions en lien avec ce chapitre
+            new QuestionsAsyncTask().execute();
+            return;
+        }
 
         // Définition des lignes pour le ListView
         LinearLayout ll_items = findViewById(R.id.ll_items);

@@ -130,7 +130,6 @@ public class LoginActivity extends AppCompatActivity {
                             (int) getResources().getDisplayMetrics().density * 100,
                             (int) getResources().getDisplayMetrics().density * 100, false));
                 } catch (FileNotFoundException | SecurityException e) {
-                    e.printStackTrace();
                     // si l'image n'a pas été trouvée, on en met une par défaut
                     iv_photo.setImageResource(getResources().getIdentifier(
                         // à partir du nom du logo

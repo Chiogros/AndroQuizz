@@ -3,7 +3,10 @@ package com.example.loustics.models;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewParent;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Space;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -41,9 +44,10 @@ public class YesNo extends QuestionFrame {
             m_b_isRight = false;
         }
 
+        // Si le sujet et la réponse sont tous les deux des textes
         if (questionSubjectView instanceof TextView && questionAnswerView instanceof TextView) {
-            TextView tv_subject = ((TextView) questionSubjectView);
-            TextView tv_answer = ((TextView) questionAnswerView);
+            TextView tv_subject = (TextView) questionSubjectView;
+            TextView tv_answer = (TextView) questionAnswerView;
 
             // insère le mot à la place s'il y a ces 5 underscores
             if (tv_subject.getText().toString().contains("_____")) {
@@ -52,15 +56,16 @@ public class YesNo extends QuestionFrame {
                 tv_subject.append(" " + ((TextView) questionAnswerView).getText());
             }
 
+            // on vide la réponse qui a été ajouté au Textview du sujet
             tv_answer.setText("");
         }
-
-        // Pour séparer le texte du sujet que la réponse
-        TextView space = new TextView(getContext());
-        space.setText(" ");
+        
+        // Pour séparer le sujet de la réponse
+        Space space = new Space(getContext());
+        space.setLayoutParams(new LinearLayout.LayoutParams(20, 1));
 
         LinearLayout ll_subject = new LinearLayout(getContext());
-        // ll_subject.setOrientation(LinearLayout.HORIZONTAL);
+        ll_subject.setOrientation(LinearLayout.HORIZONTAL);
         ll_subject.addView(questionSubjectView);
         ll_subject.addView(space);
         ll_subject.addView(questionAnswerView);
@@ -74,6 +79,25 @@ public class YesNo extends QuestionFrame {
         ll_question.setOrientation(LinearLayout.VERTICAL);
         ll_question.addView(ll_subject);
         ll_question.addView(m_tb);
+
+        // Question avec une petite affiche
+        if (questionSubjectView instanceof TextView && questionAnswerView instanceof ImageView) {
+            TextView tv_subject = (TextView) questionSubjectView;
+            ImageView iv_answer = (ImageView) questionAnswerView;
+
+            LinearLayout viewParent = (LinearLayout) tv_subject.getParent();
+            viewParent.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+
+            iv_answer.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+
+            int layoutWidth = viewParent.getMeasuredWidth();
+            int answerWidth = iv_answer.getMeasuredWidth();
+            tv_subject.setMaxWidth(
+                    layoutWidth
+                    - answerWidth
+            );
+        }
+
         return ll_question;
     }
 

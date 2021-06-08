@@ -43,7 +43,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="tried to allow user to change his profile picture, but it's a fail">
+    <list default="true" id="0cc0d281-c95f-4631-a32e-f0345a9dc3f0" name="Default Changelist" comment="there is now an array in each Question subclass that contains all types of QuestionFrame that are compatible with">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -60,11 +60,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/Loustics.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Loustics.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/AddUserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/AddUserActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/ChaptersActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Calculation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Litteral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/LoginActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/loustics/models/YesNo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -606,7 +604,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623189268029</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="there is now an array in each Question subclass that contains all types of QuestionFrame that are compatible with">
+      <created>1623191777070</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1623191777070</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -659,7 +664,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="design of HomeActivity" />
     <MESSAGE value="design of HomeActivity&#10;added brown-light and brown-dark as colors" />
     <MESSAGE value="changed all drawables to vectors&#10;CoursesActivity design done" />
     <MESSAGE value="modified some SVG for headers&#10;added set isRight() to RadioMCQ with the attributes needed" />
@@ -684,7 +688,8 @@
     <MESSAGE value="bug on checkbox that displayed images on right&#10;Some margins changed&#10;Changed text on ResultActivity&#10;Theme changed for bars of AddUserActivity" />
     <MESSAGE value="bug on checkbox that displayed images on right&#10;Some margins changed&#10;Changed text on ResultActivity&#10;Theme changed for bars of AddUserActivity&#10;added photo for each account, photo taken from gallery" />
     <MESSAGE value="tried to allow user to change his profile picture, but it's a fail" />
-    <option name="LAST_COMMIT_MESSAGE" value="tried to allow user to change his profile picture, but it's a fail" />
+    <MESSAGE value="there is now an array in each Question subclass that contains all types of QuestionFrame that are compatible with" />
+    <option name="LAST_COMMIT_MESSAGE" value="there is now an array in each Question subclass that contains all types of QuestionFrame that are compatible with" />
   </component>
   <component name="WindowStateProjectService">
     <state x="200" y="110" key="#PSD" timestamp="1620638841713">
@@ -763,36 +768,36 @@
     <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623174413199" />
     <state x="1302" y="184" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621616840795" />
     <state x="2571" y="264" key="FileChooserDialogImpl/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1621431848796" />
-    <state width="1874" height="265" key="GridCell.Tab.0.bottom" timestamp="1623191397888">
+    <state width="1874" height="327" key="GridCell.Tab.0.bottom" timestamp="1623195017788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620638846116" />
-    <state width="1874" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623191397888" />
+    <state width="1874" height="327" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1623195017788" />
     <state width="1874" height="285" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.bottom/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="265" key="GridCell.Tab.0.center" timestamp="1623191397887">
+    <state width="1874" height="327" key="GridCell.Tab.0.center" timestamp="1623195017788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623191397887" />
+    <state width="1874" height="327" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1623195017788" />
     <state width="1874" height="285" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.center/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="265" key="GridCell.Tab.0.left" timestamp="1623191397887">
+    <state width="1874" height="327" key="GridCell.Tab.0.left" timestamp="1623195017788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623191397887" />
+    <state width="1874" height="327" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1623195017788" />
     <state width="1874" height="285" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.left/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
-    <state width="1874" height="265" key="GridCell.Tab.0.right" timestamp="1623191397888">
+    <state width="1874" height="327" key="GridCell.Tab.0.right" timestamp="1623195017788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="262" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1620821452510" />
     <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620638846115" />
-    <state width="1874" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623191397888" />
+    <state width="1874" height="327" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1623195017788" />
     <state width="1874" height="285" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@0.0.3840.1128" timestamp="1621268459900" />
     <state width="1874" height="270" key="GridCell.Tab.0.right/1920.88.1920.1080/0.0.3840.1128@1920.88.1920.1080" timestamp="1622191143018" />
     <state width="1874" height="254" key="GridCell.Tab.1.bottom" timestamp="1623188513555">
