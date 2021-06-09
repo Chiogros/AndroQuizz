@@ -1,16 +1,22 @@
 package com.example.loustics;
 
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
+import android.media.ThumbnailUtils;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
+import android.util.LruCache;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,11 +31,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.bumptech.glide.Glide;
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.File;
+import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.List;
@@ -39,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private List<User> m_l_users;
     private AppDatabase db;
+    private LruCache<String, Bitmap> m_cache;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,20 +58,39 @@ public class LoginActivity extends AppCompatActivity {
         setBarsThemes();
         setFloatingButton();
         setTextColors();
+        setCache();
 
         // lance la récupération de toutes les questions en lien avec ce chapitre
         new UsersAsyncTask().execute();
     }
 
-    private void setTextColors() {
-        // surligne le texte
-        SpannableString str = new SpannableString(" Bienvenue. ");
-        // marron
-        str.setSpan(new BackgroundColorSpan(0xFFc89462), 0, str.length(), 0);
-        str.setSpan(new ForegroundColorSpan(0xFFFFFFFF), 0, str.length(), 0);
+    public void addBitmapToCache(String key, Bitmap bitmap) {
+        if (getBitmapFromCache(key) == null) {
+            m_cache.put(key, bitmap);
+        }
+    }
 
-        TextView t = findViewById(R.id.tv_message);
-        t.setText(str);
+    public Bitmap getBitmapFromCache(String key) {
+        return m_cache.get(key);
+    }
+
+    private Bitmap getThumbnail(Uri uri, int size) throws FileNotFoundException {
+        // ouvre l'image depuis les fichiers
+        ParcelFileDescriptor parcelFD = getContentResolver().openFileDescriptor(uri, "r");
+        FileDescriptor imageStream = parcelFD.getFileDescriptor();
+
+        // décoder juste les dimensions
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFileDescriptor(imageStream, null, options);
+
+        // calculer le ratio de rétrécissement par rapport à la taille max de l'image
+        int biggestSize = options.outHeight > options.outWidth ? options.outHeight : options.outWidth;
+        options.inSampleSize = biggestSize / size;
+
+        // cette fois-ci on lit l'image entière
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeFileDescriptor(imageStream, null, options);
     }
 
     // au retour de l'activité AddUser, si on a ajouté un utilisateur on actualise la liste, sinon rien
@@ -71,9 +100,31 @@ public class LoginActivity extends AppCompatActivity {
         // == 1 car on a donné 1 au startActivityForResult()
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
+                // on fait disparaître la flèche
+                ImageView iv = findViewById(R.id.iv_add_arrow);
+                iv.setAlpha(0f);
+
+                // on récupère la liste des utilisateurs
                 new UsersAsyncTask().execute();
             }
         }
+    }
+
+    private void nothingThere() {
+        ImageView iv = findViewById(R.id.iv_add_arrow);
+        iv.setAlpha(0.5f);
+    }
+
+    // afficher la navigationBar en blanc avec les boutons noirs
+    public void setBarsThemes() {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+        }
+    }
+
+    private void setCache() {
+        int cacheSize = 18000;
+        m_cache = new LruCache<String, Bitmap>(cacheSize) {};
     }
 
     public void setDAOs() {
@@ -121,27 +172,56 @@ public class LoginActivity extends AppCompatActivity {
 
                 // Image de l'user
                 ImageView iv_photo = new ImageView(getContext());
-                try {
-                    // parse et récupère l'image dans la gallerie
-                    final Uri imageUri = Uri.parse(this.getItem(position).getM_photo());
-                    final InputStream imageStream = getContentResolver().openInputStream(imageUri);
-                    final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                    iv_photo.setImageBitmap(Bitmap.createScaledBitmap(selectedImage,
-                            (int) getResources().getDisplayMetrics().density * 100,
-                            (int) getResources().getDisplayMetrics().density * 100, false));
-                } catch (FileNotFoundException | SecurityException e) {
+
+                // récupère le chemin vers l'image
+                String imageUriToString = this.getItem(position).getM_photo();
+                // si le chemin est vide, alors on assigne une image par défaut
+                if (imageUriToString.isEmpty()) {
+
                     // si l'image n'a pas été trouvée, on en met une par défaut
                     iv_photo.setImageResource(getResources().getIdentifier(
-                        // à partir du nom du logo
-                        "ic_unknown_person", "drawable", getPackageName()));
+                            // à partir du nom du logo
+                            "ic_unknown_person", "drawable", getPackageName()));
                     // on met ce logo en marron
                     iv_photo.setColorFilter(getResources().getColor(R.color.brown), PorterDuff.Mode.SRC_IN);
+
+                } else {
+
+                    // parse l'image à partir de sa string
+                    final Uri imageUri = Uri.parse(imageUriToString);
+
+                    // récupère l'image du cache
+                    Bitmap ImageThumbnail;
+                    ImageThumbnail = getBitmapFromCache(imageUriToString);
+
+                    // affiche l'image si elle n'existe pas en cache, sinon la charge
+                    if (ImageThumbnail == null) {
+                        // créé un aperçu de l'image, moins lourd à manipuler en parallèle
+                        new BitmapAsyncTask(iv_photo).execute(imageUriToString);
+                    } else {
+                        iv_photo.setImageBitmap(ImageThumbnail);
+                    }
+
                 }
 
+                // la cardview permet de faire les arrondis de l'image
                 CardView cv_photo = new CardView(getContext());
                 // on met arrondi la cardview pour avoir un cercle
-                cv_photo.setRadius(getResources().getDisplayMetrics().density * 38);
+                cv_photo.setRadius(150);
                 cv_photo.addView(iv_photo);
+
+                // on met des contraintes pour redimensionner l'image
+                LinearLayout.LayoutParams cv_params = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+                cv_params.width = 300;
+                cv_params.height = 300;
+                cv_params.leftMargin = 10;
+                cv_params.bottomMargin = 10;
+                cv_params.topMargin = 10;
+
+                cv_photo.setLayoutParams(cv_params);
                 ll_line.addView(cv_photo);
 
                 Space space = new Space(getContext());
@@ -195,20 +275,21 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void nothingThere() {
+    private void setTextColors() {
+        // surligne le texte
+        SpannableString str = new SpannableString(" Bienvenue. ");
+        // marron
+        str.setSpan(new BackgroundColorSpan(0xFFc89462), 0, str.length(), 0);
+        str.setSpan(new ForegroundColorSpan(0xFFFFFFFF), 0, str.length(), 0);
 
-    }
-
-    // afficher la navigationBar en blanc avec les boutons noirs
-    public void setBarsThemes() {
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
-        }
+        TextView t = findViewById(R.id.tv_message);
+        t.setText(str);
     }
 
 
     // Classes privées
 
+    // Charge la liste des utilisateurs
     private class UsersAsyncTask extends android.os.AsyncTask<Void, Void, List<User>> {
 
         @Override
@@ -221,6 +302,42 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPostExecute(List<User> users) {
             m_l_users = users;
             setListView();
+        }
+    }
+
+    // Charge le bitmap, l'enregistre dans le cache et l'affiche dans l'ImageView associé
+    private class BitmapAsyncTask extends AsyncTask<String, Void, Bitmap> {
+
+        private ImageView m_imageView;
+
+        public BitmapAsyncTask(ImageView imageView) {
+            m_imageView = imageView;
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... uris) {
+            // parse l'url de l'image
+            final Uri imageUri = Uri.parse(uris[0]);
+
+            try {
+                // récupère la miniature
+                Bitmap image = getThumbnail(imageUri, 300);
+                // l'ajoute au cache
+                addBitmapToCache(uris[0], image);
+                // la renvoie pour affichage
+                return image;
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            if (bitmap != null) {
+                // affiche l'image
+                m_imageView.setImageBitmap(bitmap);
+            }
         }
     }
 

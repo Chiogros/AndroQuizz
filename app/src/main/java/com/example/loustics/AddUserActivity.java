@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.User;
 
+import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
@@ -44,6 +46,25 @@ public class AddUserActivity extends AppCompatActivity {
         setListeners();
     }
 
+    private Bitmap getThumbnail(Uri uri, int size) throws FileNotFoundException {
+        // ouvre l'image depuis les fichiers
+        ParcelFileDescriptor parcelFD = getContentResolver().openFileDescriptor(uri, "r");
+        FileDescriptor imageStream = parcelFD.getFileDescriptor();
+
+        // décoder juste les dimensions
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFileDescriptor(imageStream, null, options);
+
+        // calculer le ratio de rétrécissement par rapport à la taille max de l'image
+        int biggestSize = options.outHeight > options.outWidth ? options.outHeight : options.outWidth;
+        options.inSampleSize = biggestSize / size;
+
+        // cette fois-ci on lit l'image entière
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeFileDescriptor(imageStream, null, options);
+    }
+
     private void setAttributes() {
         et_firstName = findViewById(R.id.et_firstName);
         et_lastName = findViewById(R.id.et_lastName);
@@ -60,12 +81,11 @@ public class AddUserActivity extends AppCompatActivity {
                 m_photo = data.getDataString();
 
                 // récupère l'image
-                final InputStream imageStream = getContentResolver().openInputStream(imageUri);
-                final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                Bitmap ImageThumbnail = getThumbnail(imageUri, 300);
 
                 // affiche l'image
                 ImageView iv_photo = findViewById(R.id.iv_photopicker);
-                iv_photo.setImageBitmap(selectedImage);
+                iv_photo.setImageBitmap(ImageThumbnail);
             } catch (FileNotFoundException | NullPointerException e) {
                 Toast.makeText(getApplicationContext(), "Oops, une erreur s'est glissée ici...", Toast.LENGTH_SHORT).show();
             }
