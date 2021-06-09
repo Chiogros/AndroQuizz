@@ -87,13 +87,13 @@ public class AddUserActivity extends AppCompatActivity {
     }
 
 
-    private void onAddPhoto(View view) {
+    public void onAddPhoto(View view) {
         Intent photoPicker = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         photoPicker.setType("image/*");
         startActivityForResult(photoPicker, RESULT_LOAD_IMG);
     }
 
-    private void onValidateButton(View view) {
+    public void onValidateButton(View view) {
         User newUser = new User(et_firstName.getText().toString(),
                                 et_lastName.getText().toString(),
                                 m_photo

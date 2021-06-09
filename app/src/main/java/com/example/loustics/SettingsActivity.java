@@ -90,7 +90,7 @@ public class SettingsActivity extends AppCompatActivity {
                 changePhotoButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
-                        Toast.makeText(getContext(), "Oops, cette fonctionnalité n'a pas été implémentée.", Toast.LENGTH_LONG);
+                        Toast.makeText(getContext(), "Oops, cette fonctionnalité n'a pas été implémentée.", Toast.LENGTH_LONG).show();
                         return true;
                     }
                 });
