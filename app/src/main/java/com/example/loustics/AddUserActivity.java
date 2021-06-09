@@ -65,12 +65,6 @@ public class AddUserActivity extends AppCompatActivity {
         return BitmapFactory.decodeFileDescriptor(imageStream, null, options);
     }
 
-    private void setAttributes() {
-        et_firstName = findViewById(R.id.et_firstName);
-        et_lastName = findViewById(R.id.et_lastName);
-        b = findViewById(R.id.b_add_user);
-    }
-
     @Override
     protected void onActivityResult(int reqCode, int resultCode, Intent data) {
         super.onActivityResult(reqCode, resultCode, data);
@@ -93,19 +87,29 @@ public class AddUserActivity extends AppCompatActivity {
     }
 
 
-    public void onAddPhoto(View view) {
+    private void onAddPhoto(View view) {
         Intent photoPicker = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         photoPicker.setType("image/*");
         startActivityForResult(photoPicker, RESULT_LOAD_IMG);
     }
 
-    public void onValidateButton(View view) {
+    private void onValidateButton(View view) {
         User newUser = new User(et_firstName.getText().toString(),
                                 et_lastName.getText().toString(),
                                 m_photo
         );
 
         new UserAddAsyncTask().execute(newUser);
+    }
+
+    private void setAttributes() {
+        et_firstName = findViewById(R.id.et_firstName);
+        et_lastName = findViewById(R.id.et_lastName);
+        b = findViewById(R.id.b_add_user);
+    }
+
+    private void setDAOs() {
+        db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
     }
 
     private void setListeners() {
@@ -158,12 +162,8 @@ public class AddUserActivity extends AppCompatActivity {
 
     }
 
-    public void setDAOs() {
-        db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
-    }
-
     // afficher la navigationBar en blanc avec les boutons noirs
-    public void setNavigationBarColors() {
+    private void setNavigationBarColors() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }

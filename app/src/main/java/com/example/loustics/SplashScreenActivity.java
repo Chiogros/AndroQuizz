@@ -13,8 +13,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        // Attends 2 secondes avant de lancer la nouvelle activité
-        new Handler().postDelayed(this::runNextActivity, 2000);
+        // Attends 1.5 secondes avant de lancer la nouvelle activité
+        new Handler().postDelayed(this::runNextActivity, 1500);
     }
 
     private void runNextActivity() {

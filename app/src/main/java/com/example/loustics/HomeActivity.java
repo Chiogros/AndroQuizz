@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
-import android.transition.Fade;
-import android.util.Log;
-import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +15,6 @@ import android.widget.Space;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.view.ViewCompat;
 
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.CourseDAO;
@@ -47,31 +42,28 @@ public class HomeActivity extends AppCompatActivity {
 
         getIntentValues();
         setHelloText();
-        setupDAOs();
+        setDAOs();
         setNavigationBarColors();
         setFloatingButton();
         fetchCourses();
-    }
-
-    private void setHelloText() {
-        TextView t = findViewById(R.id.tv_bonjour);
-
-        String helloText = t.getText().toString();
-        helloText += " " + m_s_firstName;
-        t.setText(helloText);
     }
 
     private void fetchCourses() {
         new CoursesAsyncTask().execute();
     }
 
-    public void getIntentValues() {
+    private void getIntentValues() {
         // Nom et prénom de l'utilisateur
         m_s_lastName = getIntent().getStringExtra(LASTNAME);
         m_s_firstName = getIntent().getStringExtra(FIRSTNAME);
     }
 
-    public void setFloatingButton() {
+    private void setDAOs() {
+        db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
+        courseDAO = db.courseDAO();
+    }
+
+    private void setFloatingButton() {
         FloatingActionButton fab = findViewById(R.id.fab_settings);
         fab.setImageResource(R.drawable.ic_settings);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +79,15 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    public void setListView(@NotNull List<Course> courses) {
+    private void setHelloText() {
+        TextView t = findViewById(R.id.tv_bonjour);
+
+        String helloText = t.getText().toString();
+        helloText += " " + m_s_firstName;
+        t.setText(helloText);
+    }
+
+    private void setListView(@NotNull List<Course> courses) {
 
         // Définition des lignes pour le ListView + l'action du clic sur chaque ligne qui renvoie sur une nouvelle activité
         ListView lv_items = findViewById(R.id.lv_items);
@@ -158,15 +158,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     // afficher la navigationBar en blanc avec les boutons noirs
-    public void setNavigationBarColors() {
+    private void setNavigationBarColors() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }
-    }
-
-    public void setupDAOs() {
-        db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
-        courseDAO = db.courseDAO();
     }
 
 

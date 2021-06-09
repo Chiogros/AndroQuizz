@@ -1,11 +1,9 @@
 package com.example.loustics;
 
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
-import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -14,9 +12,7 @@ import android.os.ParcelFileDescriptor;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.util.LruCache;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,23 +20,19 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.Space;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.bumptech.glide.Glide;
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.List;
 
 
@@ -64,13 +56,13 @@ public class LoginActivity extends AppCompatActivity {
         new UsersAsyncTask().execute();
     }
 
-    public void addBitmapToCache(String key, Bitmap bitmap) {
+    private void addBitmapToCache(String key, Bitmap bitmap) {
         if (getBitmapFromCache(key) == null) {
             m_cache.put(key, bitmap);
         }
     }
 
-    public Bitmap getBitmapFromCache(String key) {
+    private Bitmap getBitmapFromCache(String key) {
         return m_cache.get(key);
     }
 
@@ -93,6 +85,11 @@ public class LoginActivity extends AppCompatActivity {
         return BitmapFactory.decodeFileDescriptor(imageStream, null, options);
     }
 
+    private void nothingThere() {
+        ImageView iv = findViewById(R.id.iv_add_arrow);
+        iv.setAlpha(0.5f);
+    }
+
     // au retour de l'activité AddUser, si on a ajouté un utilisateur on actualise la liste, sinon rien
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -110,13 +107,8 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void nothingThere() {
-        ImageView iv = findViewById(R.id.iv_add_arrow);
-        iv.setAlpha(0.5f);
-    }
-
     // afficher la navigationBar en blanc avec les boutons noirs
-    public void setBarsThemes() {
+    private void setBarsThemes() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }
@@ -127,11 +119,11 @@ public class LoginActivity extends AppCompatActivity {
         m_cache = new LruCache<String, Bitmap>(cacheSize) {};
     }
 
-    public void setDAOs() {
+    private void setDAOs() {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
     }
 
-    public void setFloatingButton() {
+    private void setFloatingButton() {
         FloatingActionButton fab = findViewById(R.id.fab_add_user);
         fab.setImageResource(R.drawable.ic_user_add);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -143,7 +135,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void setListView() {
+    private void setListView() {
 
         if (m_l_users.size() == 0)
             nothingThere();

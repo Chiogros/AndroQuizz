@@ -60,7 +60,7 @@ public class ChaptersActivity extends AppCompatActivity {
         new QuestionsAsyncTask().execute();
     }
 
-    public void defineQuestionFrameType() {
+    private void defineQuestionFrameType() {
         int rand = (int) (Math.random() * (4));   // 0 -> 3
 
         switch (rand) {
@@ -82,14 +82,14 @@ public class ChaptersActivity extends AppCompatActivity {
         }
     }
 
-    public void getIntentValues() {
+    private void getIntentValues() {
         m_s_courseName = getIntent().getStringExtra(COURSE);
         m_s_chapterName = getIntent().getStringExtra(CHAPTER);
         m_s_firstName = getIntent().getStringExtra(FIRSTNAME);
         m_s_lastName = getIntent().getStringExtra(LASTNAME);
     }
 
-    public void onButtonClick(View view) {
+    private void onButtonClick(View view) {
         int errors = 0;
         for(QuestionFrame qf : m_l_questionsFrames) {
             if (!qf.isRight())
@@ -108,12 +108,12 @@ public class ChaptersActivity extends AppCompatActivity {
         finish();
     }
 
-    public void setDAOs() {
+    private void setDAOs() {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
     }
 
     // Nom de la matière dans l'en-tête
-    public void setHeader() {
+    private void setHeader() {
 
         // on applique le texte au TextView afin qu'il soit affiché
         TextView t = (TextView) findViewById(R.id.tv_chapter);
@@ -121,7 +121,7 @@ public class ChaptersActivity extends AppCompatActivity {
 
     }
 
-    public void setListView() {
+    private void setListView() {
         // on relance la recherche de questions
         if (m_l_questions.size() == 0) {
             defineQuestionFrameType();
@@ -163,7 +163,7 @@ public class ChaptersActivity extends AppCompatActivity {
     }
 
     // afficher la navigationBar en blanc avec les boutons noirs
-    public void setNavigationBarColors() {
+    private void setNavigationBarColors() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }

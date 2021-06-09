@@ -43,7 +43,7 @@ public class ResultActivity extends AppCompatActivity {
         work();
     }
 
-    public void getIntentValues() {
+    private void getIntentValues() {
         m_s_courseName = getIntent().getStringExtra(COURSE);
         m_s_chapterName = getIntent().getStringExtra(CHAPTER);
         m_s_firstName = getIntent().getStringExtra(FIRSTNAME);
@@ -114,7 +114,7 @@ public class ResultActivity extends AppCompatActivity {
         });
     }
 
-    public void onSuccess() {
+    private void onSuccess() {
         // Enregistre dans la base de données
         Achievement newSuccess = new Achievement(m_s_chapterName, m_s_courseName, m_s_firstName, m_s_lastName);
         new AchievementsAsyncTask().execute(newSuccess);
@@ -149,17 +149,17 @@ public class ResultActivity extends AppCompatActivity {
         });
     }
 
-    public void setDAOs() {
+    private void setDAOs() {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
     }
 
-    public void setNavigationBarColors() {
+    private void setNavigationBarColors() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }
     }
 
-    public boolean succededToTest() {
+    private boolean succededToTest() {
         return m_i_errors <= m_i_numberOfQuestions * 0.20;
     }
 

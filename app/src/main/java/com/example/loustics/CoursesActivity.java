@@ -56,7 +56,7 @@ public class CoursesActivity extends AppCompatActivity {
         new AchievementsAsyncTask().execute();
     }
 
-    public void getIntentValues() {
+    private void getIntentValues() {
         // Nom de la matière
         m_s_courseName = getIntent().getStringExtra(COURSE);
         m_s_firstName = getIntent().getStringExtra(FIRSTNAME);
@@ -68,12 +68,12 @@ public class CoursesActivity extends AppCompatActivity {
         supportFinishAfterTransition();
     }
 
-    public void setDAOs() {
+    private void setDAOs() {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
     }
 
     // Nom de la matière dans l'en-tête
-    public void setHeader() {
+    private void setHeader() {
 
         // on applique le texte au TextView afin qu'il soit affiché
         TextView t = (TextView) findViewById(R.id.tv_course);
@@ -83,7 +83,7 @@ public class CoursesActivity extends AppCompatActivity {
         new LogoAsyncTask().execute(m_s_courseName);
     }
 
-    public void setImageViewLogo(String resources) {
+    private void setImageViewLogo(String resources) {
         ImageView iv = (ImageView) findViewById(R.id.iv_course);
         iv.setImageResource(
                 getResources().getIdentifier(
@@ -96,7 +96,7 @@ public class CoursesActivity extends AppCompatActivity {
         iv.setColorFilter(getResources().getColor(R.color.defaultWhite), PorterDuff.Mode.SRC_IN);
     }
 
-    public void setListView(@NotNull List<Chapter> chapters) {
+    private void setListView(@NotNull List<Chapter> chapters) {
 
         // Définition des lignes pour le ListView + l'action du click sur chaque ligne qui renvoit sur une nouvelle activité
         ListView lv_items = findViewById(R.id.lv_items);
@@ -154,7 +154,7 @@ public class CoursesActivity extends AppCompatActivity {
     }
 
     // afficher la navigationBar en blanc avec les boutons noirs
-    public void setNavigationBarColors() {
+    private void setNavigationBarColors() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         }

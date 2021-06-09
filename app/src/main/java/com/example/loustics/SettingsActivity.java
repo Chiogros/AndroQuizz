@@ -3,7 +3,6 @@ package com.example.loustics;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -33,13 +32,24 @@ public class SettingsActivity extends AppCompatActivity {
         setLayoutXML();
         setNavigationBarColors();
         getIntentValues();
-        setupDAOs();
+        setDAOs();
     }
 
-    public void getIntentValues() {
+    private void getIntentValues() {
         // Nom et prénom de l'utilisateur
         m_s_lastName = getIntent().getStringExtra(LASTNAME);
         m_s_firstName = getIntent().getStringExtra(FIRSTNAME);
+    }
+
+    // Activé lors du clic sur la flèche de retour de la ActionBar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //if (item.getItemId() == R.id.home) {    // R.id.home existe déjà, interne à Android
+        this.finish();
+        /*}
+        Log.v("id", String.valueOf(item.getItemId()));
+        return super.onOptionsItemSelected(item);*/
+        return true;
     }
 
     // Activer la flèche de retour dans la ActionBar
@@ -48,32 +58,24 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void setupDAOs() {
+    private void setDAOs() {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
-    }
-
-    // afficher la navigationBar en blanc avec les boutons noirs
-    public void setNavigationBarColors() {
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
-        }
-    }
-
-    // Activé lors du clic sur la flèche de retour de la ActionBar
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //if (item.getItemId() == R.id.home) {    // R.id.home existe déjà, interne à Android
-            this.finish();
-        /*}
-        Log.v("id", String.valueOf(item.getItemId()));
-        return super.onOptionsItemSelected(item);*/
-        return true;
     }
 
     private void setLayoutXML() {
         // insère le XML dans le layout
         getSupportFragmentManager().beginTransaction().replace(R.id.fl_settings, new SettingsFragment()).commit();
     }
+
+    // afficher la navigationBar en blanc avec les boutons noirs
+    private void setNavigationBarColors() {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+        }
+    }
+
+
+    // Classes privées
 
     // Il faut associer le settings_fragment.xml qui sert de layout au FrameLayout qui est dans activity_settings.xml
     public static class SettingsFragment extends PreferenceFragmentCompat {
@@ -82,7 +84,7 @@ public class SettingsActivity extends AppCompatActivity {
             // Liaison entre le FrameLayout et le XML
             setPreferencesFromResource(R.xml.settings_fragment, rootKey);
 
-            // Actions sur les éléments du layout
+            // Changer la photo
             Preference changePhotoButton = getPreferenceManager().findPreference("changePhotoButton");
             if (changePhotoButton != null) {
                 changePhotoButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -94,7 +96,7 @@ public class SettingsActivity extends AppCompatActivity {
                 });
             }
 
-            // Actions sur les éléments du layout
+            // Se déconnecter
             Preference deconnexionButton = getPreferenceManager().findPreference("deconnexionButton");
             if (deconnexionButton != null) {
                 deconnexionButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -109,7 +111,7 @@ public class SettingsActivity extends AppCompatActivity {
                 });
             }
 
-            // Actions sur les éléments du layout
+            // Supprimer le compte
             Preference deleteButton = getPreferenceManager().findPreference("deleteButton");
             if (deleteButton != null) {
                 deleteButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -160,8 +162,5 @@ public class SettingsActivity extends AppCompatActivity {
             }
         }
     }
-
-
-    // Classes privées
 
 }
