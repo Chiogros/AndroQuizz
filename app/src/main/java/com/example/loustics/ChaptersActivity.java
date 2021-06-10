@@ -89,7 +89,7 @@ public class ChaptersActivity extends AppCompatActivity {
         m_s_lastName = getIntent().getStringExtra(LASTNAME);
     }
 
-    private void onButtonClick(View view) {
+    public void onButtonClick(View view) {
         int errors = 0;
         for(QuestionFrame qf : m_l_questionsFrames) {
             if (!qf.isRight())
