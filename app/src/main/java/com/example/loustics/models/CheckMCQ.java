@@ -15,6 +15,11 @@ public class CheckMCQ extends MCQ {
 
     private ArrayList<CheckBox> m_al_checkboxesToNotCheck, m_al_checkboxesToCheck;
 
+    // used by newInstance()
+    public CheckMCQ() {
+        super();
+    }
+
     public CheckMCQ(Question question, Context context) {
         super(question, context);
     }

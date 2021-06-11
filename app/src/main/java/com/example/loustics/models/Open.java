@@ -12,6 +12,7 @@ public class Open extends QuestionFrame {
 
     private EditText m_et;
 
+    // used by newInstance()
     public Open() {
         super();
     }
