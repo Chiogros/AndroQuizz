@@ -24,7 +24,7 @@ indices = {
     @Index("firstName"),
     @Index("lastName")
 })
-public class Achievement{
+public class Achievement {
 
     @NonNull
     @ColumnInfo (name = "chapterName")
