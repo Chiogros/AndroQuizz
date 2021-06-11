@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -26,6 +27,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
@@ -185,7 +187,8 @@ public class LoginActivity extends AppCompatActivity {
                         iv_photo.setImageBitmap(ImageThumbnail);
                     }
                 } else {
-                    iv_photo.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_unknown_person));
+                    Drawable d = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_unknown_person, null);
+                    iv_photo.setImageDrawable(d);
                 }
 
                 // la cardview permet de faire les arrondis de l'image
@@ -292,7 +295,7 @@ public class LoginActivity extends AppCompatActivity {
     // Charge le bitmap, l'enregistre dans le cache et l'affiche dans l'ImageView associé
     private class BitmapAsyncTask extends AsyncTask<String, Void, Bitmap> {
 
-        private ImageView m_imageView;
+        private final ImageView m_imageView;
 
         public BitmapAsyncTask(ImageView imageView) {
             m_imageView = imageView;
