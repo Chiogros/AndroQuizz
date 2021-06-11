@@ -24,7 +24,6 @@ import com.example.loustics.models.User;
 
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 
 public class AddUserActivity extends AppCompatActivity {
 
@@ -57,7 +56,7 @@ public class AddUserActivity extends AppCompatActivity {
         BitmapFactory.decodeFileDescriptor(imageStream, null, options);
 
         // calculer le ratio de rétrécissement par rapport à la taille max de l'image
-        int biggestSize = options.outHeight > options.outWidth ? options.outHeight : options.outWidth;
+        int biggestSize = Math.max(options.outHeight, options.outWidth);
         options.inSampleSize = biggestSize / size;
 
         // cette fois-ci on lit l'image entière
@@ -201,12 +200,7 @@ public class AddUserActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Boolean available) {
-
-            if (available) {
-                b.setEnabled(true);
-            } else {
-                b.setEnabled(false);
-            }
+            b.setEnabled(available);
         }
     }
 
