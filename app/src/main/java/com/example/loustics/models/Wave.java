@@ -9,7 +9,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Shader;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.example.loustics.R;
@@ -20,9 +19,7 @@ public class Wave extends View {
     private Path path;
     private Paint paint;
     private boolean gravity;
-    private int color;
     private float waveCount;
-    private int startGradientColor, endGradientColor;
 
     public Wave(Context context) {
         this(context, null, 0);
@@ -42,12 +39,12 @@ public class Wave extends View {
     private void createPaint(Context context, AttributeSet attrs, int defStyleAttr) {
         TypedArray attributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Wave, defStyleAttr, 0);
 
-        color = attributes.getColor(R.styleable.Wave_waveColor, Color.parseColor("#FF956637"));
+        int color = attributes.getColor(R.styleable.Wave_waveColor, Color.parseColor("#FF956637")); // couleur par défaut
         gravity = attributes.getBoolean(R.styleable.Wave_waveGravity, true);
         waveCount = attributes.getFloat(R.styleable.Wave_numberOfWaves, 1);
         boolean setGradient = attributes.getBoolean(R.styleable.Wave_setGradient, false);
-        startGradientColor = attributes.getColor(R.styleable.Wave_gradientStartColor, 0);
-        endGradientColor = attributes.getColor(R.styleable.Wave_gradientEndColor, 0);
+        int startGradientColor = attributes.getColor(R.styleable.Wave_gradientStartColor, 0);
+        int endGradientColor = attributes.getColor(R.styleable.Wave_gradientEndColor, 0);
 
         paint = new Paint();
         paint.setColor(color);
@@ -78,8 +75,6 @@ public class Wave extends View {
 
         while (count < waveCount) {
             // calcul de la pente de la fin de la courbe
-            float m = (y3 - y2) / (x3 - x2);
-            float newx1 = (float) (waveWidth / 3f);
             x1 += waveWidth;
             y1 = 2 * y3 - y2;
             y2 = (float) (getHeight() * Math.random());
