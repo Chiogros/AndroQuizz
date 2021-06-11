@@ -6,6 +6,8 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 
+import org.jetbrains.annotations.NotNull;
+
 import static androidx.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "Achievement",
@@ -26,40 +28,44 @@ public class Achievement{
 
     @NonNull
     @ColumnInfo (name = "chapterName")
-    private String m_s_chapterName;
+    private final String m_s_chapterName;
 
     @NonNull
     @ColumnInfo (name = "courseName")
-    private String m_s_courseName;
+    private final String m_s_courseName;
 
     @NonNull
     @ColumnInfo(name = "firstName")
-    private String m_s_firstName;
+    private final String m_s_firstName;
 
     @NonNull
     @ColumnInfo(name = "lastName")
-    private String m_s_lastName;
+    private final String m_s_lastName;
 
 
-    public Achievement(String m_s_chapterName, String m_s_courseName, String m_s_firstName, String m_s_lastName) {
+    public Achievement(@NotNull String m_s_chapterName, @NotNull String m_s_courseName, @NotNull String m_s_firstName, @NotNull String m_s_lastName) {
         this.m_s_chapterName = m_s_chapterName;
         this.m_s_courseName = m_s_courseName;
         this.m_s_firstName = m_s_firstName;
         this.m_s_lastName = m_s_lastName;
     }
 
+    @NotNull
     public String getM_s_chapterName() {
         return m_s_chapterName;
     }
 
+    @NotNull
     public String getM_s_courseName() {
         return m_s_courseName;
     }
 
+    @NotNull
     public String getM_s_firstName() {
         return m_s_firstName;
     }
 
+    @NotNull
     public String getM_s_lastName() {
         return m_s_lastName;
     }
