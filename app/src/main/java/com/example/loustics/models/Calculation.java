@@ -87,7 +87,7 @@ public abstract class Calculation extends Question {
         int tries = 0;
 
         // Création du json aléatoire
-        String jsonString = "{'right' : [" + getResult() + "], 'wrong' : [";
+        StringBuilder jsonString = new StringBuilder("{'right' : [" + getResult() + "], 'wrong' : [");
         while (alreadyGenerated.size() < numberOfWrongAnswers) {
             int generated = getAlternativeAnswer();
 
@@ -101,16 +101,16 @@ public abstract class Calculation extends Question {
             }
 
             alreadyGenerated.add(generated);
-            jsonString += generated;
+            jsonString.append(generated);
 
             if (alreadyGenerated.size() < numberOfWrongAnswers)
-                jsonString += ", ";
+                jsonString.append(", ");
         }
 
-        jsonString += "]}";
+        jsonString.append("]}");
 
         try {
-            return new JSONObject(jsonString);
+            return new JSONObject(jsonString.toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
