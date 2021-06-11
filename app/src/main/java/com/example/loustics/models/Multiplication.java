@@ -27,23 +27,23 @@ public class Multiplication extends Calculation {
 
     @NonNull
     @ColumnInfo(name = "chapterName")
-    protected String m_s_chapterName;
+    protected final String m_s_chapterName;
 
     @NonNull
     @ColumnInfo (name = "courseName")
-    protected String m_s_courseName;
+    protected final String m_s_courseName;
 
     @ColumnInfo (name = "rangeMinOperand1")
-    protected int m_i_rangeMinOperand1;
+    protected final int m_i_rangeMinOperand1;
 
     @ColumnInfo (name = "rangeMaxOperand1")
-    protected int m_i_rangeMaxOperand1;
+    protected final int m_i_rangeMaxOperand1;
 
     @ColumnInfo (name = "rangeMinOperand2")
-    protected int m_i_rangeMinOperand2;
+    protected final int m_i_rangeMinOperand2;
 
     @ColumnInfo (name = "rangeMaxOperand2")
-    protected int m_i_rangeMaxOperand2;
+    protected final int m_i_rangeMaxOperand2;
 
 
     public Multiplication(@NotNull String m_s_chapterName, @NotNull String m_s_courseName, int m_i_rangeMinOperand1, int m_i_rangeMaxOperand1, int m_i_rangeMinOperand2, int m_i_rangeMaxOperand2) {
