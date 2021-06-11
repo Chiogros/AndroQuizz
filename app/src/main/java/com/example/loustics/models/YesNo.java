@@ -49,14 +49,15 @@ public class YesNo extends QuestionFrame {
             TextView tv_subject = (TextView) questionSubjectView;
             TextView tv_answer = (TextView) questionAnswerView;
 
-            // insère le mot à la place s'il y a ces 5 underscores
+            // rajoute : pour ensuite proposer une réponse
             if (tv_subject.getText().toString().contains("_____")) {
-                tv_subject.getText().toString().replace("_____", tv_answer.getText().toString());
-            } else {
-                tv_subject.append(" " + ((TextView) questionAnswerView).getText());
+                tv_subject.append(" :");
             }
 
-            // on vide la réponse qui a été ajouté au Textview du sujet
+            // on ajoute un espace pour séparer le sujet de la réponse proposée
+            tv_subject.append(" " + ((TextView) questionAnswerView).getText());
+
+            // on vide la réponse qui a été ajoutée au Textview du sujet
             tv_answer.setText("");
         }
         

@@ -12,6 +12,7 @@ import android.os.ParcelFileDescriptor;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.util.LruCache;
 import android.view.Gravity;
 import android.view.View;
@@ -167,18 +168,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 // récupère le chemin vers l'image
                 String imageUriToString = this.getItem(position).getM_photo();
-                // si le chemin est vide, alors on assigne une image par défaut
-                if (imageUriToString.isEmpty()) {
 
-                    // si l'image n'a pas été trouvée, on en met une par défaut
-                    iv_photo.setImageResource(getResources().getIdentifier(
-                            // à partir du nom du logo
-                            "ic_unknown_person", "drawable", getPackageName()));
-                    // on met ce logo en marron
-                    iv_photo.setColorFilter(getResources().getColor(R.color.brown), PorterDuff.Mode.SRC_IN);
-
-                } else {
-
+                if (!imageUriToString.isEmpty()) {
                     // parse l'image à partir de sa string
                     final Uri imageUri = Uri.parse(imageUriToString);
 
@@ -193,7 +184,8 @@ public class LoginActivity extends AppCompatActivity {
                     } else {
                         iv_photo.setImageBitmap(ImageThumbnail);
                     }
-
+                } else {
+                    iv_photo.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_unknown_person));
                 }
 
                 // la cardview permet de faire les arrondis de l'image
@@ -311,6 +303,9 @@ public class LoginActivity extends AppCompatActivity {
             // parse l'url de l'image
             final Uri imageUri = Uri.parse(uris[0]);
 
+            Log.d("********", uris[0]);
+            if (uris[0].isEmpty())
+                return BitmapFactory.decodeResource(getResources(), R.drawable.ic_unknown_person);
             try {
                 // récupère la miniature
                 Bitmap image = getThumbnail(imageUri, 300);
@@ -319,9 +314,10 @@ public class LoginActivity extends AppCompatActivity {
                 // la renvoie pour affichage
                 return image;
             } catch (FileNotFoundException e) {
+                // si l'image n'a pas été trouvée, on en met une par défaut
                 e.printStackTrace();
+                return null;
             }
-            return null;
         }
 
         @Override

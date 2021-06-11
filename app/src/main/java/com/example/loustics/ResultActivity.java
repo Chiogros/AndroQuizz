@@ -108,6 +108,8 @@ public class ResultActivity extends AppCompatActivity {
                 i.putExtra(ResultActivity.FIRSTNAME, m_s_firstName);
                 i.putExtra(ResultActivity.LASTNAME, m_s_lastName);
 
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                 startActivity(i);
                 finish();
             }
