@@ -3,7 +3,6 @@ package com.example.loustics;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Addition;
-import com.example.loustics.models.Calculation;
 import com.example.loustics.models.CheckMCQ;
 import com.example.loustics.models.Image;
 import com.example.loustics.models.Litteral;
@@ -75,9 +73,6 @@ public class ChaptersActivity extends AppCompatActivity {
                 break;
             case 3:
                 m_qf_questionType = Open.class;
-                break;
-            default:    // should never be chosen
-                m_qf_questionType = YesNo.class;
                 break;
         }
     }
