@@ -1,19 +1,12 @@
 package com.example.loustics.models;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewParent;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Space;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-
-import com.example.loustics.R;
-
-import org.w3c.dom.Text;
 
 import java.util.Random;
 
@@ -22,6 +15,7 @@ public class YesNo extends QuestionFrame {
     private ToggleButton m_tb;
     private boolean m_b_isRight;
 
+    // used by newInstance()
     public YesNo() {
         super();
     }
