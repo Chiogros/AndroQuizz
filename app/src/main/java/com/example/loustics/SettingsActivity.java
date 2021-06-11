@@ -15,6 +15,8 @@ import com.example.loustics.db.AppDatabase;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.User;
 
+import java.util.Objects;
+
 public class SettingsActivity extends AppCompatActivity {
 
     public static final String FIRSTNAME = "firstName";
@@ -54,7 +56,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     // Activer la flèche de retour dans la ActionBar
     private void setBackButton() {
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -75,7 +77,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 
-    // Classes privées
+    // Classes privéess
 
     // Il faut associer le settings_fragment.xml qui sert de layout au FrameLayout qui est dans activity_settings.xml
     public static class SettingsFragment extends PreferenceFragmentCompat {
