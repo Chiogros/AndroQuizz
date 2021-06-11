@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Space;
 import android.widget.TextView;
 
@@ -55,12 +54,12 @@ public class ResultActivity extends AppCompatActivity {
     private void onFail() {
         // Dommage
         TextView message = findViewById(R.id.tv_result_message);
-        message.setText("Mmm...");
+        message.setText(R.string.mmm);
 
         // Marque le score
         TextView score = findViewById(R.id.tv_score);
         String string = "Tu as réussi " + (m_i_numberOfQuestions - m_i_errors) + " question"
-                + (m_i_errors < m_i_numberOfQuestions-1 ? "s" : "") +
+                + (m_i_errors < m_i_numberOfQuestions - 1 ? "s" : "") +
                 " sur " + m_i_numberOfQuestions + ", mais ce n'est pas assez. Tu feras un meilleur score la prochaine fois !";
         score.setText(string);
 
@@ -68,7 +67,7 @@ public class ResultActivity extends AppCompatActivity {
 
         // Bouton Réessayer
         ImageView iv_tryAgain = new ImageView(getApplicationContext());
-        iv_tryAgain.setImageResource(getResources().getIdentifier("ic_loop","drawable", getPackageName()));
+        iv_tryAgain.setImageResource(getResources().getIdentifier("ic_loop", "drawable", getPackageName()));
         iv_tryAgain.setColorFilter(getResources().getColor(R.color.defaultWhite));
         ll_action_bar.addView(iv_tryAgain);
 
@@ -94,7 +93,7 @@ public class ResultActivity extends AppCompatActivity {
 
         // Bouton Suivant
         ImageView iv_next = new ImageView(getApplicationContext());
-        iv_next.setImageResource(getResources().getIdentifier("ic_forward","drawable", getPackageName()));
+        iv_next.setImageResource(getResources().getIdentifier("ic_forward", "drawable", getPackageName()));
         iv_next.setColorFilter(getResources().getColor(R.color.defaultWhite));
         ll_action_bar.addView(iv_next);
 
@@ -123,13 +122,14 @@ public class ResultActivity extends AppCompatActivity {
 
         // Marque le score
         TextView score = findViewById(R.id.tv_score);
-        score.setText("Tu as réussi " + (m_i_numberOfQuestions - m_i_errors) + " questions sur " + m_i_numberOfQuestions + " !");
+        String message = "Tu as réussi " + (m_i_numberOfQuestions - m_i_errors) + " questions sur " + m_i_numberOfQuestions + " !";
+        score.setText(message);
 
         LinearLayout ll_action_bar = findViewById(R.id.action_bar);
 
         // Bouton Suivant
         ImageView iv_next = new ImageView(getApplicationContext());
-        iv_next.setImageResource(getResources().getIdentifier("ic_forward","drawable", getPackageName()));
+        iv_next.setImageResource(getResources().getIdentifier("ic_forward", "drawable", getPackageName()));
         iv_next.setColorFilter(getResources().getColor(R.color.defaultWhite));
         ll_action_bar.addView(iv_next);
 
@@ -181,8 +181,7 @@ public class ResultActivity extends AppCompatActivity {
         protected String doInBackground(Achievement... achievements) {
             db.achievementDAO().insert(achievements[0]);
 
-            String message = "Youhou, you succeded !";
-            return message;
+            return "Youhou, you succeded !";
         }
     }
 }
