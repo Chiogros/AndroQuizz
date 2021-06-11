@@ -17,7 +17,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.loustics.db.AppDatabase;
-import com.example.loustics.db.CourseDAO;
 import com.example.loustics.db.DatabaseClient;
 import com.example.loustics.models.Course;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,7 +28,6 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
 
     private AppDatabase db;
-    private CourseDAO courseDAO;
     public static final String FIRSTNAME = "firstName";
     private String m_s_firstName;
     public static final String LASTNAME = "lastName";
@@ -60,7 +58,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private void setDAOs() {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
-        courseDAO = db.courseDAO();
     }
 
     private void setFloatingButton() {
@@ -171,7 +168,7 @@ public class HomeActivity extends AppCompatActivity {
 
         @Override
         protected List<Course> doInBackground(Void... voids) {
-            return courseDAO.getAllCourses();
+            return db.courseDAO().getAllCourses();
         }
 
         @Override
