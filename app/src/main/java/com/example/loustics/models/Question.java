@@ -1,21 +1,11 @@
 package com.example.loustics.models;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 
-import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.Ignore;
-import androidx.room.Index;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.List;
 
 
 public abstract class Question {
