@@ -3,7 +3,6 @@ package com.example.loustics;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -80,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
         BitmapFactory.decodeFileDescriptor(imageStream, null, options);
 
         // calculer le ratio de rétrécissement par rapport à la taille max de l'image
-        int biggestSize = options.outHeight > options.outWidth ? options.outHeight : options.outWidth;
+        int biggestSize = Math.max(options.outHeight, options.outWidth);
         options.inSampleSize = biggestSize / size;
 
         // cette fois-ci on lit l'image entière
@@ -172,9 +171,6 @@ public class LoginActivity extends AppCompatActivity {
                 String imageUriToString = this.getItem(position).getM_photo();
 
                 if (!imageUriToString.isEmpty()) {
-                    // parse l'image à partir de sa string
-                    final Uri imageUri = Uri.parse(imageUriToString);
-
                     // récupère l'image du cache
                     Bitmap ImageThumbnail;
                     ImageThumbnail = getBitmapFromCache(imageUriToString);
