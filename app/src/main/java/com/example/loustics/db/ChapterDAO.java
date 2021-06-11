@@ -12,8 +12,6 @@ import com.example.loustics.models.Chapter;
 
 @Dao
 public interface ChapterDAO {
-    @Query("SELECT * FROM Chapter")
-    List<Chapter> getAllChapters();
 
     @Query("SELECT * FROM Chapter WHERE courseName = :courseName")
     List<Chapter> getAllChapters(String courseName);

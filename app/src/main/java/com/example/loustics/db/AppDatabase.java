@@ -7,13 +7,11 @@ import androidx.room.TypeConverters;
 
 import com.example.loustics.models.Achievement;
 import com.example.loustics.models.Addition;
-import com.example.loustics.models.Calculation;
 import com.example.loustics.models.Chapter;
 import com.example.loustics.models.Course;
 import com.example.loustics.models.Image;
 import com.example.loustics.models.Litteral;
 import com.example.loustics.models.Multiplication;
-import com.example.loustics.models.Question;
 import com.example.loustics.models.Soustraction;
 import com.example.loustics.models.User;
 

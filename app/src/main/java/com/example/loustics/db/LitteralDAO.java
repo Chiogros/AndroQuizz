@@ -20,9 +20,6 @@ public interface LitteralDAO {
     @Insert
     void insert(Litteral litteral);
 
-    @Update
-    void update(Litteral litteral);
-
     @Delete
     void delete(Litteral litteral);
 }
