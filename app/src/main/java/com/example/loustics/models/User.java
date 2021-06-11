@@ -2,10 +2,10 @@ package com.example.loustics.models;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
-import androidx.room.ForeignKey;
-import androidx.room.Index;
-import androidx.room.PrimaryKey;
 import androidx.room.Entity;
+import androidx.room.Index;
+
+import org.jetbrains.annotations.NotNull;
 
 @Entity(tableName = "User",
 primaryKeys = {
@@ -19,26 +19,28 @@ public class User {
 
     @NonNull
     @ColumnInfo(name = "firstName")
-    private String m_s_firstName;
+    private final String m_s_firstName;
 
     @NonNull
     @ColumnInfo(name = "lastName")
-    private String m_s_lastName;
+    private final String m_s_lastName;
 
     @ColumnInfo(name = "photo")
     private String m_photo;
 
 
-    public User(String m_s_firstName, String m_s_lastName, String m_photo) {
+    public User(@NotNull String m_s_firstName, @NotNull String m_s_lastName, String m_photo) {
         this.m_s_firstName = m_s_firstName;
         this.m_s_lastName = m_s_lastName;
         this.m_photo = m_photo;
     }
 
+    @NotNull
     public String getM_s_lastName() {
         return this.m_s_lastName;
     }
 
+    @NotNull
     public String getM_s_firstName() {
         return this.m_s_firstName;
     }
@@ -47,7 +49,4 @@ public class User {
         return this.m_photo;
     }
 
-    public void setM_photo(String photo) {
-        this.m_photo = photo;
-    }
 }
