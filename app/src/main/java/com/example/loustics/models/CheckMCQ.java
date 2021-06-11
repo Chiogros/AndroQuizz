@@ -14,11 +14,6 @@ import java.util.Random;
 public class CheckMCQ extends MCQ {
 
     private ArrayList<CheckBox> m_al_checkboxesToNotCheck, m_al_checkboxesToCheck;
-    private ArrayList<View> m_al_rightViews;
-
-    public CheckMCQ() {
-        super();
-    }
 
     public CheckMCQ(Question question, Context context) {
         super(question, context);
@@ -31,7 +26,7 @@ public class CheckMCQ extends MCQ {
     public View getView() {
         m_al_checkboxesToNotCheck = new ArrayList<>();
         m_al_checkboxesToCheck = new ArrayList<>();
-        m_al_rightViews = new ArrayList<>();
+        ArrayList<View> al_rightViews = new ArrayList<>();
 
         Question q = getQuestion();
 
@@ -49,7 +44,7 @@ public class CheckMCQ extends MCQ {
 
         View v_minimalRightAnswer = q.getAnswerView(firstRightAnswer, getContext()); // on isole la vue de la bonne réponse pour ensuite pouvoir récupérer l'ID du CheckBouton qui est juste
         answersViews.add(v_minimalRightAnswer);    // on y met au moins la réponse juste
-        m_al_rightViews.add(v_minimalRightAnswer);
+        al_rightViews.add(v_minimalRightAnswer);
 
         while (answersViews.size() < numberOfAnswers) { // récupère les réponses et les met dans answersViews
             String s;
@@ -72,7 +67,7 @@ public class CheckMCQ extends MCQ {
             answersViews.add(v);    // ajoute la vue avec les autres pour l'afficher
 
             if (isRight)    // la réponse est juste, on ajoute sa vue avec les autres qui sont justes
-                m_al_rightViews.add(v);
+                al_rightViews.add(v);
         }
         Collections.shuffle(answersViews);  // mélange les réponses
 
@@ -94,7 +89,7 @@ public class CheckMCQ extends MCQ {
             if (view instanceof TextView)   // change le texte si on récupère un TextView de la question
                 cb.setText(((TextView) view).getText());
 
-            if (m_al_rightViews.contains(view)) {  // si c'est une vue qui est juste, on garde ce bouton pour la vérification
+            if (al_rightViews.contains(view)) {  // si c'est une vue qui est juste, on garde ce bouton pour la vérification
                 m_al_checkboxesToCheck.add(cb);
             } else {
                 m_al_checkboxesToNotCheck.add(cb);    // garde toutes les checkbox fausses pour la vérification
