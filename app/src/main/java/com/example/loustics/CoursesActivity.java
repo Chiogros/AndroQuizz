@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +41,6 @@ public class CoursesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
 
@@ -123,7 +121,7 @@ public class CoursesActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         LinearLayout ll_line = (LinearLayout) view;
-                        TextView tv_chapterName = (TextView) ((LinearLayout) view).getChildAt(0);
+                        TextView tv_chapterName = (TextView) ll_line.getChildAt(0);
 
                         Intent i = new Intent(getContext(), ChaptersActivity.class);
 
