@@ -162,6 +162,7 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     private boolean succededToTest() {
+        // il faut au moins réussir 80% des questions
         return m_i_errors <= m_i_numberOfQuestions * 0.20;
     }
 
@@ -179,8 +180,10 @@ public class ResultActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(Achievement... achievements) {
-            db.achievementDAO().insert(achievements[0]);
+            if (db.achievementDAO().getAchievement(m_s_firstName, m_s_lastName, m_s_chapterName, m_s_courseName).size() > 0)
+                return "You already succeded, but congrats again!";
 
+            db.achievementDAO().insert(achievements[0]);
             return "Youhou, you succeded !";
         }
     }

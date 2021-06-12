@@ -81,7 +81,7 @@ public class DatabaseClient {
                 // Histoire
                 {
                     db.execSQL("INSERT INTO Chapter VALUES('La préhistoire', 'Histoire');");
-                    db.execSQL("INSERT INTO Chapter VALUES(\"L'antiquité\", 'Histoire');");
+                    db.execSQL("INSERT INTO Chapter VALUES(\"L'Antiquité\", 'Histoire');");
                     db.execSQL("INSERT INTO Chapter VALUES('Le Moyen-Âge', 'Histoire');");
                     db.execSQL("INSERT INTO Chapter VALUES('Les temps modernes', 'Histoire');");
                     db.execSQL("INSERT INTO Chapter VALUES(\"L'époque contemporaine\", 'Histoire');");
@@ -123,13 +123,13 @@ public class DatabaseClient {
                         db.execSQL("INSERT INTO Litteral VALUES('Oh, regarde ces chiots ! Tu as vu comme _____ est beau ?', 'Grammaire - Pronoms', 'Français', \"{'right' : ['celui-ci'], 'wrong' : ['ceux', 'ce', 'celui']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"J'aime beaucoup faire _____.\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['cela', 'ceci'], 'wrong' : ['ceux-là', 'ce', 'celle-là']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"J'ai fait mes exercices mais je n'ai pas bien compris _____, ni celui-là d'ailleurs.\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['celui-ci'], 'wrong' : ['ceux', 'ce', 'celui', 'celui-là']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Je ne comprends pas _____ que vous voulez me dire.', 'Grammaire - Pronoms', 'Français', \"{'right' : ['ce'], 'wrong' : ['ceux', 'ceci', 'celui-ci']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Je ne comprends pas _____ que vous voulez me dire', 'Grammaire - Pronoms', 'Français', \"{'right' : ['ce'], 'wrong' : ['ceux', 'ceci', 'celui-ci']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"J'ai couru voir le postier, _____ m'a remis une lettre pour vous.\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['lequel'], 'wrong' : ['laquelle', 'auxquels', 'duquel']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"_____ s'est trompée.\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['Elle'], 'wrong' : ['lui', 'on', 'elles']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Regarde ces voitures. _____ sont en très mauvais état !', 'Grammaire - Pronoms', 'Français', \"{'right' : ['elles'], 'wrong' : ['ils', 'elle', 'il']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Les tonneaux vides sont ceux _____ font le plus de bruit.', 'Grammaire - Pronoms', 'Français', \"{'right' : ['qui'], 'wrong' : ['auxquels', 'que', 'dont']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Je vis dans une maison _____ les murs tombent en ruine.', 'Grammaire - Pronoms', 'Français', \"{'right' : ['dont'], 'wrong' : ['qui', 'duquel', 'ou']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Nous avons trouvé un trésor _____ nous allons garder précieusement.', 'Grammaire - Pronoms', 'Français', \"{'right' : ['que'], 'wrong' : ['qui', 'auxquels', 'duquel']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Les tonneaux vides sont ceux _____ font le plus de bruit', 'Grammaire - Pronoms', 'Français', \"{'right' : ['qui'], 'wrong' : ['auxquels', 'que', 'dont']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Je vis dans une maison _____ les murs tombent en ruine', 'Grammaire - Pronoms', 'Français', \"{'right' : ['dont'], 'wrong' : ['qui', 'duquel', 'ou']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Nous avons trouvé un trésor _____ nous allons garder précieusement', 'Grammaire - Pronoms', 'Français', \"{'right' : ['que'], 'wrong' : ['qui', 'auxquels', 'duquel']}\");");
                     }
 
                     // Grammaire - Adverbes
@@ -141,25 +141,33 @@ public class DatabaseClient {
 
                     // Conjugaison - Présent
                     {
-                        db.execSQL("INSERT INTO Litteral VALUES('Je (être) un petit bout de bois.', 'Conjugaison - Présent', 'Français', \"{'right' : ['suis'], 'wrong' : ['suit', 'es', 'sui']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Le lion (être) mort ce soir.', 'Conjugaison - Présent', 'Français', \"{'right' : ['est'], 'wrong' : ['ait', 'et', 'es']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Alexandre (mange) un brownie.', 'Conjugaison - Présent', 'Français', \"{'right' : ['mange'], 'wrong' : ['manges', 'mangent', 'mangeais', 'celui-là']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Allez Pô, allez tu (venir).', 'Conjugaison - Présent', 'Français', \"{'right' : ['viens'], 'wrong' : ['vient', 'vi1', 'vien']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Seules les vacances (être) bonnes pour la santé.', 'Conjugaison - Présent', 'Français', \"{'right' : ['sont'], 'wrong' : ['son', 's on', 'sons']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Ces cartons (être) lourds.', 'Conjugaison - Présent', 'Français', \"{'right' : ['sont'], 'wrong' : ['son', 's on', 'sons']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Il (faire) tout noir.', 'Conjugaison - Présent', 'Français', \"{'right' : ['fait'], 'wrong' : ['fais', 'fai', 'faie']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Vous n'(avoir) toujours rien corrigé.\", 'Conjugaison - Présent', 'Français', \"{'right' : ['avez'], 'wrong' : ['avait', 'avé', 'avais']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Elles (avoir) des cours d'informatique.\", 'Conjugaison - Présent', 'Français', \"{'right' : ['ont'], 'wrong' : ['on', 'ons', 'hon']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Je (être) un petit bout de bois', 'Conjugaison - Présent', 'Français', \"{'right' : ['suis'], 'wrong' : ['suit', 'es', 'sui']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Le lion (être) mort ce soir', 'Conjugaison - Présent', 'Français', \"{'right' : ['est'], 'wrong' : ['ait', 'et', 'es']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Alexandre (mange) un brownie', 'Conjugaison - Présent', 'Français', \"{'right' : ['mange'], 'wrong' : ['manges', 'mangent', 'mangeais', 'celui-là']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Allez Pô, allez tu (venir)', 'Conjugaison - Présent', 'Français', \"{'right' : ['viens'], 'wrong' : ['vient', 'vi1', 'vien', 'vient']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Seules les vacances (être) bonnes pour la santé', 'Conjugaison - Présent', 'Français', \"{'right' : ['sont'], 'wrong' : ['son', 's on', 'sons']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Ces cartons (être) lourds', 'Conjugaison - Présent', 'Français', \"{'right' : ['sont'], 'wrong' : ['son', 's on', 'sons']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Il (faire) tout noir', 'Conjugaison - Présent', 'Français', \"{'right' : ['fait'], 'wrong' : ['fais', 'fai', 'faie']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Vous n'(avoir) toujours rien corrigé\", 'Conjugaison - Présent', 'Français', \"{'right' : ['avez'], 'wrong' : ['avait', 'avé', 'avais']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Elles (avoir) des cours d'informatique\", 'Conjugaison - Présent', 'Français', \"{'right' : ['ont'], 'wrong' : ['on', 'ons', 'hon']}\");");
                     }
 
                     // Conjugaison - Futur
                     {
-
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Demain, j'(aller) acheter une baguette de pain\", 'Conjugaison - Futur', 'Français', \"{'right' : ['irai'], 'wrong' : ['irait', 'irais', 'iré']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Nous (essayer) de faire un gâteau pour le goûter\", 'Conjugaison - Futur', 'Français', \"{'right' : ['essayerons'], 'wrong' : ['on', 'ons', 'essay']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Ils (faire) la vaisselle avant de partir\", 'Conjugaison - Futur', 'Français', \"{'right' : ['feront'], 'wrong' : ['feron', 'ferons', 'fairont']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Il nous (falloir) de la farine pour faire de la pâte à pizzas\", 'Conjugaison - Futur', 'Français', \"{'right' : ['faudra'], 'wrong' : ['fallé', 'faudrat', 'faudras', 'fodra', 'faux draps']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Une fois à mi-chemin, elle (conduire) jusqu'à la fin du trajet\", 'Conjugaison - Futur', 'Français', \"{'right' : ['conduira'], 'wrong' : ['conduire', 'conduirera', 'conduiront', 'conduirons']}\");");
                     }
 
                     // Conjugaison - Passé simple
                     {
-
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Nous nous (promener), lorsque nous avons trouvé cet hérisson qui semblait mal en point\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['promenions'], 'wrong' : ['promenons', 'promenait', 'promenais']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"On (aller) justement vous appeler\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['allait'], 'wrong' : ['allais', 'allé', 'allez', 'alliez']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Hier, je (jouer) à Minecraft\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['jouais'], 'wrong' : ['jouait', joué', 'jouez']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'été dernier, nous (être) dans un camping avec une piscine\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['étions'], 'wrong' : ['étaient', 'était', 'étais', 'été']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"J'(avoir) pourtant eu une bonne note à l'examen\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['avais'], 'wrong' : ['avait', 'avé', 'avez', 'avaient']}\");");
                     }
                 }
 
@@ -234,26 +242,42 @@ public class DatabaseClient {
 
                     // L'Antiquité
                     {
-                        db.execSQL("INSERT INTO Litteral VALUES(\"_____ est à l'origine de la démocratie.\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Athènes'], 'wrong' : ['Alexandrie', 'Coronée', 'Brauron', 'Didymes', 'Élée', 'Géla', 'Hermione', 'Idalion', 'Jerash', 'Kition', 'Lamia', 'Magnésie', 'Naples', 'Olbia', 'Pise', 'Rhymes', 'Sagonte', 'Tamassos', 'Xanthe', 'Zancle']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"_____ est un philosophe grec.\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Platon', 'Socrate', 'Aristote', 'Épicure', 'Heraclite', 'Diogène'], 'wrong' : ['Philippe II', 'Alexandre', 'Constantin 1er', 'Minos']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"_____ est à l'origine de la démocratie\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Athènes'], 'wrong' : ['Alexandrie', 'Coronée', 'Brauron', 'Didymes', 'Élée', 'Géla', 'Hermione', 'Idalion', 'Jerash', 'Kition', 'Lamia', 'Magnésie', 'Naples', 'Olbia', 'Pise', 'Rhymes', 'Sagonte', 'Tamassos', 'Xanthe', 'Zancle']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"_____ est un philosophe grec\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Platon', 'Socrate', 'Aristote', 'Épicure', 'Heraclite', 'Diogène'], 'wrong' : ['Philippe II', 'Alexandre', 'Constantin 1er', 'Minos']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"_____ est un héros de la guerre de Troie\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Ulysse', 'Achille', 'Ajax'], 'wrong' : ['Alexandre Le Grand', 'Diogène', 'Alexandrie']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"L'auteur de l'Illiade et l'Odysée est\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Homère'], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'auteur de l'Illiade et l'Odysée est\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Homère'], 'wrong' : ['Héra', 'Hermès', 'Artémis', 'Séléné', 'Dionysos']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Dans la mythologie grecque, la déesse de l'agriculture est\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Demeter'], 'wrong' : ['Dewi Sri', 'Mahakala', 'Ah-mun']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Dans la mythologie égyptienne, le dieu de la mort est\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Anubis'], 'wrong' : ['Hadès', 'Ahriman', 'Malsum', 'Ereshkigal', 'Ah Puch', 'Mot']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le premier empereur romain était\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Auguste'], 'wrong' : ['Dioclétien', 'Néron', 'Galba', 'Pison', 'Othon', 'Vitellius', 'Octave']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Les hommes qui se battaient dans les arènes en Rome antique étaient appelés\", \"L'Antiquité\", 'Histoire', \"{'right' : ['les gladiateurs'], 'wrong' : ['les combattants', 'les soldats', 'les arèniens', 'les arènistes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le romain célèbre _____ a prononcé 'Alea iact a est'\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Jules César'], 'wrong' : ['Octave', 'Voltaire', 'Cicéron']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Lorsque la Gaule a été conquise, le chef gaulois était\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Vercingétorix'], 'wrong' : ['Celtillos', 'Arioviste', 'Gobannitio']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"La Gaule a été conquise par Jules César en\", \"L'Antiquité\", 'Histoire', \"{'right' : ['52 avant J.C.'], 'wrong' : ['50 après J.C.', '48 avant J.C.', '25 avant J.C.']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Achille fut trempé dans _____ pour le rendre quasi invincible\", \"L'Antiquité\", 'Histoire', \"{'right' : ['le Styx'], 'wrong' : ['l Acaste', 'l Admète', 'l Amphiro', 'l Idyie', 'l Eudore', 'l Hippo', 'le Mélobosis']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Dans l'Odysée, Ulysse rencontre une sorcière qui s'appelle\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Circé'], 'wrong' : ['Hélios', 'Polyphème', 'Alcynoos', 'Calypso', 'Télémaque', 'Athéna']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le premier travail d'Hercule était de\", \"L'Antiquité\", 'Histoire', \"{'right' : ['tuer le lion de Némée'], 'wrong' : ['ramener les troupeaux de Géryon', 'ramener le chien féroce Cerbère', 'tuer l Hydre', 'ramener la biche aux cornes d or de Cérynie', 'ramener le sanglier d Érymanthe vivant', 'nettoyer les écuries d Augias', 'exterminer les oiseaux de Stymphale', 'capturer l énorme taureau blanc de l île de Crète', 'ramener les quatre chevaux sauvages de Diomède', 'ramener la ceinture que porte Eurysthée', 'ramener trois pommes d or du jardin des Hespérides']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Quand Hercule coupe une tête de l'Hydre de Lerne en deux\", \"L'Antiquité\", 'Histoire', \"{'right' : ['deux têtes repoussent'], 'wrong' : ['il meurt', 'il perd ses repères et attaque tout', 'il se transforme']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le regard de Méduse\", \"L'Antiquité\", 'Histoire', \"{'right' : ['transforme les personnes en pierre'], 'wrong' : ['rend aveugles les personnes qui la regardent', 'permet de diriger les troupes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Méduse fut tuée par\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Persée'], 'wrong' : ['Ménélas', 'Hésiode', 'Homère', 'Hestia', 'Chiron']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Celui qui récupèra la toison d'or est\", \"L'Antiquité\", 'Histoire', \"{'right' : ['Jason'], 'wrong' : ['Éson', 'Éole', 'Médée', 'Créon', 'Pélée', 'Pélias']}\");");
+                        // db.execSQL("INSERT INTO Litteral VALUES(\"\", \"L'Antiquité\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
 
                     }
 
                     // Le Moyen-Âge
                     {
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le premier roi de France était\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['Clovis'], 'wrong' : ['Louis-Philippe', 'Dagobert', 'Charles', 'Louis', 'Naopléon']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le baptême de Clovis s'est déroulé\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['à la Basilique Saint-Rémi de Reims'], 'wrong' : ['à la Cathédrale Saint-Maurice de Vienne', 'à la Basilique Notre-Dame-De-Bonne-Garde', 'à la Basilique de l Immaculée']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Clovis est issu de la dynastie\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['Mérovingienne'], 'wrong' : ['Carolingienne', 'Robertienne']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le père de Charlemagne est\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['Pépin le Bref'], 'wrong' : ['Napoléon Ier', 'Frédérique Ier Barberousse', 'Carloman Ier']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Le premier empereur français était\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['Charlemagne', 'Charles Ier'], 'wrong' : ['Charles II', 'Clovis', 'Napoléon Bonaparte']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Charlemagne a créé la dynastie des\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['Carolingiens'], 'wrong' : ['Mérovingiens', 'Robertiens']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Charlemagne est couronné empereur en\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['800'], 'wrong' : ['789', '810', '801', '798']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Pour ses enfants, Charlemagne a partagé l'empire en _____ parties\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['3'], 'wrong' : ['5', '2', '7', '4']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"La peste noire a tué _____ de la population européenne\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['40%'], 'wrong' : ['60%', '30%', '20%', '55%']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Dans un chateau-fort, la grande tour s'appelle\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['le donjon'], 'wrong' : ['la chambre du roi', 'le point de vue', 'les oubliettes', 'le poste de garde']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"On peut devenir chevalier lors\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['de l adoubement'], 'wrong' : ['de l éclaircissement', 'du baptême', 'du couronnement']}\");");
+                        // db.execSQL("INSERT INTO Litteral VALUES(\"\", \"Le Moyen-Âge\", 'Histoire', \"{'right' : ['', '', ''], 'wrong' : ['', '']}\");");
 
                     }
 
@@ -282,7 +306,7 @@ public class DatabaseClient {
                         db.execSQL("INSERT INTO Litteral VALUES(\"Les États-Unis ont déclaré la guerre à l'Allemagne et ses alliés lors de l'attaque de\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['Pearl Harbor en 1941'], 'wrong' : ['Pearl Harbor en 1940', 'New York en 1941', 'New York en 1940']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('On surnomme la seconde guerre mondiale comme étant la', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['guerre totale'], 'wrong' : ['guerre éclair', 'bataille éclair', 'guerre lumière']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('La première guerre mondiale dure de', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['1914 à 1918'], 'wrong' : ['1915 à 1918', '1914 à 1919', '1915 à 1919']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"L'armistice est signé à Rethondes le'\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['11 novembre 1918'], 'wrong' : ['11 novembre 1919', '11 décembre 1918', '11 décembre 1919']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'armistice est signé à Rethondes le\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['11 novembre 1918'], 'wrong' : ['11 novembre 1919', '11 décembre 1918', '11 décembre 1919']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"L'archiduc François-Ferdinand a eu lieu le\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['28 juin 1914 à Sarajevo'], 'wrong' : ['28 juin 1916 à Sarajevo', '28 juin 1914 à Vienne', '28 juin 1916 à Vienne']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Pendant la guerre, deux blocs se forment. La France fait partie', \"L'époque contemporaine\", 'Histoire', \"{'right' : ['de la Triple Alliance'], 'wrong' : ['de la Triple Entente', 'de la Triple Armée', 'du bloc de l Ouest']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"L'Allemagne s'allie à l'Autriche-Hongrie et\", \"L'époque contemporaine\", 'Histoire', \"{'right' : ['à l Italie'], 'wrong' : ['aux Pays-Bas', 'à la Russie', 'à la Suisse']}\");");

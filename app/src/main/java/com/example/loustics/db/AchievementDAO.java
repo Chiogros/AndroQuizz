@@ -15,6 +15,9 @@ public interface AchievementDAO {
     @Query("SELECT * FROM Achievement WHERE firstName = :firstName AND lastName = :lastName AND courseName = :courseName")
     List<Achievement> getAllAchievementsInACourse(String firstName, String lastName, String courseName);
 
+    @Query("SELECT * FROM Achievement WHERE firstName = :firstName AND lastName = :lastName AND chapterName = :chapterName AND courseName = :courseName")
+    List<Achievement> getAchievement(String firstName, String lastName, String chapterName, String courseName);
+
     @Insert
     void insert(Achievement achievement);
 

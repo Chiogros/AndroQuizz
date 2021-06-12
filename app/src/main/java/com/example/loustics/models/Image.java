@@ -117,6 +117,11 @@ public class Image extends Question {
         return this.m_s_subject;
     }
 
+    @NotNull
+    public JSONObject getM_json_answers() {
+        return this.m_json_answers;
+    }
+
     @Override
     public View getSubjectView(Context context) {
         TextView tv = new TextView(context);
