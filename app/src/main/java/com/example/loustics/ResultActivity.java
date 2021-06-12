@@ -38,7 +38,6 @@ public class ResultActivity extends AppCompatActivity {
 
         getIntentValues();
         setDAOs();
-        setNavigationBarColors();
         work();
     }
 
@@ -153,12 +152,6 @@ public class ResultActivity extends AppCompatActivity {
 
     private void setDAOs() {
         db = DatabaseClient.getInstance(getApplicationContext()).getAppDatabase();
-    }
-
-    private void setNavigationBarColors() {
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
-        }
     }
 
     private boolean succededToTest() {
