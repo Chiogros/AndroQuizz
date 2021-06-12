@@ -139,19 +139,11 @@ public class CoursesActivity extends AppCompatActivity {
                     space.setLayoutParams(new LinearLayout.LayoutParams(25, 1));
                     ll_line.addView(space);
 
-                    ImageView checked = new ImageView(getContext());
-                    checked.setImageResource(getResources().getIdentifier("ic_check","drawable", getPackageName()));
-                    checked.setColorFilter(getResources().getColor(R.color.green));
-                    ll_line.addView(checked);
+                    ImageView iv_checked = new ImageView(getContext());
+                    iv_checked.setImageResource(getResources().getIdentifier("ic_check","drawable", getPackageName()));
+                    iv_checked.setColorFilter(getResources().getColor(R.color.green));
 
-                    if (tv_chapterName.getText().length() > 24)
-                        tv_chapterName.setText(
-                                new StringBuilder(
-                                    tv_chapterName.getText().subSequence(
-                                            0,
-                                            21)
-                                    + "..."
-                        ));
+                    tv_chapterName.setCompoundDrawablesWithIntrinsicBounds(null, null, iv_checked.getDrawable(), null);
                 }
 
                 return ll_line;
