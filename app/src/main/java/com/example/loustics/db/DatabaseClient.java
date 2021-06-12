@@ -125,7 +125,7 @@ public class DatabaseClient {
                         db.execSQL("INSERT INTO Litteral VALUES(\"J'ai fait mes exercices mais je n'ai pas bien compris _____, ni celui-là d'ailleurs.\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['celui-ci'], 'wrong' : ['ceux', 'ce', 'celui', 'celui-là']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Je ne comprends pas _____ que vous voulez me dire', 'Grammaire - Pronoms', 'Français', \"{'right' : ['ce'], 'wrong' : ['ceux', 'ceci', 'celui-ci']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"J'ai couru voir le postier, _____ m'a remis une lettre pour vous.\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['lequel'], 'wrong' : ['laquelle', 'auxquels', 'duquel']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"_____ s'est trompée.\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['Elle'], 'wrong' : ['lui', 'on', 'elles']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"_____ s'est trompée.\", 'Grammaire - Pronoms', 'Français', \"{'right' : ['Elle'], 'wrong' : ['Lui', 'On', 'Elles']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Regarde ces voitures. _____ sont en très mauvais état !', 'Grammaire - Pronoms', 'Français', \"{'right' : ['elles'], 'wrong' : ['ils', 'elle', 'il']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Les tonneaux vides sont ceux _____ font le plus de bruit', 'Grammaire - Pronoms', 'Français', \"{'right' : ['qui'], 'wrong' : ['auxquels', 'que', 'dont']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Je vis dans une maison _____ les murs tombent en ruine', 'Grammaire - Pronoms', 'Français', \"{'right' : ['dont'], 'wrong' : ['qui', 'duquel', 'ou']}\");");
@@ -141,33 +141,33 @@ public class DatabaseClient {
 
                     // Conjugaison - Présent
                     {
-                        db.execSQL("INSERT INTO Litteral VALUES('Je (être) un petit bout de bois', 'Conjugaison - Présent', 'Français', \"{'right' : ['suis'], 'wrong' : ['suit', 'es', 'sui']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Le lion (être) mort ce soir', 'Conjugaison - Présent', 'Français', \"{'right' : ['est'], 'wrong' : ['ait', 'et', 'es']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Alexandre (mange) un brownie', 'Conjugaison - Présent', 'Français', \"{'right' : ['mange'], 'wrong' : ['manges', 'mangent', 'mangeais', 'celui-là']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Allez Pô, allez tu (venir)', 'Conjugaison - Présent', 'Français', \"{'right' : ['viens'], 'wrong' : ['vient', 'vi1', 'vien', 'vient']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Seules les vacances (être) bonnes pour la santé', 'Conjugaison - Présent', 'Français', \"{'right' : ['sont'], 'wrong' : ['son', 's on', 'sons']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Ces cartons (être) lourds', 'Conjugaison - Présent', 'Français', \"{'right' : ['sont'], 'wrong' : ['son', 's on', 'sons']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('Il (faire) tout noir', 'Conjugaison - Présent', 'Français', \"{'right' : ['fait'], 'wrong' : ['fais', 'fai', 'faie']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Vous n'(avoir) toujours rien corrigé\", 'Conjugaison - Présent', 'Français', \"{'right' : ['avez'], 'wrong' : ['avait', 'avé', 'avais']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Elles (avoir) des cours d'informatique\", 'Conjugaison - Présent', 'Français', \"{'right' : ['ont'], 'wrong' : ['on', 'ons', 'hon']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Je _____ un petit bout de bois', 'Conjugaison - Présent', 'Français', \"{'right' : ['suis'], 'wrong' : ['suit', 'es', 'sui']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Le lion _____ mort ce soir', 'Conjugaison - Présent', 'Français', \"{'right' : ['est'], 'wrong' : ['ait', 'et', 'es']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Alexandre _____ un brownie', 'Conjugaison - Présent', 'Français', \"{'right' : ['mange'], 'wrong' : ['manges', 'mangent', 'mangeais', 'celui-là']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Allez Pô, allez tu _____', 'Conjugaison - Présent', 'Français', \"{'right' : ['viens'], 'wrong' : ['vient', 'vi1', 'vien', 'vient']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Seules les vacances _____ bonnes pour la santé', 'Conjugaison - Présent', 'Français', \"{'right' : ['sont'], 'wrong' : ['son', 's on', 'sons']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Ces cartons _____ lourds', 'Conjugaison - Présent', 'Français', \"{'right' : ['sont'], 'wrong' : ['son', 's on', 'sons']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Il _____ tout noir', 'Conjugaison - Présent', 'Français', \"{'right' : ['fait'], 'wrong' : ['fais', 'fai', 'faie']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Vous n'_____ toujours rien corrigé\", 'Conjugaison - Présent', 'Français', \"{'right' : ['avez'], 'wrong' : ['avait', 'avé', 'avais']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Elles _____ des cours d'informatique\", 'Conjugaison - Présent', 'Français', \"{'right' : ['ont'], 'wrong' : ['on', 'ons', 'hon']}\");");
                     }
 
                     // Conjugaison - Futur
                     {
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Demain, j'(aller) acheter une baguette de pain\", 'Conjugaison - Futur', 'Français', \"{'right' : ['irai'], 'wrong' : ['irait', 'irais', 'iré']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Nous (essayer) de faire un gâteau pour le goûter\", 'Conjugaison - Futur', 'Français', \"{'right' : ['essayerons'], 'wrong' : ['on', 'ons', 'essay']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Ils (faire) la vaisselle avant de partir\", 'Conjugaison - Futur', 'Français', \"{'right' : ['feront'], 'wrong' : ['feron', 'ferons', 'fairont']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Il nous (falloir) de la farine pour faire de la pâte à pizzas\", 'Conjugaison - Futur', 'Français', \"{'right' : ['faudra'], 'wrong' : ['fallé', 'faudrat', 'faudras', 'fodra', 'faux draps']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Une fois à mi-chemin, elle (conduire) jusqu'à la fin du trajet\", 'Conjugaison - Futur', 'Français', \"{'right' : ['conduira'], 'wrong' : ['conduire', 'conduirera', 'conduiront', 'conduirons']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Demain, j'_____ acheter une baguette de pain\", 'Conjugaison - Futur', 'Français', \"{'right' : ['irai'], 'wrong' : ['irait', 'irais', 'iré']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Nous _____ de faire un gâteau pour le goûter\", 'Conjugaison - Futur', 'Français', \"{'right' : ['essayerons'], 'wrong' : ['on', 'ons', 'essay']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Ils _____ la vaisselle avant de partir\", 'Conjugaison - Futur', 'Français', \"{'right' : ['feront'], 'wrong' : ['feron', 'ferons', 'fairont']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Il nous _____ de la farine pour faire de la pâte à pizzas\", 'Conjugaison - Futur', 'Français', \"{'right' : ['faudra'], 'wrong' : ['fallé', 'faudrat', 'faudras', 'fodra', 'faux draps']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Une fois à mi-chemin, elle _____ jusqu'à la fin du trajet\", 'Conjugaison - Futur', 'Français', \"{'right' : ['conduira'], 'wrong' : ['conduire', 'conduirera', 'conduiront', 'conduirons']}\");");
                     }
 
                     // Conjugaison - Passé simple
                     {
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Nous nous (promener), lorsque nous avons trouvé cet hérisson qui semblait mal en point\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['promenions'], 'wrong' : ['promenons', 'promenait', 'promenais']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"On (aller) justement vous appeler\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['allait'], 'wrong' : ['allais', 'allé', 'allez', 'alliez']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"Hier, je (jouer) à Minecraft\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['jouais'], 'wrong' : ['jouait', joué', 'jouez']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"L'été dernier, nous (être) dans un camping avec une piscine\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['étions'], 'wrong' : ['étaient', 'était', 'étais', 'été']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES(\"J'(avoir) pourtant eu une bonne note à l'examen\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['avais'], 'wrong' : ['avait', 'avé', 'avez', 'avaient']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Nous nous _____, lorsque nous avons trouvé cet hérisson qui semblait mal en point\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['promenions'], 'wrong' : ['promenons', 'promenait', 'promenais']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"On _____ justement vous appeler\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['allait'], 'wrong' : ['allais', 'allé', 'allez', 'alliez']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"Hier, je _____ à Minecraft\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['jouais'], 'wrong' : ['jouait', joué', 'jouez']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"L'été dernier, nous _____ dans un camping avec une piscine\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['étions'], 'wrong' : ['étaient', 'était', 'étais', 'été']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES(\"J'_____ pourtant eu une bonne note à l'examen\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['avais'], 'wrong' : ['avait', 'avé', 'avez', 'avaient']}\");");
                     }
                 }
 

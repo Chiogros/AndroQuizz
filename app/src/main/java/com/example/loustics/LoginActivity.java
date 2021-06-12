@@ -302,7 +302,6 @@ public class LoginActivity extends AppCompatActivity {
             // parse l'url de l'image
             final Uri imageUri = Uri.parse(uris[0]);
 
-            Log.d("********", uris[0]);
             if (uris[0].isEmpty())
                 return BitmapFactory.decodeResource(getResources(), R.drawable.ic_unknown_person);
             try {

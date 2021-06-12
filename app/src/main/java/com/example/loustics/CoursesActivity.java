@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -113,7 +112,7 @@ public class CoursesActivity extends AppCompatActivity {
                 // Nom de la matière
                 TextView tv_chapterName = new TextView(getContext());
                 tv_chapterName.setText(this.getItem(position).getM_s_name());
-                tv_chapterName.setTextSize(25);
+                tv_chapterName.setTextSize(22);
                 ll_line.addView(tv_chapterName);
                 
                 // Au clic sur le chapitre
@@ -144,6 +143,15 @@ public class CoursesActivity extends AppCompatActivity {
                     checked.setImageResource(getResources().getIdentifier("ic_check","drawable", getPackageName()));
                     checked.setColorFilter(getResources().getColor(R.color.green));
                     ll_line.addView(checked);
+
+                    if (tv_chapterName.getText().length() > 24)
+                        tv_chapterName.setText(
+                                new StringBuilder(
+                                    tv_chapterName.getText().subSequence(
+                                            0,
+                                            21)
+                                    + "..."
+                        ));
                 }
 
                 return ll_line;
