@@ -159,6 +159,17 @@ public class DatabaseClient {
                         db.execSQL("INSERT INTO Litteral VALUES(\"Ils _____ la vaisselle avant de partir\", 'Conjugaison - Futur', 'Français', \"{'right' : ['feront'], 'wrong' : ['feron', 'ferons', 'fairont']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"Il nous _____ de la farine pour faire de la pâte à pizzas\", 'Conjugaison - Futur', 'Français', \"{'right' : ['faudra'], 'wrong' : ['fallé', 'faudrat', 'faudras', 'fodra', 'faux draps']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"Une fois à mi-chemin, elle _____ jusqu'à la fin du trajet\", 'Conjugaison - Futur', 'Français', \"{'right' : ['conduira'], 'wrong' : ['conduire', 'conduirera', 'conduiront', 'conduirons']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Demain, je ___ de lire ce livre.', 'Conjugaison - Futur', 'Français', \"{'right' : ['finirai'], 'wrong' : [ 'finirais','finiraient','finira']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Demain, je me ___.', 'Conjugaison - Futur', 'Français', \"{'right' : ['pèserai'], 'wrong' : [ 'pèserais','pèseraient','pèse']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('A mon anniversaire j ___ pleins de cadeaux.', 'Conjugaison - Futur', 'Français', \"{'right' : ['aurai'], 'wrong' : [ 'aurais','auraient','fûmes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Dans 2 mois nous ___ nos diplômes.', 'Conjugaison - Futur', 'Français', \"{'right' : ['aurons'], 'wrong' : [ 'aurions','avons','auraient']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Est ce que vous ___ à la piscine en été ?', 'Conjugaison - Futur', 'Français', \"{'right' : ['irez'], 'wrong' : [ 'iront','irons','iraient']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Le week-end prochain, ils ___ un marathon.', 'Conjugaison - Futur', 'Français', \"{'right' : ['courront'], 'wrong' : [ 'courrions','courraient','courrais']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Quand est ce que tu ___ sur Grenoble ?', 'Conjugaison - Futur', 'Français', \"{'right' : ['seras'], 'wrong' : [ 'sera','seraient','serai']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Vous ___ cette maison comme je la haïe.', 'Conjugaison - Futur', 'Français', \"{'right' : ['haïrez'], 'wrong' : [ 'haïrais','haïrai','haïrerez']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Tu ___ cette poupée de vêtements adaptés.', 'Conjugaison - Futur', 'Français', \"{'right' : ['vêtiras'], 'wrong' : [ 'vêtira','vêtirai','vêtirais']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Il ___  ses dettes.', 'Conjugaison - Futur', 'Français', \"{'right' : ['payera','paiera'], 'wrong' : [ 'payerais','paierez']}\");");
+                    
                     }
 
                     // Conjugaison - Passé simple
@@ -168,6 +179,17 @@ public class DatabaseClient {
                         db.execSQL("INSERT INTO Litteral VALUES(\"Hier, je _____ à Minecraft\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['jouais'], 'wrong' : ['jouait', joué', 'jouez']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"L'été dernier, nous _____ dans un camping avec une piscine\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['étions'], 'wrong' : ['étaient', 'était', 'étais', 'été']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES(\"J'_____ pourtant eu une bonne note à l'examen\", 'Conjugaison - Passé simple', 'Français', \"{'right' : ['avais'], 'wrong' : ['avait', 'avé', 'avez', 'avaient']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Nous ___ demi-tour après quelques kilomètres.', 'Conjugaison - Passé simple', 'Français', \"{'right' : ['fîmes'], 'wrong' : [ 'fîme','firent','fûmes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Nous ___ très peur en voyant la rivière débordée.', 'Conjugaison - Passé simple', 'Français', \"{'right' : ['eûmes'], 'wrong' : [ 'eûrent','eume','fûmes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Les visiteurs ___ un but non valable.', 'Conjugaison - Passé simple', 'Français', \"{'right' : ['marquèrent'], 'wrong' : [ 'marquères','marquent','fûmes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Tu ___ à 8 heures, mais il était trop tard !.', 'Conjugaison - Passé simple', 'Français', \"{'right' : ['vins'], 'wrong' : [ 'vîns','venus','fûmes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Elle ___ une montgolfière passer au dessus de sa tête.', 'Conjugaison - Passé simple', 'Français', \"{'right' : ['vit'], 'wrong' : [ 'vient','vires','voyais']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Nous ___ vite sur le santier.', 'Conjugaison - Passé simple', 'Français', \"{'right' : ['marchâmes'], 'wrong' : [ 'marchions','marchons','marchiâmes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Les enfants ___ de jolis cadeaux.', 'Conjugaison - Passé simple', 'Français', \"{'right' : ['eurent'], 'wrong' : [ 'eûmes','eûrent','fûmes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Je ___ dans une salle pleine.', 'Conjugaison - Passé simple', 'Français', \"{'right' : ['chantai'], 'wrong' : [ 'chantais','chantait','chantas']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Ils ___ surpris de la fin du film.', 'Conjugaison - Passé simple', 'Français', \"{'right' : ['furent'], 'wrong' : [ 'futent','fuirent','fuitent']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Tu ___ raison de continuer.', 'Conjugaison - Passé simple', 'Français', \"{'right' : ['eus'], 'wrong' : [ 'eu','euent','eures']}\");");
+
                     }
                 }
 
@@ -176,7 +198,15 @@ public class DatabaseClient {
                     // Les villes
                     {
                         db.execSQL("INSERT INTO Litteral VALUES('Grenoble', 'Les villes', 'Géographie', \"{'right' : ['est appelée la Capitale des Alpes', 'a pour maire Éric Piolle', 'a accueilli les JO d hiver en 1968', 'est la ville la plus plate de France'], 'wrong' : ['accueille la plus grande gare de la région', 'est connu pour le quartier Fourvièvre']}\");");
-                        db.execSQL("INSERT INTO Litteral VALUES('La ville de Bordeaux', 'Les villes', 'Géographie', \"{'right' : ['est la capitale mondiale du Vin', 'est traversée par la Garonne', 'est la 9ème ville française en nombre d habitants'], 'wrong' : ['organise une grande paella chaque année', 'est dans le département du Vaucluse']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('La ville de Bordeaux', 'Les villes', 'Géographie', \"{'right' : ['est la capitale mondiale du Vin', 'est traversée par la Garonne', 'est la 9ème ville française en nombre d'habitants'], 'wrong' : ['organise une grande paella chaque année', 'est dans le département du Vaucluse']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Quelle(s) ville(s) ne fait pas partie des 10 plus grandes villes de France ?', 'Les villes', 'Géographie', \"{'right' : ['Chambéry', 'Saint-Etienne', 'Grenoble'], 'wrong' : [ 'Strasbourg','Nantes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Lyon est une ville : ', 'Les villes', 'Géographie', \"{'right' : ['Commerciale', 'Universitaire', 'Industrielle'], 'wrong' : [ 'Politique','Portuaire']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Marseille est : ', 'Les villes', 'Géographie', \"{'right' : ['Le principal port français'], 'wrong' : [ 'La capitale de la France','Industrielle','La plus grande ville de football']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Toulouse est un pôle :', 'Les villes', 'Géographie', \"{'right' : ['Aéronautique'], 'wrong' : [ 'Portuaire','Spatiale','Sportif']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Quelle est la 2e plus grande ville de France ? ', 'Les villes', 'Géographie', \"{'right' : ['Lyon'], 'wrong' : [ 'Strasbourg','Nantes','Lille']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Quelle est la 6e plus grande ville de France ? ', 'Les villes', 'Géographie', \"{'right' : ['Nice'], 'wrong' : [ 'Strasbourg','Lyon','Nantes']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Quelle est la 4e plus grande ville de France ? ', 'Les villes', 'Géographie', \"{'right' : ['Lille'], 'wrong' : [ 'Strasbourg','Nantes','Nice']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Quelle est la 8e plus grande ville de France ? ', 'Les villes', 'Géographie', \"{'right' : ['Nantes'], 'wrong' : [ 'Strasbourg','Lille','Nice']}\");");
                     }
 
                     // Les départements
@@ -200,6 +230,11 @@ public class DatabaseClient {
                         db.execSQL("INSERT INTO Litteral VALUES('La plus région avec le moins d habitants au km² est', 'Les régions', 'Géographie', \"{'right' : ['la Corse'], 'wrong' : ['le Centre-Val de l Oire', 'l Ardèche', 'le Grand Est', 'la Bretagne']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('La région la plus peuplée', 'Les régions', 'Géographie', \"{'right' : ['est l Île de France', 'compte plus de 12 millions d habitants'], 'wrong' : ['est la région Provence-Alpes-Côte d Azur', 'est la région qui a la plus grande superficie']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('La région Auvergne-Rhône-Alpes accueille la grande ville', 'Les régions', 'Géographie', \"{'right' : ['de Lyon'], 'wrong' : ['de Poitiers', 'de Bordeaux', 'du Touquet', 'de Besançon']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Combien, la France, compte elle de régions ? (sans les TOM)', 'Les régions', 'Géographie', \"{'right' : ['22'], 'wrong' : ['32', '24', '26']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Combien, la France, compte elle de régions ? (avec les TOM)', 'Les régions', 'Géographie', \"{'right' : ['26'], 'wrong' : ['32', '24', '22']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Quelle région existe en France ?', 'Les régions', 'Géographie', \"{'right' : ['Franche Comté', 'Centre'], 'wrong' : ['Isère', 'Loire', 'Luxembourg','Monaco']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Quelle région existe en France ?', 'Les régions', 'Géographie', \"{'right' : ['Bretagne', 'Champagne-Ardennes'], 'wrong' : ['Rhône', 'Provence', 'Luxembourg','Monaco']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Quelle région existe en France ?', 'Les régions', 'Géographie', \"{'right' : ['Haute-Normandie', 'Pays de la Loire','Limousin'], 'wrong' : ['Rhône', 'Luxembourg','Monaco']}\");");
                     }
 
                     // L'Europe
@@ -238,6 +273,7 @@ public class DatabaseClient {
                         db.execSQL("INSERT INTO Litteral VALUES('La période de la Préhistoire', 'La préhistoire', 'Histoire', \"{'right' : ['correspond à l apparition de l Homme sur Terre'], 'wrong' : ['est la période d apparition des dinosaures', 'a commencée il y a 5,5 millions d annees']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('Le squelette Lucy', 'La préhistoire', 'Histoire', \"{'right' : ['a été découvert en Éthiopie', 'a été trouvé en 1974', 'porte ce nom car les chercheurs qui l ont trouvé écoutaient Lucy in the sky of diamonds des Beatles'], 'wrong' : ['portait un bracelet en défense de mammouth où était écrit son nom', 's appelle comme ça car la personne qui l a trouvé s appelle Lucy']}\");");
                         db.execSQL("INSERT INTO Litteral VALUES('À la préhistoire, on allumait le feu', 'La préhistoire', 'Histoire', \"{'right' : ['avec des pierres', 'en tapotant deux cailloux l un contre l autre', 'en tapant un silex avec du minerai de fer'], 'wrong' : ['avec un briquet', 'en soufflant très fort sur l herbe sèche']}\");");
+                        db.execSQL("INSERT INTO Litteral VALUES('Les personnes qui étudient la Préhistoire sont appelés', 'La préhistoire', 'Histoire', \"{'right' : ['préhistoriens'], 'wrong' : ['préhistoriques', 'préhistologues']}\");");
                     }
 
                     // L'Antiquité
